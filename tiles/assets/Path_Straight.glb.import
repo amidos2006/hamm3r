@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bp0tntymxw0br"
-path="res://.godot/imported/Path_Center.glb-40b913e476d3ea12457d220ee3e99cdd.scn"
+uid="uid://8160irby17wl"
+path="res://.godot/imported/Path_Straight.glb-4df2eca97642f9a89b9239f28fc3b7aa.scn"
 
 [deps]
 
-source_file="res://tiles/Path_Center.glb"
-dest_files=["res://.godot/imported/Path_Center.glb-40b913e476d3ea12457d220ee3e99cdd.scn"]
+source_file="res://tiles/assets/Path_Straight.glb"
+dest_files=["res://.godot/imported/Path_Straight.glb-4df2eca97642f9a89b9239f28fc3b7aa.scn"]
 
 [params]
 

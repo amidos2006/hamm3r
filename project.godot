@@ -13,6 +13,15 @@ config_version=5
 config/name="HAMM3R"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/tracery_plugin/plugin.cfg", "res://addons/traceryplugin/plugin.cfg")
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

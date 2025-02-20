@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bf51lv3is5cyg"
-path="res://.godot/imported/Room_Control.glb-d1508c6c8533e768a11190322419d239.scn"
+uid="uid://dpijr8vlit2jo"
+path="res://.godot/imported/Path_End.glb-4ac7f3ee671557627b38a92f00d68d99.scn"
 
 [deps]
 
-source_file="res://tiles/Room_Control.glb"
-dest_files=["res://.godot/imported/Room_Control.glb-d1508c6c8533e768a11190322419d239.scn"]
+source_file="res://tiles/assets/Path_End.glb"
+dest_files=["res://.godot/imported/Path_End.glb-4ac7f3ee671557627b38a92f00d68d99.scn"]
 
 [params]
 
