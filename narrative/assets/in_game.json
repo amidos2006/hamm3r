@@ -1,4 +1,4 @@
 {
-	"origin": ["How are #adjective# hero?"],
-	"adjective": ["Strong", "Weak", "Frail", "Dumb", "Happy"]
+	"origin": ["How is the #adjective# hero?"],
+	"adjective": ["strong", "weak", "frail", "dumb", "happy"]
 }
