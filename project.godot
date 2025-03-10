@@ -20,7 +20,7 @@ window/size/viewport_height=1080
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/traceryplugin/plugin.cfg")
+enabled=PackedStringArray("res://addons/graphlayoutgeneration/plugin.cfg", "res://addons/traceryplugin/plugin.cfg")
 
 [rendering]
 
