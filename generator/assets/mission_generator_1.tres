@@ -2,7 +2,7 @@
 
 [ext_resource type="JSON" path="res://generator/assets/add_deadend.json" id="1_feutw"]
 [ext_resource type="JSON" path="res://generator/assets/add_normal.json" id="1_vj58r"]
-[ext_resource type="Script" path="res://addons/graphlayoutgeneration/mission.gd" id="1_vttyb"]
+[ext_resource type="Script" uid="uid://c4i0yu7is1t6e" path="res://addons/graphlayoutgeneration/mission.gd" id="1_vttyb"]
 [ext_resource type="JSON" path="res://generator/assets/recipe.json" id="2_vevmd"]
 [ext_resource type="JSON" path="res://generator/assets/add_normal_lock.json" id="3_fs4gp"]
 [ext_resource type="JSON" path="res://generator/assets/making_branch.json" id="4_263su"]

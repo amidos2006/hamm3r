@@ -6,7 +6,7 @@
 [ext_resource type="JSON" path="res://generator/assets/making_branch.json" id="4_20nhl"]
 [ext_resource type="JSON" path="res://generator/assets/add_normal_end.json" id="5_6sedy"]
 [ext_resource type="JSON" path="res://generator/assets/recipe.json" id="6_hs1sp"]
-[ext_resource type="Script" path="res://addons/graphlayoutgeneration/mission.gd" id="7_ur6ch"]
+[ext_resource type="Script" uid="uid://c4i0yu7is1t6e" path="res://addons/graphlayoutgeneration/mission.gd" id="7_ur6ch"]
 [ext_resource type="JSON" path="res://generator/assets/start.json" id="8_edsod"]
 
 [resource]
