@@ -1,4 +1,4 @@
-extends Node2D
+extends Node3D
 
 @export var mission_generator_1:Mission
 @export var mission_generator_2:Mission

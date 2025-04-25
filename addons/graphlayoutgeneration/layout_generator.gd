@@ -349,10 +349,14 @@ class LayoutMaze extends RefCounted:
 				maximum.y = cell.position.y
 		return maximum + Vector2(1, 1)
 		
+		
+	func spaceship():
+		return LayoutGenerator._spaceship_2d(self)["layout"]
+	
 	
 	func _to_string():
 		var result = "\n"
-		var maze = LayoutGenerator._spaceship_2d(self)["layout"]
+		var maze = self.spaceship()
 		for y in range(maze.size()):
 			maze[y].append(null)
 		maze.append([])
