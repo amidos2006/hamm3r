@@ -38,8 +38,8 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_7v0dw"]
-offsets = PackedFloat32Array(0, 0.275168, 0.721476, 1)
-colors = PackedColorArray(0.964706, 0.898039, 1, 1, 0.392157, 0.901961, 0.980392, 1, 0.1806, 0.42, 0.3801, 1, 0.1806, 0.42, 0.3801, 0)
+offsets = PackedFloat32Array(0, 0.385906, 1)
+colors = PackedColorArray(0.4, 0.92, 1, 1, 0.2, 0.46, 0.5, 1, 0.068, 0.1564, 0.17, 0.352941)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rcqw2"]
 animations = [{
@@ -88,17 +88,18 @@ hard_actions = ExtResource("5_ttu4d")
 leave_actions = ExtResource("6_j7iwe")
 end_actions = ExtResource("6_ttu4d")
 
-[node name="Blackout" parent="." instance=ExtResource("8_cxrv6")]
-
-[node name="Dialogue" parent="." instance=ExtResource("1_fpmxm")]
-layer = 110
-tracery_grammar = ExtResource("4_ie2y0")
-
 [node name="UIMessage" parent="." instance=ExtResource("5_sg2fo")]
+layer = 110
+
+[node name="Blackout" parent="." instance=ExtResource("8_cxrv6")]
 layer = 100
 
-[node name="Title" type="CanvasLayer" parent="."]
+[node name="Dialogue" parent="." instance=ExtResource("1_fpmxm")]
 layer = 90
+tracery_grammar = ExtResource("4_ie2y0")
+
+[node name="Title" type="CanvasLayer" parent="."]
+layer = 80
 script = ExtResource("20_m3u68")
 
 [node name="Name" type="TextureRect" parent="Title"]

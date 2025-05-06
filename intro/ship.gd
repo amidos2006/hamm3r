@@ -14,6 +14,7 @@ var _thruster_dec
 var _thruster_force
 var _attraction_force
 var _direction
+var _x_scale
 
 
 func _ready():
@@ -25,6 +26,10 @@ func _ready():
 	_direction = Vector2.ZERO
 	_active = false
 	_exit_active = false
+	_x_scale = $AnimationSprite.scale.x
+	var tween = get_tree().create_tween().set_loops()
+	tween.tween_property($AnimationSprite, "scale", Vector2(0.95 *  $AnimationSprite.scale.x ,  $AnimationSprite.scale.y), 0.1)
+	tween.tween_property($AnimationSprite, "scale", $AnimationSprite.scale, 0.1)
 
 
 func _process(delta):
@@ -38,6 +43,7 @@ func _process(delta):
 		$AnimationSprite.play("medium")
 	else:
 		$AnimationSprite.play("high")
+	
 	$FrontParticlesLeft.emitting = _thruster_power > 0
 	$FrontParticlesLeft.emission_sphere_radius = 4 + _thruster_power * 6
 	$FrontParticlesLeft.initial_velocity_min = _last_speed + 20

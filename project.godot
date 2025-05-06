@@ -11,7 +11,12 @@ config_version=5
 [application]
 
 config/name="HAMM3R"
+run/main_scene="uid://b1outtjkeukf1"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+
+[autoload]
+
+Global="*res://global.gd"
 
 [display]
 

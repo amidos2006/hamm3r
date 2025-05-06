@@ -11,6 +11,13 @@
 		}
 	},
 	{
+		"action": "timer",
+		"wait": true,
+		"args": {
+			"time": 1
+		}
+	},
+	{
 		"action": "show_dialogue",
 		"wait": true,
 		"args": {
@@ -44,10 +51,11 @@
 		}
 	},
 	{
-		"action": "change_scene",
+		"action": "switch_scene",
 		"wait": false,
 		"args": {
-			
+			"path": "res://gameover/gameover.tscn",
+			"return": "res://intro/intro.tscn"
 		}
 	}
 ]

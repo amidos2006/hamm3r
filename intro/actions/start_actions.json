@@ -1,5 +1,14 @@
 [
 	{
+		"action": "fade",
+		"wait": false,
+		"args": {
+			"start": 1,
+			"end": 0,
+			"time": 1
+		}
+	},
+	{
 		"action": "show_message",
 		"wait": true,
 		"args": {

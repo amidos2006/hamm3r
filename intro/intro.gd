@@ -15,6 +15,7 @@ var _medium_threshold
 
 
 func _ready():
+	$Blackout.start()
 	_docking_speed = 0
 	await _execute_actions(start_actions.data)
 	$Dialogue.hide_message()
@@ -85,5 +86,10 @@ func _execute_actions(actions):
 				if act.wait:
 					await $Blackout.animation_ended
 			
+			"timer":
+				if act.wait:
+					await get_tree().create_timer(act.args.time).timeout
+			"switch_scene":
+				Global.switch_scene(act.args.path, act.args)
 			"play_sound":
 				pass

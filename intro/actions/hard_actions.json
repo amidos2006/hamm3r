@@ -8,6 +8,13 @@
 		}
 	},
 	{
+		"action": "timer",
+		"wait": true,
+		"args": {
+			"time": 0.5
+		}
+	},
+	{
 		"action": "show_dialogue",
 		"wait": true,
 		"args": {
