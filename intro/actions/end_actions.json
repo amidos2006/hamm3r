@@ -7,6 +7,7 @@
 			"mood": "",
 			"text": "And mind you: my sass is not part of my programming.",
 			"action": "interact",
+			"direction": "left",
 			"time": 0
 		}
 	},
@@ -16,8 +17,9 @@
 		"args": {
 			"name": "martin",
 			"mood": "normal",
-			"text": "Cannot be a personal preference, with you not being a person.",
+			"text": "Cannot be a personal preference either, with you not being a person.",
 			"action": "interact",
+			"direction": "left",
 			"time": 0
 		}
 	},
@@ -29,6 +31,7 @@
 			"mood": "normal",
 			"text": "Sorry to interrupt the banter, fellas, but I have a station to run.",
 			"action": "interact",
+			"direction": "right",
 			"time": 0
 		}
 	},
@@ -40,6 +43,7 @@
 			"mood": "normal",
 			"text": "I will wire you the credits for this old tanker as usual. Anything else I can do for you?",
 			"action": "interact",
+			"direction": "right",
 			"time": 0
 		}
 	},
@@ -51,6 +55,7 @@
 			"mood": "normal",
 			"text": "Guess not, Tess. We are planning to haul in another big one in four months or so.",
 			"action": "interact",
+			"direction": "left",
 			"time": 0
 		}
 	},
@@ -62,6 +67,7 @@
 			"mood": "smiling",
 			"text": "Roger that. Try and take care out there, the both of you!",
 			"action": "interact",
+			"direction": "right",
 			"time": 0
 		}
 	},
@@ -81,6 +87,7 @@
 			"mood": "noise",
 			"text": "Roger that. Try and take care out there, the both of you!",
 			"action": "interact",
+			"direction": "right",
 			"time": 0
 		}
 	},
@@ -90,8 +97,9 @@
 		"args": {
 			"name": "3r",
 			"mood": "",
-			"text": "That was cold.",
+			"text": "Ouch! That was cold, Captain.",
 			"action": "interact",
+			"direction": "left",
 			"time": 0
 		}
 	},
@@ -103,6 +111,7 @@
 			"mood": "angry",
 			"text": "Just shut your artificial mouth and push us out.",
 			"action": "interact",
+			"direction": "left",
 			"time": 0
 		}
 	},
@@ -148,7 +157,7 @@
 		"action": "hide_title",
 		"wait": true,
 		"args": {
-			"time": 1.5
+			"time": 2
 		}
 	},
 	{

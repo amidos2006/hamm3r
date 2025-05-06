@@ -15,6 +15,7 @@
 			"mood": "concerned",
 			"text": "Ouch!\nEver heard of deceleration procedures, cowboy?!",
 			"action": "interact",
+			"direction": "right",
 			"time": 0
 		}
 	},
@@ -26,6 +27,7 @@
 			"mood": "angry",
 			"text": "Oh, come on! That was not that bad of a docking!",
 			"action": "interact",
+			"direction": "left",
 			"time": 0
 		}
 	},
@@ -37,6 +39,7 @@
 			"mood": "",
 			"text": "Not bad for someone who is technically a primate, I suppose?",
 			"action": "interact",
+			"direction": "left",
 			"time": 0
 		}
 	}

@@ -38,6 +38,14 @@ func _process(delta):
 		$AnimationSprite.play("medium")
 	else:
 		$AnimationSprite.play("high")
+	$FrontParticlesLeft.emitting = _thruster_power > 0
+	$FrontParticlesLeft.emission_sphere_radius = 4 + _thruster_power * 6
+	$FrontParticlesLeft.initial_velocity_min = _last_speed + 20
+	$FrontParticlesLeft.initial_velocity_max = _last_speed + 40
+	$FrontParticlesRight.emitting = $FrontParticlesLeft.emitting
+	$FrontParticlesRight.emission_sphere_radius = $FrontParticlesLeft.emission_sphere_radius
+	$FrontParticlesRight.initial_velocity_min = $FrontParticlesLeft.initial_velocity_min
+	$FrontParticlesRight.initial_velocity_max = $FrontParticlesLeft.initial_velocity_max
 	
 	_thruster_power = clamp(_thruster_power - _thruster_dec * delta, 0, 1)
 	apply_force(_direction * _attraction_force)

@@ -40,13 +40,27 @@ func _execute_actions(actions):
 				if act.wait:
 					await $UIMessage.advance_message
 			"show_dialogue":
-				$Dialogue.show_message(act.args.name, act.args.mood, act.args.text, act.args.time, act.args.action)
+				$Dialogue.show_message(act.args.name, act.args.mood, act.args.text, act.args.direction, act.args.time, act.args.action)
 				if act.wait:
 					await $Dialogue.advance_dialogue
+			
 			"move_camera":
 				$Camera2D.move_camera(act.args.dx, act.args.dy, act.args.time)
 				if act.wait:
 					await $Camera2D.animation_ended
+			"shake_camera":
+				$Camera2D.shake_camera(act.args.strength, act.args.frames)
+				if act.wait:
+					await $Camera2D.animation_ended
+			"zoom_camera":
+				$Camera2D.zoom_camera(act.args.dx, act.args.dy, act.args.time)
+				if act.wait:
+					await $Camera2D.animation_ended
+			"follow_camera":
+				$Camera2D.follow_camera(act.args.move_speed, act.args.zoom_speed, $Ship, $Station/Center)
+			"stop_follow":
+				$Camera2D.stop_follow()
+			
 			"start_minigame":
 				$Ship.start_moving(act.args.start_speed, act.args.attraction_force, act.args.thruster_force, act.args.thruster_acc, act.args.thruster_dec, act.args.action, $Station.position)
 				_soft_threshold = act.args.soft_speed
@@ -57,16 +71,7 @@ func _execute_actions(actions):
 				$Ship.ship_exit(act.args.attraction_force, act.args.thruster_force, act.args.thruster_acc, act.args.thruster_dec, act.args.time)
 				if act.wait:
 					await $Ship.ship_docked
-			"shake_camera":
-				$Camera2D.shake_camera(act.args.strength, act.args.frames)
-				if act.wait:
-					await $Camera2D.animation_ended
-			"zoom_camera":
-				$Camera2D.zoom_camera(act.args.dx, act.args.dy, act.args.time)
-				if act.wait:
-					await $Camera2D.animation_ended
-			"play_sound":
-				pass
+			
 			"show_title":
 				$Title.show_title(act.args.dx, act.args.dy, act.args.time)
 				if act.wait:
@@ -79,3 +84,6 @@ func _execute_actions(actions):
 				$Blackout.fade(act.args.start, act.args.end, act.args.time)
 				if act.wait:
 					await $Blackout.animation_ended
+			
+			"play_sound":
+				pass

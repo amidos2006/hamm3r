@@ -16,7 +16,6 @@ func _ready():
 
 func _input(event):
 	if _action_button.length() > 0 and event.is_action_pressed(_action_button):
-		print("yes")
 		_action_pressed.emit()
 
 
@@ -26,10 +25,13 @@ func _get_picture(character_name, mood):
 	return pictures[character_name].get_picture(mood)
 
 
-func show_message(character_name, mood, dialogue, time=0, action = "interact"):
-	var chatbox = $Other
-	if character_name.to_lower() == "martin":
-		chatbox = $You
+func show_message(character_name, mood, dialogue, direction = "left", time=0, action = "interact"):
+	var chatbox = $Right
+	match direction:
+		"left":
+			chatbox = $Left
+		"right":
+			chatbox = $Right
 	chatbox.get_node("Picture").texture = _get_picture(character_name, mood)
 	chatbox.get_node("Name").text = character_name
 	chatbox.get_node("Dialogue").text = dialogue
@@ -48,5 +50,5 @@ func show_message(character_name, mood, dialogue, time=0, action = "interact"):
 func hide_message():
 	_action_pressed.emit()
 	_action_button = ""
-	$You.hide()
-	$Other.hide()
+	$Left.hide()
+	$Right.hide()

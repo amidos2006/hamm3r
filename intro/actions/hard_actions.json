@@ -15,6 +15,7 @@
 			"mood": "angry",
 			"text": "FUCK!\nAre you trying to knock the station out of orbit?!",
 			"action": "interact",
+			"direction": "right",
 			"time": 0
 		}
 	},
@@ -26,6 +27,7 @@
 			"mood": "concerned",
 			"text": "I- So sorry, Tess!\nDiós, I don’t know what happened there.",
 			"action": "interact",
+			"direction": "left",
 			"time": 0
 		}
 	},
@@ -37,6 +39,7 @@
 			"mood": "",
 			"text": "Well, I guess that is what you get for #activity# while docking...",
 			"action": "interact",
+			"direction": "left",
 			"time": 0
 		}
 	}

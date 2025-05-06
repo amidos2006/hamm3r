@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b1outtjkeukf1"]
+[gd_scene load_steps=35 format=3 uid="uid://b1outtjkeukf1"]
 
 [ext_resource type="PackedScene" uid="uid://h0ewqgb7ck7x" path="res://dialogue/dialogue.tscn" id="1_fpmxm"]
 [ext_resource type="Script" uid="uid://u0ydxg0j7t04" path="res://intro/intro.gd" id="1_vyos2"]
@@ -25,12 +25,21 @@
 [ext_resource type="Texture2D" uid="uid://v4sq8bpfrmpg" path="res://intro/graphics/truckEngine_00.png" id="15_dk8sq"]
 [ext_resource type="Script" uid="uid://cciwtru2sn1cl" path="res://intro/title.gd" id="20_m3u68"]
 [ext_resource type="FontFile" uid="uid://b3yalra5jswgu" path="res://intro/font/JosefinSans-Regular.ttf" id="22_6o4ox"]
+[ext_resource type="Texture2D" uid="uid://bo8u5rlvgk6q6" path="res://intro/graphics/particle.png" id="24_7v0dw"]
 [ext_resource type="Texture2D" uid="uid://c6y01embash38" path="res://intro/graphics/idg_logo.png" id="25_hp8fq"]
 [ext_resource type="Texture2D" uid="uid://do52d4smn44hu" path="res://intro/graphics/mdia_logo.png" id="26_7v0dw"]
 [ext_resource type="Texture2D" uid="uid://bo0830o6er7ty" path="res://intro/graphics/godot_logo.png" id="27_35ehl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie2y0"]
 size = Vector2(123, 128)
+
+[sub_resource type="Curve" id="Curve_35ehl"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_7v0dw"]
+offsets = PackedFloat32Array(0, 0.275168, 0.721476, 1)
+colors = PackedColorArray(0.964706, 0.898039, 1, 1, 0.392157, 0.901961, 0.980392, 1, 0.1806, 0.42, 0.3801, 1, 0.1806, 0.42, 0.3801, 0)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rcqw2"]
 animations = [{
@@ -253,7 +262,7 @@ position = Vector2(964, 796)
 texture = ExtResource("2_jkt4n")
 
 [node name="Station" type="StaticBody2D" parent="."]
-position = Vector2(780, 674)
+position = Vector2(1033, 674)
 metadata/_edit_group_ = true
 
 [node name="Back" type="Sprite2D" parent="Station"]
@@ -273,8 +282,11 @@ z_index = 100
 position = Vector2(40.5, -1.00006)
 shape = SubResource("RectangleShape2D_ie2y0")
 
+[node name="Center" type="Marker2D" parent="Station"]
+position = Vector2(237, -3)
+
 [node name="Ship" type="RigidBody2D" parent="."]
-position = Vector2(-149, 528)
+position = Vector2(104, 528)
 gravity_scale = 0.0
 lock_rotation = true
 contact_monitor = true
@@ -292,6 +304,38 @@ texture = ExtResource("10_8c3ee")
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("11_2i53d")
 
+[node name="FrontParticlesLeft" type="CPUParticles2D" parent="Ship"]
+position = Vector2(-5, 45)
+amount = 500
+texture = ExtResource("24_7v0dw")
+emission_shape = 1
+emission_sphere_radius = 8.0
+direction = Vector2(1, 0.25)
+spread = 5.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 50.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_35ehl")
+color_ramp = SubResource("Gradient_7v0dw")
+
+[node name="FrontParticlesRight" type="CPUParticles2D" parent="Ship"]
+position = Vector2(10, 33)
+amount = 500
+texture = ExtResource("24_7v0dw")
+emission_shape = 1
+emission_sphere_radius = 8.0
+direction = Vector2(1, 0.25)
+spread = 5.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 50.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_35ehl")
+color_ramp = SubResource("Gradient_7v0dw")
+
 [node name="AnimationSprite" type="AnimatedSprite2D" parent="Ship"]
 scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_rcqw2")
@@ -306,8 +350,9 @@ position = Vector2(1.5, -3.49999)
 scale = Vector2(14.55, 6.15)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(635, 1225)
+position = Vector2(888, 1225)
 zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
 script = ExtResource("14_sg2fo")
 
 [connection signal="body_entered" from="Ship" to="Ship" method="_on_body_entered"]

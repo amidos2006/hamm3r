@@ -25,6 +25,7 @@
 			"mood": "concentrated",
 			"text": "Easy now.",
 			"action": "",
+			"direction": "left",
 			"time": 0
 		}
 	},
@@ -32,9 +33,17 @@
 		"action": "show_message",
 		"wait": false,
 		"args": {
-			"message": "PRESS [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO DECELERATE THE CARGO SHIP",
+			"message": "HOLD [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO DECELERATE",
 			"action": "interact",
 			"time": 1.0
+		}
+	},
+	{
+		"action": "follow_camera",
+		"wait": false,
+		"args": {
+			"zoom_speed": 0.05,
+			"move_speed": 100
 		}
 	},
 	{
@@ -51,6 +60,12 @@
 			"thruster_dec": 1,
 			
 			"action": "interact"
+		}
+	},
+	{
+		"action": "stop_follow",
+		"wait": false,
+		"args": {
 		}
 	}
 ]

@@ -16,8 +16,21 @@
 		"args": {
 			"name": "martin",
 			"mood": "smiling",
-			"text": "Okay....\nI guess not today.",
+			"text": "Docking aborted. I repeat: docking aborted.\nSorry, Tess.",
 			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "tess",
+			"mood": "angry",
+			"text": "Really?!",
+			"action": "interact",
+			"direction": "right",
 			"time": 0
 		}
 	},
@@ -27,7 +40,7 @@
 		"args": {
 			"start": 0,
 			"end": 1,
-			"time": 0.5
+			"time": 1
 		}
 	},
 	{
