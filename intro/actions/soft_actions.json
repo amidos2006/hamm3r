@@ -1,0 +1,35 @@
+[
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "tess",
+			"mood": "smiling",
+			"text": "Nice and smooth, Captain. I am impressed!",
+			"action": "interact",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "martin",
+			"mood": "smiling",
+			"text": "Madame, 'Smooth' is my middle name.",
+			"action": "interact",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "3r",
+			"mood": "",
+			"text": "Luis. You actually have a middle name and that is Luis.",
+			"action": "interact",
+			"time": 0
+		}
+	}
+]

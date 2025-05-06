@@ -1,0 +1,314 @@
+[gd_scene load_steps=32 format=3 uid="uid://b1outtjkeukf1"]
+
+[ext_resource type="PackedScene" uid="uid://h0ewqgb7ck7x" path="res://dialogue/dialogue.tscn" id="1_fpmxm"]
+[ext_resource type="Script" uid="uid://u0ydxg0j7t04" path="res://intro/intro.gd" id="1_vyos2"]
+[ext_resource type="JSON" path="res://intro/actions/start_actions.json" id="2_1l24h"]
+[ext_resource type="Texture2D" uid="uid://brug4thvekhdd" path="res://intro/graphics/bg_space.png" id="2_jkt4n"]
+[ext_resource type="JSON" path="res://intro/actions/soft_actions.json" id="3_ao3yw"]
+[ext_resource type="JSON" path="res://intro/actions/tracery.json" id="4_ie2y0"]
+[ext_resource type="JSON" path="res://intro/actions/medium_actions.json" id="4_rcqw2"]
+[ext_resource type="PackedScene" uid="uid://7dite6htre68" path="res://ui_message/ui_message.tscn" id="5_sg2fo"]
+[ext_resource type="JSON" path="res://intro/actions/hard_actions.json" id="5_ttu4d"]
+[ext_resource type="JSON" path="res://intro/actions/leave_actions.json" id="6_j7iwe"]
+[ext_resource type="JSON" path="res://intro/actions/end_actions.json" id="6_ttu4d"]
+[ext_resource type="Script" uid="uid://cdk8x8r6p7y4p" path="res://intro/ship.gd" id="8_1l24h"]
+[ext_resource type="PackedScene" uid="uid://obr7t3qupae3" path="res://blackout/blackout.tscn" id="8_cxrv6"]
+[ext_resource type="Texture2D" uid="uid://wy7tj8stswbs" path="res://intro/graphics/station_back.png" id="8_krbtg"]
+[ext_resource type="Texture2D" uid="uid://ci6488la4rnta" path="res://intro/graphics/station_front.png" id="9_xwdvp"]
+[ext_resource type="Texture2D" uid="uid://dpl7q5tf5eq53" path="res://intro/graphics/logo.png" id="10_5hu1j"]
+[ext_resource type="Texture2D" uid="uid://cgt2bygfhedc" path="res://intro/graphics/tankers.png" id="10_8c3ee"]
+[ext_resource type="Texture2D" uid="uid://cyu6o8m8cwmup" path="res://intro/graphics/truck.png" id="11_2i53d"]
+[ext_resource type="Texture2D" uid="uid://bhyf1sevptwdg" path="res://intro/graphics/truckEngine_03.png" id="12_1l24h"]
+[ext_resource type="Texture2D" uid="uid://c3atu0entwqwe" path="res://intro/graphics/truckEngine_01.png" id="13_ie2y0"]
+[ext_resource type="Texture2D" uid="uid://jovthc804xo4" path="res://intro/graphics/truckEngine_02.png" id="14_ao3yw"]
+[ext_resource type="Script" uid="uid://jn62uv7akgg1" path="res://intro/camera_2d.gd" id="14_sg2fo"]
+[ext_resource type="Texture2D" uid="uid://v4sq8bpfrmpg" path="res://intro/graphics/truckEngine_00.png" id="15_dk8sq"]
+[ext_resource type="Script" uid="uid://cciwtru2sn1cl" path="res://intro/title.gd" id="20_m3u68"]
+[ext_resource type="FontFile" uid="uid://b3yalra5jswgu" path="res://intro/font/JosefinSans-Regular.ttf" id="22_6o4ox"]
+[ext_resource type="Texture2D" uid="uid://c6y01embash38" path="res://intro/graphics/idg_logo.png" id="25_hp8fq"]
+[ext_resource type="Texture2D" uid="uid://do52d4smn44hu" path="res://intro/graphics/mdia_logo.png" id="26_7v0dw"]
+[ext_resource type="Texture2D" uid="uid://bo0830o6er7ty" path="res://intro/graphics/godot_logo.png" id="27_35ehl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ie2y0"]
+size = Vector2(123, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rcqw2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_1l24h")
+}],
+"loop": true,
+"name": &"high",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_ie2y0")
+}],
+"loop": true,
+"name": &"low",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_ao3yw")
+}],
+"loop": true,
+"name": &"medium",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_dk8sq")
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1l24h"]
+size = Vector2(145, 113)
+
+[node name="Intro" type="Node"]
+script = ExtResource("1_vyos2")
+start_actions = ExtResource("2_1l24h")
+soft_actions = ExtResource("3_ao3yw")
+medium_actions = ExtResource("4_rcqw2")
+hard_actions = ExtResource("5_ttu4d")
+leave_actions = ExtResource("6_j7iwe")
+end_actions = ExtResource("6_ttu4d")
+
+[node name="Blackout" parent="." instance=ExtResource("8_cxrv6")]
+
+[node name="Dialogue" parent="." instance=ExtResource("1_fpmxm")]
+layer = 110
+tracery_grammar = ExtResource("4_ie2y0")
+
+[node name="UIMessage" parent="." instance=ExtResource("5_sg2fo")]
+layer = 100
+
+[node name="Title" type="CanvasLayer" parent="."]
+layer = 90
+script = ExtResource("20_m3u68")
+
+[node name="Name" type="TextureRect" parent="Title"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -807.0
+offset_top = 329.002
+offset_right = 807.0
+offset_bottom = 812.002
+grow_horizontal = 2
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(855, 483)
+texture = ExtResource("10_5hu1j")
+
+[node name="Credits" type="RichTextLabel" parent="Title"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_top = 732.002
+offset_right = 500.0
+offset_bottom = 1092.0
+grow_horizontal = 2
+pivot_offset = Vector2(500, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("22_6o4ox")
+theme_override_fonts/mono_font = ExtResource("22_6o4ox")
+theme_override_fonts/italics_font = ExtResource("22_6o4ox")
+theme_override_fonts/bold_italics_font = ExtResource("22_6o4ox")
+theme_override_fonts/bold_font = ExtResource("22_6o4ox")
+theme_override_font_sizes/bold_italics_font_size = 42
+theme_override_font_sizes/italics_font_size = 42
+theme_override_font_sizes/mono_font_size = 42
+theme_override_font_sizes/normal_font_size = 42
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "
+
+
+
+
+
+
+
+
+[font_size=28]Written and Designed by[/font_size]
+[color=#d1ff85][font_size=52]Stefano Gualeni[/font_size][/color]
+
+[font_size=28]Programming by[/font_size]
+[color=#d1ff85][font_size=52]Ahmed Khalifa[/font_size][/color]
+
+[font_size=28]3D modelling and textures by[/font_size]
+[color=#d1ff85][font_size=52]Irina Tomova[/font_size][/color]
+
+[font_size=28]Concept art and illustrations by[/font_size]
+[color=#d1ff85][font_size=52]Daniele Giardini[/font_size][/color]
+
+
+
+
+[font_size=28]Made possible thanks to[/font_size]
+[color=#d1ff85][font_size=52]MDIA
+Institute of Digital Games[/font_size][/color]
+
+
+
+"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Logos" type="Control" parent="Title"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Title/Logos"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.5
+offset_top = -319.0
+offset_right = 154.5
+offset_bottom = -291.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("22_6o4ox")
+theme_override_font_sizes/font_size = 28
+text = "Made possible thanks to"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UM" type="TextureRect" parent="Title/Logos"]
+modulate = Color(0.819608, 1, 0.521569, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -918.0
+offset_top = -248.0
+offset_right = -278.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("25_hp8fq")
+
+[node name="MDIA" type="TextureRect" parent="Title/Logos"]
+modulate = Color(0.819608, 1, 0.521569, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 359.0
+offset_top = -205.0
+offset_right = 999.0
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("26_7v0dw")
+
+[node name="Godot" type="TextureRect" parent="Title/Logos"]
+modulate = Color(0.819608, 1, 0.521569, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -274.5
+offset_right = 357.0
+offset_bottom = 274.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("27_35ehl")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1000
+position = Vector2(964, 796)
+texture = ExtResource("2_jkt4n")
+
+[node name="Station" type="StaticBody2D" parent="."]
+position = Vector2(780, 674)
+metadata/_edit_group_ = true
+
+[node name="Back" type="Sprite2D" parent="Station"]
+z_index = -10
+position = Vector2(-2.90003, 3.02497)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("8_krbtg")
+
+[node name="Front" type="Sprite2D" parent="Station"]
+z_index = 10
+position = Vector2(90.1, -2.97503)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("9_xwdvp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Station"]
+z_index = 100
+position = Vector2(40.5, -1.00006)
+shape = SubResource("RectangleShape2D_ie2y0")
+
+[node name="Ship" type="RigidBody2D" parent="."]
+position = Vector2(-149, 528)
+gravity_scale = 0.0
+lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 50
+script = ExtResource("8_1l24h")
+metadata/_edit_group_ = true
+
+[node name="Cargo" type="Sprite2D" parent="Ship"]
+z_index = -1
+position = Vector2(26, -1.78814e-07)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("10_8c3ee")
+
+[node name="Base" type="Sprite2D" parent="Ship"]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("11_2i53d")
+
+[node name="AnimationSprite" type="AnimatedSprite2D" parent="Ship"]
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_rcqw2")
+animation = &"low"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship"]
+position = Vector2(-70.5, -6.5)
+shape = SubResource("RectangleShape2D_1l24h")
+
+[node name="VisibleNotifier" type="VisibleOnScreenNotifier2D" parent="Ship"]
+position = Vector2(1.5, -3.49999)
+scale = Vector2(14.55, 6.15)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(635, 1225)
+zoom = Vector2(1.5, 1.5)
+script = ExtResource("14_sg2fo")
+
+[connection signal="body_entered" from="Ship" to="Ship" method="_on_body_entered"]
+[connection signal="screen_exited" from="Ship/VisibleNotifier" to="Ship" method="_on_visible_on_screen_notifier_2d_screen_exited"]

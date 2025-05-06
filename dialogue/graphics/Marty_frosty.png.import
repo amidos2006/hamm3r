@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be7sqwq3fuwdm"
-path="res://.godot/imported/layout_ui.png-8571071b14e20967328388d1bc45a67f.ctex"
+uid="uid://tljftam2qfpl"
+path="res://.godot/imported/Marty_frosty.png-81d486b553045e4c508bb9283fcbc92a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/layouts/layout_ui.png"
-dest_files=["res://.godot/imported/layout_ui.png-8571071b14e20967328388d1bc45a67f.ctex"]
+source_file="res://dialogue/graphics/Marty_frosty.png"
+dest_files=["res://.godot/imported/Marty_frosty.png-81d486b553045e4c508bb9283fcbc92a.ctex"]
 
 [params]
 

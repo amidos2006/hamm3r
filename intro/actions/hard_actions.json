@@ -1,0 +1,43 @@
+[
+	{
+		"action": "shake_camera",
+		"wait": false,
+		"args": {
+			"strength": 20,
+			"frames": 10
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "tess",
+			"mood": "angry",
+			"text": "FUCK!\nAre you trying to knock the station out of orbit?!",
+			"action": "interact",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "martin",
+			"mood": "concerned",
+			"text": "I- So sorry, Tess!\nDiós, I don’t know what happened there.",
+			"action": "interact",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "3r",
+			"mood": "",
+			"text": "Well, I guess that is what you get for #activity# while docking...",
+			"action": "interact",
+			"time": 0
+		}
+	}
+]

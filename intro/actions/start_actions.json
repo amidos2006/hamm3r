@@ -1,0 +1,56 @@
+[
+	{
+		"action": "show_message",
+		"wait": true,
+		"args": {
+			"message": "PRESS [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO START",
+			"action": "interact",
+			"time": 1.0
+		}
+	},
+	{
+		"action": "move_camera",
+		"wait": true,
+		"args": {
+			"dx": 0,
+			"dy": -500,
+			"time": 5
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": false,
+		"args": {
+			"name": "martin",
+			"mood": "concentrated",
+			"text": "Easy now.",
+			"action": "",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_message",
+		"wait": false,
+		"args": {
+			"message": "PRESS [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO DECELERATE THE CARGO SHIP",
+			"action": "interact",
+			"time": 1.0
+		}
+	},
+	{
+		"action": "start_minigame",
+		"wait": true,
+		"args": {
+			"soft_speed": 40,
+			"medium_speed": 80,
+			
+			"start_speed": 100,
+			"attraction_force": 5,
+			"thruster_force": 10,
+			"thruster_acc": 2,
+			"thruster_dec": 1,
+			
+			"action": "interact"
+		}
+	}
+]

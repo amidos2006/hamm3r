@@ -1,0 +1,43 @@
+[
+	{
+		"action": "shake_camera",
+		"wait": false,
+		"args": {
+			"strength": 5,
+			"frames": 10
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "tess",
+			"mood": "concerned",
+			"text": "Ouch!\nEver heard of deceleration procedures, cowboy?!",
+			"action": "interact",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "martin",
+			"mood": "angry",
+			"text": "Oh, come on! That was not that bad of a docking!",
+			"action": "interact",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "3r",
+			"mood": "",
+			"text": "Not bad for someone who is technically a primate, I suppose?",
+			"action": "interact",
+			"time": 0
+		}
+	}
+]

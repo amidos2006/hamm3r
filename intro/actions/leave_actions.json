@@ -1,0 +1,40 @@
+[
+	{
+		"action": "ship_exit",
+		"wait": false,
+		"args": {
+			"attraction_force": 5,
+			"thruster_force": 10,
+			"thruster_acc": 2,
+			"thruster_dec": 1,
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "martin",
+			"mood": "smiling",
+			"text": "Okay....\nI guess not today.",
+			"action": "interact",
+			"time": 0
+		}
+	},
+	{
+		"action": "fade",
+		"wait": true,
+		"args": {
+			"start": 0,
+			"end": 1,
+			"time": 0.5
+		}
+	},
+	{
+		"action": "change_scene",
+		"wait": false,
+		"args": {
+			
+		}
+	}
+]

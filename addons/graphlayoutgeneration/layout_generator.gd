@@ -133,6 +133,7 @@ static func _spaceship_2d(maze, start_type="", broken_type=""):
 	
 	var start_loc = []
 	var broken_loc = []
+	var wrong_connections = []
 	for y in range(layout.size()):
 		for x in range(layout[y].size()):
 			if x < layout[y].size() / 2:
@@ -146,6 +147,8 @@ static func _spaceship_2d(maze, start_type="", broken_type=""):
 				start_loc.append(Vector2(x, y))
 			if layout[y][x] != null and layout[y][x].mission != null and layout[y][x].mission.type == broken_type:
 				broken_loc.append(Vector2(x, y))
+			if layout[y][x] != null and layout[y][x].get_neighbors(maze).size() > 3:
+				wrong_connections.append(Vector2(x, y))
 	for start in start_loc:
 		var reach_boreder = LayoutGenerator._flood_fill(layout, start, func(cell): return cell == null)
 		for point in reach_boreder:
@@ -159,7 +162,7 @@ static func _spaceship_2d(maze, start_type="", broken_type=""):
 				if point.x == broken.x and point.y == broken.y:
 					broken_blocks.append(start)
 					break
-	return {"layout": layout, "extra": extra_blocks, "start": start_blocks, "broken": broken_blocks}
+	return {"layout": layout, "extra": extra_blocks, "start": start_blocks, "broken": broken_blocks, "connections": wrong_connections}
 	
 
 static func _location_id(x, y):
@@ -480,6 +483,8 @@ class LayoutChromosome extends RefCounted:
 			if self._fitness == 1:
 				self._fitness += spaceship_result["start"].size()
 			if self._fitness == 2:
+				self._fitness += 1.0 / (spaceship_result["connections"].size() + 1)
+			if self._fitness == 3:
 				self._fitness += 1.0 / (abs(spaceship_result["broken"].size() - spaceship_result["extra"].size()) + 1)
 				self._fitness += 2.0 / (spaceship_result["extra"].size() + 1)
 				self._fitness += 0.01 * self._spaceship.size() / self._spaceship[0].size()
