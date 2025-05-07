@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://blrn5n044biwj"]
+
+[ext_resource type="Script" uid="uid://b8ovk472pd51w" path="res://intermission/intermission.gd" id="1_b0epg"]
+[ext_resource type="PackedScene" uid="uid://7dite6htre68" path="res://ui_message/ui_message.tscn" id="2_c2mt0"]
+[ext_resource type="PackedScene" uid="uid://obr7t3qupae3" path="res://blackout/blackout.tscn" id="3_ytvp6"]
+[ext_resource type="FontFile" uid="uid://b3yalra5jswgu" path="res://ui_message/font/JosefinSans-Regular.ttf" id="4_hi2t4"]
+
+[node name="Intermission" type="CanvasLayer"]
+script = ExtResource("1_b0epg")
+
+[node name="UIMessage" parent="." instance=ExtResource("2_c2mt0")]
+
+[node name="Blackout" parent="." instance=ExtResource("3_ytvp6")]
+layer = 0
+
+[node name="Label" type="RichTextLabel" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("4_hi2t4")
+theme_override_fonts/mono_font = ExtResource("4_hi2t4")
+theme_override_fonts/italics_font = ExtResource("4_hi2t4")
+theme_override_fonts/bold_italics_font = ExtResource("4_hi2t4")
+theme_override_fonts/bold_font = ExtResource("4_hi2t4")
+theme_override_font_sizes/bold_italics_font_size = 42
+theme_override_font_sizes/italics_font_size = 42
+theme_override_font_sizes/mono_font_size = 42
+theme_override_font_sizes/normal_font_size = 42
+theme_override_font_sizes/bold_font_size = 42
+bbcode_enabled = true
+text = "[color=#f5c25c]- GAME OVER -[/color]
+test"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

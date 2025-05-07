@@ -78,7 +78,7 @@ func _execute_actions(actions):
 				if act.wait:
 					await $Title.animation_ended
 			"hide_title":
-				$Title.hide_title(act.args.time)
+				$Title.hide_title(act.args.time, act.args.credits_time)
 				if act.wait:
 					await $Title.animation_ended
 			"fade":

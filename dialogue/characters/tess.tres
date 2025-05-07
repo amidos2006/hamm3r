@@ -18,6 +18,11 @@ script = ExtResource("1_cy58x")
 pictures = Array[Texture]([ExtResource("3_6cv3u")])
 metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
 
+[sub_resource type="Resource" id="Resource_x1d1r"]
+script = ExtResource("1_cy58x")
+pictures = Array[Texture]([ExtResource("6_ya1dj")])
+metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
+
 [sub_resource type="Resource" id="Resource_ya1dj"]
 script = ExtResource("1_cy58x")
 pictures = Array[Texture]([ExtResource("4_6cv3u")])
@@ -26,11 +31,6 @@ metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
 [sub_resource type="Resource" id="Resource_0m1ar"]
 script = ExtResource("1_cy58x")
 pictures = Array[Texture]([ExtResource("5_f8rgk")])
-metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
-
-[sub_resource type="Resource" id="Resource_x1d1r"]
-script = ExtResource("1_cy58x")
-pictures = Array[Texture]([ExtResource("6_ya1dj")])
 metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
 
 [resource]
