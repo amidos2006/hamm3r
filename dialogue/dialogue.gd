@@ -26,6 +26,11 @@ func _get_picture(character_name, mood):
 
 
 func show_message(character_name, mood, dialogue, direction = "left", time=0, action = "interact"):
+	var regex = RegEx.new()
+	var tracery = Tracery.Grammar.new(tracery_grammar.data)
+	regex.compile("#\\w+#")
+	for pattern in regex.search_all(dialogue):
+		dialogue = dialogue.replace(pattern.get_string(), tracery.flatten(pattern.get_string()))
 	var chatbox = $Right
 	match direction:
 		"left":
@@ -35,6 +40,10 @@ func show_message(character_name, mood, dialogue, direction = "left", time=0, ac
 	chatbox.get_node("Picture").texture = _get_picture(character_name, mood)
 	chatbox.get_node("Name").text = character_name
 	chatbox.get_node("Dialogue").text = dialogue
+	if action.length() > 0:
+		chatbox.get_node("Prompt").text = "[ " + InputMap.action_get_events(action)[0].as_text().split("(")[0].to_upper().strip_edges() + " ]"
+	else:
+		chatbox.get_node("Prompt").text = ""
 	chatbox.show()
 	
 	if time > 0:

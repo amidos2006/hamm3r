@@ -136,7 +136,9 @@ theme_override_font_sizes/mono_font_size = 42
 theme_override_font_sizes/normal_font_size = 42
 theme_override_font_sizes/bold_font_size = 42
 bbcode_enabled = true
-text = "[font_size=28]Written and Designed by[/font_size]
+text = "
+
+[font_size=28]Written and Designed by[/font_size]
 [color=#d1ff85][font_size=52]Stefano Gualeni[/font_size][/color]
 
 [font_size=28]Programming by[/font_size]

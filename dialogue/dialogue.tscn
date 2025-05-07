@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://h0ewqgb7ck7x"]
+[gd_scene load_steps=14 format=3 uid="uid://h0ewqgb7ck7x"]
 
 [ext_resource type="Texture2D" uid="uid://nqvs1pnsnfil" path="res://dialogue/graphics/dialogueBox.png" id="1_k0ki1"]
 [ext_resource type="Script" uid="uid://enrvxepgmnb1" path="res://dialogue/dialogue.gd" id="1_ru11m"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://cse8fm5lq7ni8" path="res://dialogue/characters/martin.tres" id="4_rtr7g"]
 [ext_resource type="Resource" uid="uid://b51fd857pjg27" path="res://dialogue/characters/tess.tres" id="5_0vmy0"]
 [ext_resource type="FontFile" uid="uid://dg4warscx3c37" path="res://dialogue/font/ShareTech-Regular.ttf" id="5_8y0mt"]
+[ext_resource type="Script" uid="uid://bcn3ro86ums2n" path="res://dialogue/prompt_flicker.gd" id="10_c6k8d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tmwax"]
 shader = ExtResource("2_tmwax")
@@ -138,6 +139,23 @@ text = "[center]Press [color=#f5c25c]ESC[/color] to see instructions.[/center]
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Prompt" type="Label" parent="Left"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 990.0
+offset_top = -59.0
+offset_right = 1110.0
+offset_bottom = -31.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.960784, 0.760784, 0.360784, 1)
+theme_override_fonts/font = ExtResource("5_8y0mt")
+theme_override_font_sizes/font_size = 24
+text = "[ SPACE ]"
+horizontal_alignment = 2
+script = ExtResource("10_c6k8d")
+
 [node name="Right" type="TextureRect" parent="."]
 anchors_preset = 3
 anchor_left = 1.0
@@ -219,3 +237,22 @@ text = "[center]Press [color=#f5c25c]ESC[/color] to see instructions.[/center]
 [fill]Call your grandkids if you need instructions on how to press [color=#f5c25c]ESC[/color].[/fill]"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Prompt" type="Label" parent="Right"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1110.0
+offset_top = -59.0
+offset_right = -990.0
+offset_bottom = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.960784, 0.760784, 0.360784, 1)
+theme_override_fonts/font = ExtResource("5_8y0mt")
+theme_override_font_sizes/font_size = 24
+text = "[ SPACE ]"
+script = ExtResource("10_c6k8d")
