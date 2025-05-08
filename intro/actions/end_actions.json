@@ -3,33 +3,9 @@
 		"action": "show_dialogue",
 		"wait": true,
 		"args": {
-			"name": "3r",
-			"mood": "",
-			"text": "And mind you: my sass is not part of my programming.",
-			"action": "interact",
-			"direction": "left",
-			"time": 0
-		}
-	},
-	{
-		"action": "show_dialogue",
-		"wait": true,
-		"args": {
-			"name": "martin",
-			"mood": "normal",
-			"text": "Cannot be a personal preference either, with you not being a person.",
-			"action": "interact",
-			"direction": "left",
-			"time": 0
-		}
-	},
-	{
-		"action": "show_dialogue",
-		"wait": true,
-		"args": {
 			"name": "tess",
 			"mood": "normal",
-			"text": "Sorry to interrupt the banter, fellas, but I have a station to run.",
+			"text": "Sorry to interrupt, fellas, but I have a station to run.",
 			"action": "interact",
 			"direction": "right",
 			"time": 0
@@ -53,7 +29,7 @@
 		"args": {
 			"name": "martin",
 			"mood": "normal",
-			"text": "Guess not, Tess. We are planning to haul in another big one in four months or so.",
+			"text": "Guess not, Tess. We will haul in another big one in four months or so.",
 			"action": "interact",
 			"direction": "left",
 			"time": 0
@@ -85,7 +61,7 @@
 		"args": {
 			"name": "tess",
 			"mood": "noise",
-			"text": "Roger that. Try and take care out there, the both of you!",
+			"text": "...",
 			"action": "interact",
 			"direction": "right",
 			"time": 0
@@ -136,11 +112,20 @@
 		}
 	},
 	{
+		"action": "fade",
+		"wait": false,
+		"args": {
+			"start": 0,
+			"end": 0.25,
+			"time": 1
+		}
+	},
+	{
 		"action": "show_title",
 		"wait": true,
 		"args": {
-			"dx": 1,
-			"dy": 1,
+			"dx": 0.9,
+			"dy": 0.9,
 			"time": 2
 		}
 	},
@@ -165,7 +150,7 @@
 		"action": "fade",
 		"wait": true,
 		"args": {
-			"start": 0,
+			"start": 0.25,
 			"end": 1,
 			"time": 1
 		}
@@ -175,11 +160,14 @@
 		"wait": false,
 		"args": {
 			"path": "res://intermission/intermission.tscn",
-			"message": "[font_size=72][color=#f5c25c]Four Month Later...[/color][/font_size]",
-			"ui_message": "PRESS [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO RESTART",
-			"ui_action": "interact",
-			"time": 0.5,
-			"return": ""
+			"message": "[font_size=72][color=#f5c25c]Two Months Later...[/color][/font_size]",
+			"ui_message": "",
+			"ui_action": "",
+			"time": 3,
+			"return": "",
+			"args": {
+				
+			}
 		}
 	}
 ]

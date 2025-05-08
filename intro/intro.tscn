@@ -99,7 +99,7 @@ layer = 90
 tracery_grammar = ExtResource("4_ie2y0")
 
 [node name="Title" type="CanvasLayer" parent="."]
-layer = 80
+layer = 110
 script = ExtResource("20_m3u68")
 
 [node name="Name" type="TextureRect" parent="Title"]
@@ -107,9 +107,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -807.0
-offset_top = 329.002
+offset_top = 237.0
 offset_right = 807.0
-offset_bottom = 812.002
+offset_bottom = 720.0
 grow_horizontal = 2
 scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(855, 483)
@@ -165,8 +165,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -20.0
-offset_top = -40.0
+offset_top = -30.0
 offset_right = 20.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 0
 
