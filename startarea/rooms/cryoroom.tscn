@@ -1,0 +1,116 @@
+[gd_scene load_steps=16 format=3 uid="uid://br0lr08faf64u"]
+
+[ext_resource type="ArrayMesh" uid="uid://d3dmg6pbmydf4" path="res://startarea/meshes/Ship_Interior_Room_Start.res" id="1_wtxku"]
+[ext_resource type="Material" uid="uid://ckvqti1auw8th" path="res://startarea/materials/cryoroom.tres" id="2_p2pfo"]
+[ext_resource type="ArrayMesh" uid="uid://dhu0xsxu771vf" path="res://startarea/meshes/Objects_Poster1.res" id="3_g31nr"]
+[ext_resource type="Material" uid="uid://b3wafxwv731ob" path="res://startarea/materials/posters.tres" id="4_tfvxs"]
+[ext_resource type="ArrayMesh" uid="uid://070f8n0swoqu" path="res://startarea/meshes/Objects_Poster2.res" id="5_q6x12"]
+[ext_resource type="ArrayMesh" uid="uid://c3qdqg1jflkls" path="res://startarea/meshes/Objects_Fridge.res" id="7_d6qv4"]
+[ext_resource type="Material" uid="uid://d0csqdacnxglg" path="res://startarea/materials/objects.tres" id="8_vrgiw"]
+[ext_resource type="ArrayMesh" uid="uid://c5dukyu2t5egk" path="res://startarea/meshes/Objects_Shelves.res" id="9_iub75"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ogx4w"]
+size = Vector3(4, 0.15, 5.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cww8x"]
+size = Vector3(0.15, 2.5, 5.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0lkpl"]
+size = Vector3(0.15, 2.5, 5.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ea6ua"]
+size = Vector3(3.8, 2.5, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nenc1"]
+size = Vector3(0.4, 2.5, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dtuef"]
+size = Vector3(1.2, 2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_an3yi"]
+size = Vector3(0.4, 1, 1.3)
+
+[node name="Cryoroom" type="Node3D"]
+metadata/_edit_group_ = true
+
+[node name="StaticDesign" type="Node3D" parent="."]
+
+[node name="Layout" type="StaticBody3D" parent="StaticDesign"]
+
+[node name="Model" type="MeshInstance3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.107955, 0)
+mesh = ExtResource("1_wtxku")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_p2pfo")
+
+[node name="Poster1" type="MeshInstance3D" parent="StaticDesign/Layout"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1.80549, 2.11415, -0.484211)
+mesh = ExtResource("3_g31nr")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_tfvxs")
+
+[node name="Poster2" type="MeshInstance3D" parent="StaticDesign/Layout"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1.8, 2.10743, 0.417281)
+mesh = ExtResource("5_q6x12")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_tfvxs")
+
+[node name="CollisionShape3D_1" type="CollisionShape3D" parent="StaticDesign/Layout"]
+shape = SubResource("BoxShape3D_ogx4w")
+
+[node name="CollisionShape3D_2" type="CollisionShape3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.798, 1.3, 0)
+shape = SubResource("BoxShape3D_cww8x")
+
+[node name="CollisionShape3D_3" type="CollisionShape3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.832, 1.3, 0)
+shape = SubResource("BoxShape3D_0lkpl")
+
+[node name="CollisionShape3D_4" type="CollisionShape3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 2.54)
+shape = SubResource("BoxShape3D_ea6ua")
+
+[node name="CollisionShape3D_5" type="CollisionShape3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.936409, 1.3, -2.5527)
+shape = SubResource("BoxShape3D_nenc1")
+
+[node name="CollisionShape3D_6" type="CollisionShape3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70264, 1.3, -2.5527)
+shape = SubResource("BoxShape3D_nenc1")
+
+[node name="Fridge" type="StaticBody3D" parent="StaticDesign"]
+
+[node name="Model" type="MeshInstance3D" parent="StaticDesign/Fridge"]
+transform = Transform3D(0.945518, 0, -0.325568, 0, 1, 0, 0.325568, 0, 0.945518, 1.11284, 0.107955, -1.85567)
+mesh = ExtResource("7_d6qv4")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("8_vrgiw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticDesign/Fridge"]
+transform = Transform3D(0.945519, 0, -0.325568, 0, 1, 0, 0.325568, 0, 0.945519, 1.06647, 1.01587, -1.84862)
+shape = SubResource("BoxShape3D_dtuef")
+
+[node name="Shelves" type="StaticBody3D" parent="StaticDesign"]
+
+[node name="Model" type="MeshInstance3D" parent="StaticDesign/Shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 1.82553, -0.24755)
+mesh = ExtResource("9_iub75")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticDesign/Shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.60486, 1.37361, -0.236735)
+shape = SubResource("BoxShape3D_an3yi")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="StaticDesign"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.601, 0)
+light_color = Color(0.886275, 0.92549, 0.952941, 1)
+light_indirect_energy = 0.903
+light_volumetric_fog_energy = 0.305
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 0.05
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_shadow = 30.0
+omni_range = 5.816
+omni_attenuation = 0.273

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://blrn5n044biwj"]
 
 [ext_resource type="Script" uid="uid://b8ovk472pd51w" path="res://intermission/intermission.gd" id="1_b0epg"]
-[ext_resource type="PackedScene" uid="uid://7dite6htre68" path="res://ui_message/ui_message.tscn" id="2_c2mt0"]
-[ext_resource type="PackedScene" uid="uid://obr7t3qupae3" path="res://blackout/blackout.tscn" id="3_ytvp6"]
-[ext_resource type="FontFile" uid="uid://b3yalra5jswgu" path="res://ui_message/font/JosefinSans-Regular.ttf" id="4_hi2t4"]
+[ext_resource type="PackedScene" uid="uid://7dite6htre68" path="res://interface/ui_message/ui_message.tscn" id="2_c2mt0"]
+[ext_resource type="PackedScene" uid="uid://obr7t3qupae3" path="res://interface/blackout/blackout.tscn" id="3_ytvp6"]
+[ext_resource type="FontFile" uid="uid://b3yalra5jswgu" path="res://intermission/font/JosefinSans-Regular.ttf" id="4_hi2t4"]
 
 [node name="Intermission" type="CanvasLayer"]
 script = ExtResource("1_b0epg")

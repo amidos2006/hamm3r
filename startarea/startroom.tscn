@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://dt01ry8bc1pne"]
+
+[ext_resource type="PackedScene" uid="uid://cfxd6ou7enikr" path="res://startarea/rooms/bathroom.tscn" id="1_ap4rk"]
+[ext_resource type="PackedScene" uid="uid://4wdmx1w2gdqp" path="res://startarea/rooms/controlroom.tscn" id="2_dc5nq"]
+[ext_resource type="PackedScene" uid="uid://bcp6carpfrt3v" path="res://startarea/rooms/corridor.tscn" id="3_tuwul"]
+[ext_resource type="PackedScene" uid="uid://br0lr08faf64u" path="res://startarea/rooms/cryoroom.tscn" id="4_v37f2"]
+[ext_resource type="PackedScene" uid="uid://cq85qra0wartp" path="res://startarea/rooms/tunnel.tscn" id="5_6f4e6"]
+[ext_resource type="PackedScene" uid="uid://c0ov3gvi01qt6" path="res://player/player.tscn" id="6_tuwul"]
+[ext_resource type="PackedScene" uid="uid://ccbw6mmhd6oct" path="res://environment/environment.tscn" id="7_v37f2"]
+
+[node name="Startroom" type="Node3D"]
+
+[node name="Cryoroom" parent="." instance=ExtResource("4_v37f2")]
+transform = Transform3D(-0.973734, 0, -0.227688, 0, 1, 0, 0.227688, 0, -0.973734, 9.20345, 0, -17.7294)
+
+[node name="Corridor" parent="." instance=ExtResource("3_tuwul")]
+transform = Transform3D(-0.978148, 0, -0.207912, 0, 1, 0, 0.207912, 0, -0.978148, 7.92094, -0.00266933, -13.6581)
+
+[node name="Bathroom" parent="." instance=ExtResource("1_ap4rk")]
+transform = Transform3D(0.978148, 0, 0.207912, 0, 1, 0, -0.207912, 0, 0.978148, 7.70401, 1.19209e-07, -11.3508)
+
+[node name="Controlroom" parent="." instance=ExtResource("2_dc5nq")]
+transform = Transform3D(-0.207912, 0, 0.978147, 0, 1, 0, -0.978147, 0, -0.207912, 4.94439, 1.19209e-07, -8.75733)
+
+[node name="Tunnel" parent="." instance=ExtResource("5_6f4e6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114077, 0, -3.146)
+
+[node name="Player" parent="." instance=ExtResource("6_tuwul")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.98926, 0, -17.6363)
+
+[node name="Environment" parent="." instance=ExtResource("7_v37f2")]

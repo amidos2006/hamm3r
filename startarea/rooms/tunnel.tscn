@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://cq85qra0wartp"]
+
+[ext_resource type="ArrayMesh" uid="uid://1lxste2btavi" path="res://startarea/meshes/Ship_Interior_Room_Tunnel.res" id="1_g86dh"]
+[ext_resource type="Material" uid="uid://bqhl0lfcp1lg4" path="res://startarea/materials/tunnel.tres" id="2_qrc2x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qrc2x"]
+size = Vector3(4.2, 0.15, 5.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3mevc"]
+size = Vector3(4.2, 0.15, 5.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5k6r8"]
+size = Vector3(0.5, 2.5, 3.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j77jf"]
+size = Vector3(0.5, 2.5, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b83lv"]
+size = Vector3(0.5, 2.5, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_togkr"]
+size = Vector3(0.5, 2.5, 4)
+
+[node name="Tunnel" type="Node3D"]
+
+[node name="StaticDesign" type="Node3D" parent="."]
+
+[node name="Layout" type="StaticBody3D" parent="StaticDesign"]
+
+[node name="Model" type="MeshInstance3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.113, 0)
+mesh = ExtResource("1_g86dh")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_qrc2x")
+
+[node name="CollisionShape3D_1" type="CollisionShape3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.58862)
+shape = SubResource("BoxShape3D_qrc2x")
+
+[node name="CollisionShape3D_2" type="CollisionShape3D" parent="StaticDesign/Layout"]
+transform = Transform3D(0.529919, 0, 0.848048, 0, 1, 0, -0.848048, 0, 0.529919, 3.10712, 0, -1.47809)
+shape = SubResource("BoxShape3D_3mevc")
+
+[node name="CollisionShape3D_3" type="CollisionShape3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78462, 1.20535, 1.48556)
+shape = SubResource("BoxShape3D_5k6r8")
+
+[node name="CollisionShape3D_4" type="CollisionShape3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54376, 1.23124, 1.18637)
+shape = SubResource("BoxShape3D_j77jf")
+
+[node name="CollisionShape3D_5" type="CollisionShape3D" parent="StaticDesign/Layout"]
+transform = Transform3D(0.587785, 0, -0.809017, 0, 1, 0, 0.809017, 0, 0.587785, 0.576837, 1.14261, -2.08375)
+shape = SubResource("BoxShape3D_b83lv")
+
+[node name="CollisionShape3D_6" type="CollisionShape3D" parent="StaticDesign/Layout"]
+transform = Transform3D(0.529919, 0, -0.848048, 0, 1, 0, 0.848048, 0, 0.529919, 3.45843, 1.26245, -1.14158)
+shape = SubResource("BoxShape3D_togkr")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="StaticDesign"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.36804, 1.9304, -1.85389)
+light_color = Color(0.815686, 0.862745, 0.815686, 1)
+light_bake_mode = 1
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_shadow = 30.0
+omni_range = 68.767

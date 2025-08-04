@@ -1,0 +1,471 @@
+[gd_scene load_steps=23 format=3 uid="uid://ddxe6rpi8t0h6"]
+
+[ext_resource type="PackedScene" uid="uid://cbmmva3syx6fn" path="res://start_room/scenes/sc_Ship.tscn" id="3_opwsh"]
+[ext_resource type="Texture2D" uid="uid://pmuoug7rww12" path="res://environment/assets/skybox_4.3_18.png" id="5_spvy8"]
+[ext_resource type="Material" uid="uid://d0csqdacnxglg" path="res://startarea/materials/objects.tres" id="9_yc6xl"]
+[ext_resource type="Material" uid="uid://cw2xloxc4hnog" path="res://startarea/materials/bathroom.tres" id="10_k6vqf"]
+[ext_resource type="Material" uid="uid://dvfebhhri2iw8" path="res://startarea/materials/emissive.tres" id="10_xg4tl"]
+[ext_resource type="Material" uid="uid://deirstgwry0wa" path="res://startarea/materials/controlroom.tres" id="11_ev6kq"]
+[ext_resource type="Material" uid="uid://ckvqti1auw8th" path="res://startarea/materials/cryoroom.tres" id="11_k6vqf"]
+[ext_resource type="Shader" uid="uid://cfolovkcxbyfy" path="res://startarea/materials/hatch.gdshader" id="11_yc6xl"]
+[ext_resource type="Material" uid="uid://i7mk0rtlvfyp" path="res://startarea/materials/M_Corridor.tres" id="12_jn25s"]
+[ext_resource type="Material" uid="uid://bqhl0lfcp1lg4" path="res://startarea/materials/tunnel.tres" id="13_glaac"]
+[ext_resource type="Material" uid="uid://byowqag0chqth" path="res://startarea/materials/glass.tres" id="14_7p2u3"]
+[ext_resource type="Material" uid="uid://b3wafxwv731ob" path="res://startarea/materials/posters.tres" id="15_him8o"]
+[ext_resource type="Material" uid="uid://djwngpl5k17m4" path="res://startarea/materials/controlobjects.tres" id="16_fgk2h"]
+[ext_resource type="Material" uid="uid://7qyieu0x0j1t" path="res://startarea/materials/M_CryoPods.tres" id="17_wn26v"]
+[ext_resource type="Material" uid="uid://4jvmoq1hoe17" path="res://startarea/materials/monitors.tres" id="18_cmrup"]
+[ext_resource type="Material" uid="uid://cy276t1ji2l2j" path="res://startarea/materials/pipes.tres" id="19_im1vy"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1s1ty"]
+panorama = ExtResource("5_spvy8")
+
+[sub_resource type="Sky" id="Sky_1c4sr"]
+sky_material = SubResource("PanoramaSkyMaterial_1s1ty")
+
+[sub_resource type="Environment" id="Environment_xg4tl"]
+background_mode = 2
+background_color = Color(0.278431, 0.101961, 0.619608, 1)
+sky = SubResource("Sky_1c4sr")
+ambient_light_source = 2
+ambient_light_color = Color(0.261326, 0.102165, 0.289408, 1)
+ambient_light_energy = 0.52
+reflected_light_source = 1
+glow_enabled = true
+glow_blend_mode = 0
+glow_hdr_threshold = 1.22
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jn25s"]
+render_priority = 0
+shader = ExtResource("11_yc6xl")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/uv_scale_r = 0.0
+shader_parameter/uv_scale_g = 0.0
+shader_parameter/uv_scale_b = 0.0
+shader_parameter/hatch_uv_scale = 20.0
+shader_parameter/smoothness = 0.02
+shader_parameter/light_threshold = 0.9
+shader_parameter/mid_threshold = 0.5
+shader_parameter/dark_threshold = 0.3
+shader_parameter/rim_amount = 0.5
+shader_parameter/rim_smoothness = 0.5
+shader_parameter/rim_strength = 1.0
+shader_parameter/rim_color = Color(0, 0, 0, 1)
+shader_parameter/specular_glossiness = 15.0
+shader_parameter/specular_threshold = 0.5
+shader_parameter/specular_softness = 0.1
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_glaac"]
+render_priority = 0
+shader = ExtResource("11_yc6xl")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/uv_scale_r = 0.0
+shader_parameter/uv_scale_g = 0.0
+shader_parameter/uv_scale_b = 0.0
+shader_parameter/hatch_uv_scale = 20.0
+shader_parameter/smoothness = 0.02
+shader_parameter/light_threshold = 0.9
+shader_parameter/mid_threshold = 0.5
+shader_parameter/dark_threshold = 0.3
+shader_parameter/rim_amount = 0.5
+shader_parameter/rim_smoothness = 0.5
+shader_parameter/rim_strength = 1.0
+shader_parameter/rim_color = Color(0, 0, 0, 1)
+shader_parameter/specular_glossiness = 15.0
+shader_parameter/specular_threshold = 0.5
+shader_parameter/specular_softness = 0.1
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rp681"]
+
+[node name="StartRoom" type="Node3D"]
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_xg4tl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(0.849652, 0.328924, -0.412191, 0.497832, -0.242484, 0.832685, 0.17394, -0.912694, -0.369776, 0.110902, 12.1578, -1.17304)
+shadow_enabled = true
+shadow_blur = 0.57
+
+[node name="Ship Parent" parent="." instance=ExtResource("3_opwsh")]
+
+[node name="Seal_Door1" parent="Ship Parent/Ship_Interior" index="0"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.694, 0, -8.406)
+surface_material_override/0 = ExtResource("9_yc6xl")
+
+[node name="Seal_Door1_L" parent="Ship Parent/Ship_Interior/Seal_Door1" index="0"]
+transform = Transform3D(-1.19209e-07, 0, -1, 0, 1, 0, 1, 0, -1.19209e-07, -0.324115, 0, -3.86375e-08)
+surface_material_override/0 = ExtResource("9_yc6xl")
+
+[node name="Seal_Door1_R" parent="Ship Parent/Ship_Interior/Seal_Door1" index="1"]
+transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0.393559, -3.82364e-05, 7.90201e-08)
+surface_material_override/0 = ExtResource("9_yc6xl")
+
+[node name="Room_Bathroom" parent="Ship Parent/Ship_Interior" index="1"]
+surface_material_override/0 = ExtResource("10_k6vqf")
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Bathroom/Room_Bathroom1" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Bathroom/Room_Bathroom2" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Bathroom/Room_Bathroom3" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Bathroom/Room_Bathroom4" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Bathroom/Room_Bathroom5" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Bathroom/Room_Bathroom6" index="0"]
+visible = true
+
+[node name="Room_Control" parent="Ship Parent/Ship_Interior" index="2"]
+surface_material_override/0 = ExtResource("11_ev6kq")
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Control/Room_Control1" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Control/Room_Control2" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Control/Room_Control3" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Control/Room_Control4" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Control/Room_Control5" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Control/Room_Control6" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Control/Room_Control7" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Control/Room_Control8" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Control/Room_Control9" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Control/Room_Control9_001" index="0"]
+visible = true
+
+[node name="Room_Corridor" parent="Ship Parent/Ship_Interior" index="3"]
+surface_material_override/0 = ExtResource("12_jn25s")
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Corridor/Room_Corridor1" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Corridor/Room_Corridor2" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Corridor/Room_Corridor3" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Corridor/Room_Corridor4" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Corridor/Room_Corridor5" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Corridor/Room_Corridor6" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Corridor/Room_Corridor7" index="0"]
+visible = true
+
+[node name="DoorFrame_1Room" parent="Ship Parent/Ship_Interior" index="4"]
+surface_material_override/0 = ExtResource("9_yc6xl")
+
+[node name="Door1" parent="Ship Parent/Ship_Interior/DoorFrame_1Room" index="0"]
+surface_material_override/0 = ExtResource("9_yc6xl")
+
+[node name="Room_Tunnel" parent="Ship Parent/Ship_Interior" index="5"]
+surface_material_override/0 = ExtResource("13_glaac")
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Tunnel/Room_Tunnel1" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Tunnel/Room_Tunnel2" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Tunnel/Room_Tunnel3" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Tunnel/Room_Tunnel4" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Tunnel/Room_Tunnel5" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Tunnel/Room_Tunnel6" index="0"]
+visible = true
+
+[node name="Corridor_Window" parent="Ship Parent/Ship_Interior" index="6"]
+surface_material_override/0 = ExtResource("9_yc6xl")
+
+[node name="Room_Start" parent="Ship Parent/Ship_Interior" index="7"]
+surface_material_override/0 = ExtResource("11_k6vqf")
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Start/Room1" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Start/Room2" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Start/Room3" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Start/Room4" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Start/Room5" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Start/Room6" index="0"]
+visible = true
+
+[node name="CollisionShape3D" parent="Ship Parent/Ship_Interior/Room_Start/Room7" index="0"]
+visible = true
+
+[node name="Control_Window" parent="Ship Parent/Ship_Interior" index="8"]
+surface_material_override/0 = ExtResource("9_yc6xl")
+
+[node name="DoorFrame_2Radioactive" parent="Ship Parent/Ship_Interior" index="9"]
+surface_material_override/0 = ExtResource("9_yc6xl")
+
+[node name="Door2" parent="Ship Parent/Ship_Interior/DoorFrame_2Radioactive" index="0"]
+surface_material_override/0 = ExtResource("9_yc6xl")
+
+[node name="DoorFrame_3Control" parent="Ship Parent/Ship_Interior" index="10"]
+surface_material_override/0 = ExtResource("9_yc6xl")
+
+[node name="Door3" parent="Ship Parent/Ship_Interior/DoorFrame_3Control" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.967969, 0.0791774, 0)
+surface_material_override/0 = ExtResource("9_yc6xl")
+
+[node name="DoorFrame_4Bathroom" parent="Ship Parent/Ship_Interior" index="11"]
+surface_material_override/0 = ExtResource("9_yc6xl")
+
+[node name="Door4" parent="Ship Parent/Ship_Interior/DoorFrame_4Bathroom" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.925954, 0.0791774, 0)
+surface_material_override/0 = ExtResource("9_yc6xl")
+
+[node name="Corridor_Window_Glass" parent="Ship Parent/Ship_Interior" index="12"]
+transparency = 0.34
+cast_shadow = 0
+surface_material_override/0 = ExtResource("14_7p2u3")
+
+[node name="Control_Window_Glass" parent="Ship Parent/Ship_Interior" index="13"]
+transparency = 0.31
+cast_shadow = 0
+surface_material_override/0 = ExtResource("14_7p2u3")
+
+[node name="Seal_Door2" parent="Ship Parent/Ship_Interior" index="14"]
+surface_material_override/0 = ExtResource("9_yc6xl")
+
+[node name="Seal_Door2_L" parent="Ship Parent/Ship_Interior/Seal_Door2" index="0"]
+surface_material_override/0 = ExtResource("9_yc6xl")
+
+[node name="Seal_Door2_R" parent="Ship Parent/Ship_Interior/Seal_Door2" index="1"]
+surface_material_override/0 = ExtResource("9_yc6xl")
+
+[node name="Fridge" parent="Ship Parent/Objects" index="0"]
+surface_material_override/0 = ExtResource("9_yc6xl")
+
+[node name="Shelves" parent="Ship Parent/Objects" index="1"]
+surface_material_override/0 = ExtResource("9_yc6xl")
+
+[node name="Poster1" parent="Ship Parent/Objects" index="2"]
+surface_material_override/0 = ExtResource("15_him8o")
+
+[node name="Poster2" parent="Ship Parent/Objects" index="3"]
+surface_material_override/0 = ExtResource("15_him8o")
+
+[node name="Control_Cabinets" parent="Ship Parent/Objects" index="4"]
+surface_material_override/0 = ExtResource("16_fgk2h")
+
+[node name="CryoPod1" parent="Ship Parent/Objects" index="5"]
+surface_material_override/0 = ExtResource("17_wn26v")
+
+[node name="CryoPod1_Door" parent="Ship Parent/Objects/CryoPod1" index="0"]
+surface_material_override/0 = ExtResource("17_wn26v")
+
+[node name="CryoPod1_Glass" parent="Ship Parent/Objects/CryoPod1/CryoPod1_Door" index="0"]
+transparency = 0.22
+cast_shadow = 0
+surface_material_override/0 = ExtResource("14_7p2u3")
+
+[node name="CryoPod2" parent="Ship Parent/Objects" index="6"]
+surface_material_override/0 = ExtResource("17_wn26v")
+
+[node name="CryoPod2_Door" parent="Ship Parent/Objects/CryoPod2" index="0"]
+surface_material_override/0 = ExtResource("17_wn26v")
+
+[node name="CryoPod2_Glass" parent="Ship Parent/Objects/CryoPod2/CryoPod2_Door" index="0"]
+transparency = 0.24
+cast_shadow = 0
+surface_material_override/0 = ExtResource("14_7p2u3")
+
+[node name="Monitor1" parent="Ship Parent/Objects/Armature_001" index="0"]
+surface_material_override/0 = ExtResource("18_cmrup")
+
+[node name="Monitor_MobileKeyboard" parent="Ship Parent/Objects/Armature_001" index="1"]
+surface_material_override/0 = ExtResource("18_cmrup")
+
+[node name="Monitor_Stand" parent="Ship Parent/Objects/Armature_001" index="2"]
+surface_material_override/0 = ExtResource("18_cmrup")
+
+[node name="Monitor_Keyboard" parent="Ship Parent/Objects" index="8"]
+surface_material_override/0 = ExtResource("18_cmrup")
+
+[node name="Control_Desk" parent="Ship Parent/Objects" index="9"]
+surface_material_override/0 = ExtResource("16_fgk2h")
+
+[node name="Control_Chair" parent="Ship Parent/Objects" index="10"]
+surface_material_override/0 = ExtResource("16_fgk2h")
+
+[node name="Monitor_Computer" parent="Ship Parent/Objects" index="11"]
+surface_material_override/0 = ExtResource("18_cmrup")
+
+[node name="Monitor4" parent="Ship Parent/Objects" index="12"]
+surface_material_override/0 = ExtResource("18_cmrup")
+
+[node name="Monitor2" parent="Ship Parent/Objects" index="13"]
+surface_material_override/0 = ExtResource("18_cmrup")
+
+[node name="Monitor3" parent="Ship Parent/Objects" index="14"]
+surface_material_override/0 = ExtResource("18_cmrup")
+
+[node name="Bathroom_Sink" parent="Ship Parent/Objects" index="15"]
+surface_material_override/0 = ExtResource("10_k6vqf")
+
+[node name="Bathroom_Toilet" parent="Ship Parent/Objects" index="16"]
+surface_material_override/0 = ExtResource("10_k6vqf")
+
+[node name="Bathroom_Toilet_Lid" parent="Ship Parent/Objects/Bathroom_Toilet" index="0"]
+surface_material_override/0 = ExtResource("10_k6vqf")
+
+[node name="Poster_Bathroom1" parent="Ship Parent/Objects" index="17"]
+surface_material_override/0 = ExtResource("15_him8o")
+
+[node name="Poster_Bathroom2" parent="Ship Parent/Objects" index="18"]
+surface_material_override/0 = ExtResource("15_him8o")
+
+[node name="Poster_Control" parent="Ship Parent/Objects" index="19"]
+surface_material_override/0 = ExtResource("15_him8o")
+
+[node name="Pipe_Ladder" parent="Ship Parent/Objects" index="20"]
+surface_material_override/0 = ExtResource("16_fgk2h")
+
+[node name="Pipes_Corridor" parent="Ship Parent/Objects" index="21"]
+surface_material_override/0 = ExtResource("19_im1vy")
+
+[node name="Control_AC" parent="Ship Parent/Objects" index="22"]
+surface_material_override/0 = ExtResource("16_fgk2h")
+
+[node name="Control_Box" parent="Ship Parent/Objects" index="23"]
+surface_material_override/0 = ExtResource("16_fgk2h")
+
+[node name="Pipe_ControlRoom_001" parent="Ship Parent/Objects" index="24"]
+surface_material_override/0 = ExtResource("19_im1vy")
+
+[node name="Bathroom_Cabinet" parent="Ship Parent/Objects" index="25"]
+surface_material_override/0 = ExtResource("16_fgk2h")
+
+[node name="Bathroom_AC" parent="Ship Parent/Objects" index="26"]
+surface_material_override/0 = ExtResource("16_fgk2h")
+
+[node name="Monitor_Cables" parent="Ship Parent/Objects" index="27"]
+surface_material_override/0 = SubResource("ShaderMaterial_jn25s")
+
+[node name="Pipe_ControlRoom_002" parent="Ship Parent/Objects" index="28"]
+surface_material_override/0 = ExtResource("19_im1vy")
+
+[node name="CryoPod_Note" parent="Ship Parent/Objects" index="29"]
+surface_material_override/0 = SubResource("ShaderMaterial_glaac")
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.136669, 2.36148, -0.319085)
+light_color = Color(0.886275, 0.92549, 0.952941, 1)
+light_indirect_energy = 0.903
+light_volumetric_fog_energy = 0.305
+shadow_enabled = true
+shadow_bias = 0.05
+omni_range = 5.816
+omni_attenuation = 0.273
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.907085, 2.24432, -3.54027)
+light_color = Color(0.999999, 0.974369, 0.889671, 1)
+light_energy = 0.321
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+shadow_bias = 0.039
+shadow_normal_bias = 7.606
+omni_range = 119.723
+omni_attenuation = 0.272
+
+[node name="EmissiveDoorLight" type="MeshInstance3D" parent="Lights"]
+transform = Transform3D(0.264632, 0, 0, 0, -0.0205067, 0.030817, 0, -0.0851544, -0.00742122, -0.706673, 2.17129, -2.7862)
+gi_mode = 0
+mesh = SubResource("PlaneMesh_rp681")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("10_xg4tl")
+
+[node name="EmissiveDoorLight_ControlRoom" type="MeshInstance3D" parent="Lights"]
+transform = Transform3D(-0.112509, 0.0850621, 0.00443127, -0.0031966, -0.0282575, 0.0279025, 0.11636, 0.0814702, 0.00505111, 0.941038, 2.29665, -8.16399)
+gi_mode = 0
+mesh = SubResource("PlaneMesh_rp681")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("10_xg4tl")
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96252, 2.27332, -7.01377)
+light_color = Color(0.815686, 0.862745, 0.815686, 1)
+light_energy = 1.776
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 0.161
+omni_range = 50.823
+omni_attenuation = 0.516
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.751023, 2.43715, -10.184)
+light_color = Color(0.815686, 0.862745, 0.815686, 1)
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 68.767
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(0.999462, 0, 0.0327889, 0, 1, 0, -0.0327889, 0, 0.999462, -0.731179, 2.15774, -3.62791)
+visible = false
+light_color = Color(1, 1, 0.827451, 1)
+light_energy = 0.127
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+light_bake_mode = 1
+shadow_bias = 0.5
+shadow_normal_bias = 1.165
+omni_range = 11.752
+
+[editable path="Ship Parent"]
+[editable path="Ship Parent/Ship_Interior"]
+[editable path="Ship Parent/Objects"]

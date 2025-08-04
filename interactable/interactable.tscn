@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs06mxa5cb3un"]
+
+[ext_resource type="Script" uid="uid://crmyddufpbq1q" path="res://interactable/interactable.gd" id="1_8p6r8"]
+
+[node name="Interactable" type="Area3D"]
+script = ExtResource("1_8p6r8")
+
+[node name="InteractableArea" type="CollisionShape3D" parent="."]
+
+[node name="FocusPoint" type="Marker3D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

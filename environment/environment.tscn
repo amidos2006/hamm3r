@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccbw6mmhd6oct"]
+
+[ext_resource type="Texture2D" uid="uid://pmuoug7rww12" path="res://environment/assets/skybox_4.3_18.png" id="1_8i5xt"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_und8v"]
+panorama = ExtResource("1_8i5xt")
+
+[sub_resource type="Sky" id="Sky_ogx4w"]
+sky_material = SubResource("PanoramaSkyMaterial_und8v")
+
+[sub_resource type="Environment" id="Environment_und8v"]
+background_mode = 2
+background_color = Color(0.278431, 0.101961, 0.619608, 1)
+sky = SubResource("Sky_ogx4w")
+ambient_light_source = 2
+ambient_light_color = Color(0.262745, 0.101961, 0.290196, 1)
+ambient_light_energy = 0.52
+reflected_light_source = 1
+glow_enabled = true
+glow_hdr_threshold = 1.22
+
+[node name="Environment" type="Node"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.849968, 0.328474, -0.411896, 0.497385, -0.242591, 0.832921, 0.173671, -0.912828, -0.369573, 0.111, 12.158, -1.173)
+shadow_enabled = true
+shadow_blur = 0.57
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_und8v")

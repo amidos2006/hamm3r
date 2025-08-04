@@ -1,0 +1,120 @@
+[gd_scene load_steps=12 format=3 uid="uid://dbx1afyq7yyqp"]
+
+[ext_resource type="ArrayMesh" uid="uid://cqxplyh458lva" path="res://interactable/normal_door/meshes/door_frame.res" id="1_actdp"]
+[ext_resource type="Script" uid="uid://iivux16cptri" path="res://interactable/normal_door/normal_door.gd" id="1_jst47"]
+[ext_resource type="ArrayMesh" uid="uid://mrfgt7uds50c" path="res://interactable/normal_door/meshes/door.res" id="2_jst47"]
+[ext_resource type="Script" uid="uid://crmyddufpbq1q" path="res://interactable/interactable.gd" id="4_dlvnk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y7nol"]
+size = Vector3(1.6, 2.29871, 0.6)
+
+[sub_resource type="Animation" id="Animation_b4drn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.0776299, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jst47"]
+resource_name = "close"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.25, 0.078, 0), Vector3(0, 0.078, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_55cad"]
+resource_name = "fail"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.233333, 0.333333, 0.4, 0.466667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.078, 0), Vector3(0.16, 0.078, 0), Vector3(0.08, 0.078, 0), Vector3(0.12, 0.078, 0), Vector3(0.08, 0.078, 0), Vector3(0.1, 0.078, 0), Vector3(0.08, 0.078, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_actdp"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.0776299, 0), Vector3(1.25, 0.078, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_55cad"]
+_data = {
+&"RESET": SubResource("Animation_b4drn"),
+&"close": SubResource("Animation_jst47"),
+&"fail": SubResource("Animation_55cad"),
+&"open": SubResource("Animation_actdp")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8mucw"]
+size = Vector3(2.32372, 2.63831, 1.60242)
+
+[node name="NormalDoor" type="StaticBody3D"]
+script = ExtResource("1_jst47")
+metadata/_edit_group_ = true
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Frame" type="MeshInstance3D" parent="Pivot"]
+mesh = ExtResource("1_actdp")
+
+[node name="Door" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0776299, 0)
+mesh = ExtResource("2_jst47")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11654, -0.001)
+shape = SubResource("BoxShape3D_y7nol")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_55cad")
+}
+
+[node name="Interactable" type="Area3D" parent="."]
+script = ExtResource("4_dlvnk")
+
+[node name="InteractableArea" type="CollisionShape3D" parent="Interactable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+shape = SubResource("BoxShape3D_8mucw")
+
+[node name="FocusPoint" type="Marker3D" parent="Interactable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.376499, 1.07084, 0)
+
+[connection signal="body_entered" from="Interactable" to="Interactable" method="_on_body_entered"]
+[connection signal="body_exited" from="Interactable" to="Interactable" method="_on_body_exited"]
+[connection signal="player_exit" from="Interactable" to="." method="_on_interactable_player_exit"]
+[connection signal="player_inside" from="Interactable" to="." method="_on_interactable_player_inside"]

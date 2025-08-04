@@ -1,0 +1,8 @@
+[
+	{ "name": "add_normal", "minimum": 2, "maximum": 4 },
+	{ "name": "making_branch", "minimum": 0, "maximum": 1 },
+	{ "name": "add_normal", "minimum": 1, "maximum": 2 },
+	{ "name": "add_deadend", "minimum": 1, "maximum": 2 },
+	{ "name": "add_normal_lock", "minimum": 1, "maximum": 2 },
+	{ "name": "add_normal_end", "minimum": 1, "maximum": 2 },
+]

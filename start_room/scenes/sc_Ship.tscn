@@ -1,0 +1,121 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbmmva3syx6fn"]
+
+[ext_resource type="PackedScene" path="res://start_rooms/meshes/Ship_Interior.glb" id="1_vlsp6"]
+[ext_resource type="PackedScene" path="res://start_rooms/meshes/Objects.glb" id="2_s5vu8"]
+
+[node name="Ship Parent" type="Node3D"]
+
+[node name="Ship_Interior" parent="." instance=ExtResource("1_vlsp6")]
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Bathroom/Room_Bathroom1" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Bathroom/Room_Bathroom2" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Bathroom/Room_Bathroom3" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Bathroom/Room_Bathroom4" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Bathroom/Room_Bathroom5" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Bathroom/Room_Bathroom6" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Control/Room_Control1" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Control/Room_Control2" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Control/Room_Control3" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Control/Room_Control4" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Control/Room_Control5" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Control/Room_Control6" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Control/Room_Control7" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Control/Room_Control8" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Control/Room_Control9" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Control/Room_Control9_001" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Corridor/Room_Corridor1" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Corridor/Room_Corridor2" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Corridor/Room_Corridor3" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Corridor/Room_Corridor4" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Corridor/Room_Corridor5" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Corridor/Room_Corridor6" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Corridor/Room_Corridor7" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Tunnel/Room_Tunnel1" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Tunnel/Room_Tunnel2" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Tunnel/Room_Tunnel3" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Tunnel/Room_Tunnel4" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Tunnel/Room_Tunnel5" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Tunnel/Room_Tunnel6" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Start/Room1" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Start/Room2" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Start/Room3" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Start/Room4" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Start/Room5" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Start/Room6" index="0"]
+visible = false
+
+[node name="CollisionShape3D" parent="Ship_Interior/Room_Start/Room7" index="0"]
+visible = false
+
+[node name="Objects" parent="." instance=ExtResource("2_s5vu8")]
+
+[editable path="Ship_Interior"]
+[editable path="Objects"]

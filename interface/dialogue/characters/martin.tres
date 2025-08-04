@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="CharacterMoodPictures" load_steps=17 format=3 uid="uid://cse8fm5lq7ni8"]
+
+[ext_resource type="Script" uid="uid://cq3vw6ffhj3vi" path="res://interface/dialogue/characters/character_pictures.gd" id="1_be6e7"]
+[ext_resource type="Texture2D" uid="uid://dxn06bfwj0yci" path="res://interface/dialogue/graphics/Marty_normal_a.png" id="1_rjki6"]
+[ext_resource type="Script" uid="uid://ctxh6c3jp62vb" path="res://interface/dialogue/characters/character_mood_pictures.gd" id="2_0f5yf"]
+[ext_resource type="Texture2D" uid="uid://c37t7jnh8k2h" path="res://interface/dialogue/graphics/Marty_normal_b.png" id="2_h0kq6"]
+[ext_resource type="Texture2D" uid="uid://dfbacstar8rpy" path="res://interface/dialogue/graphics/Marty_angry.png" id="4_h0kq6"]
+[ext_resource type="Texture2D" uid="uid://tljftam2qfpl" path="res://interface/dialogue/graphics/Marty_frosty.png" id="5_t3awv"]
+[ext_resource type="Texture2D" uid="uid://1236llh60uvg" path="res://interface/dialogue/graphics/Marty_frosty_confused.png" id="6_mkqxs"]
+[ext_resource type="Texture2D" uid="uid://biuf2ihshm7fn" path="res://interface/dialogue/graphics/Marty_questioning.png" id="7_s1g0y"]
+[ext_resource type="Texture2D" uid="uid://kqj4gp1r3cfk" path="res://interface/dialogue/graphics/Marty_smiling.png" id="8_s1g0y"]
+
+[sub_resource type="Resource" id="Resource_t3awv"]
+script = ExtResource("1_be6e7")
+pictures = Array[Texture]([ExtResource("1_rjki6"), ExtResource("2_h0kq6")])
+metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
+
+[sub_resource type="Resource" id="Resource_cxqns"]
+script = ExtResource("1_be6e7")
+pictures = Array[Texture]([ExtResource("4_h0kq6")])
+metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
+
+[sub_resource type="Resource" id="Resource_mkqxs"]
+script = ExtResource("1_be6e7")
+pictures = Array[Texture]([ExtResource("4_h0kq6")])
+metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
+
+[sub_resource type="Resource" id="Resource_s1g0y"]
+script = ExtResource("1_be6e7")
+pictures = Array[Texture]([ExtResource("5_t3awv")])
+metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
+
+[sub_resource type="Resource" id="Resource_jrag6"]
+script = ExtResource("1_be6e7")
+pictures = Array[Texture]([ExtResource("6_mkqxs")])
+metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
+
+[sub_resource type="Resource" id="Resource_djkfb"]
+script = ExtResource("1_be6e7")
+pictures = Array[Texture]([ExtResource("7_s1g0y")])
+metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
+
+[sub_resource type="Resource" id="Resource_8locs"]
+script = ExtResource("1_be6e7")
+pictures = Array[Texture]([ExtResource("8_s1g0y")])
+metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
+
+[resource]
+script = ExtResource("2_0f5yf")
+moods = Dictionary[String, ExtResource("1_be6e7")]({
+"angry": SubResource("Resource_cxqns"),
+"concerned": SubResource("Resource_mkqxs"),
+"frosty": SubResource("Resource_s1g0y"),
+"frosty_confused": SubResource("Resource_jrag6"),
+"questioning": SubResource("Resource_djkfb"),
+"smiling": SubResource("Resource_8locs")
+})
+default = SubResource("Resource_t3awv")
+metadata/_custom_type_script = "uid://ctxh6c3jp62vb"

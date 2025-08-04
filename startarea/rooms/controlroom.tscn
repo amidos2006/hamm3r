@@ -1,0 +1,254 @@
+[gd_scene load_steps=37 format=3 uid="uid://4wdmx1w2gdqp"]
+
+[ext_resource type="ArrayMesh" uid="uid://bpy1g36may5h1" path="res://startarea/meshes/Ship_Interior_Room_Control.res" id="1_hhid5"]
+[ext_resource type="Material" uid="uid://deirstgwry0wa" path="res://startarea/materials/controlroom.tres" id="2_12ciy"]
+[ext_resource type="ArrayMesh" uid="uid://cq7hh7olu3wdi" path="res://startarea/meshes/Objects_Poster_Control.res" id="3_wfnja"]
+[ext_resource type="ArrayMesh" uid="uid://unc401an212d" path="res://startarea/meshes/Objects_Control_Cabinets.res" id="4_oqnw0"]
+[ext_resource type="Material" uid="uid://djwngpl5k17m4" path="res://startarea/materials/controlobjects.tres" id="5_6541s"]
+[ext_resource type="ArrayMesh" uid="uid://dobhpl6gg0e61" path="res://startarea/meshes/Objects_Bathroom_AC.res" id="6_3qo5l"]
+[ext_resource type="Material" uid="uid://cy276t1ji2l2j" path="res://startarea/materials/pipes.tres" id="7_c5qxt"]
+[ext_resource type="ArrayMesh" uid="uid://vr3ris8oaije" path="res://startarea/meshes/Objects_Bathroom_Cabinet.res" id="7_gdm8r"]
+[ext_resource type="ArrayMesh" uid="uid://my0djcjfmdbc" path="res://startarea/meshes/Objects_Pipe_ControlRoom.res" id="8_gdm8r"]
+[ext_resource type="ArrayMesh" uid="uid://be76ofxhtjqdv" path="res://startarea/meshes/Objects_Control_Desk.res" id="10_ak40m"]
+[ext_resource type="ArrayMesh" uid="uid://ctvxddydjsmmc" path="res://startarea/meshes/Ship_Interior_Control_Window.res" id="10_oa3xc"]
+[ext_resource type="Material" uid="uid://d0csqdacnxglg" path="res://startarea/materials/objects.tres" id="11_dou4b"]
+[ext_resource type="ArrayMesh" uid="uid://crvknfr8xa6f5" path="res://startarea/meshes/Objects_Monitor_MobileKeyboard.res" id="11_gslmx"]
+[ext_resource type="Material" uid="uid://4jvmoq1hoe17" path="res://startarea/materials/monitors.tres" id="12_1jn6x"]
+[ext_resource type="ArrayMesh" uid="uid://dqwnog4rbmaw1" path="res://startarea/meshes/Objects_Monitor_Stand.res" id="12_cyyub"]
+[ext_resource type="ArrayMesh" uid="uid://d2i3soimnv2mx" path="res://startarea/meshes/Objects_Monitor4.res" id="12_lhp8l"]
+[ext_resource type="ArrayMesh" uid="uid://b6n1mcpwhixre" path="res://startarea/meshes/Objects_Monitor_Keyboard.res" id="13_t631a"]
+[ext_resource type="ArrayMesh" uid="uid://di2m0gtdaocr1" path="res://startarea/meshes/Objects_Monitor3.res" id="14_mdnk3"]
+[ext_resource type="ArrayMesh" uid="uid://blo3se6p5b68x" path="res://startarea/meshes/Objects_Monitor2.res" id="15_lhp8l"]
+[ext_resource type="ArrayMesh" uid="uid://qd5g668sxuq7" path="res://startarea/meshes/Objects_Monitor1.res" id="16_t631a"]
+[ext_resource type="ArrayMesh" uid="uid://bio7tn55jpa8f" path="res://startarea/meshes/Objects_Monitor_Computer.res" id="17_mdnk3"]
+[ext_resource type="ArrayMesh" uid="uid://dbvrdnndhxd6k" path="res://startarea/meshes/Objects_Monitor_Cables.res" id="20_ranpw"]
+[ext_resource type="ArrayMesh" uid="uid://ilfvyfou286y" path="res://startarea/meshes/Objects_Control_Chair.res" id="21_pbdq4"]
+[ext_resource type="ArrayMesh" uid="uid://dxoippqun2qmo" path="res://startarea/meshes/Ship_Interior_Control_Window_Glass.res" id="24_xlbcq"]
+[ext_resource type="Material" uid="uid://byowqag0chqth" path="res://startarea/materials/glass.tres" id="25_qi376"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hhid5"]
+size = Vector3(6.4, 0.15, 4.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qya55"]
+size = Vector3(4.4, 2.5, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g6d7y"]
+size = Vector3(4.6, 2.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w1gq3"]
+size = Vector3(0.15, 2.5, 2.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jcg4x"]
+size = Vector3(0.15, 2.5, 2.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qi376"]
+size = Vector3(0.15, 2.5, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xlbcq"]
+size = Vector3(0.4, 2.5, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5qcq3"]
+size = Vector3(1.8, 2.2, 0.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_88h3y"]
+size = Vector3(0.8, 2, 0.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_28h63"]
+size = Vector3(1.2, 2, 2.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7jehl"]
+size = Vector3(2.2, 2, 1.2)
+
+[node name="Controlroom" type="Node3D"]
+metadata/_edit_group_ = true
+
+[node name="StaticDesign" type="Node3D" parent="."]
+
+[node name="Layout" type="StaticBody3D" parent="StaticDesign"]
+
+[node name="Model" type="MeshInstance3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.201146, 0.0999236, -0.117335)
+mesh = ExtResource("1_hhid5")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_12ciy")
+
+[node name="Poster" type="MeshInstance3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.421867, 2.2685, 1.98139)
+mesh = ExtResource("3_wfnja")
+skeleton = NodePath("../..")
+
+[node name="Pipes" type="MeshInstance3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79145, 0.132232, 1.86909)
+mesh = ExtResource("8_gdm8r")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("7_c5qxt")
+
+[node name="AC" type="MeshInstance3D" parent="StaticDesign/Layout"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.78912, 2.10713, 1.1208)
+mesh = ExtResource("6_3qo5l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("5_6541s")
+
+[node name="Cabinet" type="MeshInstance3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -2.96992, 2.02027, 0.273902)
+mesh = ExtResource("7_gdm8r")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("5_6541s")
+
+[node name="Window" type="Node3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.951411, 1.23973, -2.69092)
+
+[node name="Frame" type="MeshInstance3D" parent="StaticDesign/Layout/Window"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.382524, 0.422908, 0.625043)
+mesh = ExtResource("10_oa3xc")
+skeleton = NodePath("../../../Desk")
+surface_material_override/0 = ExtResource("11_dou4b")
+
+[node name="Glass" type="MeshInstance3D" parent="StaticDesign/Layout/Window"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.382607, 0.425226, 0.626032)
+cast_shadow = 0
+mesh = ExtResource("24_xlbcq")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("25_qi376")
+
+[node name="CollisionShape3D_1" type="CollisionShape3D" parent="StaticDesign/Layout"]
+shape = SubResource("BoxShape3D_hhid5")
+
+[node name="CollisionShape3D_2" type="CollisionShape3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.880268, 1.29705, 2.02774)
+shape = SubResource("BoxShape3D_qya55")
+
+[node name="CollisionShape3D_3" type="CollisionShape3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.72219, 1.27693, -1.87609)
+shape = SubResource("BoxShape3D_g6d7y")
+
+[node name="CollisionShape3D_4" type="CollisionShape3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.044, 1.24237, 0.661373)
+shape = SubResource("BoxShape3D_w1gq3")
+
+[node name="CollisionShape3D_5" type="CollisionShape3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03056, 1.3378, -0.863793)
+shape = SubResource("BoxShape3D_jcg4x")
+
+[node name="CollisionShape3D_6" type="CollisionShape3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.03056, 1.3378, 1.88075)
+shape = SubResource("BoxShape3D_qi376")
+
+[node name="CollisionShape3D_7" type="CollisionShape3D" parent="StaticDesign/Layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.86459, 1.33245, 2.02774)
+shape = SubResource("BoxShape3D_xlbcq")
+
+[node name="Cabinet" type="StaticBody3D" parent="StaticDesign"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82, 0.095, 1.721)
+
+[node name="Model" type="MeshInstance3D" parent="StaticDesign/Cabinet"]
+mesh = ExtResource("4_oqnw0")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("5_6541s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticDesign/Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.421713, 1.08641, 0)
+shape = SubResource("BoxShape3D_5qcq3")
+
+[node name="Desk" type="StaticBody3D" parent="StaticDesign"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7756, -0.100798, -1.0984)
+
+[node name="Model" type="MeshInstance3D" parent="StaticDesign/Desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.2, 8)
+mesh = ExtResource("10_ak40m")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("5_6541s")
+
+[node name="FloatingComputer" type="Node3D" parent="StaticDesign/Desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0502346, 0, 0.194826)
+
+[node name="Stand" type="MeshInstance3D" parent="StaticDesign/Desk/FloatingComputer"]
+transform = Transform3D(0.114907, 0, -0.0964181, 0, 0.159, 0, 0.0964181, 0, 0.114907, -0.0605066, 2.69834, -0.66473)
+mesh = ExtResource("12_cyyub")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("12_1jn6x")
+
+[node name="Mointer1" type="MeshInstance3D" parent="StaticDesign/Desk/FloatingComputer"]
+transform = Transform3D(0.255093, 0, -0.211477, 0, 0.329, 0, 0.214048, 0, 0.252029, -0.458825, 1.94194, -0.202374)
+mesh = ExtResource("16_t631a")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("12_1jn6x")
+
+[node name="Mointer2" type="MeshInstance3D" parent="StaticDesign/Desk/FloatingComputer"]
+transform = Transform3D(0.038029, 0, -0.212718, 0, 0.216, 0, 0.215673, 0, 0.037508, -0.153318, 1.72024, 0.519304)
+mesh = ExtResource("15_lhp8l")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("12_1jn6x")
+
+[node name="Mointer3" type="MeshInstance3D" parent="StaticDesign/Desk/FloatingComputer"]
+transform = Transform3D(0.0749024, 0, -0.202974, 0, 0.216, 0, 0.205793, 0, 0.0738764, -0.224198, 1.3445, 0.523446)
+mesh = ExtResource("14_mdnk3")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("12_1jn6x")
+
+[node name="Keyboard" type="MeshInstance3D" parent="StaticDesign/Desk/FloatingComputer"]
+transform = Transform3D(0.766044, 0, -0.642788, 0, 1, 0, 0.642788, 0, 0.766044, -0.506591, 1.46165, -0.128722)
+mesh = ExtResource("11_gslmx")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("12_1jn6x")
+
+[node name="SittingComputer" type="Node3D" parent="StaticDesign/Desk"]
+
+[node name="Moniter" type="MeshInstance3D" parent="StaticDesign/Desk/SittingComputer"]
+transform = Transform3D(0.233, 0, 0, 0, 0.233, 0, 0, 0, 0.233, -1.76889, 1.40239, -0.508387)
+mesh = ExtResource("12_lhp8l")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("12_1jn6x")
+
+[node name="Keyboard" type="MeshInstance3D" parent="StaticDesign/Desk/SittingComputer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.76161, 1.06349, -0.211919)
+mesh = ExtResource("13_t631a")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("12_1jn6x")
+
+[node name="Source" type="Node3D" parent="StaticDesign/Desk"]
+
+[node name="Cables" type="MeshInstance3D" parent="StaticDesign/Desk/Source"]
+transform = Transform3D(0.766044, 0, -0.642788, 0, 1, 0, 0.642788, 0, 0.766044, -0.375767, 1.81218, -0.612442)
+mesh = ExtResource("20_ranpw")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("12_1jn6x")
+
+[node name="Computer" type="MeshInstance3D" parent="StaticDesign/Desk/Source"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.10168, 2.30663, -0.528765)
+mesh = ExtResource("17_mdnk3")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("12_1jn6x")
+
+[node name="Chair" type="StaticBody3D" parent="StaticDesign/Desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.584, 1.137, 0.363)
+
+[node name="Model" type="MeshInstance3D" parent="StaticDesign/Desk/Chair"]
+transform = Transform3D(1.217, 0, 0, 0, 1.217, 0, 0, 0, 1.217, 0, 0, 0)
+mesh = ExtResource("21_pbdq4")
+skeleton = NodePath("../../Source")
+surface_material_override/0 = ExtResource("5_6541s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticDesign/Desk/Chair"]
+shape = SubResource("BoxShape3D_88h3y")
+
+[node name="CollisionShape3D_1" type="CollisionShape3D" parent="StaticDesign/Desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.266696, 1.13088, 0.135792)
+shape = SubResource("BoxShape3D_28h63")
+
+[node name="CollisionShape3D_2" type="CollisionShape3D" parent="StaticDesign/Desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.655, 1.13088, -0.409373)
+shape = SubResource("BoxShape3D_7jehl")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="StaticDesign"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.32924, 0)
+light_color = Color(0.815686, 0.862745, 0.815686, 1)
+light_energy = 1.776
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 0.161
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_shadow = 30.0
+omni_range = 50.823
+omni_attenuation = 0.516

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Mission" load_steps=9 format=3 uid="uid://d4ge2lo35p6cv"]
+
+[ext_resource type="JSON" path="res://spaceship/generator/add_deadend.json" id="1_feutw"]
+[ext_resource type="JSON" path="res://spaceship/generator/add_normal.json" id="1_vj58r"]
+[ext_resource type="Script" uid="uid://c4i0yu7is1t6e" path="res://addons/graphlayoutgeneration/mission.gd" id="1_vttyb"]
+[ext_resource type="JSON" path="res://spaceship/generator/recipe.json" id="2_vevmd"]
+[ext_resource type="JSON" path="res://spaceship/generator/add_normal_lock.json" id="3_fs4gp"]
+[ext_resource type="JSON" path="res://spaceship/generator/making_branch.json" id="4_263su"]
+[ext_resource type="JSON" path="res://spaceship/generator/start.json" id="4_uo5hk"]
+[ext_resource type="JSON" path="res://spaceship/generator/add_normal_end.json" id="5_plas1"]
+
+[resource]
+script = ExtResource("1_vttyb")
+start_graph = ExtResource("4_uo5hk")
+recipe = ExtResource("2_vevmd")
+patterns = Array[JSON]([ExtResource("1_feutw"), ExtResource("1_vj58r"), ExtResource("3_fs4gp"), ExtResource("4_263su"), ExtResource("5_plas1")])
+max_children = 2
+verbose = false
