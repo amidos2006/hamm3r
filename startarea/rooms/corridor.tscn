@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://bcp6carpfrt3v"]
 
 [ext_resource type="ArrayMesh" uid="uid://dgh3ocgbqay5v" path="res://startarea/meshes/Ship_Interior_Room_Corridor.res" id="1_t8311"]
-[ext_resource type="Material" uid="uid://i7mk0rtlvfyp" path="res://startarea/materials/M_Corridor.tres" id="2_gxfbq"]
+[ext_resource type="Material" uid="uid://i7mk0rtlvfyp" path="res://startarea/materials/corridor.tres" id="2_gxfbq"]
 [ext_resource type="ArrayMesh" uid="uid://ctvxddydjsmmc" path="res://startarea/meshes/Ship_Interior_Control_Window.res" id="3_ff4qy"]
 [ext_resource type="Material" uid="uid://d0csqdacnxglg" path="res://startarea/materials/objects.tres" id="4_xsuk5"]
 [ext_resource type="ArrayMesh" uid="uid://dxoippqun2qmo" path="res://startarea/meshes/Ship_Interior_Control_Window_Glass.res" id="5_l5gj5"]
@@ -39,7 +39,6 @@ metadata/_edit_group_ = true
 [node name="Model" type="MeshInstance3D" parent="StaticDesign/Layout"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0846919, 0)
 mesh = ExtResource("1_t8311")
-skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_gxfbq")
 
 [node name="Window" type="Node3D" parent="StaticDesign/Layout"]
@@ -48,14 +47,12 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 [node name="Frame" type="MeshInstance3D" parent="StaticDesign/Layout/Window"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.382524, 0.422908, 0.625043)
 mesh = ExtResource("3_ff4qy")
-skeleton = NodePath("../../../Desk")
 surface_material_override/0 = ExtResource("4_xsuk5")
 
 [node name="Glass" type="MeshInstance3D" parent="StaticDesign/Layout/Window"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.382805, 0.420842, 0.629131)
 cast_shadow = 0
 mesh = ExtResource("5_l5gj5")
-skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("6_ebvd5")
 
 [node name="Pipes" type="MeshInstance3D" parent="StaticDesign/Layout"]

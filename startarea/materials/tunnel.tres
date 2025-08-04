@@ -34,5 +34,5 @@ shader_parameter/specular_threshold = 0.5
 shader_parameter/specular_softness = 0.1
 shader_parameter/shadow_gradient = SubResource("GradientTexture1D_2eigu")
 shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/wrap = 0.0
+shader_parameter/wrap = -1.0
 shader_parameter/steepness = 1.0

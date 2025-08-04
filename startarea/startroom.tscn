@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://ccbw6mmhd6oct" path="res://environment/environment.tscn" id="7_v37f2"]
 
 [node name="Startroom" type="Node3D"]
+metadata/_edit_group_ = true
+
+[node name="Environment" parent="." instance=ExtResource("7_v37f2")]
 
 [node name="Cryoroom" parent="." instance=ExtResource("4_v37f2")]
 transform = Transform3D(-0.973734, 0, -0.227688, 0, 1, 0, 0.227688, 0, -0.973734, 9.20345, 0, -17.7294)
@@ -27,5 +30,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114077, 0, -3.146)
 
 [node name="Player" parent="." instance=ExtResource("6_tuwul")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.98926, 0, -17.6363)
-
-[node name="Environment" parent="." instance=ExtResource("7_v37f2")]

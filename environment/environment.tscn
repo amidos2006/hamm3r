@@ -23,6 +23,7 @@ glow_hdr_threshold = 1.22
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.849968, 0.328474, -0.411896, 0.497385, -0.242591, 0.832921, 0.173671, -0.912828, -0.369573, 0.111, 12.158, -1.173)
+light_bake_mode = 1
 shadow_enabled = true
 shadow_blur = 0.57
 
