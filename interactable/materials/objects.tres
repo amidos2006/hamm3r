@@ -1,0 +1,38 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://bf21ef2da2yey"]
+
+[ext_resource type="Shader" uid="uid://cfolovkcxbyfy" path="res://startarea/materials/hatch.gdshader" id="1_rmtrs"]
+[ext_resource type="Texture2D" uid="uid://dmphffjp6n6jt" path="res://interactable/materials/hatch_painted.png" id="2_nnwjv"]
+[ext_resource type="Texture2D" uid="uid://lirt7cunxgjy" path="res://interactable/materials/objects_room_props.png" id="3_bxtjs"]
+
+[sub_resource type="Gradient" id="Gradient_bku4d"]
+offsets = PackedFloat32Array(0, 0.313726, 1)
+colors = PackedColorArray(0.0200569, 2.12467e-05, 0.0600436, 1, 0.153061, 0.153061, 0.153061, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2eigu"]
+gradient = SubResource("Gradient_bku4d")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_rmtrs")
+shader_parameter/cross_hatch_texture = ExtResource("2_nnwjv")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("3_bxtjs")
+shader_parameter/uv_scale_r = 0.0
+shader_parameter/uv_scale_g = 0.0
+shader_parameter/uv_scale_b = 0.0
+shader_parameter/hatch_uv_scale = 21.0
+shader_parameter/smoothness = 0.34
+shader_parameter/light_threshold = 0.58
+shader_parameter/mid_threshold = 0.16
+shader_parameter/dark_threshold = 0.18
+shader_parameter/rim_amount = 0.0
+shader_parameter/rim_smoothness = 0.0
+shader_parameter/rim_strength = 1.0
+shader_parameter/rim_color = Color(0, 0, 0, 1)
+shader_parameter/specular_glossiness = 1.0
+shader_parameter/specular_threshold = 0.5
+shader_parameter/specular_softness = 0.1
+shader_parameter/shadow_gradient = SubResource("GradientTexture1D_2eigu")
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0

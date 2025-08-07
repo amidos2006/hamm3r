@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://05t1uswscwq"]
 
-[ext_resource type="ArrayMesh" uid="uid://ca5c215hme6op" path="res://interactable/seal_door/meshes/door_frame.res" id="1_crdxj"]
+[ext_resource type="ArrayMesh" uid="uid://ca5c215hme6op" path="res://interactable/meshes/seal_door_frame.res" id="1_crdxj"]
 [ext_resource type="Script" uid="uid://dhrisfosy7p65" path="res://interactable/seal_door/seal_door.gd" id="1_xb6vn"]
-[ext_resource type="ArrayMesh" uid="uid://dpu725wmqk6iv" path="res://interactable/seal_door/meshes/door_left.res" id="2_xb6vn"]
-[ext_resource type="ArrayMesh" uid="uid://ccw7k8apjtu60" path="res://interactable/seal_door/meshes/door_right.res" id="3_i0t73"]
+[ext_resource type="ArrayMesh" uid="uid://dpu725wmqk6iv" path="res://interactable/meshes/seal_door_left.res" id="2_xb6vn"]
+[ext_resource type="ArrayMesh" uid="uid://ccw7k8apjtu60" path="res://interactable/meshes/seal_door_right.res" id="3_i0t73"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ys3yn"]
 size = Vector3(1.57129, 2.44775, 1)
