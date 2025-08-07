@@ -1,9 +1,0 @@
-{
-	"nodes": [
-		{ "id": 0, "access": 0, "type": "Start" },
-		{ "id": 1, "access": 0, "type": "End" }
-	],
-	"edges": [
-		{ "start": 0, "end": 1 }
-	]
-}
