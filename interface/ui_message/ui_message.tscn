@@ -1,10 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://7dite6htre68"]
 
 [ext_resource type="Script" uid="uid://f0ki6437lc3y" path="res://interface/ui_message/ui_message.gd" id="1_2qdxb"]
-[ext_resource type="FontFile" uid="uid://b3yalra5jswgu" path="res://interface/ui_message/font/JosefinSans-Regular.ttf" id="2_2qdxb"]
+[ext_resource type="FontFile" uid="uid://b3yalra5jswgu" path="res://intro/font/JosefinSans-Regular.ttf" id="2_2qdxb"]
 [ext_resource type="Texture2D" uid="uid://ddnbqo6quyqdr" path="res://interface/ui_message/graphics/message_sideline.png" id="2_qfpqq"]
 
 [node name="UIMessage" type="CanvasLayer"]
+layer = 110
 script = ExtResource("1_2qdxb")
 
 [node name="TextureRect" type="TextureRect" parent="."]

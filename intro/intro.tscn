@@ -1,18 +1,14 @@
-[gd_scene load_steps=35 format=3 uid="uid://b1outtjkeukf1"]
+[gd_scene load_steps=31 format=3 uid="uid://b1outtjkeukf1"]
 
-[ext_resource type="PackedScene" uid="uid://h0ewqgb7ck7x" path="res://interface/dialogue/dialogue.tscn" id="1_fpmxm"]
 [ext_resource type="Script" uid="uid://u0ydxg0j7t04" path="res://intro/intro.gd" id="1_vyos2"]
 [ext_resource type="JSON" path="res://intro/actions/start_actions.json" id="2_1l24h"]
 [ext_resource type="Texture2D" uid="uid://brug4thvekhdd" path="res://intro/graphics/bg_space.png" id="2_jkt4n"]
 [ext_resource type="JSON" path="res://intro/actions/soft_actions.json" id="3_ao3yw"]
-[ext_resource type="JSON" path="res://intro/actions/tracery.json" id="4_ie2y0"]
 [ext_resource type="JSON" path="res://intro/actions/medium_actions.json" id="4_rcqw2"]
-[ext_resource type="PackedScene" uid="uid://7dite6htre68" path="res://interface/ui_message/ui_message.tscn" id="5_sg2fo"]
 [ext_resource type="JSON" path="res://intro/actions/hard_actions.json" id="5_ttu4d"]
 [ext_resource type="JSON" path="res://intro/actions/leave_actions.json" id="6_j7iwe"]
 [ext_resource type="JSON" path="res://intro/actions/end_actions.json" id="6_ttu4d"]
 [ext_resource type="Script" uid="uid://cdk8x8r6p7y4p" path="res://intro/ship.gd" id="8_1l24h"]
-[ext_resource type="PackedScene" uid="uid://obr7t3qupae3" path="res://interface/blackout/blackout.tscn" id="8_cxrv6"]
 [ext_resource type="Texture2D" uid="uid://wy7tj8stswbs" path="res://intro/graphics/station_back.png" id="8_krbtg"]
 [ext_resource type="Texture2D" uid="uid://ci6488la4rnta" path="res://intro/graphics/station_front.png" id="9_xwdvp"]
 [ext_resource type="Texture2D" uid="uid://dpl7q5tf5eq53" path="res://intro/graphics/logo.png" id="10_5hu1j"]
@@ -24,7 +20,7 @@
 [ext_resource type="Script" uid="uid://jn62uv7akgg1" path="res://intro/camera_2d.gd" id="14_sg2fo"]
 [ext_resource type="Texture2D" uid="uid://v4sq8bpfrmpg" path="res://intro/graphics/truckEngine_00.png" id="15_dk8sq"]
 [ext_resource type="Script" uid="uid://cciwtru2sn1cl" path="res://intro/title.gd" id="20_m3u68"]
-[ext_resource type="FontFile" uid="uid://b3yalra5jswgu" path="res://interface/ui_message/font/JosefinSans-Regular.ttf" id="22_6o4ox"]
+[ext_resource type="FontFile" uid="uid://b3yalra5jswgu" path="res://intro/font/JosefinSans-Regular.ttf" id="22_6o4ox"]
 [ext_resource type="Texture2D" uid="uid://bo8u5rlvgk6q6" path="res://intro/graphics/particle.png" id="24_7v0dw"]
 [ext_resource type="Texture2D" uid="uid://c6y01embash38" path="res://intro/graphics/idg_logo.png" id="25_hp8fq"]
 [ext_resource type="Texture2D" uid="uid://do52d4smn44hu" path="res://intro/graphics/mdia_logo.png" id="26_7v0dw"]
@@ -87,16 +83,6 @@ medium_actions = ExtResource("4_rcqw2")
 hard_actions = ExtResource("5_ttu4d")
 leave_actions = ExtResource("6_j7iwe")
 end_actions = ExtResource("6_ttu4d")
-
-[node name="UIMessage" parent="." instance=ExtResource("5_sg2fo")]
-layer = 110
-
-[node name="Blackout" parent="." instance=ExtResource("8_cxrv6")]
-layer = 100
-
-[node name="Dialogue" parent="." instance=ExtResource("1_fpmxm")]
-layer = 90
-tracery_grammar = ExtResource("4_ie2y0")
 
 [node name="Title" type="CanvasLayer" parent="."]
 layer = 110

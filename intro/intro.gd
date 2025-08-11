@@ -15,11 +15,11 @@ var _medium_threshold
 
 
 func _ready():
-	$Blackout.start()
+	Blackout.start()
 	_docking_speed = 0
 	await _execute_actions(start_actions.data)
-	$Dialogue.hide_message()
-	$UIMessage.hide_message()
+	Dialogue.hide_message()
+	UiMessage.hide_message()
 	if _docking_speed < 0:
 		await _execute_actions(leave_actions.data)
 	elif _docking_speed < _soft_threshold:
@@ -37,13 +37,13 @@ func _execute_actions(actions):
 	for act in actions:
 		match(act.action):
 			"show_message":
-				$UIMessage.show_message(act.args.message, act.args.action, act.args.time)
+				UiMessage.show_message(act.args.message, act.args.action, act.args.time)
 				if act.wait:
-					await $UIMessage.advance_message
+					await UiMessage.advance_message
 			"show_dialogue":
-				$Dialogue.show_message(act.args.name, act.args.mood, act.args.text, act.args.direction, act.args.time, act.args.action)
+				Dialogue.show_message(act.args.name, act.args.mood, act.args.text, act.args.direction, act.args.time, act.args.action)
 				if act.wait:
-					await $Dialogue.advance_dialogue
+					await Dialogue.advance_dialogue
 			
 			"move_camera":
 				$Camera2D.move_camera(act.args.dx, act.args.dy, act.args.time)
@@ -82,9 +82,9 @@ func _execute_actions(actions):
 				if act.wait:
 					await $Title.animation_ended
 			"fade":
-				$Blackout.fade(act.args.start, act.args.end, act.args.time)
+				Blackout.fade(act.args.start, act.args.end, act.args.time)
 				if act.wait:
-					await $Blackout.animation_ended
+					await Blackout.animation_ended
 			
 			"timer":
 				if act.wait:

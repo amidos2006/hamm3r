@@ -12,7 +12,7 @@ func _ready():
 	hide_message()
 
 
-func _process(delta):
+func _process(_delta):
 	if _active and Input.is_action_just_pressed(_action_name):
 		hide_message()
 		advance_message.emit()

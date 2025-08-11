@@ -9,16 +9,16 @@ var _return_time
 
 
 func _ready():
-	$Blackout.start()
+	Blackout.start()
 	var tween = get_tree().create_tween()
 	tween.tween_property($Label, "modulate", Color(Color.WHITE, 1), 2)
 	await tween.finished
 	if _return_time > 0:
 		await get_tree().create_timer(_return_time).timeout
 	if _ui_action.length() > 0:
-		$UIMessage.show_message(_ui_message, _ui_action)
-		await $UIMessage.advance_message
-		$UIMessage.hide_message()
+		UiMessage.show_message(_ui_message, _ui_action)
+		await UiMessage.advance_message
+		UiMessage.hide_message()
 	tween = get_tree().create_tween()
 	tween.tween_property($Label, "modulate", Color(Color.WHITE, 0), 2)
 	await tween.finished

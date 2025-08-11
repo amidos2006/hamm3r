@@ -21,6 +21,9 @@ boot_splash/use_filter=false
 [autoload]
 
 Global="*res://global.gd"
+UiMessage="*res://interface/ui_message/ui_message.tscn"
+Blackout="*res://interface/blackout/blackout.tscn"
+Dialogue="*res://interface/dialogue/dialogue.tscn"
 
 [display]
 

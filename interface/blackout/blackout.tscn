@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cqgq2aikhrgry" path="res://interface/blackout/blackout.gd" id="1_n8ile"]
 
 [node name="Blackout" type="CanvasLayer"]
+layer = 100
 script = ExtResource("1_n8ile")
 
 [node name="ColorRect" type="ColorRect" parent="."]

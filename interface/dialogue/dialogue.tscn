@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://h0ewqgb7ck7x"]
+[gd_scene load_steps=15 format=3 uid="uid://h0ewqgb7ck7x"]
 
 [ext_resource type="Texture2D" uid="uid://nqvs1pnsnfil" path="res://interface/dialogue/graphics/dialogueBox.png" id="1_k0ki1"]
 [ext_resource type="Script" uid="uid://enrvxepgmnb1" path="res://interface/dialogue/dialogue.gd" id="1_ru11m"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://cse8fm5lq7ni8" path="res://interface/dialogue/characters/martin.tres" id="4_rtr7g"]
 [ext_resource type="Resource" uid="uid://b51fd857pjg27" path="res://interface/dialogue/characters/tess.tres" id="5_0vmy0"]
 [ext_resource type="FontFile" uid="uid://dg4warscx3c37" path="res://interface/dialogue/font/ShareTech-Regular.ttf" id="5_8y0mt"]
+[ext_resource type="JSON" path="res://interface/dialogue/tracery.json" id="6_vsjny"]
 [ext_resource type="Script" uid="uid://bcn3ro86ums2n" path="res://interface/dialogue/prompt_flicker.gd" id="10_c6k8d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tmwax"]
@@ -61,13 +62,14 @@ shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
 
 [node name="Dialogue" type="CanvasLayer"]
-layer = 128
+layer = 90
 script = ExtResource("1_ru11m")
 pictures = Dictionary[String, ExtResource("2_efegq")]({
 "3r": ExtResource("3_c6k8d"),
 "martin": ExtResource("4_rtr7g"),
 "tess": ExtResource("5_0vmy0")
 })
+tracery_grammar = ExtResource("6_vsjny")
 
 [node name="Left" type="TextureRect" parent="."]
 anchors_preset = 2

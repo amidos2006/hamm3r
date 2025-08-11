@@ -94,7 +94,7 @@ func ship_exit(attraction_force, thruster_force, thruster_acc, thruster_dec, tim
 	ship_docked.emit()
 
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	if _active:
 		ship_docked.emit(_last_speed)
 	_active = false
