@@ -1,0 +1,28 @@
+[
+	{
+		"action": "blur",
+		"wait": false,
+		"args": {
+			"start": 0.2,
+			"end": 0,
+			"time": 3
+		}
+	},
+	{
+		"action": "open",
+		"wait": true,
+		"args": {
+			"start": -0.1,
+			"end": 1,
+			"time": 3
+		}
+	},
+	{
+		"action": "controls",
+		"wait": false,
+		"args": {
+			"enable": true,
+			"time": 1
+		}
+	}
+]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bipf3lcngxcr1"]
+
+[ext_resource type="Material" uid="uid://cw3a4pcoc2gsa" path="res://global/3d_camera_blur/materials/blur_material.tres" id="1_uw7y1"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_1xjy3"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[node name="3DCameraBlur" type="MeshInstance3D"]
+material_override = ExtResource("1_uw7y1")
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_1xjy3")

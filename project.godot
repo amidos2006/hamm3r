@@ -20,10 +20,11 @@ boot_splash/use_filter=false
 
 [autoload]
 
-Global="*res://global.gd"
-UiMessage="*res://interface/ui_message/ui_message.tscn"
-Blackout="*res://interface/blackout/blackout.tscn"
-Dialogue="*res://interface/dialogue/dialogue.tscn"
+Global="*res://global/global.gd"
+UiMessage="*res://global/ui_message/ui_message.tscn"
+Blackout="*res://global/blackout/blackout.tscn"
+Dialogue="*res://global/dialogue/dialogue.tscn"
+GameEnvironment="*res://global/game_environment/game_environment.tscn"
 
 [display]
 

@@ -5,7 +5,7 @@ extends CharacterBody3D
 @export var backward_ratio = 0.4
 @export var rotation_speed = 5
 @export var gravity = 4
-
+@export var disable_controls = true
 
 var _interactable_object = null
 var _target_velocity = Vector3.ZERO
@@ -13,16 +13,18 @@ var _target_velocity = Vector3.ZERO
 
 func _physics_process(delta):
 	var movement = 0
-	if Input.is_action_pressed("forward"):
-		movement -= 1
-	elif Input.is_action_pressed("backward"):
-		movement += backward_ratio
-	
 	var direction = 0
-	if Input.is_action_pressed("right"):
-		direction -= 1
-	elif Input.is_action_pressed("left"):
-		direction += 1
+	if !disable_controls:
+	
+		if Input.is_action_pressed("forward"):
+			movement -= 1
+		elif Input.is_action_pressed("backward"):
+			movement += backward_ratio
+		
+		if Input.is_action_pressed("right"):
+			direction -= 1
+		elif Input.is_action_pressed("left"):
+			direction += 1
 	
 	if direction != 0:
 		rotate_y(direction * rotation_speed * PI / 360)
