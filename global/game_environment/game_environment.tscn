@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccbw6mmhd6oct"]
+[gd_scene load_steps=5 format=3 uid="uid://ccbw6mmhd6oct"]
 
 [ext_resource type="Texture2D" uid="uid://pmuoug7rww12" path="res://global/game_environment/graphics/skybox_4.3_18.png" id="1_4m8j2"]
-[ext_resource type="Script" uid="uid://buydh3sg12qef" path="res://global/3d_camera_blur/materials/blur_effect.gd" id="2_u304r"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_und8v"]
 panorama = ExtResource("1_4m8j2")
@@ -20,20 +19,6 @@ reflected_light_source = 1
 glow_enabled = true
 glow_hdr_threshold = 1.22
 
-[sub_resource type="CompositorEffect" id="CompositorEffect_wjl7u"]
-resource_local_to_scene = false
-resource_name = ""
-enabled = true
-effect_callback_type = 4
-needs_motion_vectors = false
-needs_normal_roughness = false
-script = ExtResource("2_u304r")
-power = 0.1
-metadata/_custom_type_script = "uid://buydh3sg12qef"
-
-[sub_resource type="Compositor" id="Compositor_7uceq"]
-compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_wjl7u")])
-
 [node name="GameEnvironment" type="Node"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -44,4 +29,3 @@ shadow_blur = 0.57
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_und8v")
-compositor = SubResource("Compositor_7uceq")

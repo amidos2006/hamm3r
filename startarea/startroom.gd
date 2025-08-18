@@ -20,7 +20,8 @@ func _execute_actions(actions):
 				pass
 				#$SubViewport.blur_effect(act.args.start, act.args.end, act.args.time)
 				#$BlurLayer.blur_effect(act.args.start, act.args.end, act.args.time)
+			"timer":
+				await get_tree().create_timer(act.args.time).timeout
+
 			"controls":
-				if act.wait:
-					await get_tree().create_timer(act.args.time).timeout
 				$Player.disable_controls = not act.args.enable

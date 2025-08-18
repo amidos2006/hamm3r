@@ -1,46 +1,36 @@
 extends StaticBody3D
 
 
-@export var start_open = false
-@export var can_open = true
+enum DoorState{
+	OPEN,
+	CLOSE,
+	FAIL
+}
 
 
-func _ready():
-	var start_animation = "open"
-	if start_open:
-		if can_open:
-			start_animation = "open"
-			$CollisionShape3D.set_deferred("disabled", true)
-		else:
-			start_animation = "fail"
-			$CollisionShape3D.set_deferred("disabled", false)
-	else:
-		start_animation = "close"
-		$CollisionShape3D.set_deferred("disabled", false)
-	$AnimationPlayer.play(start_animation)
-	$AnimationPlayer.seek($AnimationPlayer.current_animation_length, false)
+var _state = DoorState.CLOSE
 
 
 func open_door():
-	if $CollisionShape3D.disabled:
-		if can_open:
-			$AnimationPlayer.play("open")
-			await $AnimationPlayer.animation_finished
-			$CollisionShape3D.set_deferred("disabled", false)
-		else:
-			$AnimationPlayer.play("fail")
-	
-func close_door():
-	if not $CollisionShape3D.disabled:
+	if _state == DoorState.CLOSE:
+		$AnimationPlayer.play("open")
+		await $AnimationPlayer.animation_finished
 		$CollisionShape3D.set_deferred("disabled", true)
+		_state = DoorState.OPEN
+
+
+func fail_door():
+	if _state == DoorState.CLOSE:
+		$AnimationPlayer.play("fail")
+		_state = DoorState.FAIL
+
+
+func close_door():
+	if _state == DoorState.OPEN:
+		$CollisionShape3D.set_deferred("disabled", false)
 		$AnimationPlayer.play("close")
+		_state = DoorState.CLOSE
 
 
-func _on_interactable_player_inside(player, focus_point) -> void:
-	print(player.is_looking_at(self))
-	if player.is_looking_at(self):
-		player.look_at_interactable(focus_point)
-
-
-func _on_interactable_player_exit(player) -> void:
-	player.reset_looking()
+func _on_interactable_player_exited():
+	close_door()

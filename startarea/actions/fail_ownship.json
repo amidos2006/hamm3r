@@ -1,0 +1,59 @@
+[
+	{
+		"action": "controls",
+		"args": {
+			"enable": false,
+		}
+	},
+	{
+		"action": "function",
+		"wait": false,
+		"args": {
+			"name": "fail_door",
+			"player": false, 
+			"signal": ""
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "martin",
+			"mood": "angry",
+			"text": "Remind me 3R to fix that door.",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Roger that.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "timer",
+		"args":{
+			"time": 0.1
+		}
+	},
+	{
+		"action": "interaction",
+		"args": {
+			"enable": false
+		}
+	},
+	{
+		"action": "controls",
+		"args": {
+			"enable": true
+		}
+	}
+]

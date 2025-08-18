@@ -18,11 +18,15 @@
 		}
 	},
 	{
-		"action": "controls",
-		"wait": false,
+		"action": "timer",
 		"args": {
-			"enable": true,
 			"time": 1
+		}
+	},
+	{
+		"action": "controls",
+		"args": {
+			"enable": true
 		}
 	}
 ]
