@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://dbx1afyq7yyqp"]
 
-[ext_resource type="ArrayMesh" uid="uid://cqxplyh458lva" path="res://interactable/meshes/door_frame.res" id="1_actdp"]
+[ext_resource type="ArrayMesh" uid="uid://cqxplyh458lva" path="res://interactable/normal_door/meshes/door_frame.res" id="1_actdp"]
 [ext_resource type="Script" uid="uid://iivux16cptri" path="res://interactable/normal_door/normal_door.gd" id="1_jst47"]
-[ext_resource type="ArrayMesh" uid="uid://mrfgt7uds50c" path="res://interactable/meshes/door.res" id="2_jst47"]
+[ext_resource type="ArrayMesh" uid="uid://mrfgt7uds50c" path="res://interactable/normal_door/meshes/door.res" id="2_jst47"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="4_dlvnk"]
-[ext_resource type="JSON" path="res://interactable/normal_door/normal_door_open.json" id="5_fh74d"]
+[ext_resource type="JSON" path="res://interactable/normal_door/normal_door.json" id="5_fh74d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y7nol"]
 size = Vector3(1.6, 2.29871, 0.6)

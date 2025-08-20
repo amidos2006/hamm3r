@@ -18,6 +18,12 @@
 		}
 	},
 	{
+		"action": "music",
+		"args": {
+			"action": "play"
+		}
+	},
+	{
 		"action": "move_camera",
 		"wait": true,
 		"args": {

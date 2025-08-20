@@ -1,0 +1,63 @@
+[gd_scene load_steps=12 format=3 uid="uid://chj1rvqew6sky"]
+
+[ext_resource type="ArrayMesh" uid="uid://dhu0xsxu771vf" path="res://interactable/poster/meshes/poster_1.res" id="1_y5tby"]
+[ext_resource type="Script" uid="uid://bgcto2kuykqow" path="res://interactable/poster/poster.gd" id="1_ywquu"]
+[ext_resource type="ArrayMesh" uid="uid://070f8n0swoqu" path="res://interactable/poster/meshes/poster_2.res" id="2_ywquu"]
+[ext_resource type="ArrayMesh" uid="uid://bpmma6skbckhr" path="res://interactable/poster/meshes/poster_3.res" id="3_p3482"]
+[ext_resource type="Material" uid="uid://b3wafxwv731ob" path="res://interactable/poster/materials/posters.tres" id="3_v2f2y"]
+[ext_resource type="ArrayMesh" uid="uid://dssswl3j4w0y4" path="res://interactable/poster/meshes/poster_4.res" id="4_6323w"]
+[ext_resource type="ArrayMesh" uid="uid://cq7hh7olu3wdi" path="res://interactable/poster/meshes/poster_5.res" id="5_v2f2y"]
+[ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="7_p3482"]
+[ext_resource type="JSON" path="res://interactable/poster/poster.json" id="8_6323w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_btaj2"]
+size = Vector3(0.1, 2.4, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6323w"]
+size = Vector3(1, 2.4, 1)
+
+[node name="Poster" type="StaticBody3D"]
+script = ExtResource("1_ywquu")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Poster_1" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, 0, -3.82137e-15, 8.74228e-08, -1, 0, 2.4, 0)
+mesh = ExtResource("1_y5tby")
+surface_material_override/0 = ExtResource("3_v2f2y")
+
+[node name="Poster_2" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, 0, -3.82137e-15, 8.74228e-08, -1, 0, 2.4, 0)
+mesh = ExtResource("2_ywquu")
+surface_material_override/0 = ExtResource("3_v2f2y")
+
+[node name="Poster_3" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, 0, -3.82137e-15, 8.74228e-08, -1, 0, 2.4, 0)
+mesh = ExtResource("3_p3482")
+surface_material_override/0 = ExtResource("3_v2f2y")
+
+[node name="Poster_4" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, 0, -3.82137e-15, 8.74228e-08, -1, 0, 2.4, 0)
+mesh = ExtResource("4_6323w")
+surface_material_override/0 = ExtResource("3_v2f2y")
+
+[node name="Poster_5" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, 0, -3.82137e-15, 8.74228e-08, -1, 0, 2.4, 0)
+mesh = ExtResource("5_v2f2y")
+surface_material_override/0 = ExtResource("3_v2f2y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+shape = SubResource("BoxShape3D_btaj2")
+
+[node name="Interactable" parent="." instance=ExtResource("7_p3482")]
+interaction = ExtResource("8_6323w")
+
+[node name="InteractableArea" parent="Interactable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.2, 0)
+shape = SubResource("BoxShape3D_6323w")
+
+[node name="FocusPoint" parent="Interactable" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+
+[editable path="Interactable"]

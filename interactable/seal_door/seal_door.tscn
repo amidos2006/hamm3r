@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://05t1uswscwq"]
+[gd_scene load_steps=14 format=3 uid="uid://05t1uswscwq"]
 
-[ext_resource type="ArrayMesh" uid="uid://ca5c215hme6op" path="res://interactable/meshes/seal_door_frame.res" id="1_crdxj"]
+[ext_resource type="ArrayMesh" uid="uid://ca5c215hme6op" path="res://interactable/seal_door/meshes/seal_door_frame.res" id="1_crdxj"]
 [ext_resource type="Script" uid="uid://dhrisfosy7p65" path="res://interactable/seal_door/seal_door.gd" id="1_xb6vn"]
-[ext_resource type="ArrayMesh" uid="uid://dpu725wmqk6iv" path="res://interactable/meshes/seal_door_left.res" id="2_xb6vn"]
-[ext_resource type="ArrayMesh" uid="uid://ccw7k8apjtu60" path="res://interactable/meshes/seal_door_right.res" id="3_i0t73"]
+[ext_resource type="ArrayMesh" uid="uid://dpu725wmqk6iv" path="res://interactable/seal_door/meshes/seal_door_left.res" id="2_xb6vn"]
+[ext_resource type="ArrayMesh" uid="uid://ccw7k8apjtu60" path="res://interactable/seal_door/meshes/seal_door_right.res" id="3_i0t73"]
+[ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="5_66maq"]
+[ext_resource type="JSON" path="res://interactable/seal_door/seal_door.json" id="6_m8aqy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ys3yn"]
 size = Vector3(1.57129, 2.44775, 1)
@@ -127,6 +129,9 @@ _data = {
 &"open": SubResource("Animation_xb6vn")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_m8aqy"]
+size = Vector3(2, 2.4, 3)
+
 [node name="SealDoor" type="StaticBody3D"]
 script = ExtResource("1_xb6vn")
 
@@ -151,3 +156,17 @@ shape = SubResource("BoxShape3D_ys3yn")
 libraries = {
 &"": SubResource("AnimationLibrary_ys3yn")
 }
+
+[node name="Interactable" parent="." instance=ExtResource("5_66maq")]
+interaction = ExtResource("6_m8aqy")
+
+[node name="InteractableArea" parent="Interactable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+shape = SubResource("BoxShape3D_m8aqy")
+
+[node name="FocusPoint" parent="Interactable" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10833, 0.122978)
+
+[connection signal="player_exited" from="Interactable" to="." method="_on_interactable_player_exited"]
+
+[editable path="Interactable"]

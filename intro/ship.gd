@@ -47,6 +47,13 @@ func _process(delta):
 	else:
 		$AnimationSprite.play("high")
 	
+	if _thruster_power > 0:
+		$Sounds/Engine.volume_db = _thruster_power
+		if not $Sounds/Engine.playing:
+			$Sounds/Engine.play()
+	else:
+		$Sounds/Engine.stop()
+	
 	$FrontParticlesLeft.emitting = _thruster_power > 0
 	$FrontParticlesLeft.emission_sphere_radius = 4 + _thruster_power * 6
 	$FrontParticlesLeft.initial_velocity_min = _last_speed + 20

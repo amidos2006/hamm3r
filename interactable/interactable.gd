@@ -5,7 +5,7 @@ extends Area3D
 
 
 var _player = null
-var _disable_interaction = false
+var disable_interaction = false
 
 
 signal player_entered
@@ -14,7 +14,7 @@ signal player_exited
 
 func _process(delta):
 	if _player != null:
-		if _player.is_looking_at(get_parent()):
+		if _player.is_looking_at(get_parent()) and not disable_interaction:
 			_player.focus_interactable(get_parent(), $FocusPoint.global_position)
 		else:
 			_player.reset_interactable(get_parent())
@@ -34,7 +34,7 @@ func _on_body_exited(body):
 
 
 func interact(player):
-	if _disable_interaction:
+	if disable_interaction:
 		return
 	
 	for act in interaction.data:
@@ -52,14 +52,16 @@ func interact(player):
 			"timer":
 				await get_tree().create_timer(act.args.time).timeout
 			"interaction":
-				self._disable_interaction = not act.args.enable
+				self.disable_interaction = not act.args.enable
+				if self.disable_interaction:
+					player.reset_interactable(get_parent())
 			"function":
 				if act.args.player:
 					player.call(act.args.name, get_parent())
 					if act.wait and act.args.signal.length() > 0:
-						await player.to_signal(player, act.args.signal)
+						await Signal(player, act.args.signal)
 				else:
 					get_parent().call(act.args.name)
 					if act.wait and act.args.signal.length() > 0:
-						await get_parent().to_signal(get_parent(), act.args.signal)
+						await Signal(get_parent(), act.args.signal)
 				

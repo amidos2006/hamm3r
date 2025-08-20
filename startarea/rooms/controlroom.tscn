@@ -2,7 +2,6 @@
 
 [ext_resource type="ArrayMesh" uid="uid://bpy1g36may5h1" path="res://startarea/meshes/Ship_Interior_Room_Control.res" id="1_hhid5"]
 [ext_resource type="Material" uid="uid://deirstgwry0wa" path="res://startarea/materials/controlroom.tres" id="2_12ciy"]
-[ext_resource type="ArrayMesh" uid="uid://cq7hh7olu3wdi" path="res://startarea/meshes/Objects_Poster_Control.res" id="3_wfnja"]
 [ext_resource type="ArrayMesh" uid="uid://unc401an212d" path="res://startarea/meshes/Objects_Control_Cabinets.res" id="4_oqnw0"]
 [ext_resource type="Material" uid="uid://djwngpl5k17m4" path="res://startarea/materials/controlobjects.tres" id="5_6541s"]
 [ext_resource type="ArrayMesh" uid="uid://dobhpl6gg0e61" path="res://startarea/meshes/Objects_Bathroom_AC.res" id="6_3qo5l"]
@@ -24,6 +23,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dbvrdnndhxd6k" path="res://startarea/meshes/Objects_Monitor_Cables.res" id="20_ranpw"]
 [ext_resource type="ArrayMesh" uid="uid://ilfvyfou286y" path="res://startarea/meshes/Objects_Control_Chair.res" id="21_pbdq4"]
 [ext_resource type="ArrayMesh" uid="uid://dxoippqun2qmo" path="res://startarea/meshes/Ship_Interior_Control_Window_Glass.res" id="24_xlbcq"]
+[ext_resource type="PackedScene" uid="uid://chj1rvqew6sky" path="res://interactable/poster/poster.tscn" id="25_hfa5r"]
 [ext_resource type="Material" uid="uid://byowqag0chqth" path="res://startarea/materials/glass.tres" id="25_qi376"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hhid5"]
@@ -71,11 +71,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.201146, 0.0999236, -0.1173
 mesh = ExtResource("1_hhid5")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_12ciy")
-
-[node name="Poster" type="MeshInstance3D" parent="StaticDesign/Layout"]
-transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.421867, 2.2685, 1.98139)
-mesh = ExtResource("3_wfnja")
-skeleton = NodePath("../..")
 
 [node name="Pipes" type="MeshInstance3D" parent="StaticDesign/Layout"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79145, 0.132232, 1.86909)
@@ -252,3 +247,6 @@ distance_fade_begin = 20.0
 distance_fade_shadow = 30.0
 omni_range = 50.823
 omni_attenuation = 0.516
+
+[node name="Poster" parent="." instance=ExtResource("25_hfa5r")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.435682, -0.166232, 1.96636)

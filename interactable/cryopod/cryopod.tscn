@@ -1,0 +1,130 @@
+[gd_scene load_steps=17 format=3 uid="uid://bo6xmnsy3pi2o"]
+
+[ext_resource type="ArrayMesh" uid="uid://bo3b3emcn0e3x" path="res://interactable/cryopod/meshes/pod.res" id="1_6bmbm"]
+[ext_resource type="Script" uid="uid://cuun17rnovr7k" path="res://interactable/cryopod/cryopod.gd" id="1_t0j7g"]
+[ext_resource type="Material" uid="uid://b1yrai51rfv0w" path="res://interactable/cryopod/materials/cryopods.tres" id="2_q6wdd"]
+[ext_resource type="ArrayMesh" uid="uid://bv6dtjmqay04b" path="res://interactable/cryopod/meshes/note.res" id="3_t0j7g"]
+[ext_resource type="ArrayMesh" uid="uid://0kvlp3ws0ryf" path="res://interactable/cryopod/meshes/door.res" id="4_8e3tg"]
+[ext_resource type="ArrayMesh" uid="uid://dg4b3d7g5yobw" path="res://interactable/cryopod/meshes/glass.res" id="5_wc77n"]
+[ext_resource type="Material" uid="uid://c5upfk3h14hp2" path="res://interactable/cryopod/materials/glass.tres" id="6_mgbn5"]
+[ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="7_q6wdd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6bmbm"]
+size = Vector3(1.5, 2.4, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8e3tg"]
+size = Vector3(1.5, 2.4, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mgbn5"]
+size = Vector3(0.2, 2.4, 1.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wc77n"]
+size = Vector3(1.5, 0.4, 1.5)
+
+[sub_resource type="Animation" id="Animation_6bmbm"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.0472, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q6wdd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q6wdd"]
+_data = {
+&"RESET": SubResource("Animation_q6wdd"),
+&"open": SubResource("Animation_6bmbm")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t0j7g"]
+size = Vector3(2, 2.4, 3)
+
+[node name="Cryopod" type="StaticBody3D"]
+script = ExtResource("1_t0j7g")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Base" type="Node3D" parent="Pivot"]
+
+[node name="Body" type="MeshInstance3D" parent="Pivot/Base"]
+mesh = ExtResource("1_6bmbm")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_q6wdd")
+
+[node name="Note" type="MeshInstance3D" parent="Pivot/Base"]
+transform = Transform3D(-0.856773, -0.240002, 0.456442, -0.227014, 0.970258, 0.0840516, -0.463039, -0.0316054, -0.885775, 0.407557, 1.45798, 0.0662078)
+mesh = ExtResource("3_t0j7g")
+surface_material_override/0 = ExtResource("2_q6wdd")
+
+[node name="Door" type="Node3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18018, 0)
+
+[node name="Frame" type="MeshInstance3D" parent="Pivot/Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.116468, 0.201449)
+mesh = ExtResource("4_8e3tg")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_q6wdd")
+
+[node name="Glass" type="MeshInstance3D" parent="Pivot/Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.111675, 0.227241)
+mesh = ExtResource("5_wc77n")
+skeleton = NodePath("../Frame")
+surface_material_override/0 = ExtResource("6_mgbn5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+shape = SubResource("BoxShape3D_6bmbm")
+
+[node name="Back" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0.450385)
+shape = SubResource("BoxShape3D_8e3tg")
+
+[node name="Right" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.2, -0.049)
+shape = SubResource("BoxShape3D_mgbn5")
+
+[node name="Left" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.2, -0.049)
+shape = SubResource("BoxShape3D_mgbn5")
+
+[node name="Floor" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0384094, 0)
+shape = SubResource("BoxShape3D_wc77n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_q6wdd")
+}
+
+[node name="Interactable" parent="." instance=ExtResource("7_q6wdd")]
+
+[node name="InteractableArea" parent="Interactable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+shape = SubResource("BoxShape3D_t0j7g")
+
+[node name="FocusPoint" parent="Interactable" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00544, 0)
+
+[editable path="Interactable"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dt01ry8bc1pne"]
+[gd_scene load_steps=14 format=3 uid="uid://dt01ry8bc1pne"]
 
 [ext_resource type="PackedScene" uid="uid://cfxd6ou7enikr" path="res://startarea/rooms/bathroom.tscn" id="1_ap4rk"]
 [ext_resource type="Script" uid="uid://hvxybe6ew1wi" path="res://startarea/startroom.gd" id="1_v37f2"]
@@ -9,45 +9,65 @@
 [ext_resource type="PackedScene" uid="uid://cq85qra0wartp" path="res://startarea/rooms/tunnel.tscn" id="5_6f4e6"]
 [ext_resource type="JSON" path="res://startarea/actions/fail_ownship.json" id="5_wr6lj"]
 [ext_resource type="PackedScene" uid="uid://c0ov3gvi01qt6" path="res://player/player.tscn" id="6_tuwul"]
+[ext_resource type="PackedScene" uid="uid://bxw43s4qrsdcl" path="res://interactable/toilet/toilet.tscn" id="8_76u0v"]
 [ext_resource type="PackedScene" uid="uid://dbx1afyq7yyqp" path="res://interactable/normal_door/normal_door.tscn" id="9_6f4e6"]
+[ext_resource type="PackedScene" uid="uid://05t1uswscwq" path="res://interactable/seal_door/seal_door.tscn" id="11_epbhn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_epbhn"]
+size = Vector3(3, 2.4, 1)
 
 [node name="Startroom" type="Node3D"]
 script = ExtResource("1_v37f2")
 start_actions = ExtResource("2_wr6lj")
 metadata/_edit_group_ = true
 
+[node name="Player" parent="." instance=ExtResource("6_tuwul")]
+transform = Transform3D(0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, 0.939693, 7.52029, 0, -19.0232)
+
 [node name="Cryoroom" parent="." instance=ExtResource("4_v37f2")]
-transform = Transform3D(-0.973734, 0, -0.227688, 0, 1, 0, 0.227688, 0, -0.973734, 9.20345, 0, -17.7294)
+transform = Transform3D(-0.973734, 0, -0.227688, 0, 1, 0, 0.227688, 0, -0.973734, 8.83921, 0, -17.7939)
 
-[node name="CryoroomCorridorDoor" parent="." instance=ExtResource("9_6f4e6")]
-transform = Transform3D(0.975149, 0, 0.221548, 0, 1, 0, -0.221548, 0, 0.975149, 10.527, 0, -15.3835)
+[node name="CryopodExit" type="Area3D" parent="Cryoroom"]
+transform = Transform3D(-0.973734, 0, 0.227688, 0, 1, 0, -0.227688, 0, -0.973734, 0.84356, 0, -0.123222)
 
-[node name="CorridorFailDoor" parent="." instance=ExtResource("9_6f4e6")]
-transform = Transform3D(0.975149, 0, 0.221548, 0, 1, 0, -0.221548, 0, 0.975149, 6.92522, 0, -14.6006)
-
-[node name="Interactable" parent="CorridorFailDoor" index="3"]
-interaction = ExtResource("5_wr6lj")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cryoroom/CryopodExit"]
+transform = Transform3D(0.974288, 0, 0.225308, 0, 1, 0, -0.225308, 0, 0.974288, 0, 1.2, -0.120012)
+shape = SubResource("BoxShape3D_epbhn")
 
 [node name="Corridor" parent="." instance=ExtResource("3_tuwul")]
-transform = Transform3D(-0.978148, 0, -0.207912, 0, 1, 0, 0.207912, 0, -0.978148, 7.92094, -0.00266933, -13.7356)
+transform = Transform3D(-0.978148, 0, -0.207912, 0, 1, 0, 0.207912, 0, -0.978148, 7.5567, -0.00266933, -13.8002)
 
-[node name="CorridorControlDoor" parent="." instance=ExtResource("9_6f4e6")]
-transform = Transform3D(0.975149, 0, 0.221548, 0, 1, 0, -0.221548, 0, 0.975149, 5.3283, 0, -12.1212)
+[node name="CryoroomDoor" parent="Corridor" instance=ExtResource("9_6f4e6")]
+transform = Transform3D(-0.999902, 0, -0.0139616, 0, 1, 0, 0.0139616, 0, -0.999902, -2.89173, 0.00266933, 1.07006)
+
+[node name="FailDoor" parent="Corridor" instance=ExtResource("9_6f4e6")]
+transform = Transform3D(-0.999902, 0, -0.0139616, 0, 1, 0, 0.0139616, 0, -0.999902, 0.794117, 0.00266933, 1.05312)
+
+[node name="Interactable" parent="Corridor/FailDoor" index="3"]
+interaction = ExtResource("5_wr6lj")
+
+[node name="ControlDoor" parent="Corridor" instance=ExtResource("9_6f4e6")]
+transform = Transform3D(-0.999902, 0, -0.0139616, 0, 1, 0, 0.0139616, 0, -0.999902, 2.87163, 0.00266933, -1.04005)
 
 [node name="Bathroom" parent="." instance=ExtResource("1_ap4rk")]
-transform = Transform3D(0.978148, 0, 0.207912, 0, 1, 0, -0.207912, 0, 0.978148, 7.61554, 1.19209e-07, -11.3508)
+transform = Transform3D(0.978148, 0, 0.207912, 0, 1, 0, -0.207912, 0, 0.978148, 7.2513, 1.19209e-07, -11.4154)
 
-[node name="BathroomControlDoor" parent="." instance=ExtResource("9_6f4e6")]
-transform = Transform3D(-0.221549, 0, 0.975149, 0, 1, 0, -0.975149, 0, -0.221549, 6.55858, 0, -11.1795)
+[node name="Toilet" parent="Bathroom" instance=ExtResource("8_76u0v")]
+transform = Transform3D(0.0723156, 0, -0.997382, 0, 1, 0, 0.997382, 0, 0.0723156, 0.341434, 0.0237245, 0.174564)
+
+[node name="BathroomControlDoor" parent="Bathroom" instance=ExtResource("9_6f4e6")]
+transform = Transform3D(-0.0139625, 0, 0.999902, 0, 1, 0, -0.999902, 0, -0.0139625, -1.06948, -1.19209e-07, -0.0521975)
 
 [node name="Controlroom" parent="." instance=ExtResource("2_dc5nq")]
-transform = Transform3D(-0.207912, 0, 0.978147, 0, 1, 0, -0.978147, 0, -0.207912, 4.95479, 1.19209e-07, -8.81061)
+transform = Transform3D(-0.207912, 0, 0.978147, 0, 1, 0, -0.978147, 0, -0.207912, 4.59055, 1.19209e-07, -8.87516)
+
+[node name="SealDoor" parent="Controlroom" instance=ExtResource("11_epbhn")]
+transform = Transform3D(-0.703247, 0, -0.710948, 0, 1, 0, 0.710948, 0, -0.703247, -2.573, 0.02, -1.585)
 
 [node name="Tunnel" parent="." instance=ExtResource("5_6f4e6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114077, 0, -3.146)
 
-[node name="Player" parent="." instance=ExtResource("6_tuwul")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.98926, 0, -17.6363)
+[connection signal="body_entered" from="Cryoroom/CryopodExit" to="." method="_on_cryopod_exit_body_entered"]
 
-[editable path="CorridorFailDoor"]
-[editable path="CorridorFailDoor/Interactable"]
+[editable path="Corridor/FailDoor"]
+[editable path="Corridor/FailDoor/Interactable"]

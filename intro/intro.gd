@@ -23,12 +23,15 @@ func _ready():
 	if _docking_speed < 0:
 		await _execute_actions(leave_actions.data)
 	elif _docking_speed < _soft_threshold:
+		$Ship/Sounds/Light.play(0.1)
 		await _execute_actions(soft_actions.data)
 		await _execute_actions(end_actions.data)
 	elif _docking_speed < _medium_threshold:
+		$Ship/Sounds/Medium.play(0.1)
 		await _execute_actions(medium_actions.data)
 		await _execute_actions(end_actions.data)
 	else:
+		$Ship/Sounds/Hard.play(0.1)
 		await _execute_actions(hard_actions.data)
 		await _execute_actions(end_actions.data)
 
@@ -91,5 +94,9 @@ func _execute_actions(actions):
 					await get_tree().create_timer(act.args.time).timeout
 			"switch_scene":
 				Global.switch_scene(act.args.path, act.args)
-			"play_sound":
-				pass
+			"music":
+				if act.args.action == "play":
+					$Music.autoplay = true
+					$Music.play()
+				elif act.args.action == "stop":
+					$Music.stop()

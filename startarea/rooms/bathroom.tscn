@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cfxd6ou7enikr"]
+[gd_scene load_steps=14 format=3 uid="uid://cfxd6ou7enikr"]
 
 [ext_resource type="ArrayMesh" uid="uid://b55q6k34lvauk" path="res://startarea/meshes/Ship_Interior_Room_Bathroom.res" id="1_202ce"]
 [ext_resource type="Material" uid="uid://cw2xloxc4hnog" path="res://startarea/materials/bathroom.tres" id="2_oqlc1"]
@@ -8,9 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://vr3ris8oaije" path="res://startarea/meshes/Objects_Bathroom_Cabinet.res" id="6_57fwb"]
 [ext_resource type="ArrayMesh" uid="uid://dd33ry6lqxlw4" path="res://startarea/meshes/Objects_Pipe_Bathroom.res" id="7_xiue6"]
 [ext_resource type="Material" uid="uid://cy276t1ji2l2j" path="res://startarea/materials/pipes.tres" id="8_wqbbc"]
-[ext_resource type="ArrayMesh" uid="uid://bpmma6skbckhr" path="res://startarea/meshes/Objects_Poster_Bathroom1.res" id="9_fyqlq"]
-[ext_resource type="Material" uid="uid://b3wafxwv731ob" path="res://startarea/materials/posters.tres" id="10_hd0gm"]
-[ext_resource type="ArrayMesh" uid="uid://dssswl3j4w0y4" path="res://startarea/meshes/Objects_Poster_Bathroom2.res" id="11_ysw2s"]
+[ext_resource type="PackedScene" uid="uid://chj1rvqew6sky" path="res://interactable/poster/poster.tscn" id="12_6ixil"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hoo3s"]
 size = Vector3(2.4, 0.15, 2.2)
@@ -55,18 +53,6 @@ mesh = ExtResource("6_57fwb")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("4_du6bl")
 
-[node name="Poster1" type="MeshInstance3D" parent="StaticDesign/Layout"]
-transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, 0.412977, 2.17681, 0.93)
-mesh = ExtResource("9_fyqlq")
-skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("10_hd0gm")
-
-[node name="Poster2" type="MeshInstance3D" parent="StaticDesign/Layout"]
-transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -0.488561, 2.44528, 0.93)
-mesh = ExtResource("11_ysw2s")
-skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("10_hd0gm")
-
 [node name="CollisionShape3D_1" type="CollisionShape3D" parent="StaticDesign/Layout"]
 transform = Transform3D(1, -1.34436e-06, 0.000104711, 1.34437e-06, 1, -7.833e-09, -0.000104711, 8.35707e-09, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_hoo3s")
@@ -94,3 +80,9 @@ surface_material_override/0 = ExtResource("2_oqlc1")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticDesign/Sink"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0167618, 1.27476, -0.70381)
 shape = SubResource("BoxShape3D_d4kua")
+
+[node name="Poster_1" parent="StaticDesign" instance=ExtResource("12_6ixil")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.430776, -0.209485, 0.910775)
+
+[node name="Poster_2" parent="StaticDesign" instance=ExtResource("12_6ixil")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.498115, 0.0448192, 0.914144)

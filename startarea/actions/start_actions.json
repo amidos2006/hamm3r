@@ -1,5 +1,19 @@
 [
 	{
+		"action": "controls",
+		"args": {
+			"enable": false
+		}
+	},
+	{
+		"action": "function",
+		"wait": false,
+		"args": {
+			"name": "disable_interaction",
+			"target": "Cryoroom/Cryopod_1"
+		}
+	},
+	{
 		"action": "blur",
 		"wait": false,
 		"args": {
@@ -18,15 +32,293 @@
 		}
 	},
 	{
-		"action": "timer",
+		"action": "show_dialogue",
+		"wait": true,
 		"args": {
-			"time": 1
+			"name": "martin",
+			"mood": "frosty_confused",
+			"text": "Wh-Where... What?!",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Wakey wakey, Captain.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "martin",
+			"mood": "frosty",
+			"text": "Has... Has it been two months already?",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Afraid not, boss. We just reached the new tanker.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "martin",
+			"mood": "frosty_confused",
+			"text": "Then why did you unfreeze me? A-are we in trouble?",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Trouble: I am not sure.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "This is more of a precaution, for which your help is necessary.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "martin",
+			"mood": "frosty",
+			"text": "Mhhh...",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "I will debrief you after we are done with post-awakening diagnostics.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "For now, could you try and look all the way to the left?",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "controls",
+		"args": {
+			"enable": false,
+			"left": true
+		}
+	},
+	{
+		"action": "show_message",
+		"wait": false,
+		"args": {
+			"message": "PRESS [color=#d1ff85][font_size=72]LEFT[/font_size][/color] TO ROTATE",
+			"action": "",
+			"time": 1.0
+		}
+	},
+	{
+		"action": "signal",
+		"wait": true,
+		"args": {
+			"name": "angle_left",
+			"target": "Player"
+		}
+	},
+	{
+		"action": "controls",
+		"args": {
+			"enable": false
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "martin",
+			"mood": "frosty",
+			"text": "Ouch",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Wonderful. Let us try the right-hand side now?",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "controls",
+		"args": {
+			"enable": false,
+			"right": true
+		}
+	},
+	{
+		"action": "show_message",
+		"wait": false,
+		"args": {
+			"message": "PRESS [color=#d1ff85][font_size=72]RIGHT[/font_size][/color] TO ROTATE",
+			"action": "",
+			"time": 1.0
+		}
+	},
+	{
+		"action": "signal",
+		"wait": true,
+		"args": {
+			"name": "angle_right",
+			"target": "Player"
+		}
+	},
+	{
+		"action": "controls",
+		"args": {
+			"enable": false
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Good enough.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Let me open the Cryopod for you.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "function",
+		"wait": true,
+		"args": {
+			"name": "open_door",
+			"target": "Cryoroom/Cryopod_1",
+			"signal": "animation_ended"
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Okay, you can try and step outside of the pod. Please be careful...",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "controls",
+		"args": {
+			"enable": true,
+			"angle": {
+				"min": -100,
+				"max": 90
+			}
+		}
+	},
+	{
+		"action": "show_message",
+		"wait": false,
+		"args": {
+			"message": "PRESS [color=#d1ff85][font_size=72]UP[/font_size][/color] TO MOVE FORWARD",
+			"action": "",
+			"time": 1.0
+		}
+	},
+	{
+		"action": "signal",
+		"wait": true,
+		"args": {
+			"name": "cryopod_exit",
+			"target": "."
 		}
 	},
 	{
 		"action": "controls",
 		"args": {
 			"enable": true
+		}
+	},
+	{
+		"action": "function",
+		"wait": false,
+		"args": {
+			"name": "enable_interaction",
+			"target": "Cryoroom/Cryopod_1"
 		}
 	}
 ]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b1outtjkeukf1"]
+[gd_scene load_steps=37 format=3 uid="uid://b1outtjkeukf1"]
 
 [ext_resource type="Script" uid="uid://u0ydxg0j7t04" path="res://intro/intro.gd" id="1_vyos2"]
 [ext_resource type="JSON" path="res://intro/actions/start_actions.json" id="2_1l24h"]
@@ -16,15 +16,21 @@
 [ext_resource type="Texture2D" uid="uid://cyu6o8m8cwmup" path="res://intro/graphics/truck.png" id="11_2i53d"]
 [ext_resource type="Texture2D" uid="uid://bhyf1sevptwdg" path="res://intro/graphics/truckEngine_03.png" id="12_1l24h"]
 [ext_resource type="Texture2D" uid="uid://c3atu0entwqwe" path="res://intro/graphics/truckEngine_01.png" id="13_ie2y0"]
+[ext_resource type="AudioStream" uid="uid://b42gu2tos628q" path="res://intro/sounds/hamm3r_logo.wav" id="14_35ehl"]
 [ext_resource type="Texture2D" uid="uid://jovthc804xo4" path="res://intro/graphics/truckEngine_02.png" id="14_ao3yw"]
 [ext_resource type="Script" uid="uid://jn62uv7akgg1" path="res://intro/camera_2d.gd" id="14_sg2fo"]
 [ext_resource type="Texture2D" uid="uid://v4sq8bpfrmpg" path="res://intro/graphics/truckEngine_00.png" id="15_dk8sq"]
 [ext_resource type="Script" uid="uid://cciwtru2sn1cl" path="res://intro/title.gd" id="20_m3u68"]
 [ext_resource type="FontFile" uid="uid://b3yalra5jswgu" path="res://intro/font/JosefinSans-Regular.ttf" id="22_6o4ox"]
 [ext_resource type="Texture2D" uid="uid://bo8u5rlvgk6q6" path="res://intro/graphics/particle.png" id="24_7v0dw"]
+[ext_resource type="AudioStream" uid="uid://g6mt8ig37mer" path="res://intro/sounds/spaceship_engine_1.wav" id="25_gs241"]
 [ext_resource type="Texture2D" uid="uid://c6y01embash38" path="res://intro/graphics/idg_logo.png" id="25_hp8fq"]
 [ext_resource type="Texture2D" uid="uid://do52d4smn44hu" path="res://intro/graphics/mdia_logo.png" id="26_7v0dw"]
+[ext_resource type="AudioStream" uid="uid://b7luxbwp0w8wu" path="res://intro/sounds/clunk_light.wav" id="26_hp8fq"]
+[ext_resource type="AudioStream" uid="uid://di066ysqv0rgo" path="res://intro/sounds/clunk_medium.wav" id="27_7v0dw"]
 [ext_resource type="Texture2D" uid="uid://bo0830o6er7ty" path="res://intro/graphics/godot_logo.png" id="27_35ehl"]
+[ext_resource type="AudioStream" uid="uid://cfrwrgchveoor" path="res://intro/sounds/clunk_hard.wav" id="28_7v0dw"]
+[ext_resource type="AudioStream" uid="uid://1krnre7hxqij" path="res://intro/sounds/space_soundscape.wav" id="31_74s3g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie2y0"]
 size = Vector2(123, 128)
@@ -228,6 +234,9 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("27_35ehl")
 
+[node name="AppearSound" type="AudioStreamPlayer" parent="Title"]
+stream = ExtResource("14_35ehl")
+
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1000
 position = Vector2(964, 796)
@@ -256,6 +265,8 @@ shape = SubResource("RectangleShape2D_ie2y0")
 
 [node name="Center" type="Marker2D" parent="Station"]
 position = Vector2(237, -3)
+
+[node name="AudioListener2D" type="AudioListener2D" parent="Station"]
 
 [node name="Ship" type="RigidBody2D" parent="."]
 position = Vector2(104, 528)
@@ -321,11 +332,28 @@ shape = SubResource("RectangleShape2D_1l24h")
 position = Vector2(1.5, -3.49999)
 scale = Vector2(14.55, 6.15)
 
+[node name="Sounds" type="Node2D" parent="Ship"]
+
+[node name="Engine" type="AudioStreamPlayer2D" parent="Ship/Sounds"]
+stream = ExtResource("25_gs241")
+
+[node name="Light" type="AudioStreamPlayer2D" parent="Ship/Sounds"]
+stream = ExtResource("26_hp8fq")
+
+[node name="Medium" type="AudioStreamPlayer2D" parent="Ship/Sounds"]
+stream = ExtResource("27_7v0dw")
+
+[node name="Hard" type="AudioStreamPlayer2D" parent="Ship/Sounds"]
+stream = ExtResource("28_7v0dw")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(888, 1225)
 zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 script = ExtResource("14_sg2fo")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_74s3g")
 
 [connection signal="body_entered" from="Ship" to="Ship" method="_on_body_entered"]
 [connection signal="screen_exited" from="Ship/VisibleNotifier" to="Ship" method="_on_visible_on_screen_notifier_2d_screen_exited"]
