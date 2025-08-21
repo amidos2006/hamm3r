@@ -5,6 +5,9 @@ extends Area3D
 
 
 var _player = null
+var _different_marker = null
+
+
 var disable_interaction = false
 
 
@@ -15,7 +18,10 @@ signal player_exited
 func _process(delta):
 	if _player != null:
 		if _player.is_looking_at(get_parent()) and not disable_interaction:
-			_player.focus_interactable(get_parent(), $FocusPoint.global_position)
+			var marker = $FocusPoint
+			if _different_marker != null:
+				marker = _different_marker
+			_player.focus_interactable(get_parent(), marker.global_position)
 		else:
 			_player.reset_interactable(get_parent())
 
@@ -64,4 +70,12 @@ func interact(player):
 					get_parent().call(act.args.name)
 					if act.wait and act.args.signal.length() > 0:
 						await Signal(get_parent(), act.args.signal)
-				
+			"script":
+				if act.args.name == "change":
+					self.interaction = load(act.args.path)
+			"look":
+				if act.args.enable:
+					_different_marker = get_parent().get_node(act.args.name)
+					player.focus_interactable(null, _different_marker.global_position)
+				else:
+					_different_marker = null

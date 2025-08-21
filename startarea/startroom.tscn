@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dt01ry8bc1pne"]
+[gd_scene load_steps=23 format=3 uid="uid://dt01ry8bc1pne"]
 
 [ext_resource type="PackedScene" uid="uid://cfxd6ou7enikr" path="res://startarea/rooms/bathroom.tscn" id="1_ap4rk"]
 [ext_resource type="Script" uid="uid://hvxybe6ew1wi" path="res://startarea/startroom.gd" id="1_v37f2"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bxw43s4qrsdcl" path="res://interactable/toilet/toilet.tscn" id="8_76u0v"]
 [ext_resource type="PackedScene" uid="uid://dbx1afyq7yyqp" path="res://interactable/normal_door/normal_door.tscn" id="9_6f4e6"]
 [ext_resource type="PackedScene" uid="uid://05t1uswscwq" path="res://interactable/seal_door/seal_door.tscn" id="11_epbhn"]
+[ext_resource type="JSON" path="res://startarea/actions/before_gun_seal_door.json" id="14_6hsne"]
 [ext_resource type="JSON" path="res://startarea/actions/control_room.json" id="14_36ptl"]
 [ext_resource type="Material" uid="uid://dvfebhhri2iw8" path="res://startarea/materials/emissive.tres" id="15_vv6ew"]
 [ext_resource type="Script" uid="uid://hae3qadaxqck" path="res://startarea/door_light.gd" id="16_pn0un"]
@@ -86,6 +87,15 @@ transform = Transform3D(-0.207912, 0, 0.978147, 0, 1, 0, -0.978147, 0, -0.207912
 [node name="SealDoor" parent="Controlroom" instance=ExtResource("11_epbhn")]
 transform = Transform3D(-0.703247, 0, -0.710948, 0, 1, 0, 0.710948, 0, -0.703247, -2.573, 0.02, -1.585)
 
+[node name="Interactable" parent="Controlroom/SealDoor" index="3"]
+interaction = ExtResource("14_6hsne")
+
+[node name="Computer" type="Marker3D" parent="Controlroom/SealDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.67637, 1.70021, -4.1708)
+
+[node name="Cabinet" type="Marker3D" parent="Controlroom/SealDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1997, 1.54833, -3.10899)
+
 [node name="EventArea" parent="Controlroom" instance=ExtResource("5_hjhpf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8539, 0, 0.626216)
 event = ExtResource("14_36ptl")
@@ -116,4 +126,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114077, 0, -3.146)
 [editable path="Cryoroom/EventArea"]
 [editable path="Corridor/FailDoor"]
 [editable path="Corridor/FailDoor/Interactable"]
+[editable path="Controlroom/SealDoor"]
+[editable path="Controlroom/SealDoor/Interactable"]
 [editable path="Controlroom/EventArea"]

@@ -142,7 +142,7 @@
 	{
 		"action": "timer",
 		"args": {
-			"time": 1.5
+			"time": 1.0
 		}
 	},
 	{
