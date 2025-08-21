@@ -1,5 +1,11 @@
 [
 	{
+		"action": "interaction",
+		"args": {
+			"enable": false
+		}
+	},
+	{
 		"action": "function",
 		"wait": false,
 		"args": {

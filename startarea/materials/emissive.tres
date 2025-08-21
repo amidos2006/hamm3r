@@ -5,6 +5,6 @@ disable_ambient_light = true
 disable_fog = true
 albedo_color = Color(0, 0, 0, 1)
 emission_enabled = true
-emission = Color(0.467915, 0.87, 0.3567, 1)
+emission = Color(0.87, 0.1653, 0.1653, 1)
 emission_energy_multiplier = 4.94
 disable_receive_shadows = true

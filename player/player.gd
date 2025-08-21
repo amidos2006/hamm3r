@@ -84,7 +84,7 @@ func _physics_process(delta):
 func focus_interactable(interactable, focus_point):
 	_interactable_object = interactable
 	_interactable_focus = _get_rotation(focus_point)
-	if not interactable.get_node("Interactable").disable_interaction:
+	if _interactable_object and not _interactable_object.get_node("Interactable").disable_interaction:
 		UiMessage.show_message("PRESS [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO INTERACT", "interact", 0)
 	
 

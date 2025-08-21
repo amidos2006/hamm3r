@@ -10,7 +10,7 @@
 		"wait": true,
 		"args": {
 			"name": "martin",
-			"mood": "frosty",
+			"mood": "normal",
 			"text": "#fridge#",
 			"action": "interact",
 			"direction": "left",

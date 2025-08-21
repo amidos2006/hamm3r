@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dt01ry8bc1pne"]
+[gd_scene load_steps=22 format=3 uid="uid://dt01ry8bc1pne"]
 
 [ext_resource type="PackedScene" uid="uid://cfxd6ou7enikr" path="res://startarea/rooms/bathroom.tscn" id="1_ap4rk"]
 [ext_resource type="Script" uid="uid://hvxybe6ew1wi" path="res://startarea/startroom.gd" id="1_v37f2"]
@@ -7,14 +7,28 @@
 [ext_resource type="PackedScene" uid="uid://bcp6carpfrt3v" path="res://startarea/rooms/corridor.tscn" id="3_tuwul"]
 [ext_resource type="PackedScene" uid="uid://br0lr08faf64u" path="res://startarea/rooms/cryoroom.tscn" id="4_v37f2"]
 [ext_resource type="PackedScene" uid="uid://cq85qra0wartp" path="res://startarea/rooms/tunnel.tscn" id="5_6f4e6"]
+[ext_resource type="PackedScene" uid="uid://bni0qdjwbjdm7" path="res://interactable/event_area.tscn" id="5_hjhpf"]
 [ext_resource type="JSON" path="res://startarea/actions/fail_ownship.json" id="5_wr6lj"]
 [ext_resource type="PackedScene" uid="uid://c0ov3gvi01qt6" path="res://player/player.tscn" id="6_tuwul"]
+[ext_resource type="JSON" path="res://startarea/actions/cryoroom_door.json" id="7_hjhpf"]
 [ext_resource type="PackedScene" uid="uid://bxw43s4qrsdcl" path="res://interactable/toilet/toilet.tscn" id="8_76u0v"]
 [ext_resource type="PackedScene" uid="uid://dbx1afyq7yyqp" path="res://interactable/normal_door/normal_door.tscn" id="9_6f4e6"]
 [ext_resource type="PackedScene" uid="uid://05t1uswscwq" path="res://interactable/seal_door/seal_door.tscn" id="11_epbhn"]
+[ext_resource type="JSON" path="res://startarea/actions/control_room.json" id="14_36ptl"]
+[ext_resource type="Material" uid="uid://dvfebhhri2iw8" path="res://startarea/materials/emissive.tres" id="15_vv6ew"]
+[ext_resource type="Script" uid="uid://hae3qadaxqck" path="res://startarea/door_light.gd" id="16_pn0un"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_epbhn"]
 size = Vector3(3, 2.4, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hjhpf"]
+size = Vector3(1.8362, 2.55908, 0.719727)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fsbqm"]
+size = Vector3(0.573792, 2.95172, 4.90755)
+
+[sub_resource type="QuadMesh" id="QuadMesh_36ptl"]
+size = Vector2(0.5, 0.1)
 
 [node name="Startroom" type="Node3D"]
 script = ExtResource("1_v37f2")
@@ -33,6 +47,14 @@ transform = Transform3D(-0.973734, 0, 0.227688, 0, 1, 0, -0.227688, 0, -0.973734
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cryoroom/CryopodExit"]
 transform = Transform3D(0.974288, 0, 0.225308, 0, 1, 0, -0.225308, 0, 0.974288, 0, 1.2, -0.120012)
 shape = SubResource("BoxShape3D_epbhn")
+
+[node name="EventArea" parent="Cryoroom" instance=ExtResource("5_hjhpf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.689701, 0, -1.67549)
+event = ExtResource("7_hjhpf")
+
+[node name="CollisionShape3D" parent="Cryoroom/EventArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.293119, 0.779541, -0.0528145)
+shape = SubResource("BoxShape3D_hjhpf")
 
 [node name="Corridor" parent="." instance=ExtResource("3_tuwul")]
 transform = Transform3D(-0.978148, 0, -0.207912, 0, 1, 0, 0.207912, 0, -0.978148, 7.5567, -0.00266933, -13.8002)
@@ -64,10 +86,34 @@ transform = Transform3D(-0.207912, 0, 0.978147, 0, 1, 0, -0.978147, 0, -0.207912
 [node name="SealDoor" parent="Controlroom" instance=ExtResource("11_epbhn")]
 transform = Transform3D(-0.703247, 0, -0.710948, 0, 1, 0, 0.710948, 0, -0.703247, -2.573, 0.02, -1.585)
 
+[node name="EventArea" parent="Controlroom" instance=ExtResource("5_hjhpf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8539, 0, 0.626216)
+event = ExtResource("14_36ptl")
+singleton = false
+
+[node name="CollisionShape3D" parent="Controlroom/EventArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213095, 0.975861, -0.940556)
+shape = SubResource("BoxShape3D_fsbqm")
+
+[node name="Computer" type="Marker3D" parent="Controlroom/EventArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.244884, 1.57483, -1.15208)
+
+[node name="Door" type="Marker3D" parent="Controlroom/EventArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.80162, 1.61035, -1.63262)
+
+[node name="DoorLight" type="MeshInstance3D" parent="Controlroom/EventArea"]
+transform = Transform3D(0.615208, 0.126491, 0.77815, 0.0171873, 0.984658, -0.173648, -0.788177, 0.120204, 0.603595, -4.17519, 2.34495, -1.9888)
+gi_mode = 0
+mesh = SubResource("QuadMesh_36ptl")
+surface_material_override/0 = ExtResource("15_vv6ew")
+script = ExtResource("16_pn0un")
+
 [node name="Tunnel" parent="." instance=ExtResource("5_6f4e6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114077, 0, -3.146)
 
 [connection signal="body_entered" from="Cryoroom/CryopodExit" to="." method="_on_cryopod_exit_body_entered"]
 
+[editable path="Cryoroom/EventArea"]
 [editable path="Corridor/FailDoor"]
 [editable path="Corridor/FailDoor/Interactable"]
+[editable path="Controlroom/EventArea"]

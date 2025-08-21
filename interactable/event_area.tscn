@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bni0qdjwbjdm7"]
+
+[ext_resource type="Script" uid="uid://djqthkln1pw3r" path="res://interactable/event_area.gd" id="1_8ipdy"]
+
+[node name="EventArea" type="Area3D"]
+script = ExtResource("1_8ipdy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
