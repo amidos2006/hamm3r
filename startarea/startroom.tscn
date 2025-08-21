@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dt01ry8bc1pne"]
+[gd_scene load_steps=22 format=3 uid="uid://dt01ry8bc1pne"]
 
 [ext_resource type="PackedScene" uid="uid://cfxd6ou7enikr" path="res://startarea/rooms/bathroom.tscn" id="1_ap4rk"]
 [ext_resource type="Script" uid="uid://hvxybe6ew1wi" path="res://startarea/startroom.gd" id="1_v37f2"]
@@ -21,9 +21,6 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_epbhn"]
 size = Vector3(3, 2.4, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_hjhpf"]
-size = Vector3(1.8362, 2.55908, 0.719727)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fsbqm"]
 size = Vector3(0.573792, 2.95172, 4.90755)
@@ -49,19 +46,14 @@ transform = Transform3D(-0.973734, 0, 0.227688, 0, 1, 0, -0.227688, 0, -0.973734
 transform = Transform3D(0.974288, 0, 0.225308, 0, 1, 0, -0.225308, 0, 0.974288, 0, 1.2, -0.120012)
 shape = SubResource("BoxShape3D_epbhn")
 
-[node name="EventArea" parent="Cryoroom" instance=ExtResource("5_hjhpf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.689701, 0, -1.67549)
-event = ExtResource("7_hjhpf")
-
-[node name="CollisionShape3D" parent="Cryoroom/EventArea" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.293119, 0.779541, -0.0528145)
-shape = SubResource("BoxShape3D_hjhpf")
-
 [node name="Corridor" parent="." instance=ExtResource("3_tuwul")]
 transform = Transform3D(-0.978148, 0, -0.207912, 0, 1, 0, 0.207912, 0, -0.978148, 7.5567, -0.00266933, -13.8002)
 
 [node name="CryoroomDoor" parent="Corridor" instance=ExtResource("9_6f4e6")]
 transform = Transform3D(-0.999902, 0, -0.0139616, 0, 1, 0, 0.0139616, 0, -0.999902, -2.89173, 0.00266933, 1.07006)
+
+[node name="Interactable" parent="Corridor/CryoroomDoor" index="3"]
+interaction = ExtResource("7_hjhpf")
 
 [node name="FailDoor" parent="Corridor" instance=ExtResource("9_6f4e6")]
 transform = Transform3D(-0.999902, 0, -0.0139616, 0, 1, 0, 0.0139616, 0, -0.999902, 0.794117, 0.00266933, 1.05312)
@@ -123,7 +115,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114077, 0, -3.146)
 
 [connection signal="body_entered" from="Cryoroom/CryopodExit" to="." method="_on_cryopod_exit_body_entered"]
 
-[editable path="Cryoroom/EventArea"]
+[editable path="Corridor/CryoroomDoor"]
+[editable path="Corridor/CryoroomDoor/Interactable"]
 [editable path="Corridor/FailDoor"]
 [editable path="Corridor/FailDoor/Interactable"]
 [editable path="Controlroom/SealDoor"]
