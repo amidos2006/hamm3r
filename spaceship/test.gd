@@ -1,6 +1,6 @@
 extends Node3D
 
-var _tile_scene = preload("res://tiles/scenes/tile.tscn")
+var _tile_scene = preload("res://spaceship/tile.tscn")
 
 func _ready():
 	var graphs = []

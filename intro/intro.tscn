@@ -21,7 +21,7 @@
 [ext_resource type="Script" uid="uid://jn62uv7akgg1" path="res://intro/camera_2d.gd" id="14_sg2fo"]
 [ext_resource type="Texture2D" uid="uid://v4sq8bpfrmpg" path="res://intro/graphics/truckEngine_00.png" id="15_dk8sq"]
 [ext_resource type="Script" uid="uid://cciwtru2sn1cl" path="res://intro/title.gd" id="20_m3u68"]
-[ext_resource type="FontFile" uid="uid://b3yalra5jswgu" path="res://intro/font/JosefinSans-Regular.ttf" id="22_6o4ox"]
+[ext_resource type="FontFile" uid="uid://b3yalra5jswgu" path="res://global/ui_message/font/JosefinSans-Regular.ttf" id="22_6o4ox"]
 [ext_resource type="Texture2D" uid="uid://bo8u5rlvgk6q6" path="res://intro/graphics/particle.png" id="24_7v0dw"]
 [ext_resource type="AudioStream" uid="uid://g6mt8ig37mer" path="res://intro/sounds/spaceship_engine_1.wav" id="25_gs241"]
 [ext_resource type="Texture2D" uid="uid://c6y01embash38" path="res://intro/graphics/idg_logo.png" id="25_hp8fq"]
