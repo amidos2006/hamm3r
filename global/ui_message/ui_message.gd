@@ -13,7 +13,7 @@ func _ready():
 
 
 func _process(_delta):
-	if _active and Input.is_action_just_pressed(_action_name):
+	if _active and _action_name.length() > 0 and Input.is_action_just_pressed(_action_name):
 		hide_message()
 		advance_message.emit()
 

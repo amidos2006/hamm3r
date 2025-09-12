@@ -285,8 +285,8 @@
 		"args": {
 			"enable": true,
 			"angle": {
-				"min": -100,
-				"max": 90
+				"min": 90,
+				"max": 270
 			}
 		}
 	},

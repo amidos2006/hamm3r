@@ -164,7 +164,7 @@
 			"ui_message": "",
 			"ui_action": "",
 			"time": 3,
-			"return": "res://startarea/startroom.tscn",
+			"return": "res://startarea/startarea.tscn",
 			"args": {
 				
 			}

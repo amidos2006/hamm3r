@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bo6xmnsy3pi2o"]
+[gd_scene load_steps=18 format=3 uid="uid://bo6xmnsy3pi2o"]
 
 [ext_resource type="ArrayMesh" uid="uid://bo3b3emcn0e3x" path="res://interactable/cryopod/meshes/pod.res" id="1_6bmbm"]
 [ext_resource type="Script" uid="uid://cuun17rnovr7k" path="res://interactable/cryopod/cryopod.gd" id="1_t0j7g"]
@@ -8,6 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dg4b3d7g5yobw" path="res://interactable/cryopod/meshes/glass.res" id="5_wc77n"]
 [ext_resource type="Material" uid="uid://c5upfk3h14hp2" path="res://interactable/cryopod/materials/glass.tres" id="6_mgbn5"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="7_q6wdd"]
+[ext_resource type="JSON" path="res://interactable/cryopod/cryopod.json" id="9_8e3tg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6bmbm"]
 size = Vector3(1.5, 2.4, 1.5)
@@ -119,6 +120,7 @@ libraries = {
 }
 
 [node name="Interactable" parent="." instance=ExtResource("7_q6wdd")]
+interaction = ExtResource("9_8e3tg")
 
 [node name="InteractableArea" parent="Interactable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)

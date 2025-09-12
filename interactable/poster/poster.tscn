@@ -23,26 +23,31 @@ script = ExtResource("1_ywquu")
 
 [node name="Poster_1" type="MeshInstance3D" parent="Pivot"]
 transform = Transform3D(4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, 0, -3.82137e-15, 8.74228e-08, -1, 0, 2.4, 0)
+cast_shadow = 0
 mesh = ExtResource("1_y5tby")
 surface_material_override/0 = ExtResource("3_v2f2y")
 
 [node name="Poster_2" type="MeshInstance3D" parent="Pivot"]
 transform = Transform3D(4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, 0, -3.82137e-15, 8.74228e-08, -1, 0, 2.4, 0)
+cast_shadow = 0
 mesh = ExtResource("2_ywquu")
 surface_material_override/0 = ExtResource("3_v2f2y")
 
 [node name="Poster_3" type="MeshInstance3D" parent="Pivot"]
 transform = Transform3D(4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, 0, -3.82137e-15, 8.74228e-08, -1, 0, 2.4, 0)
+cast_shadow = 0
 mesh = ExtResource("3_p3482")
 surface_material_override/0 = ExtResource("3_v2f2y")
 
 [node name="Poster_4" type="MeshInstance3D" parent="Pivot"]
 transform = Transform3D(4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, 0, -3.82137e-15, 8.74228e-08, -1, 0, 2.4, 0)
+cast_shadow = 0
 mesh = ExtResource("4_6323w")
 surface_material_override/0 = ExtResource("3_v2f2y")
 
 [node name="Poster_5" type="MeshInstance3D" parent="Pivot"]
 transform = Transform3D(4.37114e-08, -1, -8.74228e-08, -1, -4.37114e-08, 0, -3.82137e-15, 8.74228e-08, -1, 0, 2.4, 0)
+cast_shadow = 0
 mesh = ExtResource("5_v2f2y")
 surface_material_override/0 = ExtResource("3_v2f2y")
 

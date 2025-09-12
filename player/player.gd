@@ -60,11 +60,15 @@ func _physics_process(delta):
 	
 	if direction != 0:
 		rotate_y(direction * rotation_speed * PI / 360)
+		var temp_angle = rotation_degrees.y
+		if temp_angle < 0:
+			temp_angle += 360
 		if restricted_angle != null:
-			rotation_degrees.y = clamp(rotation_degrees.y, restricted_angle.x, restricted_angle.y)
-		if rotation_degrees.y > 100:
+			temp_angle = clamp(temp_angle, restricted_angle.x, restricted_angle.y)
+			rotation_degrees.y = temp_angle
+		if temp_angle > 270:
 			angle_left.emit()
-		if rotation_degrees.y < -90:
+		if temp_angle < 90:
 			angle_right.emit()
 	
 	var forward = Vector3.FORWARD.rotated(Vector3.UP, rotation.y)
