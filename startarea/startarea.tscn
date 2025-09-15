@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=4 uid="uid://y1xw7mo8ak7r"]
+[gd_scene load_steps=116 format=4 uid="uid://y1xw7mo8ak7r"]
 
 [ext_resource type="Script" uid="uid://hvxybe6ew1wi" path="res://startarea/startarea.gd" id="1_3scv4"]
 [ext_resource type="Texture2D" uid="uid://c528nknwv5wa6" path="res://startarea/meshes/Ship_Interior_Bathroom.png" id="1_4bl57"]
@@ -21,6 +21,7 @@
 [ext_resource type="Material" uid="uid://cw2xloxc4hnog" path="res://startarea/materials/bathroom.tres" id="9_nxhd3"]
 [ext_resource type="PackedScene" uid="uid://bxw43s4qrsdcl" path="res://interactable/toilet/toilet.tscn" id="13_2pnu0"]
 [ext_resource type="ArrayMesh" uid="uid://my0djcjfmdbc" path="res://startarea/meshes/Objects_Pipe_ControlRoom.res" id="16_k17ha"]
+[ext_resource type="Material" uid="uid://deirstgwry0wa" path="res://startarea/materials/controlroom.tres" id="16_qgwtf"]
 [ext_resource type="ArrayMesh" uid="uid://c5dukyu2t5egk" path="res://startarea/meshes/Objects_Shelves.res" id="17_nxhd3"]
 [ext_resource type="PackedScene" uid="uid://g0k0ar4ug5py" path="res://interactable/fridge/fridge.tscn" id="18_3qgax"]
 [ext_resource type="PackedScene" uid="uid://dbx1afyq7yyqp" path="res://interactable/normal_door/normal_door.tscn" id="18_lxhx7"]
@@ -42,6 +43,10 @@
 [ext_resource type="JSON" path="res://startarea/actions/control_room.json" id="30_qgwtf"]
 [ext_resource type="Material" uid="uid://dvfebhhri2iw8" path="res://startarea/materials/emissive.tres" id="31_wwn5p"]
 [ext_resource type="Script" uid="uid://hae3qadaxqck" path="res://startarea/door_light.gd" id="32_106fm"]
+[ext_resource type="Material" uid="uid://i7mk0rtlvfyp" path="res://startarea/materials/corridor.tres" id="35_wwn5p"]
+[ext_resource type="Material" uid="uid://bqhl0lfcp1lg4" path="res://startarea/materials/tunnel.tres" id="41_106fm"]
+[ext_resource type="Material" uid="uid://ckvqti1auw8th" path="res://startarea/materials/cryoroom.tres" id="43_nkhtx"]
+[ext_resource type="Material" uid="uid://d0csqdacnxglg" path="res://startarea/materials/objects.tres" id="45_chb6r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_34ej3"]
 resource_name = "Bathroom"
@@ -520,7 +525,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.6841
 [node name="Bathroom" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.21003, 1.3, 8.75019)
 mesh = SubResource("ArrayMesh_x7bo5")
-skeleton = NodePath("")
+surface_material_override/0 = ExtResource("9_nxhd3")
 
 [node name="Objects" type="Node3D" parent="Bathroom"]
 
@@ -580,10 +585,10 @@ transform = Transform3D(0, 1.78814e-07, -1, -1, -1.19209e-07, -5.96046e-08, -5.9
 shape = SubResource("ConvexPolygonShape3D_5ehgq")
 
 [node name="Poster_1" parent="Bathroom" instance=ExtResource("2_pen6l")]
-transform = Transform3D(0.0638181, 0, 0.997962, 0, 1, 0, -0.997962, 0, 0.0638181, -0.450108, -1.34213, 0.889851)
+transform = Transform3D(0.0638181, 0, 0.997962, 0, 1, 0, -0.997962, 0, 0.0638181, -0.450108, -1.34213, 0.897133)
 
 [node name="Poster_2" parent="Bathroom" instance=ExtResource("2_pen6l")]
-transform = Transform3D(0.0638181, 0, 0.997962, 0, 1, 0, -0.997962, 0, 0.0638181, 0.521687, -1.70725, 0.889851)
+transform = Transform3D(0.0638181, 0, 0.997962, 0, 1, 0, -0.997962, 0, 0.0638181, 0.521687, -1.70725, 0.897133)
 
 [node name="Toilet" parent="Bathroom" instance=ExtResource("13_2pnu0")]
 transform = Transform3D(0.0723156, 0, -0.997382, 0, 1, 0, 0.997382, 0, 0.0723156, 0.400393, -1.27803, 0.174564)
@@ -594,7 +599,7 @@ transform = Transform3D(-0.0139625, 0, 0.999902, 0, 1, 0, -0.999902, 0, -0.01396
 [node name="Control" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.80451, 0, 7.56975)
 mesh = SubResource("ArrayMesh_ydk3d")
-skeleton = NodePath("")
+surface_material_override/0 = ExtResource("16_qgwtf")
 
 [node name="Objects" type="Node3D" parent="Control"]
 
@@ -616,6 +621,7 @@ surface_material_override/0 = ExtResource("4_m1vxx")
 [node name="Window" type="MeshInstance3D" parent="Control/Objects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365547, 1.57354, -1.95227)
 mesh = SubResource("ArrayMesh_je17y")
+surface_material_override/0 = ExtResource("45_chb6r")
 
 [node name="Control_Window_Glass" type="MeshInstance3D" parent="Control/Objects/Window"]
 mesh = SubResource("ArrayMesh_qcive")
@@ -741,12 +747,12 @@ surface_material_override/0 = ExtResource("31_wwn5p")
 script = ExtResource("32_106fm")
 
 [node name="Poster" parent="Control" instance=ExtResource("2_pen6l")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.780459, -0.166232, 1.96636)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.780459, -0.166232, 2.09557)
 
 [node name="Corridor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.00451, 0, 10.8697)
 mesh = SubResource("ArrayMesh_t3rlv")
-skeleton = NodePath("")
+surface_material_override/0 = ExtResource("35_wwn5p")
 
 [node name="Objects" type="Node3D" parent="Corridor"]
 
@@ -754,6 +760,7 @@ skeleton = NodePath("")
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -3.49444, 1.57354, -0.475299)
 mesh = SubResource("ArrayMesh_mat7b")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("45_chb6r")
 
 [node name="Corridor_Window_Glass" type="MeshInstance3D" parent="Corridor/Objects/Window"]
 mesh = SubResource("ArrayMesh_ibfg8")
@@ -810,10 +817,13 @@ interaction = ExtResource("20_k17ha")
 [node name="ControlDoor" parent="Corridor" instance=ExtResource("18_lxhx7")]
 transform = Transform3D(-0.999902, 0, -0.0139616, 0, 1, 0, 0.0139616, 0, -0.999902, 2.99261, -0.114634, -1.10111)
 
+[node name="SealDoor" parent="Corridor" instance=ExtResource("27_doki2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97942, 0.0418736, -10.6287)
+
 [node name="Tunnel" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.468877, 0, 0.737001, 0, 1.0234, 0, -0.468877, 0, 0.737001, 0.294396, 1.15801, 4.05963)
 mesh = SubResource("ArrayMesh_uv7fp")
-skeleton = NodePath("")
+surface_material_override/0 = ExtResource("41_106fm")
 
 [node name="Collisions" type="StaticBody3D" parent="Tunnel"]
 transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0.106635, 1.40902, 3.0915)
@@ -844,7 +854,7 @@ shape = SubResource("ConvexPolygonShape3D_024ov")
 [node name="Cryoroom" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80451, 0, 14.5697)
 mesh = SubResource("ArrayMesh_ebjak")
-skeleton = NodePath("")
+surface_material_override/0 = ExtResource("43_nkhtx")
 
 [node name="Objects" type="Node3D" parent="Cryoroom"]
 
@@ -852,6 +862,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 1.72007, -0.24755)
 mesh = ExtResource("17_nxhd3")
 skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("45_chb6r")
 
 [node name="Collisions" type="StaticBody3D" parent="Cryoroom"]
 
@@ -887,10 +898,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88724, 0, 1.65322)
 show_note = false
 
 [node name="Poster_1" parent="Cryoroom" instance=ExtResource("2_pen6l")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.77304, -0.395715, -0.550082)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.80831, -0.395715, -0.550082)
 
 [node name="Poster_2" parent="Cryoroom" instance=ExtResource("2_pen6l")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.77246, -0.395715, 0.393952)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.80773, -0.395715, 0.393952)
 
 [node name="CryopodExit" type="Area3D" parent="Cryoroom"]
 transform = Transform3D(-0.973734, 0, 0.227688, 0, 1, 0, -0.227688, 0, -0.973734, 0.84356, 0, -0.123222)
@@ -962,3 +973,5 @@ omni_range = 68.767
 [editable path="Corridor/CryoroomDoor/Interactable"]
 [editable path="Corridor/FailDoor"]
 [editable path="Corridor/FailDoor/Interactable"]
+[editable path="Corridor/SealDoor"]
+[editable path="Corridor/SealDoor/Interactable"]
