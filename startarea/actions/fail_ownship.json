@@ -26,21 +26,9 @@
 		"args": {
 			"name": "martin",
 			"mood": "angry",
-			"text": "Remind me 3R to fix that door.",
+			"text": "I need to remember to fix this door.",
 			"action": "interact",
 			"direction": "left",
-			"time": 0
-		}
-	},
-	{
-		"action": "show_dialogue",
-		"wait": true,
-		"args": {
-			"name": "3R",
-			"mood": "normal",
-			"text": "Roger that.",
-			"action": "interact",
-			"direction": "right",
 			"time": 0
 		}
 	},

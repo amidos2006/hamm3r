@@ -93,10 +93,7 @@
 		}
 	},
 	{
-		"action": "look",
-		"args": {
-			"enable": false
-		}
+		"action": "rotate"
 	},
 	{
 		"action": "timer",

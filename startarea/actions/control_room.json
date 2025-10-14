@@ -30,33 +30,9 @@
 		"args": {
 			"name": "3R",
 			"mood": "normal",
-			"text": "Look, this might be nothing. Here’s the thing–",
+			"text": "Here’s the thing: my sensors say that this tanker is not completely dead.",
 			"action": "interact",
 			"direction": "right",
-			"time": 0
-		}
-	},
-	{
-		"action": "show_dialogue",
-		"wait": true,
-		"args": {
-			"name": "3R",
-			"mood": "normal",
-			"text": "According to my sensors, the last tanker does not appear to be completely dead.",
-			"action": "interact",
-			"direction": "right",
-			"time": 0
-		}
-	},
-	{
-		"action": "show_dialogue",
-		"wait": true,
-		"args": {
-			"name": "martin",
-			"mood": "questioning",
-			"text": "How could this be?",
-			"action": "interact",
-			"direction": "left",
 			"time": 0
 		}
 	},
@@ -66,7 +42,7 @@
 		"args": {
 			"name": "martin",
 			"mood": "concerned",
-			"text": "I mean, that lemon out there has been gathering cosmic rays and interstellar dust for more than twenty years!",
+			"text": "That lemon out there has been gathering cosmic rays and interstellar dust for more than twenty years!",
 			"action": "interact",
 			"direction": "left",
 			"time": 0
@@ -78,7 +54,7 @@
 		"args": {
 			"name": "martin",
 			"mood": "questioning",
-			"text": "Presence of organics?",
+			"text": "Strange... Do you detect organic lifeforms?",
 			"action": "interact",
 			"direction": "left",
 			"time": 0
@@ -102,18 +78,6 @@
 		"args": {
 			"name": "martin",
 			"mood": "normal",
-			"text": "And for that, this boy needs to personally walk inside that thing.",
-			"action": "interact",
-			"direction": "left",
-			"time": 0
-		}
-	},
-	{
-		"action": "show_dialogue",
-		"wait": true,
-		"args": {
-			"name": "martin",
-			"mood": "normal",
 			"text": "Well, fuck me. Gravity and pressure okay in there?",
 			"action": "interact",
 			"direction": "left",
@@ -126,7 +90,7 @@
 		"args": {
 			"name": "3R",
 			"mood": "normal",
-			"text": "I took the liberty to powered up and ready the tanker for your visit.",
+			"text": "I took the liberty to power up and ready the tanker for your visit.",
 			"action": "interact",
 			"direction": "right",
 			"time": 0
@@ -159,7 +123,7 @@
 		"args": {
 			"name": "3R",
 			"mood": "normal",
-			"text": "All door sensors are green.",
+			"text": "The readings on the other side of the door are all green.",
 			"action": "interact",
 			"direction": "right",
 			"time": 0

@@ -25,6 +25,7 @@ var restricted_angle = null
 
 signal angle_left
 signal angle_right
+signal animation_ended
 
 
 var _interactable_object = null
@@ -92,6 +93,13 @@ func focus_interactable(interactable, focus_point):
 		UiMessage.show_message("PRESS [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO INTERACT", "interact", 0)
 	
 
+func rotate_focus(interactable):
+	rotation.y += $Pivot/Camera3D.rotation.y
+	$Pivot/Camera3D.rotation.y = 0
+	reset_interactable(interactable)
+	_interactable_focus = Vector3.ZERO
+	
+
 func reset_interactable(interactable):
 	if _interactable_object == interactable:
 		_interactable_object = null;
@@ -103,3 +111,13 @@ func is_looking_at(body):
 	if $RayCast3D.is_colliding():
 		return $RayCast3D.get_collider() == body
 	return false
+
+
+func take_gun(gun):
+	await get_tree().create_timer(0.1).timeout
+	animation_ended.emit()
+	
+
+func equip_gun(gun):
+	await get_tree().create_timer(0.1).timeout
+	animation_ended.emit()

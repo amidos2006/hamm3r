@@ -43,7 +43,9 @@ func interact(player):
 	if disable_interaction:
 		return
 	
+	print(interaction.data.size())
 	for act in interaction.data:
+		print(act.action)
 		match(act.action):
 			"controls":
 				player.disable_controls = not act.args.enable
@@ -72,10 +74,16 @@ func interact(player):
 						await Signal(get_parent(), act.args.signal)
 			"script":
 				if act.args.name == "change":
-					self.interaction = load(act.args.path)
+					var object = get_parent()
+					if act.args.has("other"):
+						object = object.get_parent().get_node(act.args.other)
+					object.get_node("Interactable").interaction = load(act.args.path)
 			"look":
 				if act.args.enable:
 					_different_marker = get_parent().get_node(act.args.name)
 					player.focus_interactable(null, _different_marker.global_position)
 				else:
 					_different_marker = null
+			"rotate":
+				player.rotate_focus(get_parent())
+				_different_marker = null

@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=4 uid="uid://y1xw7mo8ak7r"]
+[gd_scene load_steps=117 format=4 uid="uid://y1xw7mo8ak7r"]
 
 [ext_resource type="Script" uid="uid://hvxybe6ew1wi" path="res://startarea/startarea.gd" id="1_3scv4"]
 [ext_resource type="Texture2D" uid="uid://c528nknwv5wa6" path="res://startarea/meshes/Ship_Interior_Bathroom.png" id="1_4bl57"]
@@ -43,6 +43,7 @@
 [ext_resource type="JSON" path="res://startarea/actions/control_room.json" id="30_qgwtf"]
 [ext_resource type="Material" uid="uid://dvfebhhri2iw8" path="res://startarea/materials/emissive.tres" id="31_wwn5p"]
 [ext_resource type="Script" uid="uid://hae3qadaxqck" path="res://startarea/door_light.gd" id="32_106fm"]
+[ext_resource type="PackedScene" uid="uid://cxnv0w5rb7egn" path="res://interactable/weapon_locker/weapon_locker.tscn" id="35_5sfhf"]
 [ext_resource type="Material" uid="uid://i7mk0rtlvfyp" path="res://startarea/materials/corridor.tres" id="35_wwn5p"]
 [ext_resource type="Material" uid="uid://bqhl0lfcp1lg4" path="res://startarea/materials/tunnel.tres" id="41_106fm"]
 [ext_resource type="Material" uid="uid://ckvqti1auw8th" path="res://startarea/materials/cryoroom.tres" id="43_nkhtx"]
@@ -722,7 +723,7 @@ interaction = ExtResource("28_xinp0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.67637, 1.70021, -4.1708)
 
 [node name="Cabinet" type="Marker3D" parent="Control/SealDoor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1997, 1.54833, -3.10899)
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0.9921, 1.30001, -3.31886)
 
 [node name="EventArea" parent="Control" instance=ExtResource("29_5yten")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8539, 0, 0.626216)
@@ -748,6 +749,13 @@ script = ExtResource("32_106fm")
 
 [node name="Poster" parent="Control" instance=ExtResource("2_pen6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.780459, -0.166232, 2.09557)
+
+[node name="WeaponLocker" parent="Control" instance=ExtResource("35_5sfhf")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.658715, 0, 1.69585)
+contain_gun = true
+
+[node name="Computer" type="Marker3D" parent="Control/WeaponLocker"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.91783, 1.46843, 2.38972)
 
 [node name="Corridor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.00451, 0, 10.8697)
@@ -817,16 +825,13 @@ interaction = ExtResource("20_k17ha")
 [node name="ControlDoor" parent="Corridor" instance=ExtResource("18_lxhx7")]
 transform = Transform3D(-0.999902, 0, -0.0139616, 0, 1, 0, 0.0139616, 0, -0.999902, 2.99261, -0.114634, -1.10111)
 
-[node name="SealDoor" parent="Corridor" instance=ExtResource("27_doki2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97942, 0.0418736, -10.6287)
-
 [node name="Tunnel" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.468877, 0, 0.737001, 0, 1.0234, 0, -0.468877, 0, 0.737001, 0.294396, 1.15801, 4.05963)
 mesh = SubResource("ArrayMesh_uv7fp")
 surface_material_override/0 = ExtResource("41_106fm")
 
 [node name="Collisions" type="StaticBody3D" parent="Tunnel"]
-transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0.106635, 1.40902, 3.0915)
+transform = Transform3D(-1.19209e-07, 0, -1, 0, 1, 0, 1, 0, -1.49012e-07, 0.106635, 1.40902, 3.0915)
 
 [node name="CollisionShape3D_1" type="CollisionShape3D" parent="Tunnel/Collisions"]
 shape = SubResource("ConcavePolygonShape3D_ag7yg")
@@ -850,6 +855,9 @@ shape = SubResource("ConvexPolygonShape3D_uq68i")
 [node name="CollisionShape3D_6" type="CollisionShape3D" parent="Tunnel/Collisions"]
 transform = Transform3D(-1.06581e-14, 1.49012e-07, 1, 1, 7.54979e-08, 0, -7.54979e-08, 1, -1.78814e-07, -1.51751, -0.106599, 0.0140884)
 shape = SubResource("ConvexPolygonShape3D_024ov")
+
+[node name="SealDoor" parent="." instance=ExtResource("27_doki2")]
+transform = Transform3D(1, 0, -6.8236e-08, 0, 1, 0, 6.8236e-08, 0, 1, 0.0250903, 0.0418737, 0.241)
 
 [node name="Cryoroom" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80451, 0, 14.5697)
@@ -888,7 +896,7 @@ shape = SubResource("ConvexPolygonShape3D_7l267")
 shape = SubResource("ConvexPolygonShape3D_ijw6d")
 
 [node name="Fridge" parent="Cryoroom" instance=ExtResource("18_3qgax")]
-transform = Transform3D(0.877833, 0, -0.478968, 0, 1, 0, 0.478968, 0, 0.877833, 0.955302, 0, -1.73807)
+transform = Transform3D(0.846547, 0, -0.532315, 0, 1, 0, 0.532315, 0, 0.846547, 0.869634, 0, -1.73082)
 
 [node name="Cryopod_1" parent="Cryoroom" instance=ExtResource("19_rgvhy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.884003, 0, 1.65322)
@@ -973,5 +981,5 @@ omni_range = 68.767
 [editable path="Corridor/CryoroomDoor/Interactable"]
 [editable path="Corridor/FailDoor"]
 [editable path="Corridor/FailDoor/Interactable"]
-[editable path="Corridor/SealDoor"]
-[editable path="Corridor/SealDoor/Interactable"]
+[editable path="SealDoor"]
+[editable path="SealDoor/Interactable"]

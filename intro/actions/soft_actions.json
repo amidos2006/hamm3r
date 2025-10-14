@@ -36,7 +36,7 @@
 		"args": {
 			"name": "3r",
 			"mood": "",
-			"text": "Luis. You actually have a middle name and that is Luis.",
+			"text": "'Luis.' You actually have a middle name and that is Luis.",
 			"action": "interact",
 			"direction": "left",
 			"time": 0

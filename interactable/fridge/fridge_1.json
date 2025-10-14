@@ -1,0 +1,57 @@
+[
+	{
+		"action": "controls",
+		"args": {
+			"enable": false,
+		}
+	},
+	{
+		"action": "function",
+		"wait": true,
+		"args": {
+			"name": "open_door",
+			"player": false, 
+			"signal": "animation_ended"
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "martin",
+			"mood": "normal",
+			"text": "Eating is out of the question, I am still dizzy with cryo-sleep.",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "script",
+		"args": {
+			"name": "change",
+			"path": "res://interactable/fridge/fridge_2.json"
+		}
+	},
+	{
+		"action": "function",
+		"wait": false,
+		"args": {
+			"name": "close_door",
+			"player": false, 
+			"signal": ""
+		}
+	},
+	{
+		"action": "timer",
+		"args": {
+			"time": 0.25
+		}
+	},
+	{
+		"action": "controls",
+		"args": {
+			"enable": true
+		}
+	}
+]

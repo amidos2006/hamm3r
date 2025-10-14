@@ -97,7 +97,7 @@
 		"args": {
 			"name": "3R",
 			"mood": "normal",
-			"text": "Trouble: I am not sure.",
+			"text": "Trouble: Take this as a precautionary measure, for which I need your help.",
 			"action": "interact",
 			"direction": "right",
 			"time": 0
@@ -109,43 +109,7 @@
 		"args": {
 			"name": "3R",
 			"mood": "normal",
-			"text": "This is more of a precaution, for which your help is necessary.",
-			"action": "interact",
-			"direction": "right",
-			"time": 0
-		}
-	},
-	{
-		"action": "show_dialogue",
-		"wait": true,
-		"args": {
-			"name": "martin",
-			"mood": "frosty",
-			"text": "Mhhh...",
-			"action": "interact",
-			"direction": "left",
-			"time": 0
-		}
-	},
-	{
-		"action": "show_dialogue",
-		"wait": true,
-		"args": {
-			"name": "3R",
-			"mood": "normal",
-			"text": "I will debrief you after we are done with post-awakening diagnostics.",
-			"action": "interact",
-			"direction": "right",
-			"time": 0
-		}
-	},
-	{
-		"action": "show_dialogue",
-		"wait": true,
-		"args": {
-			"name": "3R",
-			"mood": "normal",
-			"text": "For now, could you try and look all the way to the left?",
+			"text": "But first, some post-awakening diagnostics. Look all the way to the left.",
 			"action": "interact",
 			"direction": "right",
 			"time": 0
@@ -187,7 +151,7 @@
 		"args": {
 			"name": "martin",
 			"mood": "frosty",
-			"text": "Ouch",
+			"text": "Ouch!",
 			"action": "interact",
 			"direction": "left",
 			"time": 0
@@ -241,19 +205,7 @@
 		"args": {
 			"name": "3R",
 			"mood": "normal",
-			"text": "Good enough.",
-			"action": "interact",
-			"direction": "right",
-			"time": 0
-		}
-	},
-	{
-		"action": "show_dialogue",
-		"wait": true,
-		"args": {
-			"name": "3R",
-			"mood": "normal",
-			"text": "Let me open the Cryopod for you.",
+			"text": "Good enough. Let me open the Cryopod for you.",
 			"action": "interact",
 			"direction": "right",
 			"time": 0

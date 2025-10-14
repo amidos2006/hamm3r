@@ -4,5 +4,6 @@
 	"fridge": ["Eating is out of the question, I am still dizzy from cryo-sleep.", "Not hungry: being brought back from the dead has a way of upsetting my stomach.", "Hard pass."],
 	"problem": ["so, tell me what's going down in tanker town, buddy.", "buddy, lay it on me. And keep in mind that I have a splitting headache.", "...*BURP*... What do you need my half-frozen ass for, 3R?"],
 	"forgetting": ["Well, 3R, you are right!", "Thank you very much for the warning and constant support throughout this mission.", "I agree that it would be wise to visit the toilet before going in.", "Is it my pants again?"],
-	"gun": ["Captain, as we have already established, there is a chance you are not going to be alone in there.", "Yeah, no! Just so we are clear here: I am not going to let you through that door without a weapon."]
+	"gun": ["Captain, as we have already established, there is a chance you are not going to be alone in there.", "Yeah, no! Just so we are clear here: I am not going to let you through that door without a weapon."],
+	"fixdoor": ["Well, shit on a stick.", "I need to remember to fix this door."]
 }
