@@ -21,7 +21,7 @@ func stop_effect():
 	
 func move_gun(location, time):
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "global_position", Vector3(), time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "global_position", location, time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	await tween.finished
 	animation_ended.emit()
 	

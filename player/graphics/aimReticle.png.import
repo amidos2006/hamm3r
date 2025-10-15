@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl4vo7t4hh06j"
-path="res://.godot/imported/life_full.png-0aedb99a6f6431bf08e9097627a8be46.ctex"
+uid="uid://blh3ylxptck2c"
+path="res://.godot/imported/aimReticle.png-9491f59d276e78275d960d18b8402f9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/graphics/ui/life_full.png"
-dest_files=["res://.godot/imported/life_full.png-0aedb99a6f6431bf08e9097627a8be46.ctex"]
+source_file="res://player/graphics/aimReticle.png"
+dest_files=["res://.godot/imported/aimReticle.png-9491f59d276e78275d960d18b8402f9a.ctex"]
 
 [params]
 

@@ -54,20 +54,20 @@
 	},
 	{
 		"action": "function",
-		"wait": true,
-		"args": {
-			"name": "equip_gun",
-			"player": true,
-			"signal": "animation_ended"
-		}
-	},
-	{
-		"action": "function",
 		"wait": false,
 		"args": {
 			"name": "remove_gun",
 			"player": false,
 			"signal": ""
+		}
+	},
+	{
+		"action": "function",
+		"wait": true,
+		"args": {
+			"name": "equip_gun",
+			"player": true,
+			"signal": "animation_ended"
 		}
 	},
 	{
@@ -95,6 +95,12 @@
 			"name": "change",
 			"other": "SealDoor",
 			"path": "res://interactable/seal_door/seal_door.json"
+		}
+	},
+	{
+		"action": "timer",
+		"args": {
+			"time": 0.25
 		}
 	},
 	{

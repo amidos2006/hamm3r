@@ -5,6 +5,8 @@ extends CharacterBody3D
 @export var backward_ratio = 0.4
 @export var rotation_speed = 5
 @export var gravity = 4
+@export var max_health = 5
+@export var health = 3
 
 
 var disable_controls:
@@ -21,6 +23,7 @@ var allowed_controls = {
 	"interact": true
 }
 var restricted_angle = null
+var gun_equipped = false
 
 
 signal angle_left
@@ -31,6 +34,11 @@ signal animation_ended
 var _interactable_object = null
 var _interactable_focus = Vector3.ZERO
 var _target_velocity = Vector3.ZERO
+
+
+func _ready():
+	$UI.initialize_health(health, max_health)
+	$Pivot/Camera3D/Gun.visible = false
 
 
 func _get_rotation(target_pos):
@@ -79,6 +87,15 @@ func _physics_process(delta):
 	if is_on_floor():
 		_target_velocity.y = 0
 	velocity = _target_velocity
+	if gun_equipped:
+		if abs(movement) + abs(direction) > 0:
+			$AnimationPlayer.play("Walk")
+			var anim_dir = sign(movement)
+			if abs(direction) > 0:
+				anim_dir = sign(direction)
+			$AnimationPlayer.speed_scale = anim_dir
+		else:
+			$AnimationPlayer.play("Idle")
 		
 	move_and_slide()
 	
@@ -113,11 +130,18 @@ func is_looking_at(body):
 	return false
 
 
-func take_gun(gun):
-	await get_tree().create_timer(0.1).timeout
+func take_gun(locker):
+	var gun = locker.get_node("Gun")
+	gun.move_gun(self.global_position + $Pivot.position / 2, 0.5)
+	await gun.animation_ended
 	animation_ended.emit()
 	
 
-func equip_gun(gun):
-	await get_tree().create_timer(0.1).timeout
+func equip_gun(locker):
+	$UI.show_ui(1.5)
+	$AnimationPlayer.play("Equip")
+	$Pivot/Camera3D/Gun.visible = true
+	await $UI.animation_ended
+	$AnimationPlayer.play("Idle")
+	gun_equipped = true
 	animation_ended.emit()

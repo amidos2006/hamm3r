@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6pi78m8t4uhb"
-path="res://.godot/imported/energyBar_bg.png-9ffe8abfed63489846e9f8ff97767698.ctex"
+uid="uid://dso55dfdqmlx"
+path="res://.godot/imported/screen_gunB.png-3f8adf71e6ad2f20355e7285fc21e523.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/graphics/ui/energyBar_bg.png"
-dest_files=["res://.godot/imported/energyBar_bg.png-9ffe8abfed63489846e9f8ff97767698.ctex"]
+source_file="res://spaceship/screens/graphics/screen_gunB.png"
+dest_files=["res://.godot/imported/screen_gunB.png-3f8adf71e6ad2f20355e7285fc21e523.ctex"]
 
 [params]
 

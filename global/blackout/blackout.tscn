@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://obr7t3qupae3"]
+[gd_scene load_steps=3 format=3 uid="uid://obr7t3qupae3"]
 
 [ext_resource type="Script" uid="uid://cqgq2aikhrgry" path="res://global/blackout/blackout.gd" id="1_n8ile"]
+[ext_resource type="Texture2D" uid="uid://da11kpl68ns44" path="res://global/blackout/graphics/freeze.png" id="2_2ib22"]
 
 [node name="Blackout" type="CanvasLayer"]
 layer = 100
@@ -35,3 +36,17 @@ offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 0
 color = Color(0, 0, 0, 0)
+
+[node name="FreezeTexture" type="TextureRect" parent="."]
+modulate = Color(0.71, 0.884, 1, 1)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1000.0
+offset_top = -798.0
+offset_right = 1000.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_2ib22")

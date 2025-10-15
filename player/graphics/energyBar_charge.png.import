@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpngogqvaehpe"
-path="res://.godot/imported/life_empty.png-0f360eae581c5ad15236a662d1782cad.ctex"
+uid="uid://cykfcii4xleis"
+path="res://.godot/imported/energyBar_charge.png-def751136fa9c3a38d8f37ae424b8c06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/graphics/ui/life_empty.png"
-dest_files=["res://.godot/imported/life_empty.png-0f360eae581c5ad15236a662d1782cad.ctex"]
+source_file="res://player/graphics/energyBar_charge.png"
+dest_files=["res://.godot/imported/energyBar_charge.png-def751136fa9c3a38d8f37ae424b8c06.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blh3ylxptck2c"
-path="res://.godot/imported/aimReticle.png-c48cb5dbbb03b90a643e6386f22594bd.ctex"
+uid="uid://c1p6iq0y0k8nf"
+path="res://.godot/imported/screen_gunA.png-ace0567f4b2c783142acb995660133ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/graphics/ui/aimReticle.png"
-dest_files=["res://.godot/imported/aimReticle.png-c48cb5dbbb03b90a643e6386f22594bd.ctex"]
+source_file="res://spaceship/screens/graphics/screen_gunA.png"
+dest_files=["res://.godot/imported/screen_gunA.png-ace0567f4b2c783142acb995660133ce.ctex"]
 
 [params]
 

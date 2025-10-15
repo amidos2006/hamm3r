@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cykfcii4xleis"
-path="res://.godot/imported/energyBar_charge.png-8cff7f92f389cb224d7b677dca903de5.ctex"
+uid="uid://bschu71rmyf2c"
+path="res://.godot/imported/energyBar_handle.png-0d6220b3188859d59dc77220d4aedf00.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/graphics/ui/energyBar_charge.png"
-dest_files=["res://.godot/imported/energyBar_charge.png-8cff7f92f389cb224d7b677dca903de5.ctex"]
+source_file="res://player/graphics/energyBar_handle.png"
+dest_files=["res://.godot/imported/energyBar_handle.png-0d6220b3188859d59dc77220d4aedf00.ctex"]
 
 [params]
 
