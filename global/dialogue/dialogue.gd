@@ -4,6 +4,7 @@ extends CanvasLayer
 @export var tracery_grammar:JSON
 
 var _action_button
+var _timer = null
 
 
 signal _action_pressed
@@ -26,6 +27,9 @@ func _get_picture(character_name, mood):
 
 
 func show_message(character_name, mood, dialogue, direction = "left", time=0, action = "interact"):
+	if _timer != null:
+		_timer.cancel_free()
+		_timer.timeout.emit()
 	var regex = RegEx.new()
 	var tracery = Tracery.Grammar.new(tracery_grammar.data)
 	regex.compile("#\\w+#")
@@ -47,7 +51,9 @@ func show_message(character_name, mood, dialogue, direction = "left", time=0, ac
 	chatbox.show()
 	
 	if time > 0:
-		await get_tree().create_timer(time).timeout
+		_timer = get_tree().create_timer(time)
+		await _timer.timeout
+		_timer = null
 	else:
 		_action_button = action
 		await _action_pressed

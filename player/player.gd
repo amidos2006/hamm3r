@@ -24,6 +24,7 @@ var allowed_controls = {
 }
 var restricted_angle = null
 var gun_equipped = false
+var inside_hamm = true
 
 
 signal angle_left
@@ -64,8 +65,11 @@ func _physics_process(delta):
 	if allowed_controls["interact"] and Input.is_action_just_pressed("interact"):
 		if _interactable_object != null:
 			_interactable_object.get_node("Interactable").interact(self)
-		else:
-			pass
+		elif gun_equipped:
+			if inside_hamm:
+				Dialogue.show_message("martin", "normal", "#no_shooting#", "left", 3, "")
+			else:
+				pass
 	
 	if direction != 0:
 		rotate_y(direction * rotation_speed * PI / 360)
@@ -92,7 +96,7 @@ func _physics_process(delta):
 			$AnimationPlayer.play("Walk")
 			var anim_dir = sign(movement)
 			if abs(direction) > 0:
-				anim_dir = sign(direction)
+				anim_dir = -sign(direction)
 			$AnimationPlayer.speed_scale = anim_dir
 		else:
 			$AnimationPlayer.play("Idle")

@@ -5,5 +5,6 @@
 	"problem": ["so, tell me what's going down in tanker town, buddy.", "buddy, lay it on me. And keep in mind that I have a splitting headache.", "...*BURP*... What do you need my half-frozen ass for, 3R?"],
 	"forgetting": ["Well, 3R, you are right!", "Thank you very much for the warning and constant support throughout this mission.", "I agree that it would be wise to visit the toilet before going in.", "Is it my pants again?"],
 	"gun": ["Captain, as we have already established, there is a chance you are not going to be alone in there.", "Yeah, no! Just so we are clear here: I am not going to let you through that door without a weapon."],
-	"fixdoor": ["Well, shit on a stick.", "I need to remember to fix this door."]
+	"fixdoor": ["Well, shit on a stick.", "I need to remember to fix this door."],
+	"no_shooting": ["Incandescent plasma inside the HAMM? No thank you!", "That's crazy! I might end up shooting a pipe or something...", "Nah, I am not dumb enough to use this gun in here."]
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=4 uid="uid://y1xw7mo8ak7r"]
+[gd_scene load_steps=113 format=4 uid="uid://y1xw7mo8ak7r"]
 
 [ext_resource type="Script" uid="uid://hvxybe6ew1wi" path="res://startarea/startarea.gd" id="1_3scv4"]
 [ext_resource type="Texture2D" uid="uid://c528nknwv5wa6" path="res://startarea/meshes/Ship_Interior_Bathroom.png" id="1_4bl57"]
@@ -30,12 +30,7 @@
 [ext_resource type="ArrayMesh" uid="uid://be76ofxhtjqdv" path="res://startarea/meshes/Objects_Control_Desk.res" id="20_ijw6d"]
 [ext_resource type="JSON" path="res://startarea/actions/fail_ownship.json" id="20_k17ha"]
 [ext_resource type="ArrayMesh" uid="uid://dsksjt7l2iv54" path="res://startarea/meshes/Objects_Pipes_Corridor.res" id="21_3m83t"]
-[ext_resource type="ArrayMesh" uid="uid://d2i3soimnv2mx" path="res://startarea/meshes/Objects_Monitor4.res" id="21_oas1x"]
 [ext_resource type="ArrayMesh" uid="uid://d4jc82i2hg0kj" path="res://startarea/meshes/Objects_Pipe_Ladder.res" id="22_5ehgq"]
-[ext_resource type="Material" uid="uid://4jvmoq1hoe17" path="res://startarea/materials/monitors.tres" id="22_doki2"]
-[ext_resource type="ArrayMesh" uid="uid://b6n1mcpwhixre" path="res://startarea/meshes/Objects_Monitor_Keyboard.res" id="23_xinp0"]
-[ext_resource type="ArrayMesh" uid="uid://dbvrdnndhxd6k" path="res://startarea/meshes/Objects_Monitor_Cables.res" id="24_itakq"]
-[ext_resource type="ArrayMesh" uid="uid://bio7tn55jpa8f" path="res://startarea/meshes/Objects_Monitor_Computer.res" id="25_2clgs"]
 [ext_resource type="ArrayMesh" uid="uid://ilfvyfou286y" path="res://startarea/meshes/Objects_Control_Chair.res" id="26_5yten"]
 [ext_resource type="PackedScene" uid="uid://05t1uswscwq" path="res://interactable/seal_door/seal_door.tscn" id="27_doki2"]
 [ext_resource type="JSON" path="res://startarea/actions/before_gun_seal_door.json" id="28_xinp0"]
@@ -47,6 +42,7 @@
 [ext_resource type="Material" uid="uid://i7mk0rtlvfyp" path="res://startarea/materials/corridor.tres" id="35_wwn5p"]
 [ext_resource type="Material" uid="uid://bqhl0lfcp1lg4" path="res://startarea/materials/tunnel.tres" id="41_106fm"]
 [ext_resource type="Material" uid="uid://ckvqti1auw8th" path="res://startarea/materials/cryoroom.tres" id="43_nkhtx"]
+[ext_resource type="PackedScene" uid="uid://s06kfgaux5dw" path="res://interactable/computer/computer.tscn" id="44_wwn5p"]
 [ext_resource type="Material" uid="uid://d0csqdacnxglg" path="res://startarea/materials/objects.tres" id="45_chb6r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_34ej3"]
@@ -634,26 +630,6 @@ mesh = ExtResource("20_ijw6d")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("4_m1vxx")
 
-[node name="Moniter" type="MeshInstance3D" parent="Control/Objects/Desk"]
-transform = Transform3D(0.233, 0, 0, 0, 0.233, 0, 0, 0, 0.233, 4.23111, 1.20239, -8.50839)
-mesh = ExtResource("21_oas1x")
-surface_material_override/0 = ExtResource("22_doki2")
-
-[node name="Keyboard" type="MeshInstance3D" parent="Control/Objects/Desk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.23839, 0.86349, -8.21192)
-mesh = ExtResource("23_xinp0")
-surface_material_override/0 = ExtResource("22_doki2")
-
-[node name="Cables" type="MeshInstance3D" parent="Control/Objects/Desk"]
-transform = Transform3D(0.766044, 0, -0.642788, 0, 1, 0, 0.642788, 0, 0.766044, 5.62423, 1.61218, -8.61244)
-mesh = ExtResource("24_itakq")
-surface_material_override/0 = ExtResource("22_doki2")
-
-[node name="Computer" type="MeshInstance3D" parent="Control/Objects/Desk"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89832, 2.10663, -8.52876)
-mesh = ExtResource("25_2clgs")
-surface_material_override/0 = ExtResource("22_doki2")
-
 [node name="Chair" type="MeshInstance3D" parent="Control/Objects/Desk"]
 transform = Transform3D(1.217, 0, 0, 0, 1.217, 0, 0, 0, 1.217, 4.20912, 0.963361, -7.81133)
 mesh = ExtResource("26_5yten")
@@ -971,6 +947,9 @@ distance_fade_enabled = true
 distance_fade_begin = 20.0
 distance_fade_shadow = 30.0
 omni_range = 68.767
+
+[node name="Computer" parent="." instance=ExtResource("44_wwn5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.73709, 0.777039, 6.12355)
 
 [connection signal="body_entered" from="Cryoroom/CryopodExit" to="." method="_on_cryopod_exit_body_entered"]
 
