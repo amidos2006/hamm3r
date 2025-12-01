@@ -84,7 +84,7 @@
 		"action": "script",
 		"args": {
 			"name": "change",
-			"path": "res://interactable/weapon_locker/actions/weapon_locker_empty.json"
+			"path": "res://assets/actions/startarea/weapon_locker_empty.json"
 		}
 	},
 	{

@@ -29,7 +29,7 @@
 		"action": "script",
 		"args": {
 			"name": "change",
-			"path": "res://assets/actions/startarea/fridge/fridge_2.json"
+			"path": "res://assets/actions/startarea/fridge_2.json"
 		}
 	},
 	{

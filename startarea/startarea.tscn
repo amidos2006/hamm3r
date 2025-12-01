@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://hvxybe6ew1wi" path="res://startarea/startarea.gd" id="1_3scv4"]
 [ext_resource type="Texture2D" uid="uid://c528nknwv5wa6" path="res://startarea/meshes/Ship_Interior_Bathroom.png" id="1_4bl57"]
 [ext_resource type="PackedScene" uid="uid://c0ov3gvi01qt6" path="res://player/player.tscn" id="1_rgvhy"]
-[ext_resource type="PackedScene" uid="uid://chj1rvqew6sky" path="res://interactable/poster/poster.tscn" id="2_pen6l"]
+[ext_resource type="PackedScene" uid="uid://chj1rvqew6sky" path="res://interactable/poster.tscn" id="2_pen6l"]
 [ext_resource type="Texture2D" uid="uid://caf1mji3nln1d" path="res://startarea/meshes/Ship_Interior_ControlRoom.png" id="2_q75ip"]
 [ext_resource type="JSON" path="res://assets/actions/startarea/start_actions.json" id="2_xq0vx"]
 [ext_resource type="Texture2D" uid="uid://dy3uixc3sxg2a" path="res://startarea/meshes/Ship_Interior_Corridor.png" id="3_pen6l"]
@@ -24,7 +24,7 @@
 [ext_resource type="Material" uid="uid://deirstgwry0wa" path="res://assets/materials/controlroom.tres" id="16_qgwtf"]
 [ext_resource type="ArrayMesh" uid="uid://c5dukyu2t5egk" path="res://startarea/meshes/Objects_Shelves.res" id="17_nxhd3"]
 [ext_resource type="PackedScene" uid="uid://g0k0ar4ug5py" path="res://interactable/fridge/fridge.tscn" id="18_3qgax"]
-[ext_resource type="PackedScene" uid="uid://dbx1afyq7yyqp" path="res://interactable/normal_door/normal_door.tscn" id="18_lxhx7"]
+[ext_resource type="PackedScene" uid="uid://dbx1afyq7yyqp" path="res://interactable/normal_door.tscn" id="18_lxhx7"]
 [ext_resource type="JSON" path="res://assets/actions/startarea/cryoroom_door.json" id="19_2pnu0"]
 [ext_resource type="PackedScene" uid="uid://bo6xmnsy3pi2o" path="res://interactable/cryopod/cryopod.tscn" id="19_rgvhy"]
 [ext_resource type="ArrayMesh" uid="uid://be76ofxhtjqdv" path="res://startarea/meshes/Objects_Control_Desk.res" id="20_ijw6d"]
@@ -35,7 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://05t1uswscwq" path="res://interactable/seal_door/seal_door.tscn" id="27_doki2"]
 [ext_resource type="JSON" path="res://assets/actions/startarea/before_gun_seal_door.json" id="28_xinp0"]
 [ext_resource type="Script" uid="uid://hae3qadaxqck" path="res://startarea/door_light.gd" id="32_106fm"]
-[ext_resource type="PackedScene" uid="uid://cxnv0w5rb7egn" path="res://interactable/weapon_locker/weapon_locker.tscn" id="35_5sfhf"]
+[ext_resource type="PackedScene" uid="uid://cxnv0w5rb7egn" path="res://interactable/weapon_locker.tscn" id="35_5sfhf"]
 [ext_resource type="Material" uid="uid://i7mk0rtlvfyp" path="res://assets/materials/corridor.tres" id="35_wwn5p"]
 [ext_resource type="Material" uid="uid://bqhl0lfcp1lg4" path="res://assets/materials/tunnel.tres" id="41_106fm"]
 [ext_resource type="Material" uid="uid://ckvqti1auw8th" path="res://assets/materials/cryoroom.tres" id="43_nkhtx"]
@@ -570,9 +570,6 @@ shape = SubResource("ConvexPolygonShape3D_5ehgq")
 [node name="Poster_1" parent="Bathroom" instance=ExtResource("2_pen6l")]
 transform = Transform3D(0.0638181, 0, 0.997962, 0, 1, 0, -0.997962, 0, 0.0638181, -0.450108, -1.34213, 0.897133)
 
-[node name="Poster_2" parent="Bathroom" instance=ExtResource("2_pen6l")]
-transform = Transform3D(0.0638181, 0, 0.997962, 0, 1, 0, -0.997962, 0, 0.0638181, 0.521687, -1.70725, 0.897133)
-
 [node name="Toilet" parent="Bathroom" instance=ExtResource("13_2pnu0")]
 transform = Transform3D(0.0723156, 0, -0.997382, 0, 1, 0, 0.997382, 0, 0.0723156, 0.400393, -1.27803, 0.174564)
 
@@ -901,8 +898,10 @@ omni_range = 68.767
 [editable path="Control/SealDoor"]
 [editable path="Control/SealDoor/Interactable"]
 [editable path="Corridor/CryoroomDoor"]
+[editable path="Corridor/CryoroomDoor/Pivot"]
 [editable path="Corridor/CryoroomDoor/Interactable"]
 [editable path="Corridor/FailDoor"]
+[editable path="Corridor/FailDoor/Pivot"]
 [editable path="Corridor/FailDoor/Interactable"]
 [editable path="SealDoor"]
 [editable path="SealDoor/Interactable"]
