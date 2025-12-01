@@ -1,0 +1,22 @@
+[
+	{
+		"action": "controls",
+		"args": {
+			"enable": false
+		}
+	},
+	{
+		"action": "function",
+		"wait": true,
+		"args": {
+			"name": "toggle_door",
+			"signal": "animation_ended",
+		}
+	},
+	{
+		"action": "controls",
+		"args": {
+			"enable": true
+		}
+	}
+]

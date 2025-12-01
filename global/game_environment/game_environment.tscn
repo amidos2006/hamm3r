@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://ccbw6mmhd6oct"]
 
-[ext_resource type="Texture2D" uid="uid://pmuoug7rww12" path="res://global/game_environment/graphics/skybox_4.3_18.png" id="1_4m8j2"]
+[ext_resource type="Texture2D" uid="uid://pmuoug7rww12" path="res://assets/graphics/backgrounds/skybox_4.3_18.png" id="1_t2a01"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_und8v"]
-panorama = ExtResource("1_4m8j2")
+panorama = ExtResource("1_t2a01")
 
 [sub_resource type="Sky" id="Sky_ogx4w"]
 sky_material = SubResource("PanoramaSkyMaterial_und8v")

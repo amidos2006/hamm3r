@@ -64,23 +64,29 @@ func interact(player):
 				if self.disable_interaction:
 					player.reset_interactable(get_parent())
 			"function":
-				if act.args.player:
+				if "target" in act.args and act.args.target == "Player":
 					player.call(act.args.name, get_parent())
-					if act.wait and act.args.signal.length() > 0:
+					if act.wait and "signal" in act.args and act.args.signal.length() > 0:
 						await Signal(player, act.args.signal)
 				else:
-					get_parent().call(act.args.name)
-					if act.wait and act.args.signal.length() > 0:
-						await Signal(get_parent(), act.args.signal)
+					var object = get_parent()
+					if "target" in act.args:
+						object = object.get_parent().get_node(act.args.target)
+					object.call(act.args.name)
+					if act.wait and "signal" in act.args and act.args.signal.length() > 0:
+						await Signal(object, act.args.signal)
 			"script":
 				if act.args.name == "change":
 					var object = get_parent()
-					if act.args.has("other"):
-						object = object.get_parent().get_node(act.args.other)
+					if act.args.has("target"):
+						object = object.get_parent().get_node(act.args.target)
 					object.get_node("Interactable").interaction = load(act.args.path)
 			"look":
 				if act.args.enable:
-					_different_marker = get_parent().get_node(act.args.name)
+					var object = get_parent().get_parent()
+					if "parent" in act.args:
+						object = object.get_node(act.args.parent)
+					_different_marker = object.get_node(act.args.name).get_node("Interactable").get_node("FocusPoint")
 					player.focus_interactable(null, _different_marker.global_position)
 				else:
 					_different_marker = null

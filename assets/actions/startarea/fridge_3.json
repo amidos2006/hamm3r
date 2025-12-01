@@ -1,0 +1,54 @@
+[
+	{
+		"action": "controls",
+		"args": {
+			"enable": false,
+		}
+	},
+	{
+		"action": "function",
+		"wait": true,
+		"args": {
+			"name": "open_door",
+			"signal": "animation_ended"
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "martin",
+			"mood": "normal",
+			"text": "Hard pass.",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "script",
+		"args": {
+			"name": "change",
+			"path": "res://assets/actions/fridge/fridge_1.json"
+		}
+	},
+	{
+		"action": "function",
+		"wait": false,
+		"args": {
+			"name": "close_door"
+		}
+	},
+	{
+		"action": "timer",
+		"args": {
+			"time": 0.25
+		}
+	},
+	{
+		"action": "controls",
+		"args": {
+			"enable": true
+		}
+	}
+]

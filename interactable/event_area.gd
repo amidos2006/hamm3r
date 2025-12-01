@@ -55,7 +55,7 @@ func _apply_event(player):
 					
 			"look":
 				if act.args.enable:
-					player.focus_interactable(null, get_node(act.args.name).global_position)
+					player.focus_interactable(null, get_parent().get_node(act.args.name).global_position)
 				else:
 					player.reset_interactable(null)
 				

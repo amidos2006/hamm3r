@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://blrn5n044biwj"]
 
 [ext_resource type="Script" uid="uid://b8ovk472pd51w" path="res://intermission/intermission.gd" id="1_b0epg"]
-[ext_resource type="FontFile" uid="uid://b3yalra5jswgu" path="res://intro/font/JosefinSans-Regular.ttf" id="4_hi2t4"]
+[ext_resource type="FontFile" uid="uid://b3yalra5jswgu" path="res://assets/fonts/JosefinSans-Regular.ttf" id="4_hi2t4"]
 
 [node name="Intermission" type="CanvasLayer"]
 layer = 110

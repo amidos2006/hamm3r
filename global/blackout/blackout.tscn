@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://obr7t3qupae3"]
 
 [ext_resource type="Script" uid="uid://cqgq2aikhrgry" path="res://global/blackout/blackout.gd" id="1_n8ile"]
-[ext_resource type="Texture2D" uid="uid://da11kpl68ns44" path="res://global/blackout/graphics/freeze.png" id="2_2ib22"]
+[ext_resource type="Texture2D" uid="uid://da11kpl68ns44" path="res://assets/graphics/backgrounds/freeze.png" id="2_2ib22"]
 
 [node name="Blackout" type="CanvasLayer"]
 layer = 100

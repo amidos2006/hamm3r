@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dgjmhkjdasecq" path="res://interactable/weapon_locker/meshes/Gun_AO_Gun.png" id="1_8ss2u"]
 [ext_resource type="Script" uid="uid://dxi8iphfkghwa" path="res://interactable/weapon_locker/gun.gd" id="1_j5pyn"]
-[ext_resource type="Texture2D" uid="uid://c8r25dl7fpgct" path="res://interactable/weapon_locker/textures/shine_particle.png" id="3_vrb44"]
-[ext_resource type="Texture2D" uid="uid://dp0wnlh0dxh0m" path="res://interactable/weapon_locker/textures/orbs.png" id="4_1kbl7"]
+[ext_resource type="Texture2D" uid="uid://c8r25dl7fpgct" path="res://assets/graphics/particles/halo.png" id="3_vrb44"]
+[ext_resource type="Texture2D" uid="uid://dp0wnlh0dxh0m" path="res://assets/graphics/particles/big_circle.png" id="4_1kbl7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17tph"]
 resource_name = "Gun_AO"

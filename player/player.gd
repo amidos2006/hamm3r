@@ -130,6 +130,7 @@ func reset_interactable(interactable):
 
 func is_looking_at(body):
 	if $RayCast3D.is_colliding():
+		print($RayCast3D.get_collider().name)
 		return $RayCast3D.get_collider() == body
 	return false
 

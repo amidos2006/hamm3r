@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="CharacterMoodPictures" load_steps=13 format=3 uid="uid://b51fd857pjg27"]
 
-[ext_resource type="Texture2D" uid="uid://opwax1by03ky" path="res://global/dialogue/graphics/Tess_normal.png" id="1_aqei6"]
+[ext_resource type="Texture2D" uid="uid://opwax1by03ky" path="res://assets/graphics/dialogue/Tess_normal.png" id="1_aqei6"]
 [ext_resource type="Script" uid="uid://cq3vw6ffhj3vi" path="res://global/dialogue/characters/character_pictures.gd" id="1_cy58x"]
-[ext_resource type="Texture2D" uid="uid://bdmitepqkf4ty" path="res://global/dialogue/graphics/Tess_angry.png" id="3_6cv3u"]
+[ext_resource type="Texture2D" uid="uid://bdmitepqkf4ty" path="res://assets/graphics/dialogue/Tess_angry.png" id="3_6cv3u"]
 [ext_resource type="Script" uid="uid://ctxh6c3jp62vb" path="res://global/dialogue/characters/character_mood_pictures.gd" id="3_e4ir5"]
-[ext_resource type="Texture2D" uid="uid://chvoffwgiq73r" path="res://global/dialogue/graphics/Tess_shocked.png" id="4_6cv3u"]
-[ext_resource type="Texture2D" uid="uid://cqqi2yu451wb8" path="res://global/dialogue/graphics/Tess_smiling.png" id="5_f8rgk"]
-[ext_resource type="Texture2D" uid="uid://cdo2js7u6fr1m" path="res://global/dialogue/graphics/Tess_noise.png" id="6_ya1dj"]
+[ext_resource type="Texture2D" uid="uid://chvoffwgiq73r" path="res://assets/graphics/dialogue/Tess_shocked.png" id="4_6cv3u"]
+[ext_resource type="Texture2D" uid="uid://cqqi2yu451wb8" path="res://assets/graphics/dialogue/Tess_smiling.png" id="5_f8rgk"]
+[ext_resource type="Texture2D" uid="uid://cdo2js7u6fr1m" path="res://assets/graphics/dialogue/Tess_noise.png" id="6_ya1dj"]
 
 [sub_resource type="Resource" id="Resource_6cv3u"]
 script = ExtResource("1_cy58x")

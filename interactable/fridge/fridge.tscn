@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ccc2cbxv3did2" path="res://interactable/fridge/fridge.gd" id="1_5ctkk"]
 [ext_resource type="Texture2D" uid="uid://dx0pttbm1t5ja" path="res://interactable/fridge/meshes/Fridge_Room_props.png" id="1_qtvbg"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="3_qtvbg"]
-[ext_resource type="JSON" path="res://interactable/fridge/fridge_1.json" id="4_5ctkk"]
+[ext_resource type="JSON" path="res://assets/actions/startarea/fridge_1.json" id="4_5ctkk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22nn0"]
 resource_name = "Col Props"

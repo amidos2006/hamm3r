@@ -1,10 +1,10 @@
-[gd_scene load_steps=27 format=4 uid="uid://s06kfgaux5dw"]
+[gd_scene load_steps=29 format=4 uid="uid://s06kfgaux5dw"]
 
 [ext_resource type="Texture2D" uid="uid://b0ybmjqh54smx" path="res://interactable/computer/meshes/StartingShip_Objects_Monitors.png" id="1_scfbs"]
 [ext_resource type="Texture2D" uid="uid://c5ioi38t6awx5" path="res://interactable/computer/meshes/StartingShip_Objects_Monitor_Animation_1.png" id="2_qpu04"]
 [ext_resource type="Texture2D" uid="uid://c1kxanydmwy61" path="res://interactable/computer/meshes/StartingShip_Objects_Pipes.png" id="3_s0ocy"]
-[ext_resource type="Texture2D" uid="uid://daat347u0h3l5" path="res://interactable/computer/graphics/3R_normal.png" id="4_0cbta"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="4_qpu04"]
+[ext_resource type="JSON" path="res://assets/actions/startarea/computer.json" id="6_3txo5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ct2o"]
 resource_name = "Monitors"
@@ -422,6 +422,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wp4ff")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_s0ocy"]
+size = Vector3(3.03314, 3.15527, 2.54736)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3txo5"]
+size = Vector3(4, 4, 4)
+
 [node name="Computer" type="StaticBody3D"]
 
 [node name="Pivot" type="Node3D" parent="."]
@@ -433,11 +439,6 @@ transform = Transform3D(0.651343, 0, -0.721523, 0, 0.972031, 0, 0.721523, 0, 0.6
 transform = Transform3D(0.333129, 0, 0, 0, 0.328733, 0, 0, 0, 0.328733, -0.00434756, -0.812903, 0.603443)
 mesh = SubResource("ArrayMesh_v4tf3")
 skeleton = NodePath("")
-
-[node name="Screen" type="Sprite3D" parent="Pivot/HangingComputer/Monitor"]
-transform = Transform3D(0.5, 0, -5.96046e-08, 0, 0.500758, -0.0793121, 0, 0.0793122, 0.500757, -0.00836372, -0.0753617, 0.69887)
-cast_shadow = 0
-texture = ExtResource("4_0cbta")
 
 [node name="Keyboard" type="MeshInstance3D" parent="Pivot/HangingComputer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00434732, -1.32039, 0.690877)
@@ -483,7 +484,17 @@ mesh = SubResource("ArrayMesh_lcdym")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0204163, 0.22027, 0.273682)
+shape = SubResource("BoxShape3D_s0ocy")
 
 [node name="Interactable" parent="." instance=ExtResource("4_qpu04")]
+interaction = ExtResource("6_3txo5")
+
+[node name="InteractableArea" parent="Interactable" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.303223)
+shape = SubResource("BoxShape3D_3txo5")
+
+[node name="FocusPoint" parent="Interactable" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225348, 1.00454, 0.716522)
 
 [editable path="Interactable"]

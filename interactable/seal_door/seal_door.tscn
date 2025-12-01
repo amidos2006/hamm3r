@@ -5,7 +5,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dpu725wmqk6iv" path="res://interactable/seal_door/meshes/seal_door_left.res" id="2_xb6vn"]
 [ext_resource type="ArrayMesh" uid="uid://ccw7k8apjtu60" path="res://interactable/seal_door/meshes/seal_door_right.res" id="3_i0t73"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="5_66maq"]
-[ext_resource type="JSON" path="res://interactable/seal_door/seal_door.json" id="6_m8aqy"]
+[ext_resource type="JSON" path="res://assets/actions/objects/seal_door.json" id="6_m8aqy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ys3yn"]
 size = Vector3(1.57129, 2.44775, 1)

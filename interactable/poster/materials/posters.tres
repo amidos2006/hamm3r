@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://b3wafxwv731ob"]
 
-[ext_resource type="Shader" uid="uid://cfolovkcxbyfy" path="res://startarea/materials/hatch.gdshader" id="1_c56j6"]
-[ext_resource type="Texture2D" uid="uid://0c2qt7vj2bgq" path="res://startarea/materials/hatch_painted.png" id="2_feyae"]
+[ext_resource type="Shader" uid="uid://cfolovkcxbyfy" path="res://assets/shaders/hatch.gdshader" id="1_c56j6"]
+[ext_resource type="Texture2D" uid="uid://0c2qt7vj2bgq" path="res://assets/materials/hatch_painted.png" id="2_feyae"]
 [ext_resource type="Texture2D" uid="uid://i4k6srdrwpp6" path="res://interactable/poster/materials/Objects_Posters.png" id="3_24rft"]
 
 [sub_resource type="Gradient" id="Gradient_bku4d"]

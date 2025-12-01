@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://bf21ef2da2yey"]
 
-[ext_resource type="Shader" uid="uid://cfolovkcxbyfy" path="res://startarea/materials/hatch.gdshader" id="1_rmtrs"]
+[ext_resource type="Shader" uid="uid://cfolovkcxbyfy" path="res://assets/shaders/hatch.gdshader" id="1_rmtrs"]
 [ext_resource type="Texture2D" uid="uid://dmphffjp6n6jt" path="res://interactable/materials/hatch_painted.png" id="2_nnwjv"]
 [ext_resource type="Texture2D" uid="uid://lirt7cunxgjy" path="res://interactable/materials/objects_room_props.png" id="3_bxtjs"]
 

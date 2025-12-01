@@ -1,0 +1,156 @@
+[
+	{
+		"action": "controls",
+		"args": {
+			"enable": false,
+		}
+	},
+	{
+		"action": "look",
+		"args": {
+			"enable": true,
+			"name": "Computer"
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "martin",
+			"mood": "normal",
+			"text": "Okay, #problem#",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Here’s the thing: my sensors say that this tanker is not completely dead.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "martin",
+			"mood": "concerned",
+			"text": "That lemon out there has been gathering cosmic rays and interstellar dust for more than twenty years!",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "martin",
+			"mood": "questioning",
+			"text": "Strange... Do you detect organic lifeforms?",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "None that I could detect from here. Still, we need to make sure it’s clean before we haul it in.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "martin",
+			"mood": "normal",
+			"text": "Well, fuck me. Gravity and pressure okay in there?",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "I took the liberty to power up and ready the tanker for your visit.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "look",
+		"args": {
+			"enable": true,
+			"name": "SealDoor"
+		}
+	},
+	{
+		"action": "timer",
+		"args": {
+			"time": 1.0
+		}
+	},
+	{
+		"action": "function",
+		"wait": false,
+		"args": {
+			"target": "DoorLight",
+			"name": "change_color"
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "The readings on the other side of the door are all green.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "timer",
+		"args": {
+			"time": 0.25
+		}
+	},
+	{
+		"action": "look",
+		"args": {
+			"enable": false
+		}
+	},
+	{
+		"action": "interaction",
+		"args": {
+			"enable": false
+		}
+	},
+	{
+		"action": "controls",
+		"args": {
+			"enable": true
+		}
+	}
+]

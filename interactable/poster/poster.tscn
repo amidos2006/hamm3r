@@ -8,7 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dssswl3j4w0y4" path="res://interactable/poster/meshes/poster_4.res" id="4_6323w"]
 [ext_resource type="ArrayMesh" uid="uid://cq7hh7olu3wdi" path="res://interactable/poster/meshes/poster_5.res" id="5_v2f2y"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="7_p3482"]
-[ext_resource type="JSON" path="res://interactable/poster/poster.json" id="8_6323w"]
+[ext_resource type="JSON" path="res://assets/actions/objects/poster.json" id="8_6323w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_btaj2"]
 size = Vector3(0.2, 2.4, 1)

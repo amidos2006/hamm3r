@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://72xodijfuul5" path="res://interactable/toilet/toilet.gd" id="1_fx3bs"]
 [ext_resource type="ArrayMesh" uid="uid://cbn58a0816elp" path="res://interactable/toilet/meshes/toilet_lid.res" id="2_ilrhp"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="3_ilrhp"]
-[ext_resource type="JSON" path="res://interactable/toilet/toilet.json" id="5_fk677"]
+[ext_resource type="JSON" path="res://assets/actions/objects/toilet.json" id="5_fk677"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8yj2b"]
 size = Vector3(1, 1.2, 1)

@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://cf2frxrsei60s" path="res://interactable/weapon_locker/weapon_locker.gd" id="1_1tbto"]
 [ext_resource type="Texture2D" uid="uid://br3jv3j1wdm3j" path="res://interactable/weapon_locker/meshes/Locker_Control_Objects.png" id="1_j1iog"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="2_1tbto"]
-[ext_resource type="JSON" path="res://interactable/weapon_locker/actions/weapon_locker_open.json" id="3_eww6r"]
+[ext_resource type="JSON" path="res://assets/actions/startarea/weapon_locker_open.json" id="3_eww6r"]
 [ext_resource type="PackedScene" uid="uid://odjrw1vjt4kh" path="res://interactable/weapon_locker/gun.tscn" id="3_gag77"]
-[ext_resource type="JSON" path="res://interactable/weapon_locker/actions/weapon_locker_empty.json" id="5_c5776"]
+[ext_resource type="JSON" path="res://assets/actions/startarea/weapon_locker_empty.json" id="5_c5776"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ndmoo"]
 resource_name = "Control_Objects"

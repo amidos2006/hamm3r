@@ -1,49 +1,46 @@
-[gd_scene load_steps=113 format=4 uid="uid://y1xw7mo8ak7r"]
+[gd_scene load_steps=106 format=4 uid="uid://y1xw7mo8ak7r"]
 
 [ext_resource type="Script" uid="uid://hvxybe6ew1wi" path="res://startarea/startarea.gd" id="1_3scv4"]
 [ext_resource type="Texture2D" uid="uid://c528nknwv5wa6" path="res://startarea/meshes/Ship_Interior_Bathroom.png" id="1_4bl57"]
 [ext_resource type="PackedScene" uid="uid://c0ov3gvi01qt6" path="res://player/player.tscn" id="1_rgvhy"]
 [ext_resource type="PackedScene" uid="uid://chj1rvqew6sky" path="res://interactable/poster/poster.tscn" id="2_pen6l"]
 [ext_resource type="Texture2D" uid="uid://caf1mji3nln1d" path="res://startarea/meshes/Ship_Interior_ControlRoom.png" id="2_q75ip"]
-[ext_resource type="JSON" path="res://startarea/actions/start_actions.json" id="2_xq0vx"]
+[ext_resource type="JSON" path="res://assets/actions/startarea/start_actions.json" id="2_xq0vx"]
 [ext_resource type="Texture2D" uid="uid://dy3uixc3sxg2a" path="res://startarea/meshes/Ship_Interior_Corridor.png" id="3_pen6l"]
 [ext_resource type="ArrayMesh" uid="uid://dobhpl6gg0e61" path="res://startarea/meshes/Objects_Bathroom_AC.res" id="3_pky7q"]
 [ext_resource type="Texture2D" uid="uid://b57hpsp8ylc4d" path="res://startarea/meshes/Ship_Interior_Room_props.png" id="4_ctpiu"]
-[ext_resource type="Material" uid="uid://djwngpl5k17m4" path="res://startarea/materials/controlobjects.tres" id="4_m1vxx"]
+[ext_resource type="Material" uid="uid://djwngpl5k17m4" path="res://assets/materials/controlobjects.tres" id="4_m1vxx"]
 [ext_resource type="Texture2D" uid="uid://dg0vq5xv1ge48" path="res://startarea/meshes/Ship_Interior_Tunnel.png" id="5_4mkn6"]
 [ext_resource type="ArrayMesh" uid="uid://dd33ry6lqxlw4" path="res://startarea/meshes/Objects_Pipe_Bathroom.res" id="5_611bn"]
 [ext_resource type="Texture2D" uid="uid://gu0pcq5qctwk" path="res://startarea/meshes/Ship_Interior_StartRoom_noShadow2.png" id="6_b3vky"]
-[ext_resource type="Material" uid="uid://cy276t1ji2l2j" path="res://startarea/materials/pipes.tres" id="6_nxhd3"]
+[ext_resource type="Material" uid="uid://cy276t1ji2l2j" path="res://assets/materials/pipes.tres" id="6_nxhd3"]
 [ext_resource type="ArrayMesh" uid="uid://vr3ris8oaije" path="res://startarea/meshes/Objects_Bathroom_Cabinet.res" id="7_bofqp"]
 [ext_resource type="Texture2D" uid="uid://qhftqm7k8lrr" path="res://startarea/meshes/Ship_Interior_Glass.png" id="7_pky7q"]
 [ext_resource type="ArrayMesh" uid="uid://b1n8efv8w3f8o" path="res://startarea/meshes/Objects_Bathroom_Sink.res" id="8_611bn"]
-[ext_resource type="Material" uid="uid://byowqag0chqth" path="res://startarea/materials/glass.tres" id="8_m1vxx"]
-[ext_resource type="Material" uid="uid://cw2xloxc4hnog" path="res://startarea/materials/bathroom.tres" id="9_nxhd3"]
+[ext_resource type="Material" uid="uid://byowqag0chqth" path="res://assets/materials/glass.tres" id="8_m1vxx"]
+[ext_resource type="Material" uid="uid://cw2xloxc4hnog" path="res://assets/materials/bathroom.tres" id="9_nxhd3"]
 [ext_resource type="PackedScene" uid="uid://bxw43s4qrsdcl" path="res://interactable/toilet/toilet.tscn" id="13_2pnu0"]
 [ext_resource type="ArrayMesh" uid="uid://my0djcjfmdbc" path="res://startarea/meshes/Objects_Pipe_ControlRoom.res" id="16_k17ha"]
-[ext_resource type="Material" uid="uid://deirstgwry0wa" path="res://startarea/materials/controlroom.tres" id="16_qgwtf"]
+[ext_resource type="Material" uid="uid://deirstgwry0wa" path="res://assets/materials/controlroom.tres" id="16_qgwtf"]
 [ext_resource type="ArrayMesh" uid="uid://c5dukyu2t5egk" path="res://startarea/meshes/Objects_Shelves.res" id="17_nxhd3"]
 [ext_resource type="PackedScene" uid="uid://g0k0ar4ug5py" path="res://interactable/fridge/fridge.tscn" id="18_3qgax"]
 [ext_resource type="PackedScene" uid="uid://dbx1afyq7yyqp" path="res://interactable/normal_door/normal_door.tscn" id="18_lxhx7"]
-[ext_resource type="JSON" path="res://startarea/actions/cryoroom_door.json" id="19_2pnu0"]
+[ext_resource type="JSON" path="res://assets/actions/startarea/cryoroom_door.json" id="19_2pnu0"]
 [ext_resource type="PackedScene" uid="uid://bo6xmnsy3pi2o" path="res://interactable/cryopod/cryopod.tscn" id="19_rgvhy"]
 [ext_resource type="ArrayMesh" uid="uid://be76ofxhtjqdv" path="res://startarea/meshes/Objects_Control_Desk.res" id="20_ijw6d"]
-[ext_resource type="JSON" path="res://startarea/actions/fail_ownship.json" id="20_k17ha"]
+[ext_resource type="JSON" path="res://assets/actions/startarea/fail_ownship.json" id="20_k17ha"]
 [ext_resource type="ArrayMesh" uid="uid://dsksjt7l2iv54" path="res://startarea/meshes/Objects_Pipes_Corridor.res" id="21_3m83t"]
 [ext_resource type="ArrayMesh" uid="uid://d4jc82i2hg0kj" path="res://startarea/meshes/Objects_Pipe_Ladder.res" id="22_5ehgq"]
 [ext_resource type="ArrayMesh" uid="uid://ilfvyfou286y" path="res://startarea/meshes/Objects_Control_Chair.res" id="26_5yten"]
 [ext_resource type="PackedScene" uid="uid://05t1uswscwq" path="res://interactable/seal_door/seal_door.tscn" id="27_doki2"]
-[ext_resource type="JSON" path="res://startarea/actions/before_gun_seal_door.json" id="28_xinp0"]
-[ext_resource type="PackedScene" uid="uid://bni0qdjwbjdm7" path="res://interactable/event_area.tscn" id="29_5yten"]
-[ext_resource type="JSON" path="res://startarea/actions/control_room.json" id="30_qgwtf"]
-[ext_resource type="Material" uid="uid://dvfebhhri2iw8" path="res://startarea/materials/emissive.tres" id="31_wwn5p"]
+[ext_resource type="JSON" path="res://assets/actions/startarea/before_gun_seal_door.json" id="28_xinp0"]
 [ext_resource type="Script" uid="uid://hae3qadaxqck" path="res://startarea/door_light.gd" id="32_106fm"]
 [ext_resource type="PackedScene" uid="uid://cxnv0w5rb7egn" path="res://interactable/weapon_locker/weapon_locker.tscn" id="35_5sfhf"]
-[ext_resource type="Material" uid="uid://i7mk0rtlvfyp" path="res://startarea/materials/corridor.tres" id="35_wwn5p"]
-[ext_resource type="Material" uid="uid://bqhl0lfcp1lg4" path="res://startarea/materials/tunnel.tres" id="41_106fm"]
-[ext_resource type="Material" uid="uid://ckvqti1auw8th" path="res://startarea/materials/cryoroom.tres" id="43_nkhtx"]
+[ext_resource type="Material" uid="uid://i7mk0rtlvfyp" path="res://assets/materials/corridor.tres" id="35_wwn5p"]
+[ext_resource type="Material" uid="uid://bqhl0lfcp1lg4" path="res://assets/materials/tunnel.tres" id="41_106fm"]
+[ext_resource type="Material" uid="uid://ckvqti1auw8th" path="res://assets/materials/cryoroom.tres" id="43_nkhtx"]
 [ext_resource type="PackedScene" uid="uid://s06kfgaux5dw" path="res://interactable/computer/computer.tscn" id="44_wwn5p"]
-[ext_resource type="Material" uid="uid://d0csqdacnxglg" path="res://startarea/materials/objects.tres" id="45_chb6r"]
+[ext_resource type="Material" uid="uid://d0csqdacnxglg" path="res://assets/materials/objects.tres" id="45_chb6r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_34ej3"]
 resource_name = "Bathroom"
@@ -233,9 +230,6 @@ data = PackedVector3Array(1.11525, 2.6, 2.1, 1.5515, 2.04018, 2.1, 1.7359, 2.213
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_62xn7"]
 points = PackedVector3Array(-0.05, 0, -1.30706, -4.41447e-06, 0, -1.30706, -0.05, 0, 1.30706, -0.05, 2.6, -1.30706, -4.41447e-06, 2.6, -1.30706, -4.41447e-06, 0, 1.30706, -0.05, 2.6, 1.30706, -4.41447e-06, 2.6, 1.30706)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_st0fc"]
-points = PackedVector3Array(2.30706, 2.6, 0, 2.30706, 2.6, -0.05, -2.30706, 2.6, 0, 2.30706, -4.29907e-09, 0, 2.30706, -4.29907e-09, -0.05, -2.30706, 2.6, -0.05, -2.30706, -4.29907e-09, 0, -2.30706, -4.29907e-09, -0.05)
-
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_unl3h"]
 points = PackedVector3Array(-1.41453, 2.6, -1.9, -2.8, 2.6, -0.51433, -1.41453, 2.652, -1.9, 3.2, 2.6, -1.9, -2.8, 2.652, -0.51433, -2.8, 2.6, 2.1, 3.2, 2.652, -1.9, 3.2, 2.6, 2.1, -2.8, 2.652, 2.1, 3.2, 2.652, 2.1)
 
@@ -251,20 +245,12 @@ points = PackedVector3Array(0.311878, 1.93715e-09, 0.983939, 0.221344, 0.0381191
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_js020"]
 points = PackedVector3Array(0.33657, -0.0190596, 0.98394, 0.246036, 0.0190596, 0.98394, -0.246102, 0.0190596, 0.98394, -0.33657, -0.0190596, 0.983747, 0.336504, -0.0190596, -0.98394, 0.246036, 0.0190596, -0.98394, -0.246102, 0.0190596, -0.98394, -0.33657, -0.0190596, -0.98394)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ijw6d"]
-size = Vector3(0.8, 2, 0.8)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_oas1x"]
-size = Vector3(1.2, 2, 2.2)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_doki2"]
-size = Vector3(2.2, 2, 1.2)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_nkhtx"]
-size = Vector3(0.573792, 2.95172, 4.90755)
-
-[sub_resource type="QuadMesh" id="QuadMesh_chb6r"]
+[sub_resource type="QuadMesh" id="QuadMesh_itakq"]
 size = Vector2(0.5, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2clgs"]
+emission_enabled = true
+emission = Color(1, 0.3, 0.3, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sme2x"]
 resource_name = "Col Corridor"
@@ -653,10 +639,6 @@ shape = SubResource("ConcavePolygonShape3D_u16jh")
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0.924229, -2.6, 1.9042)
 shape = SubResource("ConvexPolygonShape3D_62xn7")
 
-[node name="CollisionShape3D_5" type="CollisionShape3D" parent="Control/Collisions"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 1.63134, -2.6, -2.61131)
-shape = SubResource("ConvexPolygonShape3D_st0fc")
-
 [node name="CollisionShape3D_6" type="CollisionShape3D" parent="Control/Collisions"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 2.34343, -2.6, -0.636397)
 shape = SubResource("ConvexPolygonShape3D_unl3h")
@@ -677,51 +659,11 @@ shape = SubResource("ConvexPolygonShape3D_xgxjd")
 transform = Transform3D(-0.707102, 0, 0.707111, 0, 1, 0, -0.707111, 0, -0.707102, -6.22103, -2.58094, -2.43497)
 shape = SubResource("ConvexPolygonShape3D_js020")
 
-[node name="Chair" type="CollisionShape3D" parent="Control/Collisions"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 2.58775, -1.91495, -2.09049)
-shape = SubResource("BoxShape3D_ijw6d")
-
-[node name="Desk_1" type="CollisionShape3D" parent="Control/Collisions"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 3.81218, -1.58706, -3.14264)
-shape = SubResource("BoxShape3D_oas1x")
-
-[node name="Desk_2" type="CollisionShape3D" parent="Control/Collisions"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 2.30264, -1.38841, -2.70464)
-shape = SubResource("BoxShape3D_doki2")
-
 [node name="SealDoor" parent="Control" instance=ExtResource("27_doki2")]
 transform = Transform3D(-0.703247, 0, -0.710948, 0, 1, 0, 0.710948, 0, -0.703247, -2.31422, 0.0246812, -1.42632)
 
 [node name="Interactable" parent="Control/SealDoor" index="3"]
 interaction = ExtResource("28_xinp0")
-
-[node name="Computer" type="Marker3D" parent="Control/SealDoor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.67637, 1.70021, -4.1708)
-
-[node name="Cabinet" type="Marker3D" parent="Control/SealDoor"]
-transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0.9921, 1.30001, -3.31886)
-
-[node name="EventArea" parent="Control" instance=ExtResource("29_5yten")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8539, 0, 0.626216)
-event = ExtResource("30_qgwtf")
-singleton = false
-
-[node name="CollisionShape3D" parent="Control/EventArea" index="0"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.213095, 0.975861, 0.899158)
-shape = SubResource("BoxShape3D_nkhtx")
-
-[node name="Computer" type="Marker3D" parent="Control/EventArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.244884, 1.57483, -1.15208)
-
-[node name="Door" type="Marker3D" parent="Control/EventArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.80162, 1.61035, -1.63262)
-
-[node name="DoorLight" type="MeshInstance3D" parent="Control/EventArea"]
-transform = Transform3D(0.709142, 0.110428, 0.696364, 0.0171873, 0.984658, -0.173648, -0.704856, 0.13511, 0.696364, -3.93577, 2.35827, -1.81469)
-gi_mode = 0
-mesh = SubResource("QuadMesh_chb6r")
-surface_material_override/0 = ExtResource("31_wwn5p")
-script = ExtResource("32_106fm")
 
 [node name="Poster" parent="Control" instance=ExtResource("2_pen6l")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.780459, -0.166232, 2.09557)
@@ -730,8 +672,14 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.7804
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.658715, 0, 1.69585)
 contain_gun = true
 
-[node name="Computer" type="Marker3D" parent="Control/WeaponLocker"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.91783, 1.46843, 2.38972)
+[node name="Computer" parent="Control" instance=ExtResource("44_wwn5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93258, 0.777039, -1.4462)
+
+[node name="DoorLight" type="MeshInstance3D" parent="Control"]
+transform = Transform3D(0.694784, 0.329646, 0.639225, 0, 0.888777, -0.458339, -0.719219, 0.318447, 0.617508, -2.07588, 2.34216, -1.16701)
+mesh = SubResource("QuadMesh_itakq")
+surface_material_override/0 = SubResource("StandardMaterial3D_2clgs")
+script = ExtResource("32_106fm")
 
 [node name="Corridor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.00451, 0, 10.8697)
@@ -948,14 +896,10 @@ distance_fade_begin = 20.0
 distance_fade_shadow = 30.0
 omni_range = 68.767
 
-[node name="Computer" parent="." instance=ExtResource("44_wwn5p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.73709, 0.777039, 6.12355)
-
 [connection signal="body_entered" from="Cryoroom/CryopodExit" to="." method="_on_cryopod_exit_body_entered"]
 
 [editable path="Control/SealDoor"]
 [editable path="Control/SealDoor/Interactable"]
-[editable path="Control/EventArea"]
 [editable path="Corridor/CryoroomDoor"]
 [editable path="Corridor/CryoroomDoor/Interactable"]
 [editable path="Corridor/FailDoor"]

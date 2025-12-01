@@ -8,7 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dg4b3d7g5yobw" path="res://interactable/cryopod/meshes/glass.res" id="5_wc77n"]
 [ext_resource type="Material" uid="uid://c5upfk3h14hp2" path="res://interactable/cryopod/materials/glass.tres" id="6_mgbn5"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="7_q6wdd"]
-[ext_resource type="JSON" path="res://interactable/cryopod/cryopod.json" id="9_8e3tg"]
+[ext_resource type="JSON" path="res://assets/actions/startarea/cryopod.json" id="9_8e3tg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6bmbm"]
 size = Vector3(1.5, 2.4, 1.5)
