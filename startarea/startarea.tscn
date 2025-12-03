@@ -19,7 +19,7 @@
 [ext_resource type="ArrayMesh" uid="uid://b1n8efv8w3f8o" path="res://startarea/meshes/Objects_Bathroom_Sink.res" id="8_611bn"]
 [ext_resource type="Material" uid="uid://byowqag0chqth" path="res://assets/materials/glass.tres" id="8_m1vxx"]
 [ext_resource type="Material" uid="uid://cw2xloxc4hnog" path="res://assets/materials/bathroom.tres" id="9_nxhd3"]
-[ext_resource type="PackedScene" uid="uid://bxw43s4qrsdcl" path="res://interactable/toilet/toilet.tscn" id="13_2pnu0"]
+[ext_resource type="PackedScene" uid="uid://bxw43s4qrsdcl" path="res://interactable/toilet.tscn" id="13_2pnu0"]
 [ext_resource type="ArrayMesh" uid="uid://my0djcjfmdbc" path="res://startarea/meshes/Objects_Pipe_ControlRoom.res" id="16_k17ha"]
 [ext_resource type="Material" uid="uid://deirstgwry0wa" path="res://assets/materials/controlroom.tres" id="16_qgwtf"]
 [ext_resource type="ArrayMesh" uid="uid://c5dukyu2t5egk" path="res://startarea/meshes/Objects_Shelves.res" id="17_nxhd3"]
