@@ -17,7 +17,7 @@
 		"action": "script",
 		"args": {
 			"name": "change",
-			"path": "res://assets/actions/startarea/weapon_locker_gun.json"
+			"path": "res://assets/actions/startarea/weapon_locker_take.json"
 		}
 	},
 	{

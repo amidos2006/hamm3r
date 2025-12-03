@@ -1,0 +1,108 @@
+[
+	{
+		"action": "controls",
+		"args": {
+			"enable": false
+		}
+	},
+	{
+		"action": "interaction",
+		"args": {
+			"enable": false
+		}
+	},
+	{
+		"action": "look",
+		"args": {
+			"enable": true,
+			"name": "Computer"
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "I am glad that you are taking your plasma gun as it is not advisable to go unarmed.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "look",
+		"args": {
+			"enable": true,
+			"name": "WeaponLocker"
+		}
+	},
+	{
+		"action": "timer",
+		"args": {
+			"time": 0.8
+		}
+	},
+	{
+		"action": "function",
+		"wait": true,
+		"args": {
+			"name": "take_gun",
+			"target": "Player",
+			"signal": "animation_ended"
+		}
+	},
+	{
+		"action": "function",
+		"wait": false,
+		"args": {
+			"name": "remove_gun"
+		}
+	},
+	{
+		"action": "function",
+		"wait": true,
+		"args": {
+			"name": "equip_gun",
+			"target": "Player",
+			"signal": "animation_ended"
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": true,
+		"args": {
+			"name": "martin",
+			"mood": "smiling",
+			"text": "That is more like it.",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "script",
+		"args": {
+			"name": "change",
+			"path": "res://assets/actions/objects/locker.json"
+		}
+	},
+	{
+		"action": "timer",
+		"args": {
+			"time": 0.25
+		}
+	},
+	{
+		"action": "interaction",
+		"args": {
+			"enable": true
+		}
+	},
+	{
+		"action": "controls",
+		"args": {
+			"enable": true
+		}
+	}
+]

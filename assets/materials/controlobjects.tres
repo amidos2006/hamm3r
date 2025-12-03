@@ -2,7 +2,6 @@
 
 [ext_resource type="Shader" uid="uid://cfolovkcxbyfy" path="res://assets/shaders/hatch.gdshader" id="1_khx2d"]
 [ext_resource type="Texture2D" uid="uid://0c2qt7vj2bgq" path="res://assets/materials/hatch_painted.png" id="2_pnev4"]
-[ext_resource type="Texture2D" uid="uid://df7uoepa7a5ux" path="res://startarea/meshes/Objects_Control_Objects.png" id="3_6hut1"]
 
 [sub_resource type="Gradient" id="Gradient_bku4d"]
 offsets = PackedFloat32Array(0.0705882, 0.490196, 1)
@@ -11,12 +10,15 @@ colors = PackedColorArray(0.0387742, 4.10736e-05, 0.0964069, 1, 0.429135, 0.4291
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_2eigu"]
 gradient = SubResource("Gradient_bku4d")
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p1i7h"]
+load_path = "res://.godot/imported/Objects_Control_Objects.png-e3e799d11d5a956b98882eefc40834d2.s3tc.ctex"
+
 [resource]
 render_priority = 0
 shader = ExtResource("1_khx2d")
 shader_parameter/cross_hatch_texture = ExtResource("2_pnev4")
 shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/texture_albedo = ExtResource("3_6hut1")
+shader_parameter/texture_albedo = SubResource("CompressedTexture2D_p1i7h")
 shader_parameter/uv_scale_r = 0.0
 shader_parameter/uv_scale_g = 0.0
 shader_parameter/uv_scale_b = 0.0

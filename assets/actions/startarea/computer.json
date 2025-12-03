@@ -130,6 +130,14 @@
 		}
 	},
 	{
+		"action": "variable",
+		"args": {
+			"name": "door_lock",
+			"target": "SealDoor",
+			"value": "green"
+		}
+	},
+	{
 		"action": "timer",
 		"args": {
 			"time": 0.25

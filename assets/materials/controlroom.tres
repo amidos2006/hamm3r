@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://cfolovkcxbyfy" path="res://assets/shaders/hatch.gdshader" id="1_dcfnj"]
 [ext_resource type="Texture2D" uid="uid://0c2qt7vj2bgq" path="res://assets/materials/hatch_painted.png" id="2_ifu50"]
-[ext_resource type="Texture2D" uid="uid://caf1mji3nln1d" path="res://startarea/meshes/Ship_Interior_ControlRoom.png" id="3_8gws6"]
+[ext_resource type="Texture2D" uid="uid://caf1mji3nln1d" path="res://assets/models/Ship_Interior_ControlRoom.png" id="3_8gws6"]
 
 [sub_resource type="Gradient" id="Gradient_bku4d"]
 offsets = PackedFloat32Array(0.203922, 0.45098, 1)

@@ -1,15 +1,17 @@
 extends StaticBody3D
 
 
+var door_lock = "red"
+var first_time = true
+
+
 enum DoorState{
 	OPEN,
 	CLOSE,
 	FAIL
 }
 
-
 var _state = DoorState.CLOSE
-
 
 func open_door():
 	if _state == DoorState.CLOSE:

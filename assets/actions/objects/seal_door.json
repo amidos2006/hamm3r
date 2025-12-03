@@ -1,15 +1,15 @@
 [
 	{
+		"action": "controls",
+		"args": {
+			"enable": false,
+		}
+	},
+	{
 		"action": "function",
 		"wait": false,
 		"args": {
 			"name": "open_door"
-		}
-	},
-	{
-		"action": "controls",
-		"args": {
-			"enable": false,
 		}
 	},
 	{

@@ -100,3 +100,8 @@ func _execute_actions(actions):
 					$Music.play()
 				elif act.args.action == "stop":
 					$Music.stop()
+			"sound":
+				var tween = get_tree().create_tween()
+				tween.tween_property(get_node(act.args.name), "volume_db", act.args.value, act.args.time)
+				if act.wait:
+					await tween.finished

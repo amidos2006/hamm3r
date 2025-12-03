@@ -121,6 +121,24 @@
 		}
 	},
 	{
+		"action": "sound",
+		"wait": false,
+		"args": {
+			"name": "Ship",
+			"value": -10,
+			"time": 2
+		}
+	},
+	{
+		"action": "sound",
+		"wait": false,
+		"args": {
+			"name": "Music",
+			"value": -10,
+			"time": 2
+		}
+	},
+	{
 		"action": "show_title",
 		"wait": true,
 		"args": {
@@ -147,12 +165,21 @@
 		}
 	},
 	{
+		"action": "sound",
+		"wait": false,
+		"args": {
+			"name": "Title/AppearSound",
+			"value": -40,
+			"time": 2
+		}
+	},
+	{
 		"action": "fade",
 		"wait": true,
 		"args": {
 			"start": 0.25,
 			"end": 1,
-			"time": 1
+			"time": 2
 		}
 	},
 	{

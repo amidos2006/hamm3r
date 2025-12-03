@@ -3,7 +3,6 @@ extends Area3D
 
 @export var interaction:JSON = null
 
-
 var _player = null
 var _different_marker = null
 
@@ -43,9 +42,20 @@ func interact(player):
 	if disable_interaction:
 		return
 	
-	print(interaction.data.size())
 	for act in interaction.data:
-		print(act.action)
+		var conditions = true
+		if act.has("conditions"):
+			for cond in act.conditions:
+				var target = get_parent()
+				if cond.has("target"):
+					if cond.target == "player":
+						target = player
+					else:
+						target = get_parent().get_parent().get_node(cond.target)
+				conditions = conditions and target.get(cond.name) == cond.value
+		if not conditions:
+			continue
+		
 		match(act.action):
 			"controls":
 				player.disable_controls = not act.args.enable
@@ -64,7 +74,7 @@ func interact(player):
 				if self.disable_interaction:
 					player.reset_interactable(get_parent())
 			"function":
-				if "target" in act.args and act.args.target == "Player":
+				if act.args.has("target") and act.args.target == "Player":
 					player.call(act.args.name, get_parent())
 					if act.wait and "signal" in act.args and act.args.signal.length() > 0:
 						await Signal(player, act.args.signal)
@@ -93,3 +103,11 @@ func interact(player):
 			"rotate":
 				player.rotate_focus(get_parent())
 				_different_marker = null
+			"variable":
+				var target = get_parent()
+				if act.args.has("target"):
+					if act.args.target == "player":
+						target = player
+					else:
+						target = get_parent().get_parent().get_node(act.args.target)
+				target.set(act.args.name, act.args.value)

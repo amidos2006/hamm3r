@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cyu6o8m8cwmup" path="res://assets/graphics/intro/truck.png" id="11_2i53d"]
 [ext_resource type="Texture2D" uid="uid://bhyf1sevptwdg" path="res://assets/graphics/intro/truckEngine_03.png" id="12_1l24h"]
 [ext_resource type="Texture2D" uid="uid://c3atu0entwqwe" path="res://assets/graphics/intro/truckEngine_01.png" id="13_ie2y0"]
-[ext_resource type="AudioStream" uid="uid://b42gu2tos628q" path="res://assets/sfx/intro/hamm3r_logo.wav" id="14_35ehl"]
+[ext_resource type="AudioStream" uid="uid://cxgodrlsto8t1" path="res://assets/music/intro/hamm3r_theme.wav" id="14_74s3g"]
 [ext_resource type="Texture2D" uid="uid://jovthc804xo4" path="res://assets/graphics/intro/truckEngine_02.png" id="14_ao3yw"]
 [ext_resource type="Script" uid="uid://jn62uv7akgg1" path="res://intro/camera_2d.gd" id="14_sg2fo"]
 [ext_resource type="Texture2D" uid="uid://v4sq8bpfrmpg" path="res://assets/graphics/intro/truckEngine_00.png" id="15_dk8sq"]
@@ -235,7 +235,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("27_35ehl")
 
 [node name="AppearSound" type="AudioStreamPlayer" parent="Title"]
-stream = ExtResource("14_35ehl")
+stream = ExtResource("14_74s3g")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1000

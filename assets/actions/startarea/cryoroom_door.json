@@ -52,7 +52,7 @@
 		"action": "script",
 		"args": {
 			"name": "change",
-			"path": "res://interactable/normal_door/normal_door.json"
+			"path": "res://assets/actions/objects/normal_door.json"
 		}
 	},
 	{

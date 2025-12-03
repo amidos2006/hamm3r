@@ -178,6 +178,7 @@ transform = Transform3D(1, 0, 0, 0, 0.499998, 0.866026, 0, -0.866026, 0.499998, 
 
 [node name="Model" type="MeshInstance3D" parent="Pivot/Camera3D/Gun"]
 transform = Transform3D(-0.25, 0, 3.7749e-08, 0, 0.25, 0, -3.7749e-08, 0, -0.25, 0, 0.294, 0.396)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_sxpnq")
 skeleton = NodePath("")
 

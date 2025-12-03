@@ -1,0 +1,399 @@
+[
+	{
+		"action": "controls",
+		"args": {
+			"enable": false,
+		}
+	},
+	{
+		"action": "interaction",
+		"args": {
+			"enable": false
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"conditions": [
+			{
+				"name": "door_lock",
+				"value": "red"
+			}
+		],
+		"wait": true,
+		"args": {
+			"name": "martin",
+			"mood": "normal",
+			"text": "The door is locked. I need to talk to 3R.",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "look",
+		"conditions": [
+			{
+				"name": "door_lock",
+				"value": "green"
+			},
+			{
+				"name": "first_time",
+				"value": false
+			},
+			{
+				"name": "gun_equipped",
+				"target": "player",
+				"value": false
+			},
+		],
+		"args": {
+			"enable": true,
+			"name": "Computer"
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"conditions": [
+			{
+				"name": "door_lock",
+				"value": "green"
+			},
+			{
+				"name": "first_time",
+				"value": false
+			},
+			{
+				"name": "gun_equipped",
+				"target": "player",
+				"value": false
+			},
+		],
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Please take your plasma gun from the cabinet.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "look",
+		"conditions": [
+			{
+				"name": "door_lock",
+				"value": "green"
+			},
+			{
+				"name": "first_time",
+				"value": false
+			},
+			{
+				"name": "gun_equipped",
+				"target": "player",
+				"value": false
+			},
+		],
+		"args": {
+			"enable": true,
+			"name": "WeaponLocker"
+		}
+	},
+	{
+		"action": "rotate",
+		"conditions": [
+			{
+				"name": "door_lock",
+				"value": "green"
+			},
+			{
+				"name": "first_time",
+				"value": false
+			},
+			{
+				"name": "gun_equipped",
+				"target": "player",
+				"value": false
+			},
+		],
+	},
+	{
+		"action": "look",
+		"conditions": [
+			{
+				"name": "door_lock",
+				"value": "green"
+			},
+			{
+				"name": "first_time",
+				"value": true
+			},
+			{
+				"name": "gun_equipped",
+				"target": "player",
+				"value": false
+			},
+		],
+		"args": {
+			"enable": true,
+			"name": "Computer"
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"conditions": [
+			{
+				"name": "door_lock",
+				"value": "green"
+			},
+			{
+				"name": "first_time",
+				"value": true
+			},
+			{
+				"name": "gun_equipped",
+				"target": "player",
+				"value": false
+			},
+		],
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Are you not forgetting something, Captain?",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"conditions": [
+			{
+				"name": "door_lock",
+				"value": "green"
+			},
+			{
+				"name": "first_time",
+				"value": true
+			},
+			{
+				"name": "gun_equipped",
+				"target": "player",
+				"value": false
+			},
+		],
+		"wait": true,
+		"args": {
+			"name": "martin",
+			"mood": "smiling",
+			"text": "#forgetting#",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"conditions": [
+			{
+				"name": "door_lock",
+				"value": "green"
+			},
+			{
+				"name": "first_time",
+				"value": true
+			},
+			{
+				"name": "gun_equipped",
+				"target": "player",
+				"value": false
+			},
+		],
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "No, I mean... You see, I merely wanted to remind you to take the plasma gun with you.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "look",
+		"conditions": [
+			{
+				"name": "door_lock",
+				"value": "green"
+			},
+			{
+				"name": "first_time",
+				"value": true
+			},
+			{
+				"name": "gun_equipped",
+				"target": "player",
+				"value": false
+			},
+		],
+		"args": {
+			"enable": true,
+			"name": "WeaponLocker"
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"conditions": [
+			{
+				"name": "door_lock",
+				"value": "green"
+			},
+			{
+				"name": "first_time",
+				"value": true
+			},
+			{
+				"name": "gun_equipped",
+				"target": "player",
+				"value": false
+			},
+		],
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "It is inside the cabinet.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"conditions": [
+			{
+				"name": "door_lock",
+				"value": "green"
+			},
+			{
+				"name": "first_time",
+				"value": true
+			},
+			{
+				"name": "gun_equipped",
+				"target": "player",
+				"value": false
+			},
+		],
+		"wait": true,
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "It would not be advisable to go in unarmed.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "rotate",
+		"conditions": [
+			{
+				"name": "door_lock",
+				"value": "green"
+			},
+			{
+				"name": "first_time",
+				"value": true
+			},
+			{
+				"name": "gun_equipped",
+				"target": "player",
+				"value": false
+			},
+		],
+	},
+	{
+		"action": "variable",
+		"conditions": [
+			{
+				"name": "door_lock",
+				"value": "green"
+			},
+			{
+				"name": "first_time",
+				"value": true
+			},
+			{
+				"name": "gun_equipped",
+				"target": "player",
+				"value": false
+			},
+		],
+		"args": {
+			"name": "first_time",
+			"value": false,
+		}
+	},
+	{
+		"action": "function",
+		"wait": false,
+		"conditions": [
+			{
+				"name": "door_lock",
+				"value": "green"
+			},
+			{
+				"name": "gun_equipped",
+				"target": "player",
+				"value": true
+			},
+		],
+		"args": {
+			"name": "open_door"
+		}
+	},
+	{
+		"action": "timer",
+		"args": {
+			"time": 0.25
+		}
+	},
+	{
+		"action": "interaction",
+		"conditions": [
+			{
+				"name": "door_lock",
+				"value": "green"
+			},
+			{
+				"name": "gun_equipped",
+				"target": "player",
+				"value": false
+			},
+		],
+		"args": {
+			"enable": true
+		}
+	},
+	{
+		"action": "interaction",
+		"conditions": [
+			{
+				"name": "door_lock",
+				"value": "red"
+			},
+		],
+		"args": {
+			"enable": true
+		}
+	},
+	{
+		"action": "controls",
+		"args": {
+			"enable": true
+		}
+	}
+]

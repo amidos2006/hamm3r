@@ -16,8 +16,11 @@ var _attraction_force
 var _direction
 var _x_scale
 
+var volume_db
+
 
 func _ready():
+	volume_db = 0
 	_attraction_force = 0
 	_thruster_force = 0
 	_thruster_power = 0
@@ -48,7 +51,7 @@ func _process(delta):
 		$AnimationSprite.play("high")
 	
 	if _thruster_power > 0:
-		$Sounds/Engine.volume_db = _thruster_power
+		$Sounds/Engine.volume_db = _thruster_power + volume_db
 		if not $Sounds/Engine.playing:
 			$Sounds/Engine.play()
 	else:
