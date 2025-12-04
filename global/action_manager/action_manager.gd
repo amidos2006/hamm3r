@@ -28,17 +28,6 @@ func run_actions(actions, caller, player=null):
 		
 		var target = get_target(act.get("target", ""), caller, player)
 		match(act.action):
-			#Interactable related actions
-			"look":
-				if act.args.enable:
-					caller.get_node("Interactable")._different_marker = get_target(act.args.get("at", ""), caller, player).get_node("Interactable").get_node("FocusPoint")
-					player.focus_interactable(null, caller.get_node("Interactable")._different_marker.global_position)
-				else:
-					caller.get_node("Interactable")._different_marker = null
-			"rotate":
-				player.rotate_focus(caller)
-				caller.get_node("Interactable")._different_marker = null
-			
 			# Generic related actions
 			"show_message":
 				UiMessage.show_message(act.args.message, act.args.action, act.args.time)
@@ -76,7 +65,7 @@ func run_actions(actions, caller, player=null):
 					target.play()
 				elif act.args.action.to_lower() == "stop":
 					target.stop()
-				elif act.args.action.to_lower() == "volume":
+				elif act.args.action.to_lower() == "fade":
 					var tween = get_tree().create_tween()
 					tween.tween_property(target, "volume_db", act.args.value, act.wait)
 		

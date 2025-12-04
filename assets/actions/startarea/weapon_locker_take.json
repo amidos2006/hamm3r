@@ -17,10 +17,12 @@
 		}
 	},
 	{
-		"action": "look",
+		"action": "function",
+		"target": "Player",
 		"args": {
-			"enable": true,
-			"at": "../Computer"
+			"name": "look_at_interactable",
+			"object": "caller",
+			"args": [true, "../Computer"]
 		}
 	},
 	{
@@ -36,10 +38,12 @@
 		}
 	},
 	{
-		"action": "look",
+		"action": "function",
+		"target": "Player",
 		"args": {
-			"enable": true,
-			"at": "../WeaponLocker"
+			"name": "look_at_interactable",
+			"object": "caller",
+			"args": [true, "../WeaponLocker"]
 		}
 	},
 	{

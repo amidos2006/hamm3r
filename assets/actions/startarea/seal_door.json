@@ -18,13 +18,13 @@
 	},
 	{
 		"action": "show_dialogue",
+		"wait": "advance_dialogue",
 		"conditions": [
 			{
 				"name": "door_lock",
 				"value": "red"
 			}
 		],
-		"wait": true,
 		"args": {
 			"name": "martin",
 			"mood": "normal",
@@ -35,7 +35,8 @@
 		}
 	},
 	{
-		"action": "look",
+		"action": "function",
+		"target": "Player",
 		"conditions": [
 			{
 				"name": "door_lock",
@@ -52,12 +53,14 @@
 			},
 		],
 		"args": {
-			"enable": true,
-			"name": "Computer"
+			"name": "look_at_interactable",
+			"object": "caller",
+			"args": [true, "../Computer"]
 		}
 	},
 	{
 		"action": "show_dialogue",
+		"wait": "advance_dialogue",
 		"conditions": [
 			{
 				"name": "door_lock",
@@ -73,7 +76,6 @@
 				"value": false
 			},
 		],
-		"wait": true,
 		"args": {
 			"name": "3R",
 			"mood": "normal",
@@ -84,7 +86,8 @@
 		}
 	},
 	{
-		"action": "look",
+		"action": "function",
+		"target": "Player",
 		"conditions": [
 			{
 				"name": "door_lock",
@@ -101,12 +104,14 @@
 			},
 		],
 		"args": {
-			"enable": true,
-			"name": "WeaponLocker"
+			"name": "look_at_interactable",
+			"object": "caller",
+			"args": [true, "../WeaponLocker"]
 		}
 	},
 	{
-		"action": "rotate",
+		"action": "function",
+		"target": "player",
 		"conditions": [
 			{
 				"name": "door_lock",
@@ -122,9 +127,14 @@
 				"value": false
 			},
 		],
+		"args": {
+			"name": "rotate_interactable",
+			"object": "caller"
+		}
 	},
 	{
-		"action": "look",
+		"action": "function",
+		"target": "Player",
 		"conditions": [
 			{
 				"name": "door_lock",
@@ -141,12 +151,14 @@
 			},
 		],
 		"args": {
-			"enable": true,
-			"name": "Computer"
+			"name": "look_at_interactable",
+			"object": "caller",
+			"args": [true, "../Computer"]
 		}
 	},
 	{
 		"action": "show_dialogue",
+		"wait": "advance_dialogue",
 		"conditions": [
 			{
 				"name": "door_lock",
@@ -162,7 +174,6 @@
 				"value": false
 			},
 		],
-		"wait": true,
 		"args": {
 			"name": "3R",
 			"mood": "normal",
@@ -174,6 +185,7 @@
 	},
 	{
 		"action": "show_dialogue",
+		"wait": "advance_dialogue",
 		"conditions": [
 			{
 				"name": "door_lock",
@@ -189,7 +201,6 @@
 				"value": false
 			},
 		],
-		"wait": true,
 		"args": {
 			"name": "martin",
 			"mood": "smiling",
@@ -201,6 +212,7 @@
 	},
 	{
 		"action": "show_dialogue",
+		"wait": "advance_dialogue",
 		"conditions": [
 			{
 				"name": "door_lock",
@@ -216,7 +228,6 @@
 				"value": false
 			},
 		],
-		"wait": true,
 		"args": {
 			"name": "3R",
 			"mood": "normal",
@@ -227,7 +238,8 @@
 		}
 	},
 	{
-		"action": "look",
+		"action": "function",
+		"target": "player",
 		"conditions": [
 			{
 				"name": "door_lock",
@@ -244,8 +256,9 @@
 			},
 		],
 		"args": {
-			"enable": true,
-			"name": "WeaponLocker"
+			"name": "look_at_interactable",
+			"object": "caller",
+			"args": [true, "../WeaponLocker"]
 		}
 	},
 	{
@@ -265,7 +278,7 @@
 				"value": false
 			},
 		],
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "3R",
 			"mood": "normal",
@@ -292,7 +305,7 @@
 				"value": false
 			},
 		],
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "3R",
 			"mood": "normal",
@@ -303,7 +316,8 @@
 		}
 	},
 	{
-		"action": "rotate",
+		"action": "function",
+		"target": "player",
 		"conditions": [
 			{
 				"name": "door_lock",
@@ -319,6 +333,10 @@
 				"value": false
 			},
 		],
+		"args": {
+			"name": "rotate_interactable",
+			"object": "caller"
+		}
 	},
 	{
 		"action": "variable",

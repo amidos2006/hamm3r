@@ -8,10 +8,12 @@
 		}
 	},
 	{
-		"action": "look",
+		"action": "function",
+		"target": "Player",
 		"args": {
-			"enable": true,
-			"name": "Computer"
+			"name": "look_at_interactable",
+			"object": "caller",
+			"args": [true, "../Computer"]
 		}
 	},
 	{
@@ -99,10 +101,12 @@
 		}
 	},
 	{
-		"action": "look",
+		"action": "function",
+		"target": "Player",
 		"args": {
-			"enable": true,
-			"at": "../SealDoor",
+			"name": "look_at_interactable",
+			"object": "caller",
+			"args": [true, "../SealDoor"],
 		}
 	},
 	{
@@ -141,9 +145,11 @@
 		"wait": 0.25,
 	},
 	{
-		"action": "look",
+		"action": "function",
+		"target": "player",
 		"args": {
-			"enable": false
+			"name": "rotate_interactable",
+			"object": "caller"
 		}
 	},
 	{

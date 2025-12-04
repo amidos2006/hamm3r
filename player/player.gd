@@ -112,14 +112,27 @@ func focus_interactable(interactable, focus_point):
 	_interactable_focus = _get_rotation(focus_point)
 	if _interactable_object and not _interactable_object.get_node("Interactable").disable_interaction:
 		UiMessage.show_message("PRESS [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO INTERACT", "interact", 0)
-	
+
+
+func look_at_interactable(caller, enable, at=""):
+	if enable:
+		caller.get_node("Interactable")._different_marker = ActionManager.get_target(at, caller, self).get_node("Interactable").get_node("FocusPoint")
+		self.focus_interactable(null, caller.get_node("Interactable")._different_marker.global_position)
+	else:
+		caller.get_node("Interactable")._different_marker = null
+
 
 func rotate_focus(interactable):
 	rotation.y += $Pivot/Camera3D.rotation.y
 	$Pivot/Camera3D.rotation.y = 0
 	reset_interactable(interactable)
 	_interactable_focus = Vector3.ZERO
-	
+
+
+func rotate_interactable(caller):
+	self.rotate_focus(caller)
+	caller.get_node("Interactable")._different_marker = null
+
 
 func reset_interactable(interactable):
 	if _interactable_object == interactable:

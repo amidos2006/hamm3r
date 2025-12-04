@@ -18,7 +18,7 @@
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "3R",
 			"mood": "normal",
@@ -36,7 +36,7 @@
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "3R",
 			"mood": "normal",
