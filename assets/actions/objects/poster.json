@@ -1,13 +1,15 @@
 [
 	{
-		"action": "controls",
+		"action": "variable",
+		"target": "player",
 		"args": {
-			"enable": false,
+			"name": "disable_controls",
+			"value": true
 		}
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "martin",
 			"mood": "normal",
@@ -19,14 +21,14 @@
 	},
 	{
 		"action": "timer",
-		"args": {
-			"time": 0.25
-		}
+		"wait": 0.25,
 	},
 	{
-		"action": "controls",
+		"action": "variable",
+		"target": "player",
 		"args": {
-			"enable": true
+			"name": "disable_controls",
+			"value": false
 		}
-	}
+	},
 ]

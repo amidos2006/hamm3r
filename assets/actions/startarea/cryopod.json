@@ -1,8 +1,10 @@
 [
 	{
-		"action": "controls",
+		"action": "variable",
+		"target": "player",
 		"args": {
-			"enable": false,
+			"name": "disable_controls",
+			"value": true
 		}
 	},
 	{
@@ -24,9 +26,11 @@
 		}
 	},
 	{
-		"action": "controls",
+		"action": "variable",
+		"target": "player",
 		"args": {
-			"enable": true
+			"name": "disable_controls",
+			"value": false
 		}
-	}
+	},
 ]

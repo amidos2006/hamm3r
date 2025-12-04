@@ -1,21 +1,22 @@
 [
 	{
-		"action": "controls",
+		"action": "variable",
+		"target": "player",
 		"args": {
-			"enable": false,
+			"name": "disable_controls",
+			"value": true
 		}
 	},
 	{
 		"action": "function",
-		"wait": true,
+		"wait": "animation_ended",
 		"args": {
 			"name": "open_door",
-			"signal": "animation_ended"
 		}
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "martin",
 			"mood": "normal",
@@ -26,29 +27,29 @@
 		}
 	},
 	{
-		"action": "script",
+		"action": "function",
+		"target": "Interactable",
 		"args": {
-			"name": "change",
-			"path": "res://assets/actions/startarea/fridge_1.json"
+			"name": "change_script",
+			"args": ["res://assets/actions/startarea/fridge_1.json"]
 		}
 	},
 	{
 		"action": "function",
-		"wait": false,
 		"args": {
 			"name": "close_door"
 		}
 	},
 	{
 		"action": "timer",
-		"args": {
-			"time": 0.25
-		}
+		"wait": 0.25,
 	},
 	{
-		"action": "controls",
+		"action": "variable",
+		"target": "player",
 		"args": {
-			"enable": true
+			"name": "disable_controls",
+			"value": false
 		}
-	}
+	},
 ]

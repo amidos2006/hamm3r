@@ -1,22 +1,29 @@
 [
 	{
-		"action": "controls",
+		"action": "variable",
+		"target": "player",
 		"args": {
-			"enable": false
+			"name": "disable_controls",
+			"value": true
 		}
 	},
 	{
 		"action": "function",
-		"wait": true,
+		"wait": "animation_ended",
 		"args": {
 			"name": "toggle_lid",
-			"signal": "animation_ended",
 		}
 	},
 	{
-		"action": "controls",
+		"action": "timer",
+		"wait": 0.25,
+	},
+	{
+		"action": "variable",
+		"target": "player",
 		"args": {
-			"enable": true
+			"name": "disable_controls",
+			"value": false
 		}
-	}
+	},
 ]

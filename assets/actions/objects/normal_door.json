@@ -1,33 +1,28 @@
 [
 	{
-		"action": "interaction",
+		"action": "variable",
+		"target": "player",
 		"args": {
-			"enable": false
+			"name": "disable_controls",
+			"value": true
 		}
 	},
 	{
 		"action": "function",
-		"wait": false,
 		"args": {
 			"name": "open_door"
 		}
 	},
 	{
-		"action": "controls",
-		"args": {
-			"enable": false,
-		}
-	},
-	{
 		"action": "timer",
-		"args": {
-			"time": 0.25
-		}
+		"wait": 0.25,
 	},
 	{
-		"action": "controls",
+		"action": "variable",
+		"target": "player",
 		"args": {
-			"enable": true
+			"name": "disable_controls",
+			"value": false
 		}
-	}
+	},
 ]

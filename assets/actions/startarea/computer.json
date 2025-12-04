@@ -1,8 +1,10 @@
 [
 	{
-		"action": "controls",
+		"action": "variable",
+		"target": "player",
 		"args": {
-			"enable": false,
+			"name": "disable_controls",
+			"value": true
 		}
 	},
 	{
@@ -14,7 +16,7 @@
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "martin",
 			"mood": "normal",
@@ -26,7 +28,7 @@
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "3R",
 			"mood": "normal",
@@ -38,7 +40,7 @@
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "martin",
 			"mood": "concerned",
@@ -50,7 +52,7 @@
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "martin",
 			"mood": "questioning",
@@ -62,7 +64,7 @@
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "3R",
 			"mood": "normal",
@@ -74,7 +76,7 @@
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "martin",
 			"mood": "normal",
@@ -86,7 +88,7 @@
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "3R",
 			"mood": "normal",
@@ -100,26 +102,23 @@
 		"action": "look",
 		"args": {
 			"enable": true,
-			"name": "SealDoor"
+			"at": "../SealDoor",
 		}
 	},
 	{
 		"action": "timer",
-		"args": {
-			"time": 1.0
-		}
+		"wait": 1.0,
 	},
 	{
 		"action": "function",
-		"wait": false,
+		"target": "../DoorLight",
 		"args": {
-			"target": "DoorLight",
 			"name": "change_color"
 		}
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "3R",
 			"mood": "normal",
@@ -131,17 +130,15 @@
 	},
 	{
 		"action": "variable",
+		"target": "../SealDoor",
 		"args": {
 			"name": "door_lock",
-			"target": "SealDoor",
 			"value": "green"
 		}
 	},
 	{
 		"action": "timer",
-		"args": {
-			"time": 0.25
-		}
+		"wait": 0.25,
 	},
 	{
 		"action": "look",
@@ -150,15 +147,20 @@
 		}
 	},
 	{
-		"action": "interaction",
+		"action": "function",
+		"target": "Interactable",
 		"args": {
-			"enable": false
+			"name": "disable_interactable",
+			"object": "player",
+			"args": [true]
 		}
 	},
 	{
-		"action": "controls",
+		"action": "variable",
+		"target": "player",
 		"args": {
-			"enable": true
+			"name": "disable_controls",
+			"value": false
 		}
-	}
+	},
 ]

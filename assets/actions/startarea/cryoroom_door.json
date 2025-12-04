@@ -1,14 +1,19 @@
 [
 	{
-		"action": "controls",
+		"action": "variable",
+		"target": "player",
 		"args": {
-			"enable": false,
+			"name": "disable_controls",
+			"value": true
 		}
 	},
 	{
-		"action": "interaction",
+		"action": "function",
+		"target": "Interactable",
 		"args": {
-			"enable": false,
+			"name": "disable_interactable",
+			"object": "player",
+			"args": [true]
 		}
 	},
 	{
@@ -25,7 +30,6 @@
 	},
 	{
 		"action": "function",
-		"wait": false,
 		"args": {
 			"name": "open_door"
 		}
@@ -49,22 +53,28 @@
 		}
 	},
 	{
-		"action": "script",
+		"action": "function",
+		"target": "Interactable",
 		"args": {
-			"name": "change",
-			"path": "res://assets/actions/objects/normal_door.json"
+			"name": "change_script",
+			"args": ["res://assets/actions/objects/normal_door.json"]
 		}
 	},
 	{
-		"action": "interaction",
+		"action": "function",
+		"target": "Interactable",
 		"args": {
-			"enable": true,
+			"name": "disable_interactable",
+			"object": "player",
+			"args": [false]
 		}
 	},
 	{
-		"action": "controls",
+		"action": "variable",
+		"target": "player",
 		"args": {
-			"enable": true
+			"name": "disable_controls",
+			"value": false
 		}
-	}
+	},
 ]

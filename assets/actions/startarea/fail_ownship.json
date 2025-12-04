@@ -1,19 +1,23 @@
 [
 	{
-		"action": "controls",
+		"action": "variable",
+		"target": "player",
 		"args": {
-			"enable": false,
-		}
-	},
-	{
-		"action": "interaction",
-		"args": {
-			"enable": false
+			"name": "disable_controls",
+			"value": true
 		}
 	},
 	{
 		"action": "function",
-		"wait": false,
+		"target": "Interactable",
+		"args": {
+			"name": "disable_interactable",
+			"object": "player",
+			"args": [true]
+		}
+	},
+	{
+		"action": "function",
 		"args": {
 			"name": "fail_door"
 		}
@@ -37,9 +41,11 @@
 		}
 	},
 	{
-		"action": "controls",
+		"action": "variable",
+		"target": "player",
 		"args": {
-			"enable": true
+			"name": "disable_controls",
+			"value": false
 		}
-	}
+	},
 ]

@@ -1,14 +1,19 @@
 [
 	{
-		"action": "controls",
+		"action": "variable",
+		"target": "player",
 		"args": {
-			"enable": false,
+			"name": "disable_controls",
+			"value": true
 		}
 	},
 	{
-		"action": "interaction",
+		"action": "function",
+		"target": "Interactable",
 		"args": {
-			"enable": false
+			"name": "disable_interactable",
+			"object": "player",
+			"args": [true]
 		}
 	},
 	{
@@ -339,7 +344,6 @@
 	},
 	{
 		"action": "function",
-		"wait": false,
 		"conditions": [
 			{
 				"name": "door_lock",
@@ -362,7 +366,8 @@
 		}
 	},
 	{
-		"action": "interaction",
+		"action": "function",
+		"target": "Interactable",
 		"conditions": [
 			{
 				"name": "door_lock",
@@ -375,11 +380,14 @@
 			},
 		],
 		"args": {
-			"enable": true
+			"name": "disable_interactable",
+			"object": "player",
+			"args": [false]
 		}
 	},
 	{
-		"action": "interaction",
+		"action": "function",
+		"target": "Interactable",
 		"conditions": [
 			{
 				"name": "door_lock",
@@ -387,13 +395,17 @@
 			},
 		],
 		"args": {
-			"enable": true
+			"name": "disable_interactable",
+			"object": "player",
+			"args": [false]
 		}
 	},
 	{
-		"action": "controls",
+		"action": "variable",
+		"target": "player",
 		"args": {
-			"enable": true
+			"name": "disable_controls",
+			"value": false
 		}
-	}
+	},
 ]
