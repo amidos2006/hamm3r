@@ -23,7 +23,7 @@ func _ready():
 	tween.tween_property($Label, "modulate", Color(Color.WHITE, 0), 2)
 	await tween.finished
 	if _return_scene.length() > 0:
-		Global.switch_scene(_return_scene, _return_args)
+		SceneManager.switch_scene(_return_scene, _return_args)
 
 
 func initialize(args):

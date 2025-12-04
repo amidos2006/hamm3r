@@ -93,7 +93,7 @@ func _execute_actions(actions):
 				if act.wait:
 					await get_tree().create_timer(act.args.time).timeout
 			"switch_scene":
-				Global.switch_scene(act.args.path, act.args)
+				SceneManager.switch_scene(act.args.path, act.args)
 			"music":
 				if act.args.action == "play":
 					$Music.autoplay = true

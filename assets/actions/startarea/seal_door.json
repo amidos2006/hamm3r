@@ -10,6 +10,17 @@
 	{
 		"action": "function",
 		"target": "Interactable",
+		"conditions": [
+			{
+				"name": "door_lock",
+				"value": "green"
+			},
+			{
+				"name": "gun_equipped",
+				"target": "player",
+				"value": false
+			},
+		],
 		"args": {
 			"name": "disable_interactable",
 			"object": "player",
@@ -379,9 +390,7 @@
 	},
 	{
 		"action": "timer",
-		"args": {
-			"time": 0.25
-		}
+		"wait": 0.25
 	},
 	{
 		"action": "function",
@@ -395,21 +404,6 @@
 				"name": "gun_equipped",
 				"target": "player",
 				"value": false
-			},
-		],
-		"args": {
-			"name": "disable_interactable",
-			"object": "player",
-			"args": [false]
-		}
-	},
-	{
-		"action": "function",
-		"target": "Interactable",
-		"conditions": [
-			{
-				"name": "door_lock",
-				"value": "red"
 			},
 		],
 		"args": {

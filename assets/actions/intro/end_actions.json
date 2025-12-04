@@ -148,6 +148,13 @@
 		}
 	},
 	{
+		"action": "timer",
+		"wait": "true",
+		"args": {
+			"time": 2.0
+		}
+	},
+	{
 		"action": "show_message",
 		"wait": true,
 		"args": {
