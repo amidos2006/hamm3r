@@ -53,6 +53,12 @@ func _execute_actions(actions):
 						$Player.allowed_controls[key] = act.args[key]
 				if "angle" in act.args:
 					$Player.restricted_angle = Vector2(act.args.angle.min, act.args.angle.max)
+			
+			"sound":
+				if act.args.name.to_lower() == "fade":
+					var target = get_node(act.args.target)
+					var tween = get_tree().create_tween()
+					tween.tween_property(target, "volume_db", act.args.value, act.args.time)
 
 
 func _on_cryopod_exit_body_entered(body: Node3D) -> void:

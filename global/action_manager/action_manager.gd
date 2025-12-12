@@ -42,6 +42,10 @@ func run_actions(actions, caller, player=null):
 				Blackout.fade(act.args.start, act.args.end, act.args.time)
 				target = Blackout
 				act.wait = "animation_ended"
+			"open":
+				Blackout.open(act.args.start, act.args.end, act.args.time)
+				target = Blackout
+				act.wait = "animation_ended"
 			
 			# Target related actions
 			"variable":
@@ -59,15 +63,15 @@ func run_actions(actions, caller, player=null):
 					args = args + act.args.args
 				target.callv(act.args.name, args)
 			"sound":
-				if act.args.action.to_lower() == "play":
+				if act.args.name.to_lower() == "play":
 					if act.args.has("loop"):
 						target.autoplay = act.args.loop
 					target.play()
-				elif act.args.action.to_lower() == "stop":
+				elif act.args.name.to_lower() == "stop":
 					target.stop()
-				elif act.args.action.to_lower() == "fade":
+				elif act.args.name.to_lower() == "fade":
 					var tween = get_tree().create_tween()
-					tween.tween_property(target, "volume_db", act.args.value, act.wait)
+					tween.tween_property(target, "volume_db", act.args.value, act.args.time)
 		
 		if act.has("wait"):
 			if typeof(act.wait) == TYPE_STRING:

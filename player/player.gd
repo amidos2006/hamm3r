@@ -90,6 +90,8 @@ func _physics_process(delta):
 	_target_velocity.y -= delta * gravity
 	if is_on_floor():
 		_target_velocity.y = 0
+		if abs(self.velocity.x + self.velocity.z) > 0 and not $WalkingSounds/Metal.playing:
+			$WalkingSounds/Metal.play()
 	velocity = _target_velocity
 	if gun_equipped:
 		if abs(movement) + abs(direction) > 0:

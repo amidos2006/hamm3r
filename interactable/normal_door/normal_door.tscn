@@ -1,9 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbx1afyq7yyqp"]
+[gd_scene load_steps=15 format=3 uid="uid://dbx1afyq7yyqp"]
 
 [ext_resource type="Script" uid="uid://iivux16cptri" path="res://interactable/normal_door/normal_door.gd" id="1_jst47"]
 [ext_resource type="PackedScene" uid="uid://do05hodf5x4bv" path="res://assets/models/Door_Ship.glb" id="2_dlvnk"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="4_dlvnk"]
 [ext_resource type="JSON" path="res://assets/actions/objects/normal_door.json" id="5_fh74d"]
+[ext_resource type="AudioStream" uid="uid://v2xp611rx23r" path="res://assets/sfx/in_game/doors/spaceship-compartment-door_1.wav" id="5_ubxar"]
+[ext_resource type="AudioStream" uid="uid://b0ana0fcakyho" path="res://assets/sfx/in_game/doors/spaceship-compartment-door_2.wav" id="6_ubxar"]
+[ext_resource type="AudioStream" uid="uid://b8rutcl3ipwpw" path="res://assets/sfx/in_game/doors/spaceship-compartment-door_3.wav" id="7_m2hqs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y7nol"]
 size = Vector3(1.6, 2.29871, 0.6)
@@ -107,6 +110,17 @@ shape = SubResource("BoxShape3D_dlvnk")
 
 [node name="FocusPoint" parent="Interactable" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.351918, 1.08864, 0)
+
+[node name="Sounds" type="Node3D" parent="."]
+
+[node name="AudioStreamPlayer3D_1" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("5_ubxar")
+
+[node name="AudioStreamPlayer3D_2" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("6_ubxar")
+
+[node name="AudioStreamPlayer3D_3" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("7_m2hqs")
 
 [connection signal="player_exited" from="Interactable" to="." method="_on_interactable_player_exited"]
 

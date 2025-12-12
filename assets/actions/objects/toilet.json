@@ -9,7 +9,6 @@
 	},
 	{
 		"action": "function",
-		"wait": "animation_ended",
 		"args": {
 			"name": "toggle_lid",
 		}
