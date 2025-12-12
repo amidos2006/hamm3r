@@ -109,7 +109,7 @@
 		"args": {
 			"name": "3R",
 			"mood": "normal",
-			"text": "But first, some post-awakening diagnostics. Look all the way to the left.",
+			"text": "But first, some post-awakening diagnostics. Look all the way to the right.",
 			"action": "interact",
 			"direction": "right",
 			"time": 0
@@ -119,14 +119,14 @@
 		"action": "controls",
 		"args": {
 			"enable": false,
-			"left": true
+			"right": true
 		}
 	},
 	{
 		"action": "show_message",
 		"wait": false,
 		"args": {
-			"message": "PRESS [color=#d1ff85][font_size=72]LEFT[/font_size][/color] TO ROTATE",
+			"message": "PRESS [color=#d1ff85][font_size=72]RIGHT[/font_size][/color] TO ROTATE",
 			"action": "",
 			"time": 1.0
 		}
@@ -135,7 +135,7 @@
 		"action": "signal",
 		"wait": true,
 		"args": {
-			"name": "angle_left",
+			"name": "angle_right",
 			"target": "Player"
 		}
 	},
@@ -163,7 +163,7 @@
 		"args": {
 			"name": "3R",
 			"mood": "normal",
-			"text": "Wonderful. Let us try the right-hand side now?",
+			"text": "Wonderful. Let us try the left-hand side now?",
 			"action": "interact",
 			"direction": "right",
 			"time": 0
@@ -173,14 +173,14 @@
 		"action": "controls",
 		"args": {
 			"enable": false,
-			"right": true
+			"left": true
 		}
 	},
 	{
 		"action": "show_message",
 		"wait": false,
 		"args": {
-			"message": "PRESS [color=#d1ff85][font_size=72]RIGHT[/font_size][/color] TO ROTATE",
+			"message": "PRESS [color=#d1ff85][font_size=72]LEFT[/font_size][/color] TO ROTATE",
 			"action": "",
 			"time": 1.0
 		}
@@ -189,7 +189,7 @@
 		"action": "signal",
 		"wait": true,
 		"args": {
-			"name": "angle_right",
+			"name": "angle_left",
 			"target": "Player"
 		}
 	},

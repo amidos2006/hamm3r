@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://byowqag0chqth"]
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://c5upfk3h14hp2"]
 
 [ext_resource type="Shader" uid="uid://5v8odfr5ap06" path="res://assets/shaders/glass.gdshader" id="1_fo23c"]
 [ext_resource type="Texture2D" uid="uid://0c2qt7vj2bgq" path="res://assets/materials/hatch_painted.png" id="2_rlnxo"]

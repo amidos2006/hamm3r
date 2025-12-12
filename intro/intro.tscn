@@ -352,6 +352,9 @@ zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 script = ExtResource("14_sg2fo")
 
+[node name="AudioListener2D" type="AudioListener2D" parent="Camera2D"]
+current = true
+
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("31_74s3g")
 

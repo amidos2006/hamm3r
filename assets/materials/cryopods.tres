@@ -1,8 +1,8 @@
-[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://7qyieu0x0j1t"]
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://b1yrai51rfv0w"]
 
-[ext_resource type="Shader" uid="uid://cfolovkcxbyfy" path="res://assets/shaders/hatch.gdshader" id="1_yfx1k"]
-[ext_resource type="Texture2D" uid="uid://0c2qt7vj2bgq" path="res://assets/materials/hatch_painted.png" id="2_mgqw1"]
-[ext_resource type="Texture2D" uid="uid://lv5k7xuqrk6f" path="res://interactable/cryopod/materials/texture.png" id="3_2tjdn"]
+[ext_resource type="Shader" uid="uid://cfolovkcxbyfy" path="res://assets/shaders/hatch.gdshader" id="1_7iesl"]
+[ext_resource type="Texture2D" uid="uid://0c2qt7vj2bgq" path="res://assets/materials/hatch_painted.png" id="2_t85o6"]
+[ext_resource type="Texture2D" uid="uid://lv5k7xuqrk6f" path="res://interactable/cryopod/materials/texture.png" id="3_7iesl"]
 
 [sub_resource type="Gradient" id="Gradient_bku4d"]
 offsets = PackedFloat32Array(0.0823529, 0.180392, 0.447059)
@@ -13,10 +13,10 @@ gradient = SubResource("Gradient_bku4d")
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_yfx1k")
-shader_parameter/cross_hatch_texture = ExtResource("2_mgqw1")
+shader = ExtResource("1_7iesl")
+shader_parameter/cross_hatch_texture = ExtResource("2_t85o6")
 shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/texture_albedo = ExtResource("3_2tjdn")
+shader_parameter/texture_albedo = ExtResource("3_7iesl")
 shader_parameter/uv_scale_r = 0.0
 shader_parameter/uv_scale_g = 0.0
 shader_parameter/uv_scale_b = 0.0

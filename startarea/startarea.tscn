@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://gu0pcq5qctwk" path="res://assets/models/Ship_Interior_StartRoom_noShadow2.png" id="6_b3vky"]
 [ext_resource type="Material" uid="uid://cy276t1ji2l2j" path="res://assets/materials/pipes.tres" id="6_nxhd3"]
 [ext_resource type="Texture2D" uid="uid://qhftqm7k8lrr" path="res://assets/models/Ship_Interior_Glass.png" id="7_pky7q"]
-[ext_resource type="Material" uid="uid://byowqag0chqth" path="res://assets/materials/glass.tres" id="8_m1vxx"]
+[ext_resource type="Material" uid="uid://c5upfk3h14hp2" path="res://assets/materials/glass.tres" id="8_m1vxx"]
 [ext_resource type="Material" uid="uid://cw2xloxc4hnog" path="res://assets/materials/bathroom.tres" id="9_nxhd3"]
 [ext_resource type="PackedScene" uid="uid://bxw43s4qrsdcl" path="res://interactable/toilet/toilet.tscn" id="13_2pnu0"]
 [ext_resource type="Material" uid="uid://deirstgwry0wa" path="res://assets/materials/controlroom.tres" id="16_qgwtf"]
@@ -1298,6 +1298,7 @@ omni_range = 68.767
 [connection signal="body_entered" from="Cryoroom/CryopodExit" to="." method="_on_cryopod_exit_body_entered"]
 
 [editable path="Control/SealDoor"]
+[editable path="Control/SealDoor/Pivot"]
 [editable path="Control/SealDoor/Interactable"]
 [editable path="Corridor/CryoroomDoor"]
 [editable path="Corridor/CryoroomDoor/Pivot"]
@@ -1306,4 +1307,5 @@ omni_range = 68.767
 [editable path="Corridor/FailDoor/Pivot"]
 [editable path="Corridor/FailDoor/Interactable"]
 [editable path="SealDoor"]
+[editable path="SealDoor/Pivot"]
 [editable path="SealDoor/Interactable"]

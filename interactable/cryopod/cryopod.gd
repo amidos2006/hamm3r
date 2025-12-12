@@ -17,7 +17,7 @@ var _state = DoorState.CLOSE
 
 func _ready():
 	if not show_note:
-		$Pivot/Base/Note.hide()
+		$Pivot/CryoPod/CryoPod_Note.hide()
 	else:
 		$CollisionShape3D.disabled = true
 

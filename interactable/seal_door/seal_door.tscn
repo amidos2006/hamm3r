@@ -1,9 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://05t1uswscwq"]
+[gd_scene load_steps=12 format=3 uid="uid://05t1uswscwq"]
 
-[ext_resource type="ArrayMesh" uid="uid://ca5c215hme6op" path="res://interactable/seal_door/meshes/seal_door_frame.res" id="1_crdxj"]
 [ext_resource type="Script" uid="uid://dhrisfosy7p65" path="res://interactable/seal_door/seal_door.gd" id="1_xb6vn"]
-[ext_resource type="ArrayMesh" uid="uid://dpu725wmqk6iv" path="res://interactable/seal_door/meshes/seal_door_left.res" id="2_xb6vn"]
-[ext_resource type="ArrayMesh" uid="uid://ccw7k8apjtu60" path="res://interactable/seal_door/meshes/seal_door_right.res" id="3_i0t73"]
+[ext_resource type="PackedScene" uid="uid://boqheahono8cx" path="res://assets/models/Door_Tunnel.glb" id="2_4frlx"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="5_66maq"]
 [ext_resource type="JSON" path="res://assets/actions/objects/seal_door.json" id="6_m8aqy"]
 
@@ -15,7 +13,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/LeftDoor:position")
+tracks/0/path = NodePath("Pivot/Seal_Door_L:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -27,7 +25,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Pivot/RightDoor:position")
+tracks/1/path = NodePath("Pivot/Seal_Door_R:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -43,7 +41,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/RightDoor:position")
+tracks/0/path = NodePath("Pivot/Seal_Door_L:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -55,7 +53,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Pivot/LeftDoor:position")
+tracks/1/path = NodePath("Pivot/Seal_Door_R:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -71,26 +69,26 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/LeftDoor:position")
+tracks/0/path = NodePath("Pivot/Seal_Door_L:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.233333, 0.3, 0.366667, 0.4, 0.433333, 0.466667, 0.5),
+"times": PackedFloat32Array(0, 0.1667, 0.2333, 0.3, 0.3667, 0.4, 0.4333, 0.4667, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.08, 0, 0), Vector3(0.04, 0, 0), Vector3(0.06, 0, 0), Vector3(0.04, 0, 0), Vector3(0.05, 0, 0), Vector3(0.04, 0, 0), Vector3(0.05, 0, 0), Vector3(0.04, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(-0.08, 0, 0), Vector3(-0.04, 0, 0), Vector3(-0.06, 0, 0), Vector3(-0.04, 0, 0), Vector3(-0.05, 0, 0), Vector3(-0.04, 0, 0), Vector3(-0.05, 0, 0), Vector3(-0.04, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Pivot/RightDoor:position")
+tracks/1/path = NodePath("Pivot/Seal_Door_R:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.233333, 0.3, 0.366667, 0.4, 0.433333, 0.466667, 0.5),
+"times": PackedFloat32Array(0, 0.1667, 0.2333, 0.3, 0.3667, 0.4, 0.4333, 0.4667, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.08, 0, 0), Vector3(-0.04, 0, 0), Vector3(-0.06, 0, 0), Vector3(-0.04, 0, 0), Vector3(-0.05, 0, 0), Vector3(-0.04, 0, 0), Vector3(-0.05, 0, 0), Vector3(-0.04, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0.08, 0, 0), Vector3(0.04, 0, 0), Vector3(0.06, 0, 0), Vector3(0.04, 0, 0), Vector3(0.05, 0, 0), Vector3(0.04, 0, 0), Vector3(0.05, 0, 0), Vector3(0.04, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_xb6vn"]
@@ -99,26 +97,26 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/LeftDoor:position")
+tracks/0/path = NodePath("Pivot/Seal_Door_L:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.8, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(-0.8, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Pivot/RightDoor:position")
+tracks/1/path = NodePath("Pivot/Seal_Door_R:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.8, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0.8, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ys3yn"]
@@ -135,18 +133,7 @@ size = Vector3(2, 2.4, 3)
 [node name="SealDoor" type="StaticBody3D"]
 script = ExtResource("1_xb6vn")
 
-[node name="Pivot" type="Node3D" parent="."]
-
-[node name="Frame" type="MeshInstance3D" parent="Pivot"]
-mesh = ExtResource("1_crdxj")
-
-[node name="LeftDoor" type="MeshInstance3D" parent="Pivot"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-mesh = ExtResource("2_xb6vn")
-
-[node name="RightDoor" type="MeshInstance3D" parent="Pivot"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-mesh = ExtResource("3_i0t73")
+[node name="Pivot" parent="." instance=ExtResource("2_4frlx")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00439453, 1.18785, 0)
@@ -169,4 +156,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10833, 0.122978)
 
 [connection signal="player_exited" from="Interactable" to="." method="_on_interactable_player_exited"]
 
+[editable path="Pivot"]
 [editable path="Interactable"]
