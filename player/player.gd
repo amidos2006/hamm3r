@@ -145,7 +145,6 @@ func reset_interactable(interactable):
 
 func is_looking_at(body):
 	if $RayCast3D.is_colliding():
-		print($RayCast3D.get_collider().name)
 		return $RayCast3D.get_collider() == body
 	return false
 
@@ -157,7 +156,7 @@ func take_gun(locker):
 	animation_ended.emit()
 	
 
-func equip_gun(locker):
+func equip_gun():
 	$UI.show_ui(1.5)
 	$AnimationPlayer.play("Equip")
 	$Pivot/Camera3D/Gun.visible = true
@@ -172,5 +171,5 @@ func allow_keys(allowed_keys={}):
 		self.allowed_controls[key] = allowed_keys[key]
 		
 
-func restrict_angle(min, max):
-	self.restricted_angle = Vector2(min, max)
+func restrict_angle(min_value, max_value):
+	self.restricted_angle = Vector2(min_value, max_value)

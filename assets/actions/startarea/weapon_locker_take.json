@@ -70,8 +70,7 @@
 		"target": "player",
 		"wait": "animation_ended",
 		"args": {
-			"name": "equip_gun",
-			"object": "caller"
+			"name": "equip_gun"
 		}
 	},
 	{

@@ -11,6 +11,5 @@ metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
 
 [resource]
 script = ExtResource("1_6jcfi")
-moods = Dictionary[String, ExtResource("2_xsu3q")]({})
 default = SubResource("Resource_w12ax")
 metadata/_custom_type_script = "uid://ctxh6c3jp62vb"

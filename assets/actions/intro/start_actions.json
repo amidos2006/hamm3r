@@ -47,7 +47,7 @@
 		"action": "show_message",
 		"args": {
 			"message": "HOLD [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO DECELERATE",
-			"action": "interact",
+			"action": "",
 			"time": 1.0
 		}
 	},

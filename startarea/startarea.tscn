@@ -809,7 +809,7 @@ shape = SubResource("BoxShape3D_2pnu0")
 [node name="Lighting" type="Node3D" parent="."]
 
 [node name="Cyroroom" type="OmniLight3D" parent="Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80451, 2.601, 14.5697)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80451, 2.471742, 14.5697)
 light_color = Color(0.886275, 0.92549, 0.952941, 1)
 light_indirect_energy = 0.903
 light_volumetric_fog_energy = 0.305
@@ -819,11 +819,10 @@ shadow_bias = 0.05
 distance_fade_enabled = true
 distance_fade_begin = 20.0
 distance_fade_shadow = 30.0
-omni_range = 5.816
 omni_attenuation = 0.273
 
 [node name="Corridor" type="OmniLight3D" parent="Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02582, 2.44493, 11.0859)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02582, 2.43069, 11.0859)
 light_color = Color(1, 0.972549, 0.890196, 1)
 light_energy = 0.321
 light_volumetric_fog_energy = 0.0
@@ -834,11 +833,10 @@ shadow_normal_bias = 7.606
 distance_fade_enabled = true
 distance_fade_begin = 20.0
 distance_fade_shadow = 30.0
-omni_range = 119.723
 omni_attenuation = 0.272
 
 [node name="Control" type="OmniLight3D" parent="Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.80451, 2.32924, 7.56975)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.80451, 2.30817, 7.56975)
 light_color = Color(0.815686, 0.862745, 0.815686, 1)
 light_energy = 1.776
 light_bake_mode = 1
@@ -847,18 +845,16 @@ shadow_bias = 0.161
 distance_fade_enabled = true
 distance_fade_begin = 20.0
 distance_fade_shadow = 30.0
-omni_range = 50.823
 omni_attenuation = 0.516
 
 [node name="Tunnel" type="OmniLight3D" parent="Lighting"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 1.36889, 2.34869, 5.17275)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 1.36889, 2.32076, 5.17275)
 light_color = Color(0.815686, 0.862745, 0.815686, 1)
 light_bake_mode = 1
 shadow_enabled = true
 distance_fade_enabled = true
 distance_fade_begin = 20.0
 distance_fade_shadow = 30.0
-omni_range = 68.767
 
 [connection signal="body_entered" from="InteractableObjects/Cryoroom_CryopodExit" to="." method="_on_cryopod_exit_body_entered"]
 

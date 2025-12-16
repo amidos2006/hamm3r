@@ -16,8 +16,8 @@ func _ready():
 	#var result = LayoutGenerator._mission_to_layout(graph, 
 		#[23, 12, 54, 1, 0, 5, 2, 5, 8, 3, 10, 42, 13, 57, 2, 4, 5, 6, 9, 10], 
 		#"Start", "End", "Blocked")
-	#print(str(result))
 	var result = LayoutGenerator.generate_best_layout(graphs, 10, "Start", "End", "Blocked")
+	print(str(result))
 	var offset = result["start"]
 	var layout = result["layout"].spaceship()
 	
@@ -27,19 +27,28 @@ func _ready():
 		LayoutGenerator.LayoutDirection.East: false,
 		LayoutGenerator.LayoutDirection.West: false 
 	}
-	if offset.x == 0:
-		start_opening[LayoutGenerator.LayoutDirection.East] = true
-	elif offset.y == 0:
-		start_opening[LayoutGenerator.LayoutDirection.North] = true
-	elif offset.x == layout[0].size() - 1:
-		start_opening[LayoutGenerator.LayoutDirection.West] = true
-	elif offset.y == layout.size() - 1:
+	var rotation_angle = Vector3()
+	if offset.y == layout.size() - 1:
+		rotation_angle.y = 0
 		start_opening[LayoutGenerator.LayoutDirection.South] = true
+	elif offset.y == 0:
+		rotation_angle.y = 180
+		start_opening[LayoutGenerator.LayoutDirection.North] = true
+	elif offset.x == 0:
+		rotation_angle.y = 90
+		start_opening[LayoutGenerator.LayoutDirection.West] = true
+	elif offset.x == layout[0].size() - 1:
+		rotation_angle.y = -90
+		start_opening[LayoutGenerator.LayoutDirection.East] = true
 	for y in layout.size():
 		for x in layout[y].size():
 			var cell = layout[y][x]
 			var tile = _tile_scene.instantiate()
 			if cell:
+				var room_type = ""
+				if cell.mission:
+					if cell.mission.type == "End":
+						room_type = "end"
 				var temp_opening = {}
 				for key in start_opening:
 					if cell.mission != null and cell.mission.type == "Start":
@@ -51,17 +60,11 @@ func _ready():
 						cell.doors[LayoutGenerator.LayoutDirection.East] != LayoutGenerator.LayoutDoor.Wall or temp_opening[LayoutGenerator.LayoutDirection.East], 
 						cell.doors[LayoutGenerator.LayoutDirection.North] != LayoutGenerator.LayoutDoor.Wall or temp_opening[LayoutGenerator.LayoutDirection.North], 
 						cell.doors[LayoutGenerator.LayoutDirection.West] != LayoutGenerator.LayoutDoor.Wall or temp_opening[LayoutGenerator.LayoutDirection.West],
+						room_type
 				)
 				tile.position = Vector3((x - offset.x) * tile_size.x, 0, (y - offset.y) * tile_size.y)
 				add_child(tile)
-	if offset.y != layout.size() - 1:
-		if offset.x == 0:
-			self.rotation_degrees.y = 90
-		elif offset.y == 0:
-			self.rotation_degrees.y = 180
-		elif offset.x == layout[0].size() - 1:
-			self.rotation_degrees.y = -90
-			
+	self.rotation_degrees = rotation_angle
 	self.position.z = -0.5 * tile_size.y
 	
 	

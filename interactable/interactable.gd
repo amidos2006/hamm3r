@@ -14,7 +14,7 @@ signal player_entered
 signal player_exited
 
 
-func _process(delta):
+func _process(_delta):
 	if _player != null:
 		if _player.is_looking_at(get_parent()) and not disable_interaction:
 			var marker = $FocusPoint

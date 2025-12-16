@@ -19,5 +19,5 @@ func toggle_object():
 	elif _state == ToiletState.CLOSE:
 		$AnimationPlayer.play("open")
 	await $AnimationPlayer.animation_finished
-	_state = 1 - _state
+	_state = (1 - _state) as ToiletState
 	animation_ended.emit()
