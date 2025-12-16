@@ -75,8 +75,8 @@ func _process(delta):
 		_thruster_power = clamp(_thruster_power + _thruster_acc * delta, 0, 1)
 
 
-func start_moving(start_speed, attraction_force, thruster_force, thruster_acc, thruster_dec, action, station_pos):
-	_direction = Vector2(station_pos.x - position.x, station_pos.y - position.y)
+func start_moving(station, start_speed, attraction_force, thruster_force, thruster_acc, thruster_dec, action):
+	_direction = Vector2(station.position.x - position.x, station.position.y - position.y)
 	_direction = _direction.normalized()
 	linear_velocity = _direction * start_speed
 	_attraction_force = attraction_force

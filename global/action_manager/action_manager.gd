@@ -3,12 +3,12 @@ extends Node
 func _ready():
 	pass
 	
-func get_target(name, caller, player=null):
+func get_target(type, caller, player=null):
 	var target = caller
-	if name.to_lower() == "player":
+	if type.to_lower() == "player":
 		target = player
-	elif name.length() > 0:
-		target = caller.get_node(name)
+	elif type.length() > 0:
+		target = caller.get_node(type)
 	return target
 	
 	
@@ -32,9 +32,14 @@ func run_actions(actions, caller, player=null):
 			"show_message":
 				UiMessage.show_message(act.args.message, act.args.action, act.args.time)
 				target = UiMessage
-				act.wait = "advance_message"
+			"hide_message":
+				UiMessage.hide_message()
+				target = UiMessage
 			"show_dialogue":
 				Dialogue.show_message(act.args.name, act.args.mood, act.args.text, act.args.direction, act.args.time, act.args.action)
+				target = Dialogue
+			"hide_dialogue":
+				Dialogue.hide_message()
 				target = Dialogue
 			"switch_scene":
 				SceneManager.switch_scene(act.args.path, act.args)
@@ -49,29 +54,42 @@ func run_actions(actions, caller, player=null):
 			
 			# Target related actions
 			"variable":
-				target.set(act.args.name, act.args.value)
+				if act.args.has("signal"):
+					var signal_target = target
+					if act.args.has("target"):
+						signal_target = get_target(act.args.target, caller, player)
+					target.set(act.args.name, await Signal(signal_target, act.args.signal))
+				else:
+					target.set(act.args.name, act.args.value)
 			"function":
 				var args = []
 				if act.args.has("object"):
-					if act.args.object == "caller":
-						args.append(caller)
-					elif act.args.object == "target":
-						args.append(target)
-					elif act.args.object == "player" and player != null:
-						args.append(player)
+					var temp_obj = act.args.object
+					if typeof(temp_obj) != TYPE_ARRAY:
+						temp_obj = [act.args.object]
+					for obj in temp_obj:
+						if obj == "caller":
+							args.append(caller)
+						elif obj == "target":
+							args.append(target)
+						elif obj == "player" and player != null:
+							args.append(player)
+						else:
+							args.append(get_target(obj, caller, player))
 				if act.args.has("args"):
 					args = args + act.args.args
 				target.callv(act.args.name, args)
 			"sound":
 				if act.args.name.to_lower() == "play":
-					if act.args.has("loop"):
-						target.autoplay = act.args.loop
 					target.play()
 				elif act.args.name.to_lower() == "stop":
 					target.stop()
-				elif act.args.name.to_lower() == "fade":
-					var tween = get_tree().create_tween()
-					tween.tween_property(target, "volume_db", act.args.value, act.args.time)
+				elif act.args.name.to_lower() == "volume":
+					if act.args.has("time") and act.args.time > 0:
+						var tween = get_tree().create_tween()
+						tween.tween_property(target, "volume_db", act.args.value, act.args.time)
+					else:
+						target.volume_db = act.args.value
 		
 		if act.has("wait"):
 			if typeof(act.wait) == TYPE_STRING:

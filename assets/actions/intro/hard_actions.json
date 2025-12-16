@@ -1,22 +1,19 @@
 [
 	{
-		"action": "shake_camera",
-		"wait": false,
+		"action": "function",
+		"target": "Camera2D",
 		"args": {
-			"strength": 20,
-			"frames": 10
+			"name": "shake_camera",
+			"args": [20, 10]
 		}
 	},
 	{
 		"action": "timer",
-		"wait": true,
-		"args": {
-			"time": 0.5
-		}
+		"wait": 0.5
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "tess",
 			"mood": "angry",
@@ -28,7 +25,7 @@
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "martin",
 			"mood": "concerned",
@@ -40,7 +37,7 @@
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "3r",
 			"mood": "",

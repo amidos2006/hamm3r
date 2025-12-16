@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://kir8u3cfukl1"]
+
+[ext_resource type="Script" uid="uid://b2m1svmwhxmlm" path="res://spaceship/spaceship.gd" id="1_jjjul"]
+[ext_resource type="Resource" uid="uid://d4ge2lo35p6cv" path="res://assets/generator/mission_generator_1.tres" id="3_rdyws"]
+[ext_resource type="Resource" uid="uid://dkrkky2gbtibx" path="res://assets/generator/mission_generator_2.tres" id="4_xs0r8"]
+[ext_resource type="JSON" path="res://assets/generator/fixed_start.json" id="5_08jab"]
+
+[node name="Spaceship" type="Node3D"]
+script = ExtResource("1_jjjul")
+mission_generator_1 = ExtResource("3_rdyws")
+mission_generator_2 = ExtResource("4_xs0r8")
+fixed_start = ExtResource("5_08jab")
+tile_size = Vector2(5, 5)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 13.2189, 80.4526, 28.209)

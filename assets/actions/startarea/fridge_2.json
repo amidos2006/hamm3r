@@ -20,7 +20,7 @@
 		"args": {
 			"name": "martin",
 			"mood": "normal",
-			"text": "Not hungry: being brought back from the dead has a way of upsetting my stomach.",
+			"text": "Nah! Being brought back from the dead has a way of upsetting my stomach.",
 			"action": "interact",
 			"direction": "left",
 			"time": 0

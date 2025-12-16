@@ -4,13 +4,13 @@
 		"target": "player",
 		"args": {
 			"name": "disable_controls",
-			"value": false
+			"value": true
 		}
 	},
 	{
 		"action": "function",
 		"args": {
-			"name": "open_door"
+			"name": "toggle_object",
 		}
 	},
 	{

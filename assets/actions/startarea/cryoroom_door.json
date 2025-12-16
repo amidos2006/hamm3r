@@ -57,7 +57,7 @@
 		"target": "Interactable",
 		"args": {
 			"name": "change_script",
-			"args": ["res://assets/actions/objects/normal_door.json"]
+			"args": ["res://assets/actions/objects/door.json"]
 		}
 	},
 	{

@@ -13,7 +13,7 @@
 		"args": {
 			"name": "look_at_interactable",
 			"object": "caller",
-			"args": [true, "../Computer"]
+			"args": [true, "../Control_Computer"]
 		}
 	},
 	{
@@ -70,7 +70,7 @@
 		"args": {
 			"name": "3R",
 			"mood": "normal",
-			"text": "None that I could detect from here. Still, we need to make sure it’s clean before we haul it in.",
+			"text": "Inconclusive. Regardless, we need to make sure it’s clean before we haul it in.",
 			"action": "interact",
 			"direction": "right",
 			"time": 0
@@ -82,7 +82,7 @@
 		"args": {
 			"name": "martin",
 			"mood": "normal",
-			"text": "Well, fuck me. Gravity and pressure okay in there?",
+			"text": "Well, fuck me then. Are gravity and pressure okay in there?",
 			"action": "interact",
 			"direction": "left",
 			"time": 0
@@ -106,7 +106,7 @@
 		"args": {
 			"name": "look_at_interactable",
 			"object": "caller",
-			"args": [true, "../SealDoor"],
+			"args": [true, "../Control_SealDoor"],
 		}
 	},
 	{
@@ -115,7 +115,7 @@
 	},
 	{
 		"action": "function",
-		"target": "../DoorLight",
+		"target": "../Control_DoorLight",
 		"args": {
 			"name": "change_color"
 		}
@@ -134,7 +134,7 @@
 	},
 	{
 		"action": "variable",
-		"target": "../SealDoor",
+		"target": "../Control_SealDoor",
 		"args": {
 			"name": "door_lock",
 			"value": "green"

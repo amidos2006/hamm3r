@@ -1,7 +1,6 @@
 [
 	{
 		"action": "fade",
-		"wait": false,
 		"args": {
 			"start": 1,
 			"end": 0,
@@ -10,7 +9,7 @@
 	},
 	{
 		"action": "show_message",
-		"wait": true,
+		"wait": "advance_message",
 		"args": {
 			"message": "PRESS [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO START",
 			"action": "interact",
@@ -18,23 +17,23 @@
 		}
 	},
 	{
-		"action": "music",
+		"action": "sound",
+		"target": "Music",
 		"args": {
-			"action": "play"
+			"name": "play"
 		}
 	},
 	{
-		"action": "move_camera",
-		"wait": true,
+		"action": "function",
+		"target": "Camera2D",
+		"wait": "animation_ended",
 		"args": {
-			"dx": 0,
-			"dy": -500,
-			"time": 5
+			"name": "move_camera",
+			"args": [0, -500, 5]
 		}
 	},
 	{
 		"action": "show_dialogue",
-		"wait": false,
 		"args": {
 			"name": "martin",
 			"mood": "concentrated",
@@ -46,7 +45,6 @@
 	},
 	{
 		"action": "show_message",
-		"wait": false,
 		"args": {
 			"message": "HOLD [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO DECELERATE",
 			"action": "interact",
@@ -54,33 +52,56 @@
 		}
 	},
 	{
-		"action": "follow_camera",
-		"wait": false,
+		"action": "function",
+		"target": "Camera2D",
 		"args": {
-			"zoom_speed": 0.05,
-			"move_speed": 100
+			"name": "follow_camera",
+			"object": ["Ship", "Station/Center"],
+			"args": [100, 0.05]
 		}
 	},
 	{
-		"action": "start_minigame",
-		"wait": true,
+		"action": "variable",
 		"args": {
-			"soft_speed": 40,
-			"medium_speed": 80,
-			
-			"start_speed": 100,
-			"attraction_force": 5,
-			"thruster_force": 10,
-			"thruster_acc": 2,
-			"thruster_dec": 1,
-			
-			"action": "interact"
+			"name": "_soft_threshold",
+			"value": 40
 		}
 	},
 	{
-		"action": "stop_follow",
-		"wait": false,
+		"action": "variable",
 		"args": {
+			"name": "_medium_threshold",
+			"value": 80
 		}
+	},
+	{
+		"action": "function",
+		"target": "Ship",
+		"args": {
+			"name": "start_moving",
+			"object": "Station",
+			"args": [100, 5, 10, 2, 1, "interact"]
+		}
+	},
+	{
+		"action": "variable",
+		"args": {
+			"name": "_docking_speed",
+			"signal": "ship_docked",
+			"target": "Ship"
+		}
+	},
+	{
+		"action": "function",
+		"target": "Camera2D",
+		"args": {
+			"name": "stop_follow"
+		}
+	},
+	{
+		"action": "hide_message"
+	},
+	{
+		"action": "hide_dialogue"
 	}
 ]

@@ -162,7 +162,7 @@ static func _spaceship_2d(maze, start_type="", broken_type=""):
 				if point.x == broken.x and point.y == broken.y:
 					broken_blocks.append(start)
 					break
-	return {"layout": layout, "extra": extra_blocks, "start": start_blocks, "broken": broken_blocks, "connections": wrong_connections}
+	return {"layout": layout, "extra": extra_blocks, "start": start_blocks, "start_loc": start_loc, "broken": broken_blocks, "connections": wrong_connections}
 	
 
 static func _location_id(x, y):
@@ -242,7 +242,7 @@ static func generate_best_layout(graphs, size, start_type, end_type, broken_type
 		for i in range(size):
 			population.append(LayoutChromosome.new(g, g.nodes.size(), start_type, end_type, broken_type, random))
 	population.sort_custom(func(a,b): return a.fitness() < b.fitness())
-	return {"graph": population[-1]._graph, "layout": population[-1]._layout}
+	return {"graph": population[-1]._graph, "layout": population[-1]._layout, "start": population[-1]._start}
 	
 
 class LayoutCell extends RefCounted:
@@ -428,6 +428,8 @@ class LayoutChromosome extends RefCounted:
 	var _fitness
 	var _layout
 	var _spaceship
+	var _start
+	
 	
 	func _init(graph, size, start_type, end_type, broken_type, random=null):
 		self._graph = graph
@@ -443,6 +445,7 @@ class LayoutChromosome extends RefCounted:
 			self._genome.append(self._random.randi_range(0, LayoutDirection.values().size()-1))
 		self._layout = null
 		self._spaceship = null
+		self._start = null
 		self._fitness = -1.0
 		
 	
@@ -480,6 +483,7 @@ class LayoutChromosome extends RefCounted:
 			self._fitness += 1.0 / (layout_result["placement"].size() * layout_result["missing"].size() + layout_result["connections"].size() + 1)
 			var spaceship_result = LayoutGenerator._spaceship_2d(self._layout, self._start_type, self._broken_type)
 			self._spaceship = spaceship_result["layout"]
+			self._start = spaceship_result["start_loc"][0]
 			if self._fitness == 1:
 				self._fitness += spaceship_result["start"].size()
 			if self._fitness == 2:

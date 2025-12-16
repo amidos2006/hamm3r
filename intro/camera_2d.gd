@@ -7,7 +7,7 @@ signal animation_ended
 var _following = false
 
 
-func follow_camera(move_speed, zoom_speed, ship, station):
+func follow_camera(ship, station, move_speed, zoom_speed):
 	var direction = station.global_position - ship.global_position
 	direction = direction.normalized()
 	

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dhrisfosy7p65" path="res://interactable/seal_door/seal_door.gd" id="1_xb6vn"]
 [ext_resource type="PackedScene" uid="uid://boqheahono8cx" path="res://assets/models/Door_Tunnel.glb" id="2_4frlx"]
+[ext_resource type="JSON" path="res://assets/actions/objects/door.json" id="4_4frlx"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="5_66maq"]
 [ext_resource type="AudioStream" uid="uid://v2xp611rx23r" path="res://assets/sfx/in_game/doors/spaceship-compartment-door_1.wav" id="5_m8aqy"]
 [ext_resource type="AudioStream" uid="uid://b0ana0fcakyho" path="res://assets/sfx/in_game/doors/spaceship-compartment-door_2.wav" id="6_4frlx"]
-[ext_resource type="JSON" path="res://assets/actions/objects/seal_door.json" id="6_m8aqy"]
 [ext_resource type="AudioStream" uid="uid://b8rutcl3ipwpw" path="res://assets/sfx/in_game/doors/spaceship-compartment-door_3.wav" id="7_4frlx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ys3yn"]
@@ -148,7 +148,7 @@ libraries = {
 }
 
 [node name="Interactable" parent="." instance=ExtResource("5_66maq")]
-interaction = ExtResource("6_m8aqy")
+interaction = ExtResource("4_4frlx")
 
 [node name="InteractableArea" parent="Interactable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)

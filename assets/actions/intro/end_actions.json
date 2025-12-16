@@ -1,11 +1,11 @@
 [
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "tess",
 			"mood": "normal",
-			"text": "Sorry to interrupt, fellas, but I have a station to run.",
+			"text": "Fellas, I have a station to run.",
 			"action": "interact",
 			"direction": "right",
 			"time": 0
@@ -13,7 +13,7 @@
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "tess",
 			"mood": "normal",
@@ -25,7 +25,7 @@
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "martin",
 			"mood": "normal",
@@ -37,7 +37,7 @@
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "tess",
 			"mood": "smiling",
@@ -48,16 +48,8 @@
 		}
 	},
 	{
-		"action": "play_sound",
-		"wait": false,
-		"args": {
-			"name": "noise",
-			"action": "interact"
-		}
-	},
-	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "tess",
 			"mood": "noise",
@@ -69,7 +61,7 @@
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "3r",
 			"mood": "",
@@ -81,39 +73,46 @@
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "martin",
 			"mood": "angry",
-			"text": "Just shut your artificial mouth and push us out.",
+			"text": "Just shut your artificial mouth and push us out!",
 			"action": "interact",
 			"direction": "left",
 			"time": 0
 		}
 	},
 	{
-		"action": "ship_exit",
-		"wait": true,
+		"action": "function",
+		"target": "Ship",
+		"wait": "ship_docked",
 		"args": {
-			"attraction_force": 5,
-			"thruster_force": 10,
-			"thruster_acc": 2,
-			"thruster_dec": 1,
-			"time": 5
+			"name": "ship_exit",
+			"args": [5, 10, 2, 1, 1]
 		}
 	},
 	{
-		"action": "zoom_camera",
-		"wait": false,
+		"action": "sound",
+		"target": "Title/AppearSound",
 		"args": {
-			"dx": -0.7,
-			"dy": -0.7,
-			"time": 1.0
+			"name": "play"
+		}
+	},
+	{
+		"action": "timer",
+		"wait": 2.0
+	},
+	{
+		"action": "function",
+		"target": "Camera2D",
+		"args": {
+			"name": "zoom_camera",
+			"args": [-0.7, -0.7, 1.0]
 		}
 	},
 	{
 		"action": "fade",
-		"wait": false,
 		"args": {
 			"start": 0,
 			"end": 0.25,
@@ -122,41 +121,38 @@
 	},
 	{
 		"action": "sound",
-		"wait": false,
+		"target": "Ship",
 		"args": {
-			"name": "Ship",
+			"name": "volume",
 			"value": -10,
 			"time": 2
 		}
 	},
 	{
 		"action": "sound",
-		"wait": false,
+		"target": "Music",
 		"args": {
-			"name": "Music",
+			"name": "volume",
 			"value": -10,
 			"time": 2
 		}
 	},
 	{
-		"action": "show_title",
-		"wait": true,
+		"action": "function",
+		"target": "Title",
+		"wait": "animation_ended",
 		"args": {
-			"dx": 0.9,
-			"dy": 0.9,
-			"time": 2
+			"name": "show_title",
+			"args": [0.9, 0.9, 2]
 		}
 	},
 	{
 		"action": "timer",
-		"wait": "true",
-		"args": {
-			"time": 2.0
-		}
+		"wait": 2.0,
 	},
 	{
 		"action": "show_message",
-		"wait": true,
+		"wait": "advance_message",
 		"args": {
 			"message": "PRESS [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO CONTINUE",
 			"action": "interact",
@@ -164,25 +160,25 @@
 		}
 	},
 	{
-		"action": "hide_title",
-		"wait": true,
+		"action": "function",
+		"target": "Title",
+		"wait": "animation_ended",
 		"args": {
-			"time": 2,
-			"credits_time": 3
+			"name": "hide_title",
+			"args": [2, 3]
 		}
 	},
 	{
 		"action": "sound",
-		"wait": false,
+		"target": "Title/AppearSound",
 		"args": {
-			"name": "Title/AppearSound",
+			"name": "volume",
 			"value": -40,
 			"time": 2
 		}
 	},
 	{
 		"action": "fade",
-		"wait": true,
 		"args": {
 			"start": 0.25,
 			"end": 1,
@@ -198,7 +194,7 @@
 			"ui_message": "",
 			"ui_action": "",
 			"time": 3,
-			"return": "res://startarea/startarea.tscn",
+			"return": "res://in_game/in_game.tscn",
 			"args": {
 				
 			}

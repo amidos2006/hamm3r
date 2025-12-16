@@ -29,7 +29,6 @@ func hide_title(time, credits_time):
 
 func show_title(dx, dy, time):
 	show()
-	$AppearSound.play()
 	var target_scale = Vector2($Name.scale.x + dx, $Name.scale.y + dy)
 	var target_color =  Color(Color.WHITE, 1.0)
 	var tween = get_tree().create_tween()

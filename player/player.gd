@@ -90,7 +90,7 @@ func _physics_process(delta):
 	_target_velocity.y -= delta * gravity
 	if is_on_floor():
 		_target_velocity.y = 0
-		if abs(self.velocity.x + self.velocity.z) > 0 and not $WalkingSounds/Metal.playing:
+		if (abs(self.velocity.x + self.velocity.z) > 0 or abs(direction) > 0) and not $WalkingSounds/Metal.playing:
 			$WalkingSounds/Metal.play()
 	velocity = _target_velocity
 	if gun_equipped:
@@ -165,3 +165,12 @@ func equip_gun(locker):
 	$AnimationPlayer.play("Idle")
 	gun_equipped = true
 	animation_ended.emit()
+	
+	
+func allow_keys(allowed_keys={}):
+	for key in allowed_keys:
+		self.allowed_controls[key] = allowed_keys[key]
+		
+
+func restrict_angle(min, max):
+	self.restricted_angle = Vector2(min, max)

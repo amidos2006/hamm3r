@@ -22,7 +22,7 @@
 		"args": {
 			"name": "look_at_interactable",
 			"object": "caller",
-			"args": [true, "../Computer"]
+			"args": [true, "../Control_Computer"]
 		}
 	},
 	{
@@ -43,7 +43,7 @@
 		"args": {
 			"name": "look_at_interactable",
 			"object": "caller",
-			"args": [true, "../WeaponLocker"]
+			"args": [true, "../Control_WeaponLocker"]
 		}
 	},
 	{
@@ -91,7 +91,7 @@
 		"target": "Interactable",
 		"args": {
 			"name": "change_script",
-			"args": ["res://assets/actions/objects/locker.json"]
+			"args": ["res://assets/actions/objects/toggle_object.json"]
 		}
 	},
 	{

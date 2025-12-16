@@ -46,7 +46,7 @@ func close_door():
 	animation_ended.emit()
 		
 
-func toggle_door():
+func toggle_object():
 	if _state == DoorState.OPEN:
 		close_door()
 	elif _state == DoorState.CLOSE:

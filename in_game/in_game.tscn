@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj7txh3d05g42"]
+
+[ext_resource type="PackedScene" uid="uid://y1xw7mo8ak7r" path="res://startarea/startarea.tscn" id="1_0dbxd"]
+[ext_resource type="PackedScene" uid="uid://kir8u3cfukl1" path="res://spaceship/spaceship.tscn" id="2_ko8yt"]
+
+[node name="InGame" type="Node3D"]
+
+[node name="StartArea" parent="." instance=ExtResource("1_0dbxd")]
+
+[node name="Spaceship" parent="." instance=ExtResource("2_ko8yt")]

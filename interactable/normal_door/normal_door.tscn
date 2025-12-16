@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://iivux16cptri" path="res://interactable/normal_door/normal_door.gd" id="1_jst47"]
 [ext_resource type="PackedScene" uid="uid://do05hodf5x4bv" path="res://assets/models/Door_Ship.glb" id="2_dlvnk"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="4_dlvnk"]
-[ext_resource type="JSON" path="res://assets/actions/objects/normal_door.json" id="5_fh74d"]
+[ext_resource type="JSON" path="res://assets/actions/objects/door.json" id="5_fh74d"]
 [ext_resource type="AudioStream" uid="uid://v2xp611rx23r" path="res://assets/sfx/in_game/doors/spaceship-compartment-door_1.wav" id="5_ubxar"]
 [ext_resource type="AudioStream" uid="uid://b0ana0fcakyho" path="res://assets/sfx/in_game/doors/spaceship-compartment-door_2.wav" id="6_ubxar"]
 [ext_resource type="AudioStream" uid="uid://b8rutcl3ipwpw" path="res://assets/sfx/in_game/doors/spaceship-compartment-door_3.wav" id="7_m2hqs"]

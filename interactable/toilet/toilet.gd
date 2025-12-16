@@ -13,7 +13,7 @@ var _state = ToiletState.CLOSE
 signal animation_ended
 
 
-func toggle_lid():
+func toggle_object():
 	if _state == ToiletState.OPEN:
 		$AnimationPlayer.play("close")
 	elif _state == ToiletState.CLOSE:

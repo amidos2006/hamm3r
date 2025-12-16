@@ -24,7 +24,7 @@
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "martin",
 			"mood": "angry",
@@ -36,9 +36,7 @@
 	},
 	{
 		"action": "timer",
-		"args":{
-			"time": 0.1
-		}
+		"wait": 0.1
 	},
 	{
 		"action": "variable",

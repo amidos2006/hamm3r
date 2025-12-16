@@ -1,14 +1,11 @@
 [
 	{
 		"action": "timer",
-		"wait": true,
-		"args": {
-			"time": 0.5
-		}
+		"wait": 0.5,
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "tess",
 			"mood": "smiling",
@@ -20,7 +17,7 @@
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "martin",
 			"mood": "smiling",
@@ -32,7 +29,7 @@
 	},
 	{
 		"action": "show_dialogue",
-		"wait": true,
+		"wait": "advance_dialogue",
 		"args": {
 			"name": "3r",
 			"mood": "",

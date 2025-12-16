@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://72xodijfuul5" path="res://interactable/toilet/toilet.gd" id="1_fx3bs"]
 [ext_resource type="PackedScene" uid="uid://enl5nsx5v3r" path="res://assets/models/Toilet.glb" id="2_1hqff"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="3_ilrhp"]
-[ext_resource type="JSON" path="res://assets/actions/objects/toilet.json" id="5_fk677"]
+[ext_resource type="JSON" path="res://assets/actions/objects/toggle_object.json" id="4_fx3bs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8yj2b"]
 size = Vector3(1, 1.2, 1)
@@ -80,7 +80,7 @@ libraries = {
 }
 
 [node name="Interactable" parent="." instance=ExtResource("3_ilrhp")]
-interaction = ExtResource("5_fk677")
+interaction = ExtResource("4_fx3bs")
 
 [node name="InteractableArea" parent="Interactable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
