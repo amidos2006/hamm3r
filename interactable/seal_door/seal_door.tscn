@@ -155,7 +155,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 shape = SubResource("BoxShape3D_m8aqy")
 
 [node name="FocusPoint" parent="Interactable" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10833, 0.122978)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055, 1.4, 0.123)
 
 [node name="Sounds" type="Node3D" parent="."]
 

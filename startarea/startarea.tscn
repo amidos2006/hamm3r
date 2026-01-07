@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=4 uid="uid://y1xw7mo8ak7r"]
+[gd_scene load_steps=90 format=4 uid="uid://y1xw7mo8ak7r"]
 
 [ext_resource type="Script" uid="uid://hvxybe6ew1wi" path="res://startarea/startarea.gd" id="1_3scv4"]
 [ext_resource type="Texture2D" uid="uid://c528nknwv5wa6" path="res://assets/models/Ship_Interior_Bathroom.png" id="1_4bl57"]
@@ -18,6 +18,8 @@
 [ext_resource type="JSON" path="res://assets/actions/startarea/cryoroom_door.json" id="19_2pnu0"]
 [ext_resource type="PackedScene" uid="uid://bo6xmnsy3pi2o" path="res://interactable/cryopod/cryopod.tscn" id="19_rgvhy"]
 [ext_resource type="JSON" path="res://assets/actions/startarea/fail_ownship.json" id="20_k17ha"]
+[ext_resource type="PackedScene" uid="uid://bni0qdjwbjdm7" path="res://interactable/event_area.tscn" id="21_xq0vx"]
+[ext_resource type="JSON" path="res://assets/actions/startarea/exit_start_area.json" id="22_0uvls"]
 [ext_resource type="PackedScene" uid="uid://05t1uswscwq" path="res://interactable/seal_door/seal_door.tscn" id="27_doki2"]
 [ext_resource type="Script" uid="uid://hae3qadaxqck" path="res://startarea/door_light.gd" id="32_106fm"]
 [ext_resource type="PackedScene" uid="uid://cxnv0w5rb7egn" path="res://interactable/gun_cabinet/weapon_locker.tscn" id="35_5sfhf"]
@@ -476,6 +478,9 @@ size = Vector2(0.5, 0.1)
 emission_enabled = true
 emission = Color(1, 0.3, 0.3, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_0uvls"]
+size = Vector3(10, 3, 1.5)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_2pnu0"]
 size = Vector3(3, 2.4, 1)
 
@@ -485,6 +490,12 @@ start_actions = ExtResource("2_xq0vx")
 
 [node name="Player" parent="." instance=ExtResource("1_rgvhy")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.68418, 0.251945, 15.9421)
+movement_speed = 4
+backward_ratio = 0.4
+rotation_speed = 5
+gravity = 4
+max_health = 5
+health = 3
 
 [node name="Ship_Interior" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73199, 0, 14.5915)
@@ -783,6 +794,14 @@ transform = Transform3D(-0.999902, 0, -0.0139616, 0, 1, 0, 0.0139616, 0, -0.9999
 [node name="Tunnel_SealDoor" parent="InteractableObjects" instance=ExtResource("27_doki2")]
 transform = Transform3D(1, 0, -6.8236e-08, 0, 1, 0, 6.8236e-08, 0, 1, -0.0510805, 0.0418737, 0.293604)
 
+[node name="Tunnel_EventArea" parent="InteractableObjects" instance=ExtResource("21_xq0vx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.4859767)
+event = ExtResource("22_0uvls")
+
+[node name="CollisionShape3D" parent="InteractableObjects/Tunnel_EventArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81427, 1.0136719, -1.4139802)
+shape = SubResource("BoxShape3D_0uvls")
+
 [node name="Cryoroom_Fridge" parent="InteractableObjects" instance=ExtResource("18_3qgax")]
 transform = Transform3D(0.846547, 0, -0.532315, 0, 1, 0, 0.532315, 0, 0.846547, 2.67414, 0, 12.8389)
 
@@ -833,6 +852,7 @@ shadow_normal_bias = 7.606
 distance_fade_enabled = true
 distance_fade_begin = 20.0
 distance_fade_shadow = 30.0
+omni_range = 10.0
 omni_attenuation = 0.272
 
 [node name="Control" type="OmniLight3D" parent="Lighting"]
@@ -845,6 +865,7 @@ shadow_bias = 0.161
 distance_fade_enabled = true
 distance_fade_begin = 20.0
 distance_fade_shadow = 30.0
+omni_range = 10.0
 omni_attenuation = 0.516
 
 [node name="Tunnel" type="OmniLight3D" parent="Lighting"]
@@ -855,6 +876,7 @@ shadow_enabled = true
 distance_fade_enabled = true
 distance_fade_begin = 20.0
 distance_fade_shadow = 30.0
+omni_range = 10.0
 
 [connection signal="body_entered" from="InteractableObjects/Cryoroom_CryopodExit" to="." method="_on_cryopod_exit_body_entered"]
 
@@ -870,3 +892,4 @@ distance_fade_shadow = 30.0
 [editable path="InteractableObjects/Tunnel_SealDoor"]
 [editable path="InteractableObjects/Tunnel_SealDoor/Pivot"]
 [editable path="InteractableObjects/Tunnel_SealDoor/Interactable"]
+[editable path="InteractableObjects/Tunnel_EventArea"]

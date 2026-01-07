@@ -25,9 +25,9 @@ func show_message(message, action_name, time = 1.0):
 	show()
 	$Label.show()
 	while time > 0 and _active:
-		await get_tree().create_timer(time).timeout
+		await get_tree().create_timer(time, false).timeout
 		$Label.hide()
-		await get_tree().create_timer(time).timeout
+		await get_tree().create_timer(time, false).timeout
 		$Label.show()
 
 

@@ -14,7 +14,7 @@ func _ready():
 	tween.tween_property($Label, "modulate", Color(Color.WHITE, 1), 2)
 	await tween.finished
 	if _return_time > 0:
-		await get_tree().create_timer(_return_time).timeout
+		await get_tree().create_timer(_return_time, false).timeout
 	if _ui_action.length() > 0:
 		UiMessage.show_message(_ui_message, _ui_action)
 		await UiMessage.advance_message

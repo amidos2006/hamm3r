@@ -1,0 +1,52 @@
+[
+	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "disable_controls",
+			"value": true
+		}
+	},
+	{
+		"action": "function",
+		"target": "Interactable",
+		"args": {
+			"name": "disable_interactable",
+			"object": "player",
+			"args": [true]
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "concerned",
+			"text": "I need to investigate that ship before heading back.",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "timer",
+		"wait": 0.1
+	},
+	{
+		"action": "function",
+		"target": "Interactable",
+		"args": {
+			"name": "disable_interactable",
+			"object": "player",
+			"args": [false]
+		}
+	},
+	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "disable_controls",
+			"value": false
+		}
+	},
+]

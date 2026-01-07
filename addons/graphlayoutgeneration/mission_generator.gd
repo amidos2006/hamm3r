@@ -60,18 +60,23 @@ static func combine_graphs(graph1, graph2, start_name = "Start", end_name = "End
 		for child in children:
 			var index = graph1.get_node_index(child)
 			new_graph.nodes[i].connect_to(new_graph.nodes[index])
+	new_graph.nodes.append(MissionNode.new(graph1.nodes.size(), middle_node.access_level, new_name))
+	middle_node.connect_to(new_graph.nodes[-1])
+	middle_node = new_graph.nodes[-1]
+	var start_id = graph1.nodes.size()
+	var start_access = middle_node.access_level + 1
 	for node in graph2.nodes:
 		if node.type == start_name.strip_edges():
 			continue
-		new_graph.nodes.append(MissionNode.new(node.id + graph1.nodes.size() - 1, node.access_level + 1, node.type))
+		new_graph.nodes.append(MissionNode.new(node.id + start_id, node.access_level + start_access, node.type))
 	for i in range(graph2.nodes.size()):
-		var node = new_graph.nodes[i + graph1.nodes.size() - 1]
+		var node = new_graph.nodes[i + start_id]
 		if graph2.nodes[i].type == start_name.strip_edges():
 			node = middle_node
 		var children = graph2.nodes[i].get_children()
 		for child in children:
 			var index = graph2.get_node_index(child)
-			node.connect_to(new_graph.nodes[index + graph1.nodes.size() - 1])
+			node.connect_to(new_graph.nodes[index + start_id])
 	return new_graph
 	
 

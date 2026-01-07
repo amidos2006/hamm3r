@@ -264,6 +264,14 @@
 		"wait": "cryopod_exit",
 	},
 	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "inside_cryo",
+			"value": false
+		}
+	},
+	{
 		"action": "hide_message"
 	},
 	{

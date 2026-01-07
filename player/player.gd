@@ -25,6 +25,7 @@ var allowed_controls = {
 var restricted_angle = null
 var gun_equipped = false
 var inside_hamm = true
+var inside_cryo = true
 
 
 signal angle_left
@@ -35,6 +36,7 @@ signal animation_ended
 var _interactable_object = null
 var _interactable_focus = Vector3.ZERO
 var _target_velocity = Vector3.ZERO
+var _is_shooting = false
 
 
 func _ready():
@@ -68,8 +70,14 @@ func _physics_process(delta):
 		elif gun_equipped:
 			if inside_hamm:
 				Dialogue.show_message("martin", "normal", "#no_shooting#", "left", 3, "")
-			else:
-				pass
+			elif not self._is_shooting:
+				var laser_length = $RayCast3D.target_position.length()
+				if $RayCast3D.is_colliding():
+					laser_length = self.global_position.distance_to($RayCast3D.get_collision_point())
+				$AnimationPlayer.play("Shoot")
+				$AnimationPlayer.speed_scale = 1
+				$Pivot/Camera3D/Laser.fire(laser_length)
+				self._is_shooting = true
 	
 	if direction != 0:
 		rotate_y(direction * rotation_speed * PI / 360)
@@ -90,10 +98,10 @@ func _physics_process(delta):
 	_target_velocity.y -= delta * gravity
 	if is_on_floor():
 		_target_velocity.y = 0
-		if (abs(self.velocity.x + self.velocity.z) > 0 or abs(direction) > 0) and not $WalkingSounds/Metal.playing:
+		if (abs(self.velocity.x + self.velocity.z) > 0 or abs(direction) > 0) and not $WalkingSounds/Metal.playing and not inside_cryo:
 			$WalkingSounds/Metal.play()
 	velocity = _target_velocity
-	if gun_equipped:
+	if gun_equipped and not self._is_shooting:
 		if abs(movement) + abs(direction) > 0:
 			$AnimationPlayer.play("Walk")
 			var anim_dir = sign(movement)
@@ -173,3 +181,8 @@ func allow_keys(allowed_keys={}):
 
 func restrict_angle(min_value, max_value):
 	self.restricted_angle = Vector2(min_value, max_value)
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "Shoot":
+		self._is_shooting = false

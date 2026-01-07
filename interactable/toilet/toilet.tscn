@@ -6,7 +6,7 @@
 [ext_resource type="JSON" path="res://assets/actions/objects/toggle_object.json" id="4_fx3bs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8yj2b"]
-size = Vector3(1, 1.2, 1)
+size = Vector3(1, 2.4, 1)
 
 [sub_resource type="Animation" id="Animation_1hqff"]
 length = 0.001
@@ -71,7 +71,7 @@ script = ExtResource("1_fx3bs")
 [node name="Pivot" parent="." instance=ExtResource("2_1hqff")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.601847, -0.133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3289149, -0.133)
 shape = SubResource("BoxShape3D_8yj2b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -95,4 +95,4 @@ func run_actions(actions, caller, player=null):
 			if typeof(act.wait) == TYPE_STRING:
 				await Signal(target, act.wait)
 			else:
-				await get_tree().create_timer(act.wait).timeout
+				await get_tree().create_timer(act.wait, false).timeout

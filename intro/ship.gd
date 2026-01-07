@@ -100,7 +100,7 @@ func ship_exit(attraction_force, thruster_force, thruster_acc, thruster_dec, tim
 	self.remove_child(cargo)
 	get_parent().add_child(cargo)
 	cargo.position += position
-	await get_tree().create_timer(time).timeout
+	await get_tree().create_timer(time, false).timeout
 	ship_docked.emit()
 
 

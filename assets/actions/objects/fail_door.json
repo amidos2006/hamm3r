@@ -1,0 +1,37 @@
+[
+	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "disable_controls",
+			"value": true
+		}
+	},
+	{
+		"action": "function",
+		"target": "Interactable",
+		"args": {
+			"name": "disable_interactable",
+			"object": "player",
+			"args": [true]
+		}
+	},
+	{
+		"action": "function",
+		"args": {
+			"name": "fail_door"
+		}
+	},
+	{
+		"action": "timer",
+		"wait": 0.1
+	},
+	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "disable_controls",
+			"value": false
+		}
+	},
+]

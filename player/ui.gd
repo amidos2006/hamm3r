@@ -21,7 +21,7 @@ func show_ui(time):
 
 
 func initialize_health(health, max_health):
-	for index in max_health:
+	for index in range(max_health):
 		var heart = _heart_scene.instantiate()
 		$TopPivot/HeartContainer.add_child(heart)
 		heart.set_health(index < health)

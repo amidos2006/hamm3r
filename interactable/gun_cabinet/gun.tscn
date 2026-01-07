@@ -12,10 +12,14 @@ size = Vector3(0.5, 0.5, 0.8)
 transparency = 1
 blend_mode = 1
 no_depth_test = true
+shading_mode = 0
 vertex_color_use_as_albedo = true
 albedo_color = Color(1, 0.658824, 0.270588, 0.705882)
 albedo_texture = ExtResource("4_1kbl7")
-billboard_mode = 1
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_b5ax2"]
 material = SubResource("StandardMaterial3D_5jhsg")

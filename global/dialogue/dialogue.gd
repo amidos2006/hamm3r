@@ -51,7 +51,7 @@ func show_message(character_name, mood, dialogue, direction = "left", time=0, ac
 	chatbox.show()
 	
 	if time > 0:
-		_timer = get_tree().create_timer(time)
+		_timer = get_tree().create_timer(time, false)
 		await _timer.timeout
 		_timer = null
 	else:

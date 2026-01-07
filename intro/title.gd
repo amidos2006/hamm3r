@@ -18,12 +18,12 @@ func hide_title(time, credits_time):
 	tween = get_tree().create_tween()
 	tween.tween_property($Credits, "modulate", target, time)
 	await tween.finished
-	await get_tree().create_timer(credits_time).timeout
+	await get_tree().create_timer(credits_time, false).timeout
 	target =  Color(Color.WHITE, 0)
 	tween = get_tree().create_tween()
 	tween.tween_property($Credits, "modulate", target, time)
 	await tween.finished
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5, false).timeout
 	animation_ended.emit()
 
 
@@ -35,5 +35,5 @@ func show_title(dx, dy, time):
 	tween.tween_property($Name, "scale", target_scale, time).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_property($Logos, "modulate", target_color, time)
 	await tween.finished
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5, false).timeout
 	animation_ended.emit()

@@ -154,14 +154,14 @@ static func _spaceship_2d(maze, start_type="", broken_type=""):
 		var min_y = min(start.y, layout.size() - 1 - start.y)
 		if min_x < min_y:
 			if start.x < layout[0].size() / 2:
-				for x in range(start.x):
+				for x in range(start.x+1):
 					start_blocks.append(Vector2(x, start.y))
 			else:
 				for x in range(start.x, layout[0].size()):
 					start_blocks.append(Vector2(x, start.y))
 		else:
 			if start.y < layout.size() / 2:
-				for y in range(start.y):
+				for y in range(start.y+1):
 					start_blocks.append(Vector2(start.x, y))
 			else:
 				for y in range(start.y, layout.size()):
@@ -253,7 +253,7 @@ static func generate_best_layout(graphs, size, start_type, end_type, broken_type
 		for i in range(size):
 			population.append(LayoutChromosome.new(g, g.nodes.size(), start_type, end_type, broken_type, random))
 	population.sort_custom(func(a,b): return a.fitness() < b.fitness())
-	return {"graph": population[-1]._graph, "layout": population[-1]._layout, "start": population[-1]._start}
+	return {"graph": population[-1]._graph, "layout": population[-1]._layout, "start": population[-1]._start, "fitness": population[-1]._fitness}
 	
 
 class LayoutCell extends RefCounted:
@@ -277,7 +277,15 @@ class LayoutCell extends RefCounted:
 		self.doors[LayoutGenerator._direction_from_relative(rel.x, rel.y)] = type
 		if both_ways:
 			cell.connect_to(self, type, false)
-		
+	
+	
+	func get_connections():
+		var result = 0
+		for door in self.doors.values():
+			if door != LayoutDoor.Wall:
+				result += 1
+		return result
+	
 	
 	func get_neighbors(maze):
 		var result = []

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bo6xmnsy3pi2o"]
+[gd_scene load_steps=14 format=3 uid="uid://bo6xmnsy3pi2o"]
 
 [ext_resource type="Script" uid="uid://cuun17rnovr7k" path="res://interactable/cryopod/cryopod.gd" id="1_t0j7g"]
 [ext_resource type="PackedScene" uid="uid://bn2dcu731lj5g" path="res://assets/models/CryoPod.glb" id="2_wc77n"]
@@ -15,9 +15,6 @@ size = Vector3(1.5, 2.4, 0.6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mgbn5"]
 size = Vector3(0.2, 2.4, 1.6)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_wc77n"]
-size = Vector3(1.5, 0.4, 1.5)
 
 [sub_resource type="Animation" id="Animation_q6wdd"]
 length = 0.001
@@ -87,10 +84,6 @@ shape = SubResource("BoxShape3D_mgbn5")
 [node name="Left" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.2, -0.049)
 shape = SubResource("BoxShape3D_mgbn5")
-
-[node name="Floor" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0384094, 0)
-shape = SubResource("BoxShape3D_wc77n")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

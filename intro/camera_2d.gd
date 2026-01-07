@@ -20,7 +20,7 @@ func follow_camera(ship, station, move_speed, zoom_speed):
 			position += direction * factor * move_speed
 			zoom += Vector2.ONE * factor * zoom_speed
 			last_distance = new_distance
-		await get_tree().create_timer(0.01).timeout
+		await get_tree().create_timer(0.01, false).timeout
 	animation_ended.emit()
 
 
@@ -47,7 +47,7 @@ func zoom_camera(dx, dy, time):
 func shake_camera(strength, frames):
 	for i in frames:
 		offset = Vector2(randf_range(-strength, strength), randf_range(-strength, strength))
-		await get_tree().create_timer(0.01).timeout
+		await get_tree().create_timer(0.01, false).timeout
 	offset = Vector2.ZERO
 	animation_ended.emit()
 	

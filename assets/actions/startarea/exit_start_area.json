@@ -1,0 +1,18 @@
+[
+	{
+		"action": "function",
+		"target": "../Tunnel_SealDoor/Interactable",
+		"args": {
+			"name": "change_script",
+			"args": ["res://assets/actions/startarea/tunnel_no_back.json"]
+		}
+	},
+	{
+		"action": "variable",
+		"target": "Player",
+		"args": {
+			"name": "inside_hamm",
+			"value": false
+		}
+	}
+]

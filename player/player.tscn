@@ -1,10 +1,12 @@
-[gd_scene load_steps=48 format=4 uid="uid://c0ov3gvi01qt6"]
+[gd_scene load_steps=55 format=4 uid="uid://c0ov3gvi01qt6"]
 
 [ext_resource type="PackedScene" uid="uid://cmrwa6kvok00u" path="res://assets/models/human_scale.glb" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://d33dokaqiijiv" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://bytmxxwrusaqe" path="res://assets/graphics/ui/button_info.png" id="3_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://c8jn2dytxp5i7" path="res://assets/models/Gun_AO_Gun.png" id="3_g6k8r"]
 [ext_resource type="Script" uid="uid://div4ma1sqdfk3" path="res://player/ui.gd" id="3_yw30f"]
+[ext_resource type="Script" uid="uid://f1uuhlwo4vj1" path="res://player/laser.gd" id="4_1so5t"]
+[ext_resource type="Texture2D" uid="uid://dp0wnlh0dxh0m" path="res://assets/graphics/particles/big_circle.png" id="5_55jnj"]
 [ext_resource type="Texture2D" uid="uid://blh3ylxptck2c" path="res://assets/graphics/ui/aimReticle.png" id="5_qjkh3"]
 [ext_resource type="AudioStream" uid="uid://dyelqq0x1iw5g" path="res://assets/music/in_game/AC_hum_spaceship.wav" id="7_boad6"]
 [ext_resource type="AudioStream" uid="uid://cwirhf7pe1dqg" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_01.wav" id="7_rgyib"]
@@ -77,6 +79,30 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_r4vxh")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pnw6m"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 1.0
+radial_segments = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1so5t"]
+transparency = 1
+albedo_color = Color(0.95686275, 0.6784314, 0.05882353, 1)
+emission_enabled = true
+emission = Color(0.95686275, 0.6784314, 0.05882353, 1)
+emission_energy_multiplier = 10.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55jnj"]
+shading_mode = 0
+albedo_texture = ExtResource("5_55jnj")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_dx5ib"]
+material = SubResource("StandardMaterial3D_55jnj")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 radius = 0.25
@@ -182,11 +208,28 @@ tracks/0/keys = {
 "values": [Vector3(0, -0.4, -0.55), Vector3(-0.02, -0.42, -0.55), Vector3(-0.04, -0.4, -0.55), Vector3(-0.02, -0.42, -0.55), Vector3(0, -0.4, -0.55), Vector3(0.02, -0.42, -0.55), Vector3(0.04, -0.4, -0.55), Vector3(0.02, -0.42, -0.55), Vector3(0, -0.4, -0.55)]
 }
 
+[sub_resource type="Animation" id="Animation_1so5t"]
+resource_name = "Shoot"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Camera3D/Gun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.39999998, -0.55), Vector3(0, -0.4, -0.4), Vector3(0, -0.4, -0.55)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_boad6"]
 _data = {
 &"Equip": SubResource("Animation_g6k8r"),
 &"Idle": SubResource("Animation_hg6s5"),
 &"RESET": SubResource("Animation_boad6"),
+&"Shoot": SubResource("Animation_1so5t"),
 &"Walk": SubResource("Animation_rgyib")
 }
 
@@ -232,16 +275,16 @@ transform = Transform3D(1, 0, 0, 0, 0.75, 0, 0, 0, 1, 0, 0, 0)
 visible = false
 
 [node name="Pivot" type="Node3D" parent="."]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.2, 0)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.4, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
 fov = 65.0
 
 [node name="Gun" type="Node3D" parent="Pivot/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 0.499998, 0.866026, 0, -0.866026, 0.499998, 0, -1, -0.55)
+transform = Transform3D(1, 0, 0, 0, 0.49999768, 0.8660262, 0, -0.8660262, 0.49999768, 0, -1, -0.55)
 
 [node name="Model" type="MeshInstance3D" parent="Pivot/Camera3D/Gun"]
-transform = Transform3D(-0.25, 0, 3.7749e-08, 0, 0.25, 0, -3.7749e-08, 0, -0.25, 0, 0.294, 0.396)
+transform = Transform3D(-0.25, 0, 3.7748997e-08, 0, 0.25, 0, -3.7748997e-08, 0, -0.25, 1.7763568e-15, 0.29400003, 0.39599997)
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_sxpnq")
 skeleton = NodePath("")
@@ -249,13 +292,30 @@ skeleton = NodePath("")
 [node name="AudioListener3D" type="AudioListener3D" parent="Pivot/Camera3D"]
 current = true
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-target_position = Vector3(0, 0, 100)
+[node name="Laser" type="Node3D" parent="Pivot/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.057, -0.34)
+script = ExtResource("4_1so5t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/Camera3D/Laser"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.5)
+mesh = SubResource("CylinderMesh_pnw6m")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_1so5t")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="Pivot/Camera3D/Laser"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+emitting = false
+amount = 40
+one_shot = true
+mesh = SubResource("QuadMesh_dx5ib")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("CapsuleShape3D_kqu6x")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+target_position = Vector3(0, 0, 100)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -307,14 +367,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -123.0
-offset_top = -123.0
-offset_right = 123.0
-offset_bottom = 123.0
+offset_left = -43.0
+offset_top = -40.0
+offset_right = 43.0
+offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.25, 0.25)
-pivot_offset = Vector2(123, 123)
+pivot_offset = Vector2(43, 40)
 texture = ExtResource("5_qjkh3")
 
 [node name="WalkingSounds" type="Node3D" parent="."]
@@ -327,3 +386,5 @@ volume_db = -15.0
 stream = ExtResource("7_boad6")
 volume_db = -30.0
 autoplay = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
