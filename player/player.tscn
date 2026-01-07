@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://c0ov3gvi01qt6"]
+[gd_scene load_steps=52 format=4 uid="uid://c0ov3gvi01qt6"]
 
 [ext_resource type="PackedScene" uid="uid://cmrwa6kvok00u" path="res://assets/models/human_scale.glb" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://d33dokaqiijiv" path="res://player/player.gd" id="1_rkbax"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c8jn2dytxp5i7" path="res://assets/models/Gun_AO_Gun.png" id="3_g6k8r"]
 [ext_resource type="Script" uid="uid://div4ma1sqdfk3" path="res://player/ui.gd" id="3_yw30f"]
 [ext_resource type="Script" uid="uid://f1uuhlwo4vj1" path="res://player/laser.gd" id="4_1so5t"]
-[ext_resource type="Texture2D" uid="uid://dp0wnlh0dxh0m" path="res://assets/graphics/particles/big_circle.png" id="5_55jnj"]
 [ext_resource type="Texture2D" uid="uid://blh3ylxptck2c" path="res://assets/graphics/ui/aimReticle.png" id="5_qjkh3"]
 [ext_resource type="AudioStream" uid="uid://dyelqq0x1iw5g" path="res://assets/music/in_game/AC_hum_spaceship.wav" id="7_boad6"]
 [ext_resource type="AudioStream" uid="uid://cwirhf7pe1dqg" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_01.wav" id="7_rgyib"]
@@ -92,17 +91,6 @@ albedo_color = Color(0.95686275, 0.6784314, 0.05882353, 1)
 emission_enabled = true
 emission = Color(0.95686275, 0.6784314, 0.05882353, 1)
 emission_energy_multiplier = 10.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55jnj"]
-shading_mode = 0
-albedo_texture = ExtResource("5_55jnj")
-billboard_mode = 3
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="QuadMesh" id="QuadMesh_dx5ib"]
-material = SubResource("StandardMaterial3D_55jnj")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 radius = 0.25
@@ -294,6 +282,7 @@ current = true
 
 [node name="Laser" type="Node3D" parent="Pivot/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.057, -0.34)
+visible = false
 script = ExtResource("4_1so5t")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/Camera3D/Laser"]
@@ -302,12 +291,8 @@ mesh = SubResource("CylinderMesh_pnw6m")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_1so5t")
 
-[node name="CPUParticles3D" type="CPUParticles3D" parent="Pivot/Camera3D/Laser"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
-emitting = false
-amount = 40
-one_shot = true
-mesh = SubResource("QuadMesh_dx5ib")
+[node name="Marker3D" type="Marker3D" parent="Pivot/Camera3D/Laser"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)

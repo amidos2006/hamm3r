@@ -1,0 +1,153 @@
+[gd_scene load_steps=11 format=3 uid="uid://c5gjk2meqpxkv"]
+
+[ext_resource type="Script" uid="uid://dsve2vjflbrhh" path="res://player/laser_hit.gd" id="1_n1hiu"]
+[ext_resource type="Texture2D" uid="uid://dp0wnlh0dxh0m" path="res://assets/graphics/particles/big_circle.png" id="1_p4hsv"]
+[ext_resource type="Texture2D" uid="uid://c8r25dl7fpgct" path="res://assets/graphics/particles/halo.png" id="3_bkrnw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55jnj"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.96, 0.67424, 0.057600003, 0.39215687)
+albedo_texture = ExtResource("1_p4hsv")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_2udbj"]
+material = SubResource("StandardMaterial3D_55jnj")
+size = Vector2(0.07, 0.07)
+
+[sub_resource type="Curve" id="Curve_0hiah"]
+_data = [Vector2(0.0072046146, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0.25042486), -1.1417712, -1.1417712, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_l5r1x"]
+offsets = PackedFloat32Array(0.37048194, 0.8671875)
+colors = PackedColorArray(1, 0.4925, 0.13, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_bkrnw"]
+resource_name = "Disappear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hole/Sprite3D_1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.26, 0.12133334, 0, 0.78431374), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hole/Sprite3D_2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.25882354, 0.12156863, 0, 0.78431374), Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sparks:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_w8onf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hole/Sprite3D_1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hole/Sprite3D_2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sparks:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w8onf"]
+_data = {
+&"Disappear": SubResource("Animation_bkrnw"),
+&"RESET": SubResource("Animation_w8onf")
+}
+
+[node name="LaserHit" type="Node3D"]
+script = ExtResource("1_n1hiu")
+
+[node name="Sparks" type="CPUParticles3D" parent="."]
+transform = Transform3D(1.9106853e-15, 4.371139e-08, -0.99999994, 0.99999994, -4.371139e-08, 0, -4.3711385e-08, -1, -4.3711385e-08, 0, 0, 0)
+emitting = false
+amount = 100
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_2udbj")
+spread = 180.0
+gravity = Vector3(0, -20, 0)
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+damping_min = 10.0
+damping_max = 20.0
+scale_amount_curve = SubResource("Curve_0hiah")
+color_ramp = SubResource("Gradient_l5r1x")
+hue_variation_max = 1.0
+
+[node name="Hole" type="Node3D" parent="."]
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
+
+[node name="Sprite3D_1" type="Sprite3D" parent="Hole"]
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("3_bkrnw")
+
+[node name="Sprite3D_2" type="Sprite3D" parent="Hole"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("1_p4hsv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_w8onf")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

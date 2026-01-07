@@ -72,11 +72,15 @@ func _physics_process(delta):
 				Dialogue.show_message("martin", "normal", "#no_shooting#", "left", 3, "")
 			elif not self._is_shooting:
 				var laser_length = $RayCast3D.target_position.length()
+				var laser_position = Vector3.ZERO
+				var laser_normal = Vector3.ZERO
 				if $RayCast3D.is_colliding():
 					laser_length = self.global_position.distance_to($RayCast3D.get_collision_point())
+					laser_position = $RayCast3D.get_collision_point()
+					laser_normal = $RayCast3D.get_collision_normal()
 				$AnimationPlayer.play("Shoot")
 				$AnimationPlayer.speed_scale = 1
-				$Pivot/Camera3D/Laser.fire(laser_length)
+				$Pivot/Camera3D/Laser.fire(laser_length, laser_position, laser_normal)
 				self._is_shooting = true
 	
 	if direction != 0:
