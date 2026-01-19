@@ -15,8 +15,10 @@ signal animation_ended
 
 func toggle_object():
 	if _state == ToiletState.OPEN:
+		$Sounds/Close.play()
 		$AnimationPlayer.play("close")
 	elif _state == ToiletState.CLOSE:
+		$Sounds/Open.play()
 		$AnimationPlayer.play("open")
 	await $AnimationPlayer.animation_finished
 	_state = (1 - _state) as ToiletState

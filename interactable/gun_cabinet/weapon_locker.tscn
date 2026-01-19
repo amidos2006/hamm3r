@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://cxnv0w5rb7egn"]
+[gd_scene load_steps=20 format=4 uid="uid://cxnv0w5rb7egn"]
 
 [ext_resource type="Script" uid="uid://cf2frxrsei60s" path="res://interactable/gun_cabinet/weapon_locker.gd" id="1_1tbto"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="2_1tbto"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://odjrw1vjt4kh" path="res://interactable/gun_cabinet/gun.tscn" id="3_gag77"]
 [ext_resource type="Texture2D" uid="uid://b56hkpnbjxdgt" path="res://assets/models/Locker_Control_Objects.png" id="4_eww6r"]
 [ext_resource type="JSON" path="res://assets/actions/objects/toggle_object.json" id="5_c5776"]
+[ext_resource type="AudioStream" uid="uid://b8a64c0ysswnn" path="res://assets/sfx/in_game/cupboard opening.wav" id="7_hplko"]
+[ext_resource type="AudioStream" uid="uid://gu17uricsig8" path="res://assets/sfx/in_game/cupboard closing.wav" id="8_j2sq0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b4uto"]
 resource_name = "Control_Objects"
@@ -152,7 +154,7 @@ mesh = SubResource("ArrayMesh_htxo3")
 skeleton = NodePath("")
 
 [node name="Hinge" type="Node3D" parent="Pivot"]
-transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 0.3, 0, 0.3)
+transform = Transform3D(-3.6199901e-06, 0, 1, 0, 1, 0, -1, 0, -3.6199901e-06, 0.3, 0, 0.3)
 
 [node name="Door" type="MeshInstance3D" parent="Pivot/Hinge"]
 transform = Transform3D(-3.61999e-06, 0, -1, 0, 1, 0, 1, 0, -3.61999e-06, 0.300001, 0, -0.299999)
@@ -180,5 +182,13 @@ shape = SubResource("BoxShape3D_c5776")
 
 [node name="FocusPoint" parent="Interactable" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0153411, 1.04946, 0)
+
+[node name="Sounds" type="Node3D" parent="."]
+
+[node name="Open" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("7_hplko")
+
+[node name="Close" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("8_j2sq0")
 
 [editable path="Interactable"]

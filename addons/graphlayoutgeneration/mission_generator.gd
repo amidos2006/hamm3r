@@ -46,6 +46,8 @@ static func generate_dungeon(start_graph, recipe, patterns, max_connections = 4,
 	
 
 static func combine_graphs(graph1, graph2, start_name = "Start", end_name = "End", new_name = "Middle"):
+	graph2.nodes.append(MissionNode.new(graph2.nodes[-1].id+1, graph2.nodes[0].access_level, new_name))
+	graph2.nodes[0].connect_to(graph2.nodes[-1])
 	var new_graph = MissionGraph.new()
 	var middle_node = null
 	for node in graph1.nodes:

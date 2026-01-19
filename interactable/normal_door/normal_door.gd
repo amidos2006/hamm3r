@@ -9,17 +9,11 @@ enum DoorState{
 
 
 var _state = DoorState.CLOSE
-var _activeSound = null
-
-
-func _ready():
-	self._activeSound = $Sounds.get_children().pick_random()
-
 
 func open_door():
 	if _state == DoorState.CLOSE:
 		$AnimationPlayer.play("open")
-		_activeSound.play()
+		$Sounds.play()
 		await $AnimationPlayer.animation_finished
 		$CollisionShape3D.set_deferred("disabled", true)
 		_state = DoorState.OPEN

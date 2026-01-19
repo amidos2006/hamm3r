@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://05t1uswscwq"]
+[gd_scene load_steps=16 format=3 uid="uid://05t1uswscwq"]
 
 [ext_resource type="Script" uid="uid://dhrisfosy7p65" path="res://interactable/seal_door/seal_door.gd" id="1_xb6vn"]
 [ext_resource type="PackedScene" uid="uid://boqheahono8cx" path="res://assets/models/Door_Tunnel.glb" id="2_4frlx"]
@@ -133,6 +133,12 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_m8aqy"]
 size = Vector3(2, 2.4, 3)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4frlx"]
+streams_count = 3
+stream_0/stream = ExtResource("5_m8aqy")
+stream_1/stream = ExtResource("6_4frlx")
+stream_2/stream = ExtResource("7_4frlx")
+
 [node name="SealDoor" type="StaticBody3D"]
 script = ExtResource("1_xb6vn")
 
@@ -157,16 +163,8 @@ shape = SubResource("BoxShape3D_m8aqy")
 [node name="FocusPoint" parent="Interactable" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055, 1.4, 0.123)
 
-[node name="Sounds" type="Node3D" parent="."]
-
-[node name="AudioStreamPlayer3D_1" type="AudioStreamPlayer3D" parent="Sounds"]
-stream = ExtResource("5_m8aqy")
-
-[node name="AudioStreamPlayer3D_2" type="AudioStreamPlayer3D" parent="Sounds"]
-stream = ExtResource("6_4frlx")
-
-[node name="AudioStreamPlayer3D_3" type="AudioStreamPlayer3D" parent="Sounds"]
-stream = ExtResource("7_4frlx")
+[node name="Sounds" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_4frlx")
 
 [connection signal="player_exited" from="Interactable" to="." method="_on_interactable_player_exited"]
 

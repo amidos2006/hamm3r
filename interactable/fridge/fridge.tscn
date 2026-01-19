@@ -1,9 +1,11 @@
-[gd_scene load_steps=16 format=4 uid="uid://g0k0ar4ug5py"]
+[gd_scene load_steps=18 format=4 uid="uid://g0k0ar4ug5py"]
 
 [ext_resource type="Script" uid="uid://ccc2cbxv3did2" path="res://interactable/fridge/fridge.gd" id="1_5ctkk"]
 [ext_resource type="Texture2D" uid="uid://bmwhoim5i0o75" path="res://assets/models/Fridge_Room_props.png" id="2_5ctkk"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="3_qtvbg"]
 [ext_resource type="JSON" path="res://assets/actions/startarea/fridge_1.json" id="4_5ctkk"]
+[ext_resource type="AudioStream" uid="uid://c7dufo1vfo046" path="res://assets/sfx/in_game/fridge_opening.wav" id="5_fgy0m"]
+[ext_resource type="AudioStream" uid="uid://bx01qjw0ei8ob" path="res://assets/sfx/in_game/fridge_closing.wav" id="6_1l2ta"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x4r3u"]
 resource_name = "Col Props"
@@ -173,5 +175,13 @@ shape = SubResource("BoxShape3D_qtvbg")
 
 [node name="FocusPoint" parent="Interactable" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+
+[node name="Sounds" type="Node3D" parent="."]
+
+[node name="Open" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("5_fgy0m")
+
+[node name="Close" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("6_1l2ta")
 
 [editable path="Interactable"]

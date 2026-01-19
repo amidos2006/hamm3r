@@ -1,13 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://m8drxppkgior"]
+[gd_scene load_steps=19 format=3 uid="uid://m8drxppkgior"]
 
 [ext_resource type="Script" uid="uid://wvtabkn0uq5l" path="res://interactable/ship_door/ship_door.gd" id="1_sk2rt"]
-[ext_resource type="PackedScene" uid="uid://4g2s3ijiwyyf" path="res://assets/models/pcg_modules/mod_Door.glb" id="2_hjl6g"]
 [ext_resource type="JSON" path="res://assets/actions/objects/fail_door.json" id="3_hjl6g"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="3_y2usl"]
 [ext_resource type="JSON" path="res://assets/actions/objects/door.json" id="4_ygbkc"]
+[ext_resource type="PackedScene" uid="uid://dimmho0wlqegv" path="res://assets/models/pcg_modules/mod_Door_Bottom.glb" id="5_jr33b"]
 [ext_resource type="AudioStream" uid="uid://v2xp611rx23r" path="res://assets/sfx/in_game/doors/spaceship-compartment-door_1.wav" id="5_nyckf"]
+[ext_resource type="PackedScene" uid="uid://dyk1ocvdqqu63" path="res://assets/models/pcg_modules/mod_Door_Frame.glb" id="6_cc146"]
 [ext_resource type="AudioStream" uid="uid://b0ana0fcakyho" path="res://assets/sfx/in_game/doors/spaceship-compartment-door_2.wav" id="6_xwfpf"]
 [ext_resource type="AudioStream" uid="uid://b8rutcl3ipwpw" path="res://assets/sfx/in_game/doors/spaceship-compartment-door_3.wav" id="7_hexuy"]
+[ext_resource type="PackedScene" uid="uid://dd38pm1u7j0yr" path="res://assets/models/pcg_modules/mod_Door_Top.glb" id="7_vs44l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y7nol"]
 size = Vector3(3.4, 3, 0.6)
@@ -17,7 +19,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/Cube_065:position")
+tracks/0/path = NodePath("Pivot/mod_Door_Top:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -29,7 +31,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Pivot/Cube_067:position")
+tracks/1/path = NodePath("Pivot/mod_Door_Bottom:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -45,7 +47,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/Cube_065:position")
+tracks/0/path = NodePath("Pivot/mod_Door_Bottom:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -57,14 +59,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Pivot/Cube_067:position")
+tracks/1/path = NodePath("Pivot/mod_Door_Top:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 1.2300903, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 1.23, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_55cad"]
@@ -73,7 +75,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/Cube_065:position")
+tracks/0/path = NodePath("Pivot/mod_Door_Bottom:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -85,7 +87,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Pivot/Cube_067:position")
+tracks/1/path = NodePath("Pivot/mod_Door_Top:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -101,26 +103,26 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/Cube_065:position")
+tracks/0/path = NodePath("Pivot/mod_Door_Top:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -1.23, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 1.23, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Pivot/Cube_067:position")
+tracks/1/path = NodePath("Pivot/mod_Door_Bottom:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.2300903, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, -1.23, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_55cad"]
@@ -134,13 +136,25 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_dlvnk"]
 size = Vector3(3.4, 3, 2.6)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hjl6g"]
+streams_count = 3
+stream_0/stream = ExtResource("5_nyckf")
+stream_1/stream = ExtResource("6_xwfpf")
+stream_2/stream = ExtResource("7_hexuy")
+
 [node name="ShipDoor" type="StaticBody3D"]
 script = ExtResource("1_sk2rt")
 normal_interation = ExtResource("4_ygbkc")
 fail_interaction = ExtResource("3_hjl6g")
 metadata/_edit_group_ = true
 
-[node name="Pivot" parent="." instance=ExtResource("2_hjl6g")]
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="mod_Door_Frame" parent="Pivot" instance=ExtResource("6_cc146")]
+
+[node name="mod_Door_Top" parent="Pivot" instance=ExtResource("7_vs44l")]
+
+[node name="mod_Door_Bottom" parent="Pivot" instance=ExtResource("5_jr33b")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0017211735, 1.3608534, 0)
@@ -160,18 +174,9 @@ shape = SubResource("BoxShape3D_dlvnk")
 [node name="FocusPoint" parent="Interactable" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 
-[node name="Sounds" type="Node3D" parent="."]
-
-[node name="AudioStreamPlayer3D_1" type="AudioStreamPlayer3D" parent="Sounds"]
-stream = ExtResource("5_nyckf")
-
-[node name="AudioStreamPlayer3D_2" type="AudioStreamPlayer3D" parent="Sounds"]
-stream = ExtResource("6_xwfpf")
-
-[node name="AudioStreamPlayer3D_3" type="AudioStreamPlayer3D" parent="Sounds"]
-stream = ExtResource("7_hexuy")
+[node name="Sounds" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_hjl6g")
 
 [connection signal="player_exited" from="Interactable" to="." method="_on_interactable_player_exited"]
 
-[editable path="Pivot"]
 [editable path="Interactable"]

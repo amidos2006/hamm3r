@@ -1,6 +1,14 @@
 [
 	{
 		"action": "function",
+		"target": "../Tunnel_SealDoor",
+		"args": {
+			"name": "close_door",
+			"args": []
+		}
+	},
+	{
+		"action": "function",
 		"target": "../Tunnel_SealDoor/Interactable",
 		"args": {
 			"name": "change_script",

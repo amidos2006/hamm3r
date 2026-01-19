@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6wpagdi5de5j"]
+[gd_scene load_steps=12 format=3 uid="uid://b6wpagdi5de5j"]
 
 [ext_resource type="Script" uid="uid://bahocjj6rtrsu" path="res://spaceship/tile.gd" id="1_vxwtg"]
 [ext_resource type="PackedScene" uid="uid://dkt10cpnhfwqb" path="res://assets/models/pcg_modules/mod_special_Kitchen.glb" id="3_pcg23"]
@@ -8,11 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://w1vgt2mk0go" path="res://assets/models/pcg_modules/mod_Straight_1.glb" id="7_ts5ky"]
 [ext_resource type="PackedScene" uid="uid://8axtvjr6ny68" path="res://assets/models/pcg_modules/mod_Straight_2.glb" id="8_8jb1s"]
 [ext_resource type="PackedScene" uid="uid://c282rs68hfxe8" path="res://assets/models/pcg_modules/mod_Straight_3.glb" id="9_dl3ic"]
+[ext_resource type="PackedScene" uid="uid://bo8ulv1sgs4rj" path="res://assets/models/pcg_modules/mod_Cross.glb" id="9_ts5ky"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vxwtg"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_53yt0"]
-size = Vector3(5, 0.5, 5)
+[sub_resource type="BoxShape3D" id="BoxShape3D_pcg23"]
+size = Vector3(5, 0.6, 5)
 
 [node name="tile" type="Node3D"]
 script = ExtResource("1_vxwtg")
@@ -69,21 +70,21 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 [node name="1110" type="Node3D" parent="."]
 
 [node name="model_1" parent="1110" instance=ExtResource("5_53yt0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="0111" type="Node3D" parent="."]
 
 [node name="model_1" parent="0111" instance=ExtResource("5_53yt0")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="1011" type="Node3D" parent="."]
 
 [node name="model_1" parent="1011" instance=ExtResource("5_53yt0")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="1101" type="Node3D" parent="."]
 
 [node name="model_1" parent="1101" instance=ExtResource("5_53yt0")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="1010" type="Node3D" parent="."]
 
@@ -104,18 +105,15 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 [node name="model_3" parent="0101" instance=ExtResource("9_dl3ic")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
+[node name="1111" type="Node3D" parent="."]
+
+[node name="model_1" parent="1111" instance=ExtResource("9_ts5ky")]
+
 [node name="0000" type="Node3D" parent="."]
 
 [node name="model_1" type="MeshInstance3D" parent="0000"]
 transform = Transform3D(5, 0, 0, 0, 3.8, 0, 0, 0, 5, 0, 1.35509, 0)
 mesh = SubResource("BoxMesh_vxwtg")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09476119, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.336552, 0)
-shape = SubResource("BoxShape3D_53yt0")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6325638, 0)
@@ -124,3 +122,9 @@ shadow_enabled = true
 distance_fade_enabled = true
 distance_fade_begin = 20.0
 distance_fade_shadow = 30.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.32, 0)
+shape = SubResource("BoxShape3D_pcg23")

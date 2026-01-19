@@ -11,7 +11,7 @@ func _init():
 	start_graph = null
 	recipe = null
 	patterns = []
-	max_children = 3
+	max_children = 4
 	verbose = false
 	
 func generate_graph():

@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxw43s4qrsdcl"]
+[gd_scene load_steps=13 format=3 uid="uid://bxw43s4qrsdcl"]
 
 [ext_resource type="Script" uid="uid://72xodijfuul5" path="res://interactable/toilet/toilet.gd" id="1_fx3bs"]
 [ext_resource type="PackedScene" uid="uid://enl5nsx5v3r" path="res://assets/models/Toilet.glb" id="2_1hqff"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="3_ilrhp"]
 [ext_resource type="JSON" path="res://assets/actions/objects/toggle_object.json" id="4_fx3bs"]
+[ext_resource type="AudioStream" uid="uid://c53iae36t4xut" path="res://assets/sfx/in_game/toilet-lid-opening.wav" id="5_1hqff"]
+[ext_resource type="AudioStream" uid="uid://bbsv4hpk12q6d" path="res://assets/sfx/in_game/toilet-lid-closing.wav" id="6_pd4mk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8yj2b"]
 size = Vector3(1, 2.4, 1)
@@ -88,6 +90,15 @@ shape = SubResource("BoxShape3D_ilrhp")
 
 [node name="FocusPoint" parent="Interactable" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.531166, -0.0613174)
+
+[node name="Sounds" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4486165, 0)
+
+[node name="Open" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("5_1hqff")
+
+[node name="Close" type="AudioStreamPlayer3D" parent="Sounds"]
+stream = ExtResource("6_pd4mk")
 
 [editable path="Pivot"]
 [editable path="Interactable"]

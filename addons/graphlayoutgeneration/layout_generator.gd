@@ -147,7 +147,7 @@ static func _spaceship_2d(maze, start_type="", broken_type=""):
 				start_loc.append(Vector2(x, y))
 			if layout[y][x] != null and layout[y][x].mission != null and layout[y][x].mission.type == broken_type:
 				broken_loc.append(Vector2(x, y))
-			if layout[y][x] != null and layout[y][x].get_neighbors(maze).size() > 3:
+			if layout[y][x] != null and layout[y][x].get_neighbors(maze).size() > 4:
 				wrong_connections.append(Vector2(x, y))
 	for start in start_loc:
 		var min_x = min(start.x, layout[0].size() - 1 - start.x)

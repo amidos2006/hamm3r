@@ -14,5 +14,4 @@ script = ExtResource("7_ur6ch")
 start_graph = ExtResource("8_edsod")
 recipe = ExtResource("6_hs1sp")
 patterns = Array[JSON]([ExtResource("1_2n3u8"), ExtResource("2_ts45a"), ExtResource("3_1h1c8"), ExtResource("4_20nhl"), ExtResource("5_6sedy")])
-max_children = 2
-verbose = false
+max_children = 4

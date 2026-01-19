@@ -479,7 +479,7 @@ emission_enabled = true
 emission = Color(1, 0.3, 0.3, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0uvls"]
-size = Vector3(10, 3, 1.5)
+size = Vector3(10, 3, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2pnu0"]
 size = Vector3(3, 2.4, 1)
@@ -490,12 +490,6 @@ start_actions = ExtResource("2_xq0vx")
 
 [node name="Player" parent="." instance=ExtResource("1_rgvhy")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.68418, 0.251945, 15.9421)
-movement_speed = 4
-backward_ratio = 0.4
-rotation_speed = 5
-gravity = 4
-max_health = 5
-health = 3
 
 [node name="Ship_Interior" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73199, 0, 14.5915)
@@ -795,11 +789,11 @@ transform = Transform3D(-0.999902, 0, -0.0139616, 0, 1, 0, 0.0139616, 0, -0.9999
 transform = Transform3D(1, 0, -6.8236e-08, 0, 1, 0, 6.8236e-08, 0, 1, -0.0510805, 0.0418737, 0.293604)
 
 [node name="Tunnel_EventArea" parent="InteractableObjects" instance=ExtResource("21_xq0vx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.4859767)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 event = ExtResource("22_0uvls")
 
 [node name="CollisionShape3D" parent="InteractableObjects/Tunnel_EventArea" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81427, 1.0136719, -1.4139802)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.014, 0)
 shape = SubResource("BoxShape3D_0uvls")
 
 [node name="Cryoroom_Fridge" parent="InteractableObjects" instance=ExtResource("18_3qgax")]
