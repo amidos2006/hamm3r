@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dm3nn0x4vpdl6"
-path="res://.godot/imported/Gun.glb-1607d6ae49067251fd8f296857dab987.scn"
+uid="uid://b71sc1x8xqjpt"
+path="res://.godot/imported/Barrel.glb-1d239a392c77436fd6658cf50d2e44d5.scn"
 
 [deps]
 
-source_file="res://assets/models/Gun.glb"
-dest_files=["res://.godot/imported/Gun.glb-1607d6ae49067251fd8f296857dab987.scn"]
+source_file="res://assets/models/Barrel.glb"
+dest_files=["res://.godot/imported/Barrel.glb-1d239a392c77436fd6658cf50d2e44d5.scn"]
 
 [params]
 
@@ -38,5 +38,5 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-gltf/naming_version=1
+gltf/naming_version=2
 gltf/embedded_image_handling=1

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8jn2dytxp5i7"
-path.s3tc="res://.godot/imported/Gun_AO_Gun.png-6466789e17a46e3c94fb549414d099da.s3tc.ctex"
+uid="uid://cbppfrq4lm3as"
+path.s3tc="res://.godot/imported/Barrel_seg_BarrelsPickup.png-5a0a2933a82989d9c54f478884afdd9f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "0598d6176bfa7fbba1f1fc8fd0abb8ab"
+"md5": "fdef47a61077f1bd0af85eb75a20f0cb"
 }
 
 [deps]
 
-source_file="res://assets/models/Gun_AO_Gun.png"
-dest_files=["res://.godot/imported/Gun_AO_Gun.png-6466789e17a46e3c94fb549414d099da.s3tc.ctex"]
+source_file="res://assets/models/Barrel_seg_BarrelsPickup.png"
+dest_files=["res://.godot/imported/Barrel_seg_BarrelsPickup.png-5a0a2933a82989d9c54f478884afdd9f.s3tc.ctex"]
 
 [params]
 

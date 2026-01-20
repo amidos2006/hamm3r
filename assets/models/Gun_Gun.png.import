@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8jn2dytxp5i7"
-path.s3tc="res://.godot/imported/Gun_AO_Gun.png-6466789e17a46e3c94fb549414d099da.s3tc.ctex"
+uid="uid://dedgfhl63q6f0"
+path.s3tc="res://.godot/imported/Gun_Gun.png-91a50efa059544ba7d22ec243696ade3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "0598d6176bfa7fbba1f1fc8fd0abb8ab"
+"md5": "f0082ccc7bf1e211b1e79e1defcdb350"
 }
 
 [deps]
 
-source_file="res://assets/models/Gun_AO_Gun.png"
-dest_files=["res://.godot/imported/Gun_AO_Gun.png-6466789e17a46e3c94fb549414d099da.s3tc.ctex"]
+source_file="res://assets/models/Gun_Gun.png"
+dest_files=["res://.godot/imported/Gun_Gun.png-91a50efa059544ba7d22ec243696ade3.s3tc.ctex"]
 
 [params]
 
