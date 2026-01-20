@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp1i21v355k03"
-path.s3tc="res://.godot/imported/CntrlRoom_Screen_Desk_f2.png-bbf02956f073be6dd614b554ce8eadde.s3tc.ctex"
+uid="uid://bec7w8qge5t0b"
+path="res://.godot/imported/ship_pieces.png-9f27507c4b12ae5bb0f46aee2ab62b7c.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/screens/CntrlRoom_Screen_Desk_f2.png"
-dest_files=["res://.godot/imported/CntrlRoom_Screen_Desk_f2.png-bbf02956f073be6dd614b554ce8eadde.s3tc.ctex"]
+source_file="res://assets/generator/ship_pieces.png"
+dest_files=["res://.godot/imported/ship_pieces.png-9f27507c4b12ae5bb0f46aee2ab62b7c.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

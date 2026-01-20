@@ -3,6 +3,7 @@ extends Node3D
 @export var mission_generator_1:Mission
 @export var mission_generator_2:Mission
 @export var tile_size:Vector2 = Vector2(6, 6)
+@export var computer:Node3D
 @export_range(0, 1, 0.05) var door_prob:Array[float] = [0.4, 0.8, 1.0]
 @export_range(0, 1, 0.05) var door_open_prob:float = 0.25
 
@@ -46,6 +47,7 @@ func _ready():
 	elif offset.x == layout[0].size() - 1:
 		rotation_angle.y = -90
 		start_opening[LayoutGenerator.LayoutDirection.East] = true
+	computer.setup_ship(layout, offset, start_opening.find_key(true))
 	for y in layout.size():
 		for x in layout[y].size():
 			var cell = layout[y][x]
