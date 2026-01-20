@@ -1,11 +1,11 @@
-[gd_scene load_steps=52 format=4 uid="uid://c0ov3gvi01qt6"]
+[gd_scene load_steps=54 format=4 uid="uid://c0ov3gvi01qt6"]
 
 [ext_resource type="PackedScene" uid="uid://cmrwa6kvok00u" path="res://assets/models/human_scale.glb" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://d33dokaqiijiv" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://bytmxxwrusaqe" path="res://assets/graphics/ui/button_info.png" id="3_g1dw6"]
-[ext_resource type="Texture2D" uid="uid://c8jn2dytxp5i7" path="res://assets/models/Gun_AO_Gun.png" id="3_g6k8r"]
 [ext_resource type="Script" uid="uid://div4ma1sqdfk3" path="res://player/ui.gd" id="3_yw30f"]
 [ext_resource type="Script" uid="uid://f1uuhlwo4vj1" path="res://player/laser.gd" id="4_1so5t"]
+[ext_resource type="Texture2D" uid="uid://dedgfhl63q6f0" path="res://assets/models/Gun_Gun.png" id="4_55jnj"]
 [ext_resource type="Texture2D" uid="uid://blh3ylxptck2c" path="res://assets/graphics/ui/aimReticle.png" id="5_qjkh3"]
 [ext_resource type="AudioStream" uid="uid://dyelqq0x1iw5g" path="res://assets/music/in_game/AC_hum_spaceship.wav" id="7_boad6"]
 [ext_resource type="AudioStream" uid="uid://cwirhf7pe1dqg" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_01.wav" id="7_rgyib"]
@@ -39,11 +39,14 @@
 [ext_resource type="AudioStream" uid="uid://doslojwgqfptx" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV2_Walk_14.wav" id="28_fmu53"]
 [ext_resource type="AudioStream" uid="uid://cv8h3ea02bkb0" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV2_Walk_15.wav" id="29_w7j2h"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1so5t"]
+load_path = "res://.godot/imported/Gun_AO_Gun.png-6466789e17a46e3c94fb549414d099da.s3tc.ctex"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vyno6"]
 resource_name = "Gun_AO"
 cull_mode = 2
 shading_mode = 0
-albedo_texture = ExtResource("3_g6k8r")
+albedo_texture = SubResource("CompressedTexture2D_1so5t")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_r4vxh"]
 _surfaces = [{
@@ -78,6 +81,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_r4vxh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dx5ib"]
+albedo_texture = ExtResource("4_55jnj")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_pnw6m"]
 top_radius = 0.05
@@ -179,6 +185,22 @@ tracks/1/keys = {
 "values": [Vector3(0, -1, -0.55)]
 }
 
+[sub_resource type="Animation" id="Animation_1so5t"]
+resource_name = "Shoot"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Camera3D/Gun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.39999998, -0.55), Vector3(0, -0.4, -0.4), Vector3(0, -0.4, -0.55)]
+}
+
 [sub_resource type="Animation" id="Animation_rgyib"]
 resource_name = "Walk"
 length = 1.6
@@ -194,22 +216,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1.25, 0.75, 1.25, 0.75, 1.25, 0.75, 1.25, 0.75, 1.25),
 "update": 0,
 "values": [Vector3(0, -0.4, -0.55), Vector3(-0.02, -0.42, -0.55), Vector3(-0.04, -0.4, -0.55), Vector3(-0.02, -0.42, -0.55), Vector3(0, -0.4, -0.55), Vector3(0.02, -0.42, -0.55), Vector3(0.04, -0.4, -0.55), Vector3(0.02, -0.42, -0.55), Vector3(0, -0.4, -0.55)]
-}
-
-[sub_resource type="Animation" id="Animation_1so5t"]
-resource_name = "Shoot"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/Camera3D/Gun:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -0.39999998, -0.55), Vector3(0, -0.4, -0.4), Vector3(0, -0.4, -0.55)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_boad6"]
@@ -276,6 +282,7 @@ transform = Transform3D(-0.25, 0, 3.7748997e-08, 0, 0.25, 0, -3.7748997e-08, 0, 
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_sxpnq")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_dx5ib")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="Pivot/Camera3D"]
 current = true

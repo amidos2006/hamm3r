@@ -1,8 +1,135 @@
-[gd_scene load_steps=6 format=3 uid="uid://s06kfgaux5dw"]
+[gd_scene load_steps=25 format=3 uid="uid://s06kfgaux5dw"]
 
+[ext_resource type="Script" uid="uid://wbkayts6vasp" path="res://interactable/computer/computer.gd" id="1_nbhi1"]
 [ext_resource type="PackedScene" uid="uid://b2yeguu64h64u" path="res://assets/models/ControlRoom_Computers.glb" id="1_scfbs"]
+[ext_resource type="Texture2D" uid="uid://wisrdx516f2m" path="res://assets/models/ControlRoom_Computers_Monitors.png" id="2_s0ocy"]
+[ext_resource type="Shader" uid="uid://c5glrffg5mopa" path="res://assets/shaders/crt_spatial_shader.gdshader" id="3_0cbta"]
+[ext_resource type="Texture2D" uid="uid://q8qcugkv1w8x" path="res://assets/models/ControlRoom_Computers_CntrlRoom_Screen_Desk_f1.png" id="3_3txo5"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="4_qpu04"]
+[ext_resource type="Texture2D" uid="uid://q515e5pcsfvw" path="res://assets/models/ControlRoom_Computers_CntrlRoom_Screen_Desk_3R.png" id="5_0cbta"]
 [ext_resource type="JSON" path="res://assets/actions/startarea/computer.json" id="6_3txo5"]
+[ext_resource type="Texture2D" uid="uid://cbnrgq07okpa8" path="res://assets/models/ControlRoom_Computers_CntrlRoom_Screen_L.png" id="8_jwq81"]
+[ext_resource type="Texture2D" uid="uid://cughvgsqciu2q" path="res://assets/models/ControlRoom_Computers_CntrlRoom_Screen_M.png" id="9_nbhi1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0cbta"]
+albedo_texture = ExtResource("2_s0ocy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j5alt"]
+render_priority = 0
+shader = ExtResource("3_0cbta")
+shader_parameter/albedo_texture = ExtResource("3_3txo5")
+shader_parameter/texture_uv = Vector2(0, 0)
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.5
+shader_parameter/vignette_opacity = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3txo5"]
+albedo_texture = ExtResource("2_s0ocy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0cbta"]
+render_priority = 0
+shader = ExtResource("3_0cbta")
+shader_parameter/albedo_texture = ExtResource("3_3txo5")
+shader_parameter/texture_uv = Vector2(0, 0)
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.5
+shader_parameter/vignette_opacity = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j5alt"]
+albedo_texture = ExtResource("2_s0ocy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jwq81"]
+render_priority = 0
+shader = ExtResource("3_0cbta")
+shader_parameter/albedo_texture = ExtResource("3_3txo5")
+shader_parameter/texture_uv = Vector2(0, 0)
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.5
+shader_parameter/vignette_opacity = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nbhi1"]
+albedo_texture = ExtResource("2_s0ocy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8s7rf"]
+render_priority = 0
+shader = ExtResource("3_0cbta")
+shader_parameter/albedo_texture = ExtResource("5_0cbta")
+shader_parameter/texture_uv = Vector2(0, 0)
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.5
+shader_parameter/vignette_opacity = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s0ocy"]
 size = Vector3(3.03314, 3.15527, 2.54736)
@@ -10,9 +137,226 @@ size = Vector3(3.03314, 3.15527, 2.54736)
 [sub_resource type="BoxShape3D" id="BoxShape3D_3txo5"]
 size = Vector3(4, 4, 4)
 
+[sub_resource type="Animation" id="Animation_8s7rf"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Monitor4:surface_material_override/1:shader_parameter/texture_uv")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/Monitor2:surface_material_override/1:shader_parameter/albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_3txo5")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot/Monitor2:surface_material_override/1:shader_parameter/texture_uv")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pivot/Monitor3:surface_material_override/1:shader_parameter/albedo_texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_3txo5")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Pivot/Monitor3:surface_material_override/1:shader_parameter/texture_uv")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6bncj"]
+resource_name = "Gun_Show"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Monitor2:surface_material_override/1:shader_parameter/albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_jwq81")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/Monitor3:surface_material_override/1:shader_parameter/albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_nbhi1")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot/Monitor4:surface_material_override/1:shader_parameter/texture_uv")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pivot/Monitor2:surface_material_override/1:shader_parameter/texture_uv")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Pivot/Monitor3:surface_material_override/1:shader_parameter/texture_uv")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jgxms"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Monitor2:surface_material_override/1:shader_parameter/albedo_texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_3txo5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/Monitor3:surface_material_override/1:shader_parameter/albedo_texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_3txo5")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot/Monitor4:surface_material_override/1:shader_parameter/texture_uv")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pivot/Monitor2:surface_material_override/1:shader_parameter/texture_uv")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Pivot/Monitor3:surface_material_override/1:shader_parameter/texture_uv")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3jk4j"]
+_data = {
+&"Gun_Show": SubResource("Animation_6bncj"),
+&"Idle": SubResource("Animation_8s7rf"),
+&"RESET": SubResource("Animation_jgxms")
+}
+
 [node name="Computer" type="StaticBody3D"]
+script = ExtResource("1_nbhi1")
 
 [node name="Pivot" parent="." instance=ExtResource("1_scfbs")]
+
+[node name="Monitor4" parent="Pivot" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0cbta")
+surface_material_override/1 = SubResource("ShaderMaterial_j5alt")
+
+[node name="Monitor2" parent="Pivot" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_3txo5")
+surface_material_override/1 = SubResource("ShaderMaterial_0cbta")
+
+[node name="Monitor3" parent="Pivot" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_j5alt")
+surface_material_override/1 = SubResource("ShaderMaterial_jwq81")
+
+[node name="Monitor1" parent="Pivot" index="6"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nbhi1")
+surface_material_override/1 = SubResource("ShaderMaterial_8s7rf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0204163, 0.22027, 0.273682)
@@ -27,6 +371,11 @@ shape = SubResource("BoxShape3D_3txo5")
 
 [node name="FocusPoint" parent="Interactable" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225348, 1.00454, 0.716522)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3jk4j")
+}
 
 [editable path="Pivot"]
 [editable path="Interactable"]

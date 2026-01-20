@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8jn2dytxp5i7"
-path.s3tc="res://.godot/imported/Gun_AO_Gun.png-6466789e17a46e3c94fb549414d099da.s3tc.ctex"
+uid="uid://q515e5pcsfvw"
+path.s3tc="res://.godot/imported/ControlRoom_Computers_CntrlRoom_Screen_Desk_3R.png-c9f78a0b5f2293a418732bf8974dbe42.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "0598d6176bfa7fbba1f1fc8fd0abb8ab"
-}
 
 [deps]
 
-source_file="res://assets/models/Gun_AO_Gun.png"
-dest_files=["res://.godot/imported/Gun_AO_Gun.png-6466789e17a46e3c94fb549414d099da.s3tc.ctex"]
+source_file="res://assets/models/ControlRoom_Computers_CntrlRoom_Screen_Desk_3R.png"
+dest_files=["res://.godot/imported/ControlRoom_Computers_CntrlRoom_Screen_Desk_3R.png-c9f78a0b5f2293a418732bf8974dbe42.s3tc.ctex"]
 
 [params]
 
