@@ -78,6 +78,8 @@ func setup_ship(spaceship_cells, start_cell, start_direction):
 		spaceship_cells.size() * tile_size.y)
 	$SpaceshipMap/TileMapLayer/Arrow.position = start_cell * tile_size + tile_size/2
 	$SpaceshipMap/TileMapLayer.position = (Vector2($SpaceshipMap.size) - ship_size) / 2 - Vector2(0, 60)
+	$SpaceshipMap/NinePatchRect.position = (Vector2($SpaceshipMap.size) - ship_size) / 2 - Vector2(0, 60) - 2 * tile_size
+	$SpaceshipMap/NinePatchRect.size = ship_size + 4 * tile_size
 	
 	match start_direction:
 		LayoutGenerator.LayoutDirection.North:

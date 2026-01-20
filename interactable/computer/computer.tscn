@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://s06kfgaux5dw"]
+[gd_scene load_steps=31 format=3 uid="uid://s06kfgaux5dw"]
 
 [ext_resource type="Script" uid="uid://wbkayts6vasp" path="res://interactable/computer/computer.gd" id="1_nbhi1"]
 [ext_resource type="PackedScene" uid="uid://b2yeguu64h64u" path="res://assets/models/ControlRoom_Computers.glb" id="1_scfbs"]
@@ -9,6 +9,8 @@
 [ext_resource type="JSON" path="res://assets/actions/startarea/computer.json" id="6_3txo5"]
 [ext_resource type="Texture2D" uid="uid://cbnrgq07okpa8" path="res://assets/models/ControlRoom_Computers_CntrlRoom_Screen_L.png" id="8_jwq81"]
 [ext_resource type="Texture2D" uid="uid://cughvgsqciu2q" path="res://assets/models/ControlRoom_Computers_CntrlRoom_Screen_M.png" id="9_nbhi1"]
+[ext_resource type="FontFile" uid="uid://dg4warscx3c37" path="res://assets/fonts/ShareTech-Regular.ttf" id="11_3jk4j"]
+[ext_resource type="Texture2D" uid="uid://ci13a7mlsb8qr" path="res://assets/generator/border_pieces.png" id="11_7b14u"]
 [ext_resource type="Texture2D" uid="uid://bec7w8qge5t0b" path="res://assets/generator/ship_pieces.png" id="11_8s7rf"]
 [ext_resource type="Texture2D" uid="uid://b8xloy63qnuxq" path="res://assets/graphics/screens/CntrlRoom_Screen_Desk_f1.png" id="11_jgxms"]
 [ext_resource type="Texture2D" uid="uid://dxqa1jq6o60cg" path="res://assets/generator/start_arrow.png" id="12_6bncj"]
@@ -475,7 +477,7 @@ libraries = {
 }
 
 [node name="SpaceshipMap" type="SubViewport" parent="."]
-size = Vector2i(1024, 1024)
+size = Vector2i(768, 768)
 
 [node name="ColorRect" type="ColorRect" parent="SpaceshipMap"]
 anchors_preset = 15
@@ -484,6 +486,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.09019608, 0.24705882, 0.38039216, 1)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="SpaceshipMap"]
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("11_7b14u")
+
+[node name="Label" type="Label" parent="SpaceshipMap"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -217.0
+offset_top = 32.0
+offset_right = 217.0
+offset_bottom = 105.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.22745098, 0.8, 0.87058824, 1)
+theme_override_fonts/font = ExtResource("11_3jk4j")
+theme_override_font_sizes/font_size = 64
+text = "Spaceship Layout"
+horizontal_alignment = 1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="SpaceshipMap"]
 tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 3, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 3, 0, 0, 0, 2, 0, 1, 0, 0, 0, 1, 0, 3, 0, 0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0, 0, 0)

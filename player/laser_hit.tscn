@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dsve2vjflbrhh" path="res://player/laser_hit.gd" id="1_n1hiu"]
 [ext_resource type="Texture2D" uid="uid://dp0wnlh0dxh0m" path="res://assets/graphics/particles/big_circle.png" id="1_p4hsv"]
-[ext_resource type="Texture2D" uid="uid://c8r25dl7fpgct" path="res://assets/graphics/particles/halo.png" id="3_bkrnw"]
+[ext_resource type="Texture2D" uid="uid://bwiacfvegmafk" path="res://assets/graphics/particles/blast_decal.png" id="3_bkrnw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55jnj"]
 transparency = 1
@@ -63,19 +63,19 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Hole/Sprite3D_2:modulate")
+tracks/1/path = NodePath("Sparks_1:emitting")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.03333333, 0.75, 1),
-"transitions": PackedFloat32Array(1, 3, 1),
-"update": 0,
-"values": [Color(0.101960786, 0.047058824, 0, 0.78431374), Color(0.101960786, 0.047058824, 0, 0.78431374), Color(0, 0, 0, 0)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sparks_1:emitting")
+tracks/2/path = NodePath("Sparks_2:emitting")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -87,7 +87,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sparks_2:emitting")
+tracks/3/path = NodePath("Sparks_3:emitting")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -99,22 +99,10 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Sparks_3:emitting")
+tracks/4/path = NodePath("HitSphere:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("HitSphere:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.3),
 "transitions": PackedFloat32Array(1, 4, 0.25),
 "update": 0,
@@ -138,19 +126,19 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Hole/Sprite3D_2:modulate")
+tracks/1/path = NodePath("Sparks_1:emitting")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
+"update": 1,
+"values": [false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sparks_1:emitting")
+tracks/2/path = NodePath("Sparks_2:emitting")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -162,7 +150,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sparks_2:emitting")
+tracks/3/path = NodePath("Sparks_3:emitting")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -174,22 +162,10 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Sparks_3:emitting")
+tracks/4/path = NodePath("HitSphere:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("HitSphere:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -265,18 +241,12 @@ mesh = SubResource("SphereMesh_bkrnw")
 surface_material_override/0 = SubResource("StandardMaterial3D_bkrnw")
 
 [node name="Hole" type="Node3D" parent="."]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="Sprite3D_1" type="Sprite3D" parent="Hole"]
 gi_mode = 0
 modulate = Color(0, 0, 0, 1)
 texture = ExtResource("3_bkrnw")
-
-[node name="Sprite3D_2" type="Sprite3D" parent="Hole"]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
-gi_mode = 0
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("1_p4hsv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
