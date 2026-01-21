@@ -54,11 +54,7 @@ func _assign_screen(screen, type):
 	screen.get_surface_override_material(1).set_shader_parameter("albedo_texture", texture)
 
 func _ready():
-	$AnimationPlayer.play("Gun_Show")
-
-
-func show_ship():
-	pass
+	$AnimationPlayer.play("Idle")
 
 
 func show_gun():

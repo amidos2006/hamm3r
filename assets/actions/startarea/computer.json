@@ -41,6 +41,12 @@
 		}
 	},
 	{
+		"action": "function",
+		"args": {
+			"name": "show_gun",
+		}
+	},
+	{
 		"action": "show_dialogue",
 		"wait": "advance_dialogue",
 		"args": {
@@ -138,6 +144,14 @@
 		"args": {
 			"name": "door_lock",
 			"value": "green"
+		}
+	},
+	{
+		"action": "function",
+		"target": "../Control_WeaponLocker/Interactable",
+		"args": {
+			"name": "change_script",
+			"args": ["res://assets/actions/startarea/weapon_locker_open.json"],
 		}
 	},
 	{

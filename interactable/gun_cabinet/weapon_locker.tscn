@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cf2frxrsei60s" path="res://interactable/gun_cabinet/weapon_locker.gd" id="1_1tbto"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="2_1tbto"]
-[ext_resource type="JSON" path="res://assets/actions/startarea/weapon_locker_open.json" id="3_67lly"]
 [ext_resource type="PackedScene" uid="uid://odjrw1vjt4kh" path="res://interactable/gun_cabinet/gun.tscn" id="3_gag77"]
 [ext_resource type="JSON" path="res://assets/actions/objects/toggle_object.json" id="5_c5776"]
 [ext_resource type="Material" uid="uid://jw8v2c22y63k" path="res://assets/materials/mat_hammer/m_controlroom_objects.tres" id="5_j2sq0"]
 [ext_resource type="AudioStream" uid="uid://b8a64c0ysswnn" path="res://assets/sfx/in_game/cupboard opening.wav" id="7_hplko"]
+[ext_resource type="JSON" path="res://assets/actions/startarea/weapon_locker_computer.json" id="7_j2sq0"]
 [ext_resource type="AudioStream" uid="uid://gu17uricsig8" path="res://assets/sfx/in_game/cupboard closing.wav" id="8_j2sq0"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ohqul"]
@@ -138,7 +138,7 @@ size = Vector3(1, 2.20422, 1.61772)
 [node name="WeaponLocker" type="StaticBody3D"]
 script = ExtResource("1_1tbto")
 empty_json = ExtResource("5_c5776")
-gun_json = ExtResource("3_67lly")
+gun_json = ExtResource("7_j2sq0")
 metadata/_edit_group_ = true
 
 [node name="Pivot" type="Node3D" parent="."]
@@ -168,7 +168,7 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.714421, -0.0686493)
 
 [node name="Interactable" parent="." instance=ExtResource("2_1tbto")]
-interaction = ExtResource("3_67lly")
+interaction = ExtResource("7_j2sq0")
 
 [node name="InteractableArea" parent="Interactable" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10248, 0.462273)

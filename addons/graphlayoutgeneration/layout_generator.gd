@@ -510,7 +510,11 @@ class LayoutChromosome extends RefCounted:
 			if self._fitness == 3:
 				self._fitness += 1.0 / (abs(spaceship_result["broken"].size() - spaceship_result["extra"].size()) + 1)
 				self._fitness += 2.0 / (spaceship_result["extra"].size() + 1)
-				self._fitness += 0.01 * self._spaceship.size() / self._spaceship[0].size()
+				if self._spaceship.size() > 10:
+					self._fitness -= 0.01 * (self._spaceship.size() - 10)
+				if self._spaceship[0].size() > 14:
+					self._fitness -= 0.001 * (self._spaceship.size() - 13)
+				self._fitness += 0.01 * self._spaceship[0].size() / self._spaceship.size()
 			#self._fitness += 1.0 / (layout_result["extra"] + 1)
 			#self._fitness /= 3.0
 		return self._fitness
