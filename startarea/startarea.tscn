@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=4 uid="uid://y1xw7mo8ak7r"]
+[gd_scene load_steps=122 format=4 uid="uid://y1xw7mo8ak7r"]
 
 [ext_resource type="Script" uid="uid://hvxybe6ew1wi" path="res://startarea/startarea.gd" id="1_3scv4"]
 [ext_resource type="PackedScene" uid="uid://c0ov3gvi01qt6" path="res://player/player.tscn" id="1_rgvhy"]
@@ -10,6 +10,7 @@
 [ext_resource type="Material" uid="uid://cbd7c8jwr4u21" path="res://assets/materials/mat_hammer/m_controlroom_pipes.tres" id="10_361ey"]
 [ext_resource type="Material" uid="uid://jw8v2c22y63k" path="res://assets/materials/mat_hammer/m_controlroom_objects.tres" id="11_2c6kl"]
 [ext_resource type="Material" uid="uid://bjf0a24v6e5ur" path="res://assets/materials/mat_hammer/m_cryopod_glass.tres" id="12_3m83t"]
+[ext_resource type="PackedScene" uid="uid://dkt10cpnhfwqb" path="res://assets/models/pcg_modules/mod_special_Kitchen.glb" id="12_k17ha"]
 [ext_resource type="Material" uid="uid://fhpvm5h5w1km" path="res://assets/materials/mat_hammer/m_corridor.tres" id="13_2c6kl"]
 [ext_resource type="PackedScene" uid="uid://bxw43s4qrsdcl" path="res://interactable/toilet/toilet.tscn" id="13_2pnu0"]
 [ext_resource type="Material" uid="uid://c1cohk2hee1f7" path="res://assets/materials/mat_hammer/m_startroom.tres" id="16_361ey"]
@@ -858,8 +859,11 @@ shadow_mesh = SubResource("ArrayMesh_xhtvp")
 size = Vector2(0.5, 0.1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2clgs"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.3019608, 0.3019608, 1)
 emission_enabled = true
-emission = Color(1, 0.3, 0.3, 1)
+emission = Color(1, 0.3019608, 0.3019608, 1)
+emission_energy_multiplier = 2.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0uvls"]
 size = Vector3(10, 3, 2)
@@ -1189,6 +1193,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8263587, 0, -0.25509262)
 mesh = SubResource("ArrayMesh_yevw6")
 skeleton = NodePath("")
 
+[node name="Room_Unaccess" parent="Ship_Interior" instance=ExtResource("12_k17ha")]
+transform = Transform3D(-0.5, 0, 4.371139e-08, 0, 0.75, 0, -4.371139e-08, 0, -0.5, 3.1513886, 0.055062264, -1.0859013)
+
 [node name="Corridor_Window_Glass" type="MeshInstance3D" parent="Ship_Interior"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -1.2944497, 1.5735637, -4.1752768)
 cast_shadow = 0
@@ -1201,6 +1208,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.63445, 1.57354, -8.95227)
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_vm85v")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("12_3m83t")
 
 [node name="InteractableObjects" type="Node3D" parent="."]
 

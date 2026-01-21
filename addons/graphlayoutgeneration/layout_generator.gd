@@ -133,6 +133,7 @@ static func _spaceship_2d(maze, start_type="", broken_type=""):
 	
 	var start_loc = []
 	var broken_loc = []
+	var hole_loc = []
 	var wrong_connections = []
 	for y in range(layout.size()):
 		for x in range(layout[y].size()):
@@ -173,7 +174,11 @@ static func _spaceship_2d(maze, start_type="", broken_type=""):
 				if point.x == broken.x and point.y == broken.y:
 					broken_blocks.append(start)
 					break
-	return {"layout": layout, "extra": extra_blocks, "start": start_blocks, "start_loc": start_loc, "broken": broken_blocks, "connections": wrong_connections}
+	for y in range(layout.size()):
+		for x in range(layout[y].size()):
+			if layout[y][x] == null:
+				hole_loc.append(Vector2(x, y))
+	return {"layout": layout, "extra": extra_blocks, "start": start_blocks, "start_loc": start_loc, "broken": broken_blocks, "connections": wrong_connections, "holes": hole_loc}
 	
 
 static func _location_id(x, y):
@@ -510,6 +515,8 @@ class LayoutChromosome extends RefCounted:
 			if self._fitness == 3:
 				self._fitness += 1.0 / (abs(spaceship_result["broken"].size() - spaceship_result["extra"].size()) + 1)
 				self._fitness += 2.0 / (spaceship_result["extra"].size() + 1)
+				if spaceship_result["holes"].size() == 0:
+					self._fitness -= 0.05
 				if self._spaceship.size() > 10:
 					self._fitness -= 0.01 * (self._spaceship.size() - 10)
 				if self._spaceship[0].size() > 14:

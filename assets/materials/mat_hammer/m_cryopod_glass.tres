@@ -8,6 +8,7 @@ depth_draw_mode = 1
 diffuse_mode = 3
 specular_mode = 1
 disable_ambient_light = true
+albedo_color = Color(1, 1, 1, 0.78431374)
 albedo_texture = ExtResource("1_anl4g")
 metallic = 0.15
 metallic_specular = 0.61
