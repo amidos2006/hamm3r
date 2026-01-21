@@ -1020,7 +1020,7 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("11_2c6kl")
 
 [node name="Control_Chair" type="MeshInstance3D" parent="Ship_Interior/Room_Control"]
-transform = Transform3D(1.2167411, 0, 0, 0, 1.2167411, 0, 0, 0, 1.2167411, 1.2799768, 0.9330616, -0.60414267)
+transform = Transform3D(0.8514911, 0, -0.86914986, 0, 1.2167411, 0, 0.86914986, 0, 0.8514911, 1.0886606, 0.9330616, -0.74917275)
 mesh = SubResource("ArrayMesh_7fn5i")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("11_2c6kl")
@@ -1231,7 +1231,7 @@ interaction = ExtResource("18_86m7s")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.31921, -0.166232, 9.66532)
 
 [node name="Control_WeaponLocker" parent="InteractableObjects" instance=ExtResource("35_5sfhf")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.14579, 0, 9.376333)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.203446, 0, 9.376333)
 contain_gun = true
 
 [node name="Control_Computer" parent="InteractableObjects" instance=ExtResource("44_wwn5p")]
@@ -1319,7 +1319,7 @@ omni_attenuation = -0.267
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.732078, 2.0337794, 8.264975)
 light_bake_mode = 1
 shadow_enabled = true
-shadow_bias = 0.161
+shadow_bias = 0.01
 distance_fade_enabled = true
 distance_fade_begin = 20.0
 distance_fade_shadow = 30.0
