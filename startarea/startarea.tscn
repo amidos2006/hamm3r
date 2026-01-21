@@ -1191,12 +1191,14 @@ skeleton = NodePath("")
 
 [node name="Corridor_Window_Glass" type="MeshInstance3D" parent="Ship_Interior"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -1.2944497, 1.5735637, -4.1752768)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_x5dq2")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("12_3m83t")
 
 [node name="Control_Window_Glass" type="MeshInstance3D" parent="Ship_Interior"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.63445, 1.57354, -8.95227)
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_vm85v")
 skeleton = NodePath("")
 

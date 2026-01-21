@@ -1,13 +1,15 @@
-[gd_scene load_steps=31 format=3 uid="uid://s06kfgaux5dw"]
+[gd_scene load_steps=33 format=3 uid="uid://s06kfgaux5dw"]
 
 [ext_resource type="Script" uid="uid://wbkayts6vasp" path="res://interactable/computer/computer.gd" id="1_nbhi1"]
 [ext_resource type="PackedScene" uid="uid://b2yeguu64h64u" path="res://assets/models/ControlRoom_Computers.glb" id="1_scfbs"]
-[ext_resource type="Texture2D" uid="uid://wisrdx516f2m" path="res://assets/models/ControlRoom_Computers_Monitors.png" id="2_s0ocy"]
+[ext_resource type="Texture2D" uid="uid://cm1ht38itnmst" path="res://assets/models/ControlRoom_Computers_Monitors.png" id="2_s0ocy"]
 [ext_resource type="Shader" uid="uid://c5glrffg5mopa" path="res://assets/shaders/crt_spatial_shader.gdshader" id="3_0cbta"]
+[ext_resource type="Material" uid="uid://bp2ftq2ecvhkc" path="res://assets/materials/mat_hammer/m_computers.tres" id="3_kso1q"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="4_qpu04"]
 [ext_resource type="Texture2D" uid="uid://q515e5pcsfvw" path="res://assets/models/ControlRoom_Computers_CntrlRoom_Screen_Desk_3R.png" id="5_0cbta"]
 [ext_resource type="JSON" path="res://assets/actions/startarea/computer.json" id="6_3txo5"]
 [ext_resource type="Texture2D" uid="uid://cbnrgq07okpa8" path="res://assets/models/ControlRoom_Computers_CntrlRoom_Screen_L.png" id="8_jwq81"]
+[ext_resource type="Material" uid="uid://cbd7c8jwr4u21" path="res://assets/materials/mat_hammer/m_controlroom_pipes.tres" id="9_8g2b1"]
 [ext_resource type="Texture2D" uid="uid://cughvgsqciu2q" path="res://assets/models/ControlRoom_Computers_CntrlRoom_Screen_M.png" id="9_nbhi1"]
 [ext_resource type="FontFile" uid="uid://dg4warscx3c37" path="res://assets/fonts/ShareTech-Regular.ttf" id="11_3jk4j"]
 [ext_resource type="Texture2D" uid="uid://ci13a7mlsb8qr" path="res://assets/generator/border_pieces.png" id="11_7b14u"]
@@ -731,6 +733,12 @@ moniter_4 = 3
 
 [node name="Pivot" parent="." instance=ExtResource("1_scfbs")]
 
+[node name="Monitor_Keyboard" parent="Pivot" index="0"]
+surface_material_override/0 = ExtResource("3_kso1q")
+
+[node name="Monitor_Computer" parent="Pivot" index="1"]
+surface_material_override/0 = ExtResource("3_kso1q")
+
 [node name="Monitor4" parent="Pivot" index="2"]
 surface_material_override/0 = SubResource("StandardMaterial3D_0cbta")
 surface_material_override/1 = SubResource("ShaderMaterial_j5alt")
@@ -743,9 +751,15 @@ surface_material_override/1 = SubResource("ShaderMaterial_0cbta")
 surface_material_override/0 = SubResource("StandardMaterial3D_j5alt")
 surface_material_override/1 = SubResource("ShaderMaterial_jwq81")
 
+[node name="Monitor_Cables" parent="Pivot" index="5"]
+surface_material_override/0 = ExtResource("9_8g2b1")
+
 [node name="Monitor1" parent="Pivot" index="6"]
 surface_material_override/0 = SubResource("StandardMaterial3D_nbhi1")
 surface_material_override/1 = SubResource("ShaderMaterial_8s7rf")
+
+[node name="Monitor_Stand" parent="Pivot" index="7"]
+surface_material_override/0 = ExtResource("3_kso1q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0204163, 0.22027, 0.273682)
