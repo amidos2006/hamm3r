@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bjitklds44p61"]
+
+[ext_resource type="Texture2D" uid="uid://r5acy6oa6i83" path="res://assets/textures/tex_hammer/T_cryopod.png" id="1_psyo5"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_psyo5")

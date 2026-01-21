@@ -1,0 +1,32 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://c2n11a4xsy1mm"]
+
+[ext_resource type="Shader" uid="uid://cfolovkcxbyfy" path="res://assets/shaders/hatch.gdshader" id="1_te63y"]
+[ext_resource type="Texture2D" uid="uid://0c2qt7vj2bgq" path="res://assets/shaders/hatch_painted.png" id="2_8yxhf"]
+[ext_resource type="Texture2D" uid="uid://c1erfkjws1l7r" path="res://assets/textures/tex_hammer/T_corridor.png" id="3_n37q2"]
+
+[sub_resource type="Gradient" id="Gradient_0b762"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7ov8j"]
+gradient = SubResource("Gradient_0b762")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_te63y")
+shader_parameter/cross_hatch_texture = ExtResource("2_8yxhf")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("3_n37q2")
+shader_parameter/uv_scale_r = 0.0
+shader_parameter/uv_scale_g = 0.0
+shader_parameter/uv_scale_b = 0.0
+shader_parameter/hatch_uv_scale = 60.0
+shader_parameter/smoothness = 0.25999999418848
+shader_parameter/light_threshold = 0.66999998502416
+shader_parameter/mid_threshold = 0.999999977648
+shader_parameter/dark_threshold = 0.20999999530608
+shader_parameter/specular_glossiness = 13.500000186265
+shader_parameter/specular_threshold = 0.5
+shader_parameter/specular_softness = 0.1
+shader_parameter/shadow_gradient = SubResource("GradientTexture2D_7ov8j")
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/wrap = 0.01400009566500015
+shader_parameter/steepness = 1.0

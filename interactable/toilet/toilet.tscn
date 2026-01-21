@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bxw43s4qrsdcl"]
+[gd_scene load_steps=14 format=3 uid="uid://bxw43s4qrsdcl"]
 
 [ext_resource type="Script" uid="uid://72xodijfuul5" path="res://interactable/toilet/toilet.gd" id="1_fx3bs"]
 [ext_resource type="PackedScene" uid="uid://enl5nsx5v3r" path="res://assets/models/Toilet.glb" id="2_1hqff"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="3_ilrhp"]
+[ext_resource type="Material" uid="uid://dsoclvv6ric3u" path="res://assets/materials/mat_hammer/m_bathroom.tres" id="3_pd4mk"]
 [ext_resource type="JSON" path="res://assets/actions/objects/toggle_object.json" id="4_fx3bs"]
 [ext_resource type="AudioStream" uid="uid://c53iae36t4xut" path="res://assets/sfx/in_game/toilet-lid-opening.wav" id="5_1hqff"]
 [ext_resource type="AudioStream" uid="uid://bbsv4hpk12q6d" path="res://assets/sfx/in_game/toilet-lid-closing.wav" id="6_pd4mk"]
@@ -71,6 +72,12 @@ size = Vector3(1.8, 1.2, 1.8)
 script = ExtResource("1_fx3bs")
 
 [node name="Pivot" parent="." instance=ExtResource("2_1hqff")]
+
+[node name="Bathroom_Toilet" parent="Pivot" index="0"]
+surface_material_override/0 = ExtResource("3_pd4mk")
+
+[node name="Bathroom_Toilet_Lid" parent="Pivot/Bathroom_Toilet" index="0"]
+surface_material_override/0 = ExtResource("3_pd4mk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3289149, -0.133)

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dsoclvv6ric3u"]
+
+[ext_resource type="Texture2D" uid="uid://qwhp3vmo23l1" path="res://assets/textures/tex_hammer/T_bathroom.png" id="1_b2qq1"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_b2qq1")

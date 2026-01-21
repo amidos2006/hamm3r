@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bic4y3wsictxk"]
+
+[ext_resource type="Texture2D" uid="uid://cdj42lon6msq6" path="res://assets/textures/tex_hammer/T_tunnel.png" id="1_73o0e"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_73o0e")

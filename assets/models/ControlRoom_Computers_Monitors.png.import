@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wisrdx516f2m"
+uid="uid://cm1ht38itnmst"
 path.s3tc="res://.godot/imported/ControlRoom_Computers_Monitors.png-0d9e6a01836c99cd99086689ca225162.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
@@ -22,6 +22,8 @@ dest_files=["res://.godot/imported/ControlRoom_Computers_Monitors.png-0d9e6a0183
 compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -29,6 +31,10 @@ mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

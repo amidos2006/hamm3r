@@ -1,0 +1,41 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://djwngpl5k17m4"]
+
+[ext_resource type="Shader" uid="uid://cfolovkcxbyfy" path="res://assets/shaders/hatch.gdshader" id="1_khx2d"]
+[ext_resource type="Texture2D" uid="uid://0c2qt7vj2bgq" path="res://assets/shaders/hatch_painted.png" id="2_pnev4"]
+
+
+[sub_resource type="Gradient" id="Gradient_bku4d"]
+offsets = PackedFloat32Array(0.0705882, 0.490196, 1)
+colors = PackedColorArray(0.0387742, 4.10736e-05, 0.0964069, 1, 0.429135, 0.429135, 0.429135, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2eigu"]
+gradient = SubResource("Gradient_bku4d")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p1i7h"]
+load_path = "res://.godot/imported/Objects_Control_Objects.png-e3e799d11d5a956b98882eefc40834d2.s3tc.ctex"
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_khx2d")
+shader_parameter/cross_hatch_texture = ExtResource("2_pnev4")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = SubResource("CompressedTexture2D_p1i7h")
+shader_parameter/uv_scale_r = 0.0
+shader_parameter/uv_scale_g = 0.0
+shader_parameter/uv_scale_b = 0.0
+shader_parameter/hatch_uv_scale = 31.0
+shader_parameter/smoothness = 0.45
+shader_parameter/light_threshold = 0.49
+shader_parameter/mid_threshold = 0.0
+shader_parameter/dark_threshold = 0.3
+shader_parameter/rim_amount = 0.5
+shader_parameter/rim_smoothness = 0.5
+shader_parameter/rim_strength = 1.0
+shader_parameter/rim_color = Color(0, 0, 0, 1)
+shader_parameter/specular_glossiness = 15.0
+shader_parameter/specular_threshold = 0.5
+shader_parameter/specular_softness = 0.1
+shader_parameter/shadow_gradient = SubResource("GradientTexture1D_2eigu")
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/wrap = 0.0
+shader_parameter/steepness = 1.0

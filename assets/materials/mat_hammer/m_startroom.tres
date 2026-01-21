@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c1cohk2hee1f7"]
+
+[ext_resource type="Texture2D" uid="uid://cx5yecsgujvqa" path="res://assets/textures/tex_hammer/T_startroom.png" id="3_lnpnl"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("3_lnpnl")

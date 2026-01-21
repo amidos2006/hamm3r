@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://6yidcff8h8yx"]
+
+[ext_resource type="Texture2D" uid="uid://chdcv4jms0t0t" path="res://assets/textures/tex_hammer/T_controlroom.png" id="1_qustj"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_qustj")
