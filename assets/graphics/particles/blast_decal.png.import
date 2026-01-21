@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp1i21v355k03"
-path.s3tc="res://.godot/imported/CntrlRoom_Screen_Desk_f2.png-bbf02956f073be6dd614b554ce8eadde.s3tc.ctex"
+uid="uid://bwiacfvegmafk"
+path.s3tc="res://.godot/imported/blast_decal.png-ac695b318a0c6cd2b9adf124c3771c96.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/graphics/screens/CntrlRoom_Screen_Desk_f2.png"
-dest_files=["res://.godot/imported/CntrlRoom_Screen_Desk_f2.png-bbf02956f073be6dd614b554ce8eadde.s3tc.ctex"]
+source_file="res://assets/graphics/particles/blast_decal.png"
+dest_files=["res://.godot/imported/blast_decal.png-ac695b318a0c6cd2b9adf124c3771c96.s3tc.ctex"]
 
 [params]
 

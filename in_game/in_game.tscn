@@ -7,5 +7,21 @@
 
 [node name="StartArea" parent="." instance=ExtResource("1_0dbxd")]
 
-[node name="Spaceship" parent="." instance=ExtResource("2_ko8yt")]
+[node name="Spaceship" parent="." node_paths=PackedStringArray("computer") instance=ExtResource("2_ko8yt")]
+computer = NodePath("../StartArea/InteractableObjects/Control_Computer")
 door_open_prob = 0.5
+
+[editable path="StartArea"]
+[editable path="StartArea/InteractableObjects/Control_SealDoor"]
+[editable path="StartArea/InteractableObjects/Control_SealDoor/Pivot"]
+[editable path="StartArea/InteractableObjects/Control_SealDoor/Interactable"]
+[editable path="StartArea/InteractableObjects/Corridor_CryoroomDoor"]
+[editable path="StartArea/InteractableObjects/Corridor_CryoroomDoor/Pivot"]
+[editable path="StartArea/InteractableObjects/Corridor_CryoroomDoor/Interactable"]
+[editable path="StartArea/InteractableObjects/Corridor_FailDoor"]
+[editable path="StartArea/InteractableObjects/Corridor_FailDoor/Pivot"]
+[editable path="StartArea/InteractableObjects/Corridor_FailDoor/Interactable"]
+[editable path="StartArea/InteractableObjects/Tunnel_SealDoor"]
+[editable path="StartArea/InteractableObjects/Tunnel_SealDoor/Pivot"]
+[editable path="StartArea/InteractableObjects/Tunnel_SealDoor/Interactable"]
+[editable path="StartArea/InteractableObjects/Tunnel_EventArea"]
