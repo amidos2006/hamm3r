@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://cr0gqot0emxoy"]
+
+[ext_resource type="PackedScene" uid="uid://dii3au4wbw1s1" path="res://assets/models/pcg_modules/mod_special_END.glb" id="1_peksx"]
+[ext_resource type="Material" uid="uid://cd6220vbayq3t" path="res://assets/materials/mat_spaceship/m_pcg_special_ENDroom.tres" id="2_kjlt1"]
+[ext_resource type="Material" uid="uid://6eumye00dh2d" path="res://assets/materials/mat_spaceship/m_pcg_special_ENDcables.tres" id="3_p1xoh"]
+[ext_resource type="Material" uid="uid://ebgky5s4iuq8" path="res://assets/materials/mat_spaceship/m_pcg_pipes.tres" id="4_xd47i"]
+
+[node name="mod_special_END" instance=ExtResource("1_peksx")]
+
+[node name="EndRoom" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_kjlt1")
+surface_material_override/1 = ExtResource("3_p1xoh")
+surface_material_override/2 = ExtResource("4_xd47i")

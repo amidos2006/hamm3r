@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://ts3iombhp4xk"]
+
+[ext_resource type="PackedScene" uid="uid://cwx5o806eenkn" path="res://assets/models/pcg_modules/mod_Corner.glb" id="1_nck3l"]
+[ext_resource type="Material" uid="uid://bk2rccxda7b47" path="res://assets/materials/mat_spaceship/m_pcg_corner.tres" id="2_0upwk"]
+[ext_resource type="Material" uid="uid://ebgky5s4iuq8" path="res://assets/materials/mat_spaceship/m_pcg_pipes.tres" id="3_itl7k"]
+
+[node name="mod_Corner" instance=ExtResource("1_nck3l")]
+
+[node name="Corner" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_0upwk")
+surface_material_override/1 = ExtResource("3_itl7k")

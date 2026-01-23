@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=4 uid="uid://y1xw7mo8ak7r"]
+[gd_scene load_steps=125 format=4 uid="uid://y1xw7mo8ak7r"]
 
 [ext_resource type="Script" uid="uid://hvxybe6ew1wi" path="res://startarea/startarea.gd" id="1_3scv4"]
 [ext_resource type="PackedScene" uid="uid://c0ov3gvi01qt6" path="res://player/player.tscn" id="1_rgvhy"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dkt10cpnhfwqb" path="res://assets/models/pcg_modules/mod_special_Kitchen.glb" id="12_k17ha"]
 [ext_resource type="Material" uid="uid://fhpvm5h5w1km" path="res://assets/materials/mat_hammer/m_corridor.tres" id="13_2c6kl"]
 [ext_resource type="PackedScene" uid="uid://bxw43s4qrsdcl" path="res://interactable/toilet/toilet.tscn" id="13_2pnu0"]
+[ext_resource type="Material" uid="uid://bhuqo5rqa55yu" path="res://assets/materials/mat_spaceship/m_pcg_special_kitchen.tres" id="13_3m83t"]
+[ext_resource type="Material" uid="uid://ebgky5s4iuq8" path="res://assets/materials/mat_spaceship/m_pcg_pipes.tres" id="14_5ehgq"]
 [ext_resource type="Material" uid="uid://c1cohk2hee1f7" path="res://assets/materials/mat_hammer/m_startroom.tres" id="16_361ey"]
 [ext_resource type="PackedScene" uid="uid://g0k0ar4ug5py" path="res://interactable/fridge/fridge.tscn" id="18_3qgax"]
 [ext_resource type="JSON" path="res://assets/actions/startarea/seal_door.json" id="18_86m7s"]
@@ -24,6 +26,7 @@
 [ext_resource type="JSON" path="res://assets/actions/startarea/exit_start_area.json" id="22_0uvls"]
 [ext_resource type="Material" uid="uid://c7udfa1objvm0" path="res://assets/materials/mat_hammer/m_startroom_objects.tres" id="22_7l267"]
 [ext_resource type="PackedScene" uid="uid://05t1uswscwq" path="res://interactable/seal_door/seal_door.tscn" id="27_doki2"]
+[ext_resource type="PackedScene" uid="uid://ccbw6mmhd6oct" path="res://global/game_environment/game_environment.tscn" id="30_5ehgq"]
 [ext_resource type="Script" uid="uid://hae3qadaxqck" path="res://startarea/door_light.gd" id="32_106fm"]
 [ext_resource type="PackedScene" uid="uid://cxnv0w5rb7egn" path="res://interactable/gun_cabinet/weapon_locker.tscn" id="35_5sfhf"]
 [ext_resource type="PackedScene" uid="uid://s06kfgaux5dw" path="res://interactable/computer/computer.tscn" id="44_wwn5p"]
@@ -1194,7 +1197,11 @@ mesh = SubResource("ArrayMesh_yevw6")
 skeleton = NodePath("")
 
 [node name="Room_Unaccess" parent="Ship_Interior" instance=ExtResource("12_k17ha")]
-transform = Transform3D(-0.5, 0, 4.371139e-08, 0, 0.75, 0, -4.371139e-08, 0, -0.5, 3.1513886, 0.055062264, -1.0859013)
+transform = Transform3D(-0.5, 0, 4.371139e-08, 0, 0.75, 0, -4.371139e-08, 0, -0.5, 3.1513886, 0.055062264, -1.3452559)
+
+[node name="Kitchen" parent="Ship_Interior/Room_Unaccess" index="0"]
+surface_material_override/0 = ExtResource("13_3m83t")
+surface_material_override/2 = ExtResource("14_5ehgq")
 
 [node name="Corridor_Window_Glass" type="MeshInstance3D" parent="Ship_Interior"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -1.2944497, 1.5735637, -4.1752768)
@@ -1257,7 +1264,7 @@ transform = Transform3D(-0.999902, 0, -0.0139616, 0, 1, 0, 0.0139616, 0, -0.9999
 interaction = ExtResource("20_k17ha")
 
 [node name="Corridor_ControlDoor" parent="InteractableObjects" instance=ExtResource("18_lxhx7")]
-transform = Transform3D(-0.999902, 0, -0.0139616, 0, 1, 0, 0.0139616, 0, -0.999902, 6.90711, -0.114634, 9.79091)
+transform = Transform3D(-0.999902, 0, -0.0139616, 0, 1, 0, 0.0139616, 0, -0.999902, 6.9482365, -0.114634, 9.790336)
 
 [node name="Tunnel_SealDoor" parent="InteractableObjects" instance=ExtResource("27_doki2")]
 transform = Transform3D(1, 0, -6.8236e-08, 0, 1, 0, 6.8236e-08, 0, 1, -0.0510805, 0.0418737, 0.293604)
@@ -1271,7 +1278,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.014, 0)
 shape = SubResource("BoxShape3D_0uvls")
 
 [node name="Cryoroom_Fridge" parent="InteractableObjects" instance=ExtResource("18_3qgax")]
-transform = Transform3D(0.846547, 0, -0.532315, 0, 1, 0, 0.532315, 0, 0.846547, 2.67414, 0, 12.8389)
+transform = Transform3D(0.9811108, 0, -0.18026339, 0, 1, 0, 0.19344644, 0, 0.9142497, 2.776506, 0, 12.653505)
 
 [node name="Cryoroom_Cryopod_1" parent="InteractableObjects" instance=ExtResource("19_rgvhy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6206021, -0.0048007965, 16.252949)
@@ -1296,15 +1303,21 @@ shape = SubResource("BoxShape3D_2pnu0")
 [node name="Lighting" type="Node3D" parent="."]
 
 [node name="Cyroroom" type="OmniLight3D" parent="Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5478916, 2.0501587, 14.525292)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5478916, 2.0501587, 14.045464)
+light_color = Color(1, 0.87866664, 0.86, 1)
+light_energy = 3.7
 light_bake_mode = 1
 shadow_enabled = true
+shadow_bias = 0.01
+shadow_opacity = 0.96
 distance_fade_enabled = true
 distance_fade_shadow = 30.0
+omni_attenuation = 1.823
 
 [node name="Corridor" type="OmniLight3D" parent="Lighting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2413834, 2.2480042, 10.777663)
-light_color = Color(0.31431612, 0.31431612, 0.3143161, 1)
+light_color = Color(0.11634443, 0.11848014, 0.21105105, 1)
+light_energy = 1.724
 light_bake_mode = 1
 shadow_enabled = true
 shadow_bias = 0.039
@@ -1316,13 +1329,19 @@ omni_range = 11.921
 omni_attenuation = -0.267
 
 [node name="Control" type="OmniLight3D" parent="Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.732078, 2.0337794, 8.264975)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.299105, 2.034917, 7.552809)
+light_color = Color(1, 0.8784314, 0.85882354, 1)
+light_energy = 2.909
 light_bake_mode = 1
 shadow_enabled = true
 shadow_bias = 0.01
+shadow_opacity = 0.8
+shadow_blur = 6.432
 distance_fade_enabled = true
 distance_fade_begin = 20.0
 distance_fade_shadow = 30.0
+omni_range = 6.23
+omni_attenuation = 1.2
 
 [node name="Tunnel" type="OmniLight3D" parent="Lighting"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 1.36889, 2.32076, 5.17275)
@@ -1334,8 +1353,11 @@ distance_fade_begin = 20.0
 distance_fade_shadow = 30.0
 omni_range = 10.0
 
+[node name="GameEnvironment" parent="Lighting" instance=ExtResource("30_5ehgq")]
+
 [connection signal="body_entered" from="InteractableObjects/Cryoroom_CryopodExit" to="." method="_on_cryopod_exit_body_entered"]
 
+[editable path="Ship_Interior/Room_Unaccess"]
 [editable path="InteractableObjects/Control_SealDoor"]
 [editable path="InteractableObjects/Control_SealDoor/Interactable"]
 [editable path="InteractableObjects/Corridor_CryoroomDoor"]

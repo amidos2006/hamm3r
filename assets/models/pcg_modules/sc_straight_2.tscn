@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://v51wab4qcihn"]
+
+[ext_resource type="PackedScene" uid="uid://8axtvjr6ny68" path="res://assets/models/pcg_modules/mod_Straight_2.glb" id="1_rtmrl"]
+[ext_resource type="Material" uid="uid://ca1bl5fikunh7" path="res://assets/materials/mat_spaceship/m_pcg_straight2.tres" id="2_ijwae"]
+[ext_resource type="Material" uid="uid://ebgky5s4iuq8" path="res://assets/materials/mat_spaceship/m_pcg_pipes.tres" id="3_bnmpb"]
+
+[node name="mod_Straight_2" instance=ExtResource("1_rtmrl")]
+
+[node name="Straight_2" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_ijwae")
+surface_material_override/1 = ExtResource("3_bnmpb")

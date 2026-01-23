@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0bosxmp10csq"]
+
+[ext_resource type="PackedScene" uid="uid://dkt10cpnhfwqb" path="res://assets/models/pcg_modules/mod_special_Kitchen.glb" id="1_cu2jv"]
+[ext_resource type="Material" uid="uid://bhuqo5rqa55yu" path="res://assets/materials/mat_spaceship/m_pcg_special_kitchen.tres" id="2_cm5bk"]
+[ext_resource type="Material" uid="uid://bp113us1g1bu7" path="res://assets/materials/mat_spaceship/m_pcg_barrels.tres" id="3_hae6b"]
+[ext_resource type="Material" uid="uid://ebgky5s4iuq8" path="res://assets/materials/mat_spaceship/m_pcg_pipes.tres" id="4_87w25"]
+
+[node name="mod_special_Kitchen" instance=ExtResource("1_cu2jv")]
+
+[node name="Kitchen" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_cm5bk")
+surface_material_override/1 = ExtResource("3_hae6b")
+surface_material_override/2 = ExtResource("4_87w25")

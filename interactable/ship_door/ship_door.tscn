@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://m8drxppkgior"]
+[gd_scene load_steps=20 format=3 uid="uid://m8drxppkgior"]
 
 [ext_resource type="Script" uid="uid://wvtabkn0uq5l" path="res://interactable/ship_door/ship_door.gd" id="1_sk2rt"]
 [ext_resource type="JSON" path="res://assets/actions/objects/fail_door.json" id="3_hjl6g"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="3_y2usl"]
 [ext_resource type="JSON" path="res://assets/actions/objects/door.json" id="4_ygbkc"]
+[ext_resource type="Material" uid="uid://cfu600yh5ya11" path="res://assets/materials/mat_spaceship/m_pcg_door.tres" id="5_cc146"]
 [ext_resource type="PackedScene" uid="uid://dimmho0wlqegv" path="res://assets/models/pcg_modules/mod_Door_Bottom.glb" id="5_jr33b"]
 [ext_resource type="AudioStream" uid="uid://v2xp611rx23r" path="res://assets/sfx/in_game/doors/spaceship-compartment-door_1.wav" id="5_nyckf"]
 [ext_resource type="PackedScene" uid="uid://dyk1ocvdqqu63" path="res://assets/models/pcg_modules/mod_Door_Frame.glb" id="6_cc146"]
@@ -152,9 +153,18 @@ metadata/_edit_group_ = true
 
 [node name="mod_Door_Frame" parent="Pivot" instance=ExtResource("6_cc146")]
 
+[node name="seg_Door_Frame" parent="Pivot/mod_Door_Frame" index="0"]
+surface_material_override/0 = ExtResource("5_cc146")
+
 [node name="mod_Door_Top" parent="Pivot" instance=ExtResource("7_vs44l")]
 
+[node name="seg_Door_Top" parent="Pivot/mod_Door_Top" index="0"]
+surface_material_override/0 = ExtResource("5_cc146")
+
 [node name="mod_Door_Bottom" parent="Pivot" instance=ExtResource("5_jr33b")]
+
+[node name="seg_Door_Bottom" parent="Pivot/mod_Door_Bottom" index="0"]
+surface_material_override/0 = ExtResource("5_cc146")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0017211735, 1.3608534, 0)
@@ -179,4 +189,7 @@ stream = SubResource("AudioStreamRandomizer_hjl6g")
 
 [connection signal="player_exited" from="Interactable" to="." method="_on_interactable_player_exited"]
 
+[editable path="Pivot/mod_Door_Frame"]
+[editable path="Pivot/mod_Door_Top"]
+[editable path="Pivot/mod_Door_Bottom"]
 [editable path="Interactable"]

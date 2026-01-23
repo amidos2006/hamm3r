@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bp113us1g1bu7"]
+
+[ext_resource type="Texture2D" uid="uid://bdle7nrgml3m3" path="res://assets/textures/tex_spaceship/T_pcg_barrels.png" id="1_qumep"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_qumep")

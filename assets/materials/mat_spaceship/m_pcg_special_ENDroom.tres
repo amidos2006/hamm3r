@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cd6220vbayq3t"]
+
+[ext_resource type="Texture2D" uid="uid://p8cxregn1i8" path="res://assets/textures/tex_spaceship/T_pcg_special_END.png" id="1_iw80p"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_iw80p")

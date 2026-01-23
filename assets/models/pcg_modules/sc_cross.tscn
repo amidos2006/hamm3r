@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://h3rfx71jfhrx"]
+
+[ext_resource type="PackedScene" uid="uid://bo8ulv1sgs4rj" path="res://assets/models/pcg_modules/mod_Cross.glb" id="1_y7fso"]
+[ext_resource type="Material" uid="uid://lue8lkv0lnff" path="res://assets/materials/mat_spaceship/m_pcg_cross.tres" id="2_rmd4v"]
+[ext_resource type="Material" uid="uid://ebgky5s4iuq8" path="res://assets/materials/mat_spaceship/m_pcg_pipes.tres" id="3_4afbl"]
+
+[node name="mod_Cross" instance=ExtResource("1_y7fso")]
+
+[node name="mod_CrossShape" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_rmd4v")
+surface_material_override/1 = ExtResource("3_4afbl")
