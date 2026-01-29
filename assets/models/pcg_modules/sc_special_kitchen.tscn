@@ -7,7 +7,7 @@
 
 [node name="mod_special_Kitchen" instance=ExtResource("1_cu2jv")]
 
-[node name="Kitchen" parent="." index="0"]
+[node name="mod_Kitchen" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_cm5bk")
 surface_material_override/1 = ExtResource("3_hae6b")
 surface_material_override/2 = ExtResource("4_87w25")

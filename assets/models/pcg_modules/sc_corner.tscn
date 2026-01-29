@@ -6,6 +6,6 @@
 
 [node name="mod_Corner" instance=ExtResource("1_nck3l")]
 
-[node name="Corner" parent="." index="0"]
+[node name="mod_Corner" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_0upwk")
 surface_material_override/1 = ExtResource("3_itl7k")

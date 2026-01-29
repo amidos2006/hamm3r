@@ -7,7 +7,11 @@
 
 [node name="mod_special_END" instance=ExtResource("1_peksx")]
 
-[node name="EndRoom" parent="." index="0"]
+[node name="mod_EndRoom" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0011817217, -5.9604645e-08, 8.46982e-05)
 surface_material_override/0 = ExtResource("2_kjlt1")
 surface_material_override/1 = ExtResource("3_p1xoh")
 surface_material_override/2 = ExtResource("4_xd47i")
+
+[node name="CollisionShape3D" parent="mod_EndRoom/col_EndScreen_R1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0039860606, 0, -0.00042629242)

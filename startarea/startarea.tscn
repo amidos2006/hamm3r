@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=4 uid="uid://y1xw7mo8ak7r"]
+[gd_scene load_steps=125 format=4 uid="uid://y1xw7mo8ak7r"]
 
 [ext_resource type="Script" uid="uid://hvxybe6ew1wi" path="res://startarea/startarea.gd" id="1_3scv4"]
 [ext_resource type="PackedScene" uid="uid://c0ov3gvi01qt6" path="res://player/player.tscn" id="1_rgvhy"]
@@ -26,11 +26,8 @@
 [ext_resource type="JSON" path="res://assets/actions/startarea/exit_start_area.json" id="22_0uvls"]
 [ext_resource type="Material" uid="uid://c7udfa1objvm0" path="res://assets/materials/mat_hammer/m_startroom_objects.tres" id="22_7l267"]
 [ext_resource type="PackedScene" uid="uid://05t1uswscwq" path="res://interactable/seal_door/seal_door.tscn" id="27_doki2"]
-[ext_resource type="PackedScene" uid="uid://ccbw6mmhd6oct" path="res://global/game_environment/game_environment.tscn" id="30_5ehgq"]
-[ext_resource type="PackedScene" uid="uid://qgotcx4tsokc" path="res://assets/models/HealthPickup.glb" id="31_361ey"]
 [ext_resource type="Material" uid="uid://bp113us1g1bu7" path="res://assets/materials/mat_spaceship/m_pcg_barrels.tres" id="32_2c6kl"]
 [ext_resource type="Script" uid="uid://hae3qadaxqck" path="res://startarea/door_light.gd" id="32_106fm"]
-[ext_resource type="Material" uid="uid://c2h5jcdybyc3w" path="res://assets/materials/mat_spaceship/m_pcg_barrels_transparent.tres" id="33_361ey"]
 [ext_resource type="PackedScene" uid="uid://cxnv0w5rb7egn" path="res://interactable/gun_cabinet/weapon_locker.tscn" id="35_5sfhf"]
 [ext_resource type="PackedScene" uid="uid://s06kfgaux5dw" path="res://interactable/computer/computer.tscn" id="44_wwn5p"]
 
@@ -1202,8 +1199,9 @@ skeleton = NodePath("")
 [node name="Room_Unaccess" parent="Ship_Interior" instance=ExtResource("12_k17ha")]
 transform = Transform3D(-0.5, 0, 4.371139e-08, 0, 0.75, 0, -4.371139e-08, 0, -0.5, 3.1513886, 0.055062264, -1.3452559)
 
-[node name="Kitchen" parent="Ship_Interior/Room_Unaccess" index="0"]
+[node name="mod_Kitchen" parent="Ship_Interior/Room_Unaccess" index="0"]
 surface_material_override/0 = ExtResource("13_3m83t")
+surface_material_override/1 = ExtResource("32_2c6kl")
 surface_material_override/2 = ExtResource("14_5ehgq")
 
 [node name="Corridor_Window_Glass" type="MeshInstance3D" parent="Ship_Interior"]
@@ -1356,16 +1354,6 @@ distance_fade_begin = 20.0
 distance_fade_shadow = 30.0
 omni_range = 10.0
 
-[node name="GameEnvironment" parent="Lighting" instance=ExtResource("30_5ehgq")]
-
-[node name="HealthPickup" parent="Lighting" instance=ExtResource("31_361ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.602702, 1.0593247, 8.016281)
-
-[node name="HealthPickup" parent="Lighting/HealthPickup" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.059223652, 0.013077736, 0.36029816)
-surface_material_override/0 = ExtResource("32_2c6kl")
-surface_material_override/1 = ExtResource("33_361ey")
-
 [connection signal="body_entered" from="InteractableObjects/Cryoroom_CryopodExit" to="." method="_on_cryopod_exit_body_entered"]
 
 [editable path="Ship_Interior/Room_Unaccess"]
@@ -1378,4 +1366,3 @@ surface_material_override/1 = ExtResource("33_361ey")
 [editable path="InteractableObjects/Tunnel_SealDoor"]
 [editable path="InteractableObjects/Tunnel_SealDoor/Interactable"]
 [editable path="InteractableObjects/Tunnel_EventArea"]
-[editable path="Lighting/HealthPickup"]

@@ -7,7 +7,7 @@
 
 [node name="mod_Tshape" instance=ExtResource("1_4r62m")]
 
-[node name="Tshape" parent="." index="0"]
+[node name="mod_Tshape" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_cuc4f")
 surface_material_override/1 = ExtResource("3_mn3d0")
 surface_material_override/2 = ExtResource("4_twbmw")

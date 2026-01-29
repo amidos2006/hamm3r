@@ -7,7 +7,7 @@
 
 [node name="mod_Straight_1" instance=ExtResource("1_qetqq")]
 
-[node name="Straight_1" parent="." index="0"]
+[node name="mod_Straight_1" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_5xtrx")
 surface_material_override/1 = ExtResource("3_yuwp3")
 surface_material_override/2 = ExtResource("4_m50wy")
