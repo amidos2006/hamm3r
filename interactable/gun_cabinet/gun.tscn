@@ -45,7 +45,6 @@ size = Vector3(0.5, 0.5, 0.8)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jhsg"]
 transparency = 1
 blend_mode = 1
-no_depth_test = true
 shading_mode = 0
 vertex_color_use_as_albedo = true
 albedo_color = Color(1, 0.658824, 0.270588, 0.705882)
@@ -108,7 +107,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("../Pivot:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -147,7 +146,6 @@ shape = SubResource("BoxShape3D_8ss2u")
 modulate = Color(1, 0.659333, 0.27, 0.705882)
 pixel_size = 0.001
 billboard = 1
-no_depth_test = true
 texture = ExtResource("3_vrb44")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="Effect"]

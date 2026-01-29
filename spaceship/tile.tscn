@@ -151,7 +151,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 [node name="mod_Cross" parent="1111/model_1" instance=ExtResource("9_ts5ky")]
 
 [node name="0000" type="Node3D" parent="."]
-visible = false
 
 [node name="model_1" type="MeshInstance3D" parent="0000"]
 transform = Transform3D(5, 0, 0, 0, 3.8, 0, 0, 0, 5, 0, 1.35509, 0)
