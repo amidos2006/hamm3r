@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterMoodPictures" load_steps=5 format=3 uid="uid://c5k4yllbusjs8"]
+[gd_resource type="Resource" script_class="CharacterMoodPictures" format=3 uid="uid://c5k4yllbusjs8"]
 
 [ext_resource type="Script" uid="uid://ctxh6c3jp62vb" path="res://global/dialogue/characters/character_mood_pictures.gd" id="1_6jcfi"]
 [ext_resource type="Texture2D" uid="uid://djn8vucy5y0ut" path="res://assets/graphics/dialogue/3R_normal.png" id="1_6s50u"]

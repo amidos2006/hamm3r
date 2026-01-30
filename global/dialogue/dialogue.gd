@@ -45,7 +45,10 @@ func show_message(character_name, mood, dialogue, direction = "left", time=0, ac
 	chatbox.get_node("Name").text = character_name
 	chatbox.get_node("Dialogue").text = dialogue
 	if action.length() > 0:
-		chatbox.get_node("Prompt").text = "[ " + InputMap.action_get_events(action)[0].as_text().split("(")[0].to_upper().strip_edges() + " ]"
+		var button_text = InputMap.action_get_events(action)[0].as_text().split("(")[0]
+		if button_text.contains("-"):
+			button_text = button_text.split("-")[0]
+		chatbox.get_node("Prompt").text = "[ " + button_text.strip_edges().to_upper()+ " ]"
 	else:
 		chatbox.get_node("Prompt").text = ""
 	chatbox.show()

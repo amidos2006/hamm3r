@@ -390,7 +390,7 @@
 	},
 	{
 		"action": "timer",
-		"wait": 0.25
+		"wait": 0.5
 	},
 	{
 		"action": "function",

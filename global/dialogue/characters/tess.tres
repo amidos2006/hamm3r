@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterMoodPictures" load_steps=13 format=3 uid="uid://b51fd857pjg27"]
+[gd_resource type="Resource" script_class="CharacterMoodPictures" format=3 uid="uid://b51fd857pjg27"]
 
 [ext_resource type="Texture2D" uid="uid://opwax1by03ky" path="res://assets/graphics/dialogue/Tess_normal.png" id="1_aqei6"]
 [ext_resource type="Script" uid="uid://cq3vw6ffhj3vi" path="res://global/dialogue/characters/character_pictures.gd" id="1_cy58x"]

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CharacterMoodPictures" load_steps=17 format=3 uid="uid://cse8fm5lq7ni8"]
+[gd_resource type="Resource" script_class="CharacterMoodPictures" format=3 uid="uid://cse8fm5lq7ni8"]
 
 [ext_resource type="Script" uid="uid://cq3vw6ffhj3vi" path="res://global/dialogue/characters/character_pictures.gd" id="1_be6e7"]
 [ext_resource type="Texture2D" uid="uid://dxn06bfwj0yci" path="res://assets/graphics/dialogue/Marty_normal_a.png" id="1_rjki6"]
