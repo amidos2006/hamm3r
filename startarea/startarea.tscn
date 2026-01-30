@@ -957,6 +957,7 @@ shape = SubResource("ConcavePolygonShape3D_q1et0")
 [node name="Room_Control2" type="StaticBody3D" parent="Ship_Interior/Room_Control" unique_id=320249207]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ship_Interior/Room_Control/Room_Control2" unique_id=269731580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5994763, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_y8jgj")
 
 [node name="Room_Control3" type="StaticBody3D" parent="Ship_Interior/Room_Control" unique_id=912785189]
@@ -1247,8 +1248,8 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.3192
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.203446, 0, 9.376333)
 contain_gun = true
 
-[node name="Control_Computer" parent="InteractableObjects" unique_id=679649350 instance=ExtResource("44_wwn5p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.711152, 0.8168451, 6.1852484)
+[node name="Control_Computer" parent="InteractableObjects" unique_id=655110131 instance=ExtResource("44_wwn5p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.664852, 0.8296055, 6.5647683)
 
 [node name="Control_DoorLight" type="MeshInstance3D" parent="InteractableObjects" unique_id=951546814]
 transform = Transform3D(0.778019, 0.177593, 0.602617, -0.0050107, 0.960937, -0.276721, -0.628221, 0.212275, 0.748517, 2.69611, 2.37117, 6.39346)
@@ -1346,8 +1347,8 @@ shadow_blur = 6.432
 distance_fade_enabled = true
 distance_fade_begin = 20.0
 distance_fade_shadow = 30.0
-omni_range = 6.23
-omni_attenuation = 1.2
+omni_range = 7.887
+omni_attenuation = 1.661
 
 [node name="Tunnel" type="OmniLight3D" parent="Lighting" unique_id=284423684]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 1.36889, 2.32076, 5.17275)
