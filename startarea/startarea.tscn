@@ -16,15 +16,23 @@
 [ext_resource type="Material" uid="uid://bhuqo5rqa55yu" path="res://assets/materials/mat_spaceship/m_pcg_special_kitchen.tres" id="13_3m83t"]
 [ext_resource type="Material" uid="uid://ebgky5s4iuq8" path="res://assets/materials/mat_spaceship/m_pcg_pipes.tres" id="14_5ehgq"]
 [ext_resource type="Material" uid="uid://c1cohk2hee1f7" path="res://assets/materials/mat_hammer/m_startroom.tres" id="16_361ey"]
+[ext_resource type="PackedScene" uid="uid://cx5h24eyg5ktm" path="res://assets/models/Book_Leaning.glb" id="17_doki2"]
 [ext_resource type="PackedScene" uid="uid://g0k0ar4ug5py" path="res://interactable/fridge/fridge.tscn" id="18_3qgax"]
 [ext_resource type="JSON" path="res://assets/actions/startarea/seal_door.json" id="18_86m7s"]
 [ext_resource type="PackedScene" uid="uid://dbx1afyq7yyqp" path="res://interactable/normal_door/normal_door.tscn" id="18_lxhx7"]
+[ext_resource type="Material" uid="uid://c4115xib8srth" path="res://assets/materials/mat_hammer/m_controlroom_clutter.tres" id="18_xinp0"]
 [ext_resource type="JSON" path="res://assets/actions/startarea/cryoroom_door.json" id="19_2pnu0"]
+[ext_resource type="PackedScene" uid="uid://cspvd600vxwvr" path="res://assets/models/Book_Stack.glb" id="19_itakq"]
 [ext_resource type="PackedScene" uid="uid://bo6xmnsy3pi2o" path="res://interactable/cryopod/cryopod.tscn" id="19_rgvhy"]
+[ext_resource type="PackedScene" uid="uid://b1iq0nddm0bng" path="res://assets/models/Paper_PostitsWall.glb" id="20_2clgs"]
 [ext_resource type="JSON" path="res://assets/actions/startarea/fail_ownship.json" id="20_k17ha"]
+[ext_resource type="PackedScene" uid="uid://m5x1p7g7qml8" path="res://assets/models/Paper_Stack.glb" id="21_5yten"]
 [ext_resource type="PackedScene" uid="uid://bni0qdjwbjdm7" path="res://interactable/event_area.tscn" id="21_xq0vx"]
 [ext_resource type="JSON" path="res://assets/actions/startarea/exit_start_area.json" id="22_0uvls"]
 [ext_resource type="Material" uid="uid://c7udfa1objvm0" path="res://assets/materials/mat_hammer/m_startroom_objects.tres" id="22_7l267"]
+[ext_resource type="PackedScene" uid="uid://ldknwrkk1m7p" path="res://assets/models/Paper_Wall.glb" id="22_qgwtf"]
+[ext_resource type="PackedScene" uid="uid://blhdj7xv3288x" path="res://assets/models/Pencil.glb" id="23_wwn5p"]
+[ext_resource type="PackedScene" uid="uid://dnc853jourgf5" path="res://assets/models/Paper_PostitsMonitor.glb" id="24_106fm"]
 [ext_resource type="PackedScene" uid="uid://05t1uswscwq" path="res://interactable/seal_door/seal_door.tscn" id="27_doki2"]
 [ext_resource type="Material" uid="uid://bp113us1g1bu7" path="res://assets/materials/mat_spaceship/m_pcg_barrels.tres" id="32_2c6kl"]
 [ext_resource type="Script" uid="uid://hae3qadaxqck" path="res://startarea/door_light.gd" id="32_106fm"]
@@ -1212,6 +1220,83 @@ mesh = SubResource("ArrayMesh_vm85v")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("12_3m83t")
 
+[node name="Paper_Clutter" type="Node3D" parent="Ship_Interior" unique_id=58929876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4070177, 0, -6.6717277)
+
+[node name="Book_Leaning" parent="Ship_Interior/Paper_Clutter" unique_id=424093671 instance=ExtResource("17_doki2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40478897, 1.0158585, -1.9583907)
+
+[node name="Book 4" parent="Ship_Interior/Paper_Clutter/Book_Leaning" index="0" unique_id=786012433]
+transform = Transform3D(-0.01948154, -0.97272694, -0.23113379, -1.1920929e-07, 0.23117769, -0.9729116, 0.9998102, -0.01895377, -0.004503846, 0.023198128, 0, -0.018967152)
+surface_material_override/0 = ExtResource("18_xinp0")
+
+[node name="Book_Stack" parent="Ship_Interior/Paper_Clutter" unique_id=492244724 instance=ExtResource("19_itakq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5434437, 0.8155988, -0.43908405)
+
+[node name="Book_1" parent="Ship_Interior/Paper_Clutter/Book_Stack" index="0" unique_id=1992504698]
+surface_material_override/0 = ExtResource("18_xinp0")
+
+[node name="Book_2" parent="Ship_Interior/Paper_Clutter/Book_Stack" index="1" unique_id=661462226]
+surface_material_override/0 = ExtResource("18_xinp0")
+
+[node name="Book_3" parent="Ship_Interior/Paper_Clutter/Book_Stack" index="2" unique_id=1097279153]
+surface_material_override/0 = ExtResource("18_xinp0")
+
+[node name="Paper_PostitsWall" parent="Ship_Interior/Paper_Clutter" unique_id=1125490999 instance=ExtResource("20_2clgs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1953254, 1.4712652, -0.53983736)
+
+[node name="Paper_Postit_5" parent="Ship_Interior/Paper_Clutter/Paper_PostitsWall" index="0" unique_id=1815412861]
+surface_material_override/0 = ExtResource("18_xinp0")
+
+[node name="Paper_Postit_4" parent="Ship_Interior/Paper_Clutter/Paper_PostitsWall" index="1" unique_id=1276139951]
+surface_material_override/0 = ExtResource("18_xinp0")
+
+[node name="Paper_Stack" parent="Ship_Interior/Paper_Clutter" unique_id=1840934217 instance=ExtResource("21_5yten")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8070469, 0.8175934, -1.673502)
+
+[node name="Paper_A4_Stacks" parent="Ship_Interior/Paper_Clutter/Paper_Stack" index="0" unique_id=1562086285]
+surface_material_override/0 = ExtResource("18_xinp0")
+
+[node name="Paper_A4_2" parent="Ship_Interior/Paper_Clutter/Paper_Stack" index="1" unique_id=985067855]
+surface_material_override/0 = ExtResource("18_xinp0")
+
+[node name="Paper_Postit_3" parent="Ship_Interior/Paper_Clutter/Paper_Stack" index="2" unique_id=1608130421]
+surface_material_override/0 = ExtResource("18_xinp0")
+
+[node name="Paper_A4_3" parent="Ship_Interior/Paper_Clutter/Paper_Stack" index="3" unique_id=1074869106]
+surface_material_override/0 = ExtResource("18_xinp0")
+
+[node name="Paper_Wall" parent="Ship_Interior/Paper_Clutter" unique_id=629405538 instance=ExtResource("22_qgwtf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23735237, 1.9900105, -2.2265897)
+
+[node name="Paper_A4_1" parent="Ship_Interior/Paper_Clutter/Paper_Wall" index="0" unique_id=1017109863]
+surface_material_override/0 = ExtResource("18_xinp0")
+
+[node name="Paper_A4_4" parent="Ship_Interior/Paper_Clutter/Paper_Wall" index="1" unique_id=1138807800]
+surface_material_override/0 = ExtResource("18_xinp0")
+
+[node name="Paper_Postit_1" parent="Ship_Interior/Paper_Clutter/Paper_Wall" index="2" unique_id=1665715799]
+surface_material_override/0 = ExtResource("18_xinp0")
+
+[node name="Paper_Postit_2" parent="Ship_Interior/Paper_Clutter/Paper_Wall" index="3" unique_id=382685223]
+surface_material_override/0 = ExtResource("18_xinp0")
+
+[node name="Pencil2" parent="Ship_Interior/Paper_Clutter" unique_id=389969194 instance=ExtResource("23_wwn5p")]
+transform = Transform3D(0.97169775, 0, 0.23622766, 0, 1, 0, -0.23622766, 0, 0.97169775, 0.2722621, 0.82886153, -1.6892571)
+
+[node name="Pencil" parent="Ship_Interior/Paper_Clutter/Pencil2" index="0" unique_id=657985402]
+surface_material_override/0 = ExtResource("18_xinp0")
+
+[node name="Pencil_leads" parent="Ship_Interior/Paper_Clutter/Pencil2" index="1" unique_id=1542973605]
+surface_material_override/0 = ExtResource("18_xinp0")
+
+[node name="Paper_PostitsMonitor" parent="Ship_Interior/Paper_Clutter" unique_id=911511208 instance=ExtResource("24_106fm")]
+transform = Transform3D(0.99993163, 0.011693433, 0, -0.011693433, 0.99993163, 0, 0, 0, 1, 0.46521044, 1.310125, -1.7587152)
+
+[node name="Paper_Postit_6" parent="Ship_Interior/Paper_Clutter/Paper_PostitsMonitor" index="0" unique_id=9565254]
+transform = Transform3D(0.004198324, 0.086416274, 0.9962506, -0.11271447, 0.9899515, -0.0853948, -0.99361855, -0.111933276, 0.013896525, 0.0042705536, -0.060404778, 0.02656269)
+surface_material_override/0 = ExtResource("18_xinp0")
+
 [node name="InteractableObjects" type="Node3D" parent="." unique_id=2095360871]
 
 [node name="Bathroom_Poster" parent="InteractableObjects" unique_id=2027150618 instance=ExtResource("2_pen6l")]
@@ -1363,6 +1448,13 @@ omni_range = 10.0
 [connection signal="body_entered" from="InteractableObjects/Cryoroom_CryopodExit" to="." method="_on_cryopod_exit_body_entered"]
 
 [editable path="Ship_Interior/Room_Unaccess"]
+[editable path="Ship_Interior/Paper_Clutter/Book_Leaning"]
+[editable path="Ship_Interior/Paper_Clutter/Book_Stack"]
+[editable path="Ship_Interior/Paper_Clutter/Paper_PostitsWall"]
+[editable path="Ship_Interior/Paper_Clutter/Paper_Stack"]
+[editable path="Ship_Interior/Paper_Clutter/Paper_Wall"]
+[editable path="Ship_Interior/Paper_Clutter/Pencil2"]
+[editable path="Ship_Interior/Paper_Clutter/Paper_PostitsMonitor"]
 [editable path="InteractableObjects/Control_SealDoor"]
 [editable path="InteractableObjects/Control_SealDoor/Interactable"]
 [editable path="InteractableObjects/Corridor_CryoroomDoor"]
