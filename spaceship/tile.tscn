@@ -172,6 +172,9 @@ light_energy = 1.463
 light_bake_mode = 1
 shadow_enabled = true
 distance_fade_enabled = true
+distance_fade_begin = 30.0
+distance_fade_shadow = 40.0
+distance_fade_length = 5.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1955116423]
 

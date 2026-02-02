@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://c0ov3gvi01qt6"]
+[gd_scene format=4 uid="uid://c0ov3gvi01qt6"]
 
 [ext_resource type="PackedScene" uid="uid://cmrwa6kvok00u" path="res://assets/models/human_scale.glb" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://d33dokaqiijiv" path="res://player/player.gd" id="1_rkbax"]
@@ -248,63 +248,62 @@ stream_27/stream = ExtResource("27_8pxes")
 stream_28/stream = ExtResource("28_fmu53")
 stream_29/stream = ExtResource("29_w7j2h")
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" unique_id=954889308]
 script = ExtResource("1_rkbax")
 metadata/_edit_group_ = true
 
-[node name="HumanScale" parent="." instance=ExtResource("1_oul6g")]
+[node name="HumanScale" parent="." unique_id=846715413 instance=ExtResource("1_oul6g")]
 transform = Transform3D(1, 0, 0, 0, 0.75, 0, 0, 0, 1, 0, 0, 0)
 visible = false
 
-[node name="Pivot" type="Node3D" parent="."]
+[node name="Pivot" type="Node3D" parent="." unique_id=1333209666]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.4, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Pivot"]
+[node name="Camera3D" type="Camera3D" parent="Pivot" unique_id=587658740]
 fov = 65.0
+far = 100.0
 
-[node name="Gun" type="Node3D" parent="Pivot/Camera3D"]
+[node name="Gun" type="Node3D" parent="Pivot/Camera3D" unique_id=1097841654]
 transform = Transform3D(1, 0, 0, 0, 0.49999768, 0.8660262, 0, -0.8660262, 0.49999768, 0, -1, -0.55)
 
-[node name="Model" type="MeshInstance3D" parent="Pivot/Camera3D/Gun"]
+[node name="Model" type="MeshInstance3D" parent="Pivot/Camera3D/Gun" unique_id=235728160]
 transform = Transform3D(-0.25, 0, 3.7748997e-08, 0, 0.25, 0, -3.7748997e-08, 0, -0.25, 1.7763568e-15, 0.29400003, 0.39599997)
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_sxpnq")
 skeleton = NodePath("")
 
-[node name="AudioListener3D" type="AudioListener3D" parent="Pivot/Camera3D"]
+[node name="AudioListener3D" type="AudioListener3D" parent="Pivot/Camera3D" unique_id=527951568]
 current = true
 
-[node name="Laser" type="Node3D" parent="Pivot/Camera3D"]
+[node name="Laser" type="Node3D" parent="Pivot/Camera3D" unique_id=646786997]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.057, -0.34)
 visible = false
 script = ExtResource("4_1so5t")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/Camera3D/Laser"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/Camera3D/Laser" unique_id=251488610]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.5)
 mesh = SubResource("CylinderMesh_pnw6m")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_1so5t")
 
-[node name="Marker3D" type="Marker3D" parent="Pivot/Camera3D/Laser"]
+[node name="Marker3D" type="Marker3D" parent="Pivot/Camera3D/Laser" unique_id=686281208]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=607503661]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("CapsuleShape3D_kqu6x")
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=542985318]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 target_position = Vector3(0, 0, 100)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_boad6")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=938881685]
+libraries/ = SubResource("AnimationLibrary_boad6")
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1061839331]
 script = ExtResource("3_yw30f")
 
-[node name="TopPivot" type="Control" parent="UI"]
+[node name="TopPivot" type="Control" parent="UI" unique_id=2077420746]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -312,7 +311,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ESC" type="TextureRect" parent="UI/TopPivot"]
+[node name="ESC" type="TextureRect" parent="UI/TopPivot" unique_id=1315883317]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -324,14 +323,14 @@ offset_bottom = 128.0
 grow_horizontal = 0
 texture = ExtResource("3_g1dw6")
 
-[node name="HeartContainer" type="HBoxContainer" parent="UI/TopPivot"]
+[node name="HeartContainer" type="HBoxContainer" parent="UI/TopPivot" unique_id=261148951]
 layout_mode = 1
 offset_left = 40.0
 offset_top = 40.0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="BottomPivot" type="Control" parent="UI"]
+[node name="BottomPivot" type="Control" parent="UI" unique_id=101733750]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -339,7 +338,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Aim" type="TextureRect" parent="UI/BottomPivot"]
+[node name="Aim" type="TextureRect" parent="UI/BottomPivot" unique_id=812682116]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -355,13 +354,13 @@ grow_vertical = 2
 pivot_offset = Vector2(43, 40)
 texture = ExtResource("5_qjkh3")
 
-[node name="WalkingSounds" type="Node3D" parent="."]
+[node name="WalkingSounds" type="Node3D" parent="." unique_id=1455493526]
 
-[node name="Metal" type="AudioStreamPlayer3D" parent="WalkingSounds"]
+[node name="Metal" type="AudioStreamPlayer3D" parent="WalkingSounds" unique_id=34527196]
 stream = SubResource("AudioStreamRandomizer_boad6")
 volume_db = -15.0
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1184332306]
 stream = ExtResource("7_boad6")
 volume_db = -30.0
 autoplay = true

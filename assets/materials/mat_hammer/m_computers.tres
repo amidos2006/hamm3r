@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bp2ftq2ecvhkc"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bp2ftq2ecvhkc"]
 
 [ext_resource type="Texture2D" uid="uid://b517pfpqm1ana" path="res://assets/textures/tex_hammer/T_computers.png" id="1_uere4"]
 

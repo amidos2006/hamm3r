@@ -240,31 +240,31 @@ moniter_4 = 3
 
 [node name="Pivot" parent="." unique_id=725054896 instance=ExtResource("1_scfbs")]
 
-[node name="Monitor_MobileKeyboard_001" parent="Pivot" index="0" unique_id=518142958]
+[node name="Monitor_MobileKeyboard_001" parent="Pivot" index="0" unique_id=628331521]
 surface_material_override/0 = ExtResource("3_kso1q")
 
-[node name="Monitor_Stand_002" parent="Pivot" index="1" unique_id=215789786]
+[node name="Monitor_Stand_002" parent="Pivot" index="1" unique_id=1890416758]
 surface_material_override/0 = ExtResource("3_kso1q")
 
-[node name="Monitor1_002" parent="Pivot" index="2" unique_id=404840559]
+[node name="Monitor1_002" parent="Pivot" index="2" unique_id=294286997]
 surface_material_override/0 = ExtResource("3_kso1q")
 
-[node name="Monitor_Keyboard_002" parent="Pivot" index="3" unique_id=1770543872]
+[node name="Monitor_Keyboard_002" parent="Pivot" index="3" unique_id=314880138]
 surface_material_override/0 = ExtResource("3_kso1q")
 
-[node name="Monitor_Computer_002" parent="Pivot" index="4" unique_id=1715999764]
+[node name="Monitor_Computer_002" parent="Pivot" index="4" unique_id=1983085401]
 surface_material_override/0 = ExtResource("3_kso1q")
 
-[node name="Monitor4_002" parent="Pivot" index="5" unique_id=2104797459]
+[node name="Monitor4_002" parent="Pivot" index="5" unique_id=1117713561]
 surface_material_override/0 = ExtResource("3_kso1q")
 
-[node name="Monitor2_002" parent="Pivot" index="6" unique_id=605250674]
+[node name="Monitor2_002" parent="Pivot" index="6" unique_id=1334551447]
 surface_material_override/0 = ExtResource("3_kso1q")
 
-[node name="Monitor3_002" parent="Pivot" index="7" unique_id=2135270644]
+[node name="Monitor3_002" parent="Pivot" index="7" unique_id=864826550]
 surface_material_override/0 = ExtResource("3_kso1q")
 
-[node name="Monitor_Cables_002" parent="Pivot" index="8" unique_id=1113719056]
+[node name="Monitor_Cables_002" parent="Pivot" index="8" unique_id=1487205274]
 surface_material_override/0 = ExtResource("9_8g2b1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1119572893]
