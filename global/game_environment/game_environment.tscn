@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccbw6mmhd6oct"]
+[gd_scene format=3 uid="uid://ccbw6mmhd6oct"]
 
 [ext_resource type="Texture2D" uid="uid://pmuoug7rww12" path="res://assets/graphics/backgrounds/skybox_4.3_18.png" id="1_t2a01"]
 
@@ -19,13 +19,13 @@ reflected_light_source = 1
 glow_enabled = true
 glow_hdr_threshold = 1.22
 
-[node name="GameEnvironment" type="Node"]
+[node name="GameEnvironment" type="Node" unique_id=618131593]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1300009807]
 transform = Transform3D(0.84996843, 0.3284743, -0.41189605, 0.49738523, -0.24259068, 0.8329212, 0.1736711, -0.91282773, -0.3695727, 0.111, 12.158, -1.173)
 light_bake_mode = 1
 shadow_enabled = true
 shadow_blur = 0.57
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=425364556]
 environment = SubResource("Environment_yvjpw")

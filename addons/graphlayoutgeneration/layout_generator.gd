@@ -125,13 +125,14 @@ static func _flood_fill(maze, start, same_type_fn):
 			queue.append(new_pos)
 	return visited_locs
 
-static func _spaceship_2d(maze, start_type="", broken_type=""):
+static func _spaceship_2d(maze, start_type="", broken_type="", end_type=""):
 	var layout = LayoutGenerator._maze_2d(maze)
 	var extra_blocks = []
 	var start_blocks = []
 	var broken_blocks = []
 	
 	var start_loc = []
+	var end_loc = []
 	var broken_loc = []
 	var hole_loc = []
 	var wrong_connections = []
@@ -146,6 +147,8 @@ static func _spaceship_2d(maze, start_type="", broken_type=""):
 					extra_blocks.append(Vector2(layout[y].size() - x - 1, y))
 			if layout[y][x] != null and layout[y][x].mission != null and layout[y][x].mission.type == start_type:
 				start_loc.append(Vector2(x, y))
+			if layout[y][x] != null and layout[y][x].mission != null and layout[y][x].mission.type == end_type:
+				end_loc.append(Vector2(x, y))
 			if layout[y][x] != null and layout[y][x].mission != null and layout[y][x].mission.type == broken_type:
 				broken_loc.append(Vector2(x, y))
 			if layout[y][x] != null and layout[y][x].get_neighbors(maze).size() > 4:
@@ -178,7 +181,15 @@ static func _spaceship_2d(maze, start_type="", broken_type=""):
 		for x in range(layout[y].size()):
 			if layout[y][x] == null:
 				hole_loc.append(Vector2(x, y))
-	return {"layout": layout, "extra": extra_blocks, "start": start_blocks, "start_loc": start_loc, "broken": broken_blocks, "connections": wrong_connections, "holes": hole_loc}
+	var end_connections = 0
+	for end in end_loc:
+		for dir in LayoutDirection.values():
+			var rel = LayoutGenerator._relative_from_direction(dir)
+			var pos = Vector2(end.x+rel.x, end.y+rel.y)
+			if pos.x >= 0 and pos.y >= 0 and pos.x < layout[0].size() and pos.y < layout.size():
+				if layout[pos.y][pos.x] != null:
+					end_connections += 1
+	return {"layout": layout, "extra": extra_blocks, "start": start_blocks, "start_loc": start_loc, "broken": broken_blocks, "connections": wrong_connections, "holes": hole_loc, "end_connections": end_connections}
 	
 
 static func _location_id(x, y):
@@ -505,7 +516,7 @@ class LayoutChromosome extends RefCounted:
 				self._genome, self._start_type, self._end_type, self._broken_type)
 			self._layout = layout_result["layout"]
 			self._fitness += 1.0 / (layout_result["placement"].size() * layout_result["missing"].size() + layout_result["connections"].size() + 1)
-			var spaceship_result = LayoutGenerator._spaceship_2d(self._layout, self._start_type, self._broken_type)
+			var spaceship_result = LayoutGenerator._spaceship_2d(self._layout, self._start_type, self._broken_type, self._end_type)
 			self._spaceship = spaceship_result["layout"]
 			self._start = spaceship_result["start_loc"][0]
 			if self._fitness == 1:
@@ -513,6 +524,8 @@ class LayoutChromosome extends RefCounted:
 			if self._fitness == 2:
 				self._fitness += 1.0 / (spaceship_result["connections"].size() + 1)
 			if self._fitness == 3:
+				self._fitness += 1.0 / (spaceship_result["end_connections"])
+			if self._fitness == 4:
 				self._fitness += 1.0 / (abs(spaceship_result["broken"].size() - spaceship_result["extra"].size()) + 1)
 				self._fitness += 2.0 / (spaceship_result["extra"].size() + 1)
 				if spaceship_result["holes"].size() == 0:

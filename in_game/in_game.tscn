@@ -1,18 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://bj7txh3d05g42"]
+[gd_scene format=3 uid="uid://bj7txh3d05g42"]
 
 [ext_resource type="PackedScene" uid="uid://y1xw7mo8ak7r" path="res://startarea/startarea.tscn" id="1_0dbxd"]
 [ext_resource type="PackedScene" uid="uid://kir8u3cfukl1" path="res://spaceship/spaceship.tscn" id="2_ko8yt"]
 
-[node name="InGame" type="Node3D"]
+[node name="InGame" type="Node3D" unique_id=1521362044]
 
-[node name="StartArea" parent="." instance=ExtResource("1_0dbxd")]
+[node name="StartArea" parent="." unique_id=1094612729 instance=ExtResource("1_0dbxd")]
 
-[node name="Spaceship" parent="." node_paths=PackedStringArray("computer") instance=ExtResource("2_ko8yt")]
+[node name="Seal_Door1_001" parent="StartArea/InteractableObjects/Control_SealDoor/Pivot" index="0"]
+surface_material_override/0 = null
+
+[node name="Seal_Door_L" parent="StartArea/InteractableObjects/Control_SealDoor/Pivot" index="1"]
+surface_material_override/0 = null
+
+[node name="Seal_Door_R" parent="StartArea/InteractableObjects/Control_SealDoor/Pivot" index="2"]
+surface_material_override/0 = null
+
+[node name="Cyroroom" parent="StartArea/Lighting" parent_id_path=PackedInt32Array(1094612729, 1740467455) index="0" unique_id=699701197]
+distance_fade_begin = 20.0
+
+[node name="Spaceship" parent="." unique_id=306323785 node_paths=PackedStringArray("computer") instance=ExtResource("2_ko8yt")]
 computer = NodePath("../StartArea/InteractableObjects/Control_Computer")
 door_open_prob = 0.5
 
 [editable path="StartArea"]
 [editable path="StartArea/Ship_Interior/Room_Unaccess"]
+[editable path="StartArea/Ship_Interior/Paper_Clutter/Book_Leaning"]
+[editable path="StartArea/Ship_Interior/Paper_Clutter/Book_Stack"]
+[editable path="StartArea/Ship_Interior/Paper_Clutter/Paper_PostitsWall"]
+[editable path="StartArea/Ship_Interior/Paper_Clutter/Paper_Stack"]
+[editable path="StartArea/Ship_Interior/Paper_Clutter/Paper_Wall"]
+[editable path="StartArea/Ship_Interior/Paper_Clutter/Pencil2"]
+[editable path="StartArea/Ship_Interior/Paper_Clutter/Paper_PostitsMonitor"]
 [editable path="StartArea/InteractableObjects/Control_SealDoor"]
 [editable path="StartArea/InteractableObjects/Control_SealDoor/Interactable"]
 [editable path="StartArea/InteractableObjects/Corridor_CryoroomDoor"]
