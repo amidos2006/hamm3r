@@ -71,7 +71,14 @@
 		"action": "variable",
 		"args": {
 			"name": "_medium_threshold",
-			"value": 80
+			"value": 70
+		}
+	},
+	{
+		"action": "variable",
+		"args": {
+			"name": "_high_threshold",
+			"value": 100
 		}
 	},
 	{
@@ -80,7 +87,7 @@
 		"args": {
 			"name": "start_moving",
 			"object": "Station",
-			"args": [100, 5, 10, 2, 1, "interact"]
+			"args": [100, 4, 8, 2, 1, "interact"]
 		}
 	},
 	{

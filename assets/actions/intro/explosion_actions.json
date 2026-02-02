@@ -1,0 +1,44 @@
+[
+	{
+		"action": "function",
+		"target": "Camera2D",
+		"args": {
+			"name": "shake_camera",
+			"args": [50, 40]
+		}
+	},
+	{
+		"action": "function",
+		"target": "Explosion",
+		"args": {
+			"name": "explode"
+		}
+	},
+	{
+		"action": "variable",
+		"target": "Ship",
+		"args": {
+			"name": "visible",
+			"value": false
+		}
+	},
+	{
+		"action": "fade",
+		"args": {
+			"start": 0,
+			"end": 1,
+			"time": 1.5
+		}
+	},
+	{
+		"action": "switch_scene",
+		"args": {
+			"path": "res://intermission/intermission.tscn",
+			"ui_message": "PRESS [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO RESTART",
+			"ui_action": "interact",
+			"time": 0.5,
+			"message": "[font_size=128][color=#f5c25c]- GAME OVER -[/color][/font_size]",
+			"return": "res://intro/intro.tscn",
+		}
+	}
+]

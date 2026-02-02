@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://b1outtjkeukf1"]
+[gd_scene format=3 uid="uid://b1outtjkeukf1"]
 
 [ext_resource type="Script" uid="uid://u0ydxg0j7t04" path="res://intro/intro.gd" id="1_vyos2"]
 [ext_resource type="JSON" path="res://assets/actions/intro/start_actions.json" id="2_1l24h"]
@@ -6,6 +6,7 @@
 [ext_resource type="JSON" path="res://assets/actions/intro/soft_actions.json" id="3_ao3yw"]
 [ext_resource type="JSON" path="res://assets/actions/intro/medium_actions.json" id="4_rcqw2"]
 [ext_resource type="JSON" path="res://assets/actions/intro/hard_actions.json" id="5_ttu4d"]
+[ext_resource type="JSON" path="res://assets/actions/intro/explosion_actions.json" id="6_cn0as"]
 [ext_resource type="JSON" path="res://assets/actions/intro/leave_actions.json" id="6_j7iwe"]
 [ext_resource type="JSON" path="res://assets/actions/intro/end_actions.json" id="6_ttu4d"]
 [ext_resource type="Script" uid="uid://cdk8x8r6p7y4p" path="res://intro/ship.gd" id="8_1l24h"]
@@ -31,6 +32,8 @@
 [ext_resource type="Texture2D" uid="uid://bo0830o6er7ty" path="res://assets/graphics/logos/godot_logo.png" id="27_35ehl"]
 [ext_resource type="AudioStream" uid="uid://cfrwrgchveoor" path="res://assets/sfx/intro/clunk_hard.wav" id="28_7v0dw"]
 [ext_resource type="AudioStream" uid="uid://1krnre7hxqij" path="res://assets/music/intro/space_soundscape.wav" id="31_74s3g"]
+[ext_resource type="Script" uid="uid://ngomasgbyeik" path="res://intro/explosion.gd" id="33_yyo1g"]
+[ext_resource type="Texture2D" uid="uid://4dpq1nysypdt" path="res://assets/graphics/explosion/effect.png" id="34_8qj4l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie2y0"]
 size = Vector2(123, 128)
@@ -81,20 +84,132 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1l24h"]
 size = Vector2(145, 113)
 
-[node name="Intro" type="Node"]
+[sub_resource type="Animation" id="Animation_74s3g"]
+resource_name = "Explode"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fire:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flash:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Smoke:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_cn0as"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fire:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flash:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Smoke:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yyo1g"]
+_data = {
+&"Explode": SubResource("Animation_74s3g"),
+&"RESET": SubResource("Animation_cn0as")
+}
+
+[sub_resource type="Curve" id="Curve_8qj4l"]
+_data = [Vector2(0.024930753, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_srlbi"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.73684204, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_qss6y"]
+colors = PackedColorArray(1, 0.69200003, 0.23000002, 1, 0.16, 0.16, 0.16, 0)
+
+[sub_resource type="Gradient" id="Gradient_7g4wk"]
+offsets = PackedFloat32Array(0.28338763, 1)
+colors = PackedColorArray(0.23, 0.23, 0.23, 1, 0, 0, 0, 0)
+
+[sub_resource type="Curve" id="Curve_uo0ck"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_qqjqy"]
+offsets = PackedFloat32Array(0, 0.9739414)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_srlbi"]
+blend_mode = 2
+
+[node name="Intro" type="Node" unique_id=925115317]
 script = ExtResource("1_vyos2")
 start_actions = ExtResource("2_1l24h")
 soft_actions = ExtResource("3_ao3yw")
 medium_actions = ExtResource("4_rcqw2")
 hard_actions = ExtResource("5_ttu4d")
+explosion_actions = ExtResource("6_cn0as")
 leave_actions = ExtResource("6_j7iwe")
 end_actions = ExtResource("6_ttu4d")
 
-[node name="Title" type="CanvasLayer" parent="."]
+[node name="Title" type="CanvasLayer" parent="." unique_id=1883542773]
 layer = 110
 script = ExtResource("20_m3u68")
 
-[node name="Name" type="TextureRect" parent="Title"]
+[node name="Name" type="TextureRect" parent="Title" unique_id=772204095]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -107,7 +222,7 @@ scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(855, 483)
 texture = ExtResource("10_5hu1j")
 
-[node name="Credits" type="RichTextLabel" parent="Title"]
+[node name="Credits" type="RichTextLabel" parent="Title" unique_id=1093246020]
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -150,7 +265,7 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Logos" type="Control" parent="Title"]
+[node name="Logos" type="Control" parent="Title" unique_id=206184258]
 layout_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -164,7 +279,7 @@ offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Label" type="Label" parent="Title/Logos"]
+[node name="Label" type="Label" parent="Title/Logos" unique_id=1703016639]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -185,7 +300,7 @@ text = "Made possible thanks to"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="UM" type="TextureRect" parent="Title/Logos"]
+[node name="UM" type="TextureRect" parent="Title/Logos" unique_id=1361478508]
 modulate = Color(0.819608, 1, 0.521569, 1)
 layout_mode = 1
 anchors_preset = 8
@@ -201,7 +316,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("25_hp8fq")
 
-[node name="MDIA" type="TextureRect" parent="Title/Logos"]
+[node name="MDIA" type="TextureRect" parent="Title/Logos" unique_id=183180396]
 modulate = Color(0.819608, 1, 0.521569, 1)
 layout_mode = 1
 anchors_preset = 8
@@ -218,7 +333,7 @@ grow_vertical = 2
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("26_7v0dw")
 
-[node name="Godot" type="TextureRect" parent="Title/Logos"]
+[node name="Godot" type="TextureRect" parent="Title/Logos" unique_id=288869700]
 modulate = Color(0.819608, 1, 0.521569, 1)
 layout_mode = 1
 anchors_preset = 8
@@ -235,42 +350,43 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("27_35ehl")
 
-[node name="AppearSound" type="AudioStreamPlayer" parent="Title"]
+[node name="AppearSound" type="AudioStreamPlayer" parent="Title" unique_id=3401524]
 stream = ExtResource("14_74s3g")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=847812206]
 z_index = -1000
 position = Vector2(964, 796)
 texture = ExtResource("2_jkt4n")
 
-[node name="Station" type="StaticBody2D" parent="."]
+[node name="Station" type="StaticBody2D" parent="." unique_id=1972691817]
 position = Vector2(1033, 674)
 metadata/_edit_group_ = true
 
-[node name="Back" type="Sprite2D" parent="Station"]
+[node name="Back" type="Sprite2D" parent="Station" unique_id=2095396711]
 z_index = -10
 position = Vector2(-2.90003, 3.02497)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("8_krbtg")
 
-[node name="Front" type="Sprite2D" parent="Station"]
+[node name="Front" type="Sprite2D" parent="Station" unique_id=1341363650]
 z_index = 10
 position = Vector2(90.1, -2.97503)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("9_xwdvp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Station"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Station" unique_id=470808281]
 z_index = 100
 position = Vector2(40.5, -1.00006)
 shape = SubResource("RectangleShape2D_ie2y0")
 
-[node name="Center" type="Marker2D" parent="Station"]
+[node name="Center" type="Marker2D" parent="Station" unique_id=934324399]
 position = Vector2(237, -3)
 
-[node name="AudioListener2D" type="AudioListener2D" parent="Station"]
+[node name="AudioListener2D" type="AudioListener2D" parent="Station" unique_id=954471864]
 
-[node name="Ship" type="RigidBody2D" parent="."]
+[node name="Ship" type="RigidBody2D" parent="." unique_id=525000957]
 position = Vector2(104, 528)
+mass = 10.0
 gravity_scale = 0.0
 lock_rotation = true
 contact_monitor = true
@@ -278,17 +394,17 @@ max_contacts_reported = 50
 script = ExtResource("8_1l24h")
 metadata/_edit_group_ = true
 
-[node name="Cargo" type="Sprite2D" parent="Ship"]
+[node name="Cargo" type="Sprite2D" parent="Ship" unique_id=579377217]
 z_index = -1
 position = Vector2(26, -1.78814e-07)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("10_8c3ee")
 
-[node name="Base" type="Sprite2D" parent="Ship"]
+[node name="Base" type="Sprite2D" parent="Ship" unique_id=1831831839]
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("11_2i53d")
 
-[node name="FrontParticlesLeft" type="CPUParticles2D" parent="Ship"]
+[node name="FrontParticlesLeft" type="CPUParticles2D" parent="Ship" unique_id=1244668605]
 position = Vector2(-5, 45)
 amount = 500
 texture = ExtResource("24_7v0dw")
@@ -304,7 +420,7 @@ scale_amount_max = 0.2
 scale_amount_curve = SubResource("Curve_35ehl")
 color_ramp = SubResource("Gradient_7v0dw")
 
-[node name="FrontParticlesRight" type="CPUParticles2D" parent="Ship"]
+[node name="FrontParticlesRight" type="CPUParticles2D" parent="Ship" unique_id=1823882328]
 position = Vector2(10, 33)
 amount = 500
 texture = ExtResource("24_7v0dw")
@@ -320,44 +436,142 @@ scale_amount_max = 0.2
 scale_amount_curve = SubResource("Curve_35ehl")
 color_ramp = SubResource("Gradient_7v0dw")
 
-[node name="AnimationSprite" type="AnimatedSprite2D" parent="Ship"]
+[node name="AnimationSprite" type="AnimatedSprite2D" parent="Ship" unique_id=375059748]
 scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_rcqw2")
 animation = &"low"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ship" unique_id=1828504136]
 position = Vector2(-70.5, -6.5)
 shape = SubResource("RectangleShape2D_1l24h")
 
-[node name="VisibleNotifier" type="VisibleOnScreenNotifier2D" parent="Ship"]
+[node name="VisibleNotifier" type="VisibleOnScreenNotifier2D" parent="Ship" unique_id=1437871959]
 position = Vector2(1.5, -3.49999)
 scale = Vector2(14.55, 6.15)
 
-[node name="Sounds" type="Node2D" parent="Ship"]
+[node name="Sounds" type="Node2D" parent="Ship" unique_id=2061406484]
 
-[node name="Engine" type="AudioStreamPlayer2D" parent="Ship/Sounds"]
+[node name="Engine" type="AudioStreamPlayer2D" parent="Ship/Sounds" unique_id=466110907]
 stream = ExtResource("25_gs241")
 
-[node name="Light" type="AudioStreamPlayer2D" parent="Ship/Sounds"]
+[node name="Light" type="AudioStreamPlayer2D" parent="Ship/Sounds" unique_id=2097044807]
 stream = ExtResource("26_hp8fq")
 
-[node name="Medium" type="AudioStreamPlayer2D" parent="Ship/Sounds"]
+[node name="Medium" type="AudioStreamPlayer2D" parent="Ship/Sounds" unique_id=964239042]
 stream = ExtResource("27_7v0dw")
 
-[node name="Hard" type="AudioStreamPlayer2D" parent="Ship/Sounds"]
+[node name="Hard" type="AudioStreamPlayer2D" parent="Ship/Sounds" unique_id=1190624259]
 stream = ExtResource("28_7v0dw")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=90017022]
 position = Vector2(888, 1225)
 zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 script = ExtResource("14_sg2fo")
 
-[node name="AudioListener2D" type="AudioListener2D" parent="Camera2D"]
+[node name="AudioListener2D" type="AudioListener2D" parent="Camera2D" unique_id=915574990]
 current = true
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=410213199]
 stream = ExtResource("31_74s3g")
+
+[node name="Explosion" type="Node2D" parent="." unique_id=1441227318]
+position = Vector2(986, 691)
+script = ExtResource("33_yyo1g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Explosion" unique_id=1789874210]
+libraries/ = SubResource("AnimationLibrary_yyo1g")
+
+[node name="Fire" type="CPUParticles2D" parent="Explosion" unique_id=2016489933]
+z_index = 100
+emitting = false
+amount = 40
+texture = ExtResource("24_7v0dw")
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 400.0
+initial_velocity_max = 450.0
+damping_min = 40.0
+damping_max = 80.0
+damping_curve = SubResource("Curve_8qj4l")
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+scale_amount_curve = SubResource("Curve_srlbi")
+color_ramp = SubResource("Gradient_qss6y")
+
+[node name="Smoke" type="CPUParticles2D" parent="Explosion" unique_id=689198446]
+z_index = 90
+emitting = false
+amount = 80
+texture = ExtResource("24_7v0dw")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 400.0
+initial_velocity_max = 450.0
+damping_curve = SubResource("Curve_8qj4l")
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_srlbi")
+color_ramp = SubResource("Gradient_7g4wk")
+
+[node name="Flash" type="CPUParticles2D" parent="Explosion" unique_id=1086994333]
+z_index = 101
+emitting = false
+amount = 10
+texture = ExtResource("24_7v0dw")
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 100.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+scale_amount_min = 10.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_uo0ck")
+color_ramp = SubResource("Gradient_qqjqy")
+
+[node name="Cargo" type="Sprite2D" parent="Explosion" unique_id=1969392314]
+visible = false
+clip_children = 2
+z_index = -1
+position = Vector2(12, -60)
+rotation = 0.33141154
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("10_8c3ee")
+
+[node name="Damage" type="Sprite2D" parent="Explosion/Cargo" unique_id=45305743]
+material = SubResource("CanvasItemMaterial_srlbi")
+scale = Vector2(2.8571427, 2.8571427)
+texture = ExtResource("34_8qj4l")
+
+[node name="Base" type="Sprite2D" parent="Explosion" unique_id=2099818889]
+visible = false
+clip_children = 2
+position = Vector2(-37, -7.999999)
+rotation = -0.24154028
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("11_2i53d")
+
+[node name="Damage" type="Sprite2D" parent="Explosion/Base" unique_id=311758599]
+material = SubResource("CanvasItemMaterial_srlbi")
+scale = Vector2(2.8571427, 2.8571427)
+texture = ExtResource("34_8qj4l")
 
 [connection signal="body_entered" from="Ship" to="Ship" method="_on_body_entered"]
 [connection signal="screen_exited" from="Ship/VisibleNotifier" to="Ship" method="_on_visible_on_screen_notifier_2d_screen_exited"]
