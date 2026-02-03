@@ -1,0 +1,38 @@
+[
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "You okay in there, Captain?",
+			"action": "",
+			"direction": "right",
+			"time": 3
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "normal",
+			"text": "Doin' just peachy, buddy.",
+			"action": "",
+			"direction": "left",
+			"time": 3
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "It was all a bit too quiet, that is why I was asking...",
+			"action": "",
+			"direction": "right",
+			"time": 3
+		}
+	},
+]

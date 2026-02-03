@@ -7,13 +7,13 @@
 
 [node name="StartArea" parent="." unique_id=1094612729 instance=ExtResource("1_0dbxd")]
 
-[node name="Seal_Door1_001" parent="StartArea/InteractableObjects/Control_SealDoor/Pivot" index="0"]
+[node name="Seal_Door1_001" parent="StartArea/InteractableObjects/Control_SealDoor/Pivot" parent_id_path=PackedInt32Array(1094612729, 262466698, 1894069902) index="0" unique_id=1664011221]
 surface_material_override/0 = null
 
-[node name="Seal_Door_L" parent="StartArea/InteractableObjects/Control_SealDoor/Pivot" index="1"]
+[node name="Seal_Door_L" parent="StartArea/InteractableObjects/Control_SealDoor/Pivot" parent_id_path=PackedInt32Array(1094612729, 262466698, 1894069902) index="1" unique_id=669963326]
 surface_material_override/0 = null
 
-[node name="Seal_Door_R" parent="StartArea/InteractableObjects/Control_SealDoor/Pivot" index="2"]
+[node name="Seal_Door_R" parent="StartArea/InteractableObjects/Control_SealDoor/Pivot" parent_id_path=PackedInt32Array(1094612729, 262466698, 1894069902) index="2" unique_id=1860858807]
 surface_material_override/0 = null
 
 [node name="Cyroroom" parent="StartArea/Lighting" parent_id_path=PackedInt32Array(1094612729, 1740467455) index="0" unique_id=699701197]

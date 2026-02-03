@@ -1,0 +1,38 @@
+[
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Mhhh... I have a bad feeling about this, Captain.",
+			"action": "",
+			"direction": "right",
+			"time": 3
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "normal",
+			"text": "Feelings? You?!",
+			"action": "",
+			"direction": "left",
+			"time": 3
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "*SIGHS*",
+			"action": "",
+			"direction": "right",
+			"time": 3
+		}
+	},
+]

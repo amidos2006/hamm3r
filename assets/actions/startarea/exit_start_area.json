@@ -16,11 +16,10 @@
 		}
 	},
 	{
-		"action": "variable",
+		"action": "function",
 		"target": "Player",
 		"args": {
-			"name": "inside_hamm",
-			"value": false
+			"name": "enter_tanker",
 		}
 	}
 ]

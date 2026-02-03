@@ -1,0 +1,50 @@
+[
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "normal",
+			"text": "Until this point, it all seems pretty dead to me.",
+			"action": "",
+			"direction": "left",
+			"time": 3
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "I am not sure I heard that right. Could you repeat?",
+			"action": "",
+			"direction": "right",
+			"time": 3
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "normal",
+			"text": "I said it’s all good for now.",
+			"action": "",
+			"direction": "left",
+			"time": 3
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Copy that, Captain, thank you.",
+			"action": "",
+			"direction": "right",
+			"time": 3
+		}
+	},
+]

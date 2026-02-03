@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://cxnv0w5rb7egn"]
+[gd_scene format=4 uid="uid://cxnv0w5rb7egn"]
 
 [ext_resource type="Script" uid="uid://cf2frxrsei60s" path="res://interactable/gun_cabinet/weapon_locker.gd" id="1_1tbto"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="2_1tbto"]
@@ -169,45 +169,43 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_c5776"]
 size = Vector3(1, 2.20422, 1.61772)
 
-[node name="WeaponLocker" type="StaticBody3D"]
+[node name="WeaponLocker" type="StaticBody3D" unique_id=647506162]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.086, 0, 0)
 script = ExtResource("1_1tbto")
 empty_json = ExtResource("5_c5776")
 gun_json = ExtResource("7_j2sq0")
 metadata/_edit_group_ = true
 
-[node name="Pivot" type="Node3D" parent="."]
+[node name="Pivot" type="Node3D" parent="." unique_id=352464619]
 
-[node name="Locker_body" type="MeshInstance3D" parent="Pivot"]
+[node name="Locker_body" type="MeshInstance3D" parent="Pivot" unique_id=1575440726]
 mesh = SubResource("ArrayMesh_e008y")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("5_j2sq0")
 surface_material_override/1 = ExtResource("5_y6mx8")
 
-[node name="Hinge" type="Node3D" parent="Pivot"]
+[node name="Hinge" type="Node3D" parent="Pivot" unique_id=688760555]
 transform = Transform3D(-3.6199901e-06, 0, 1, 0, 1, 0, -1, 0, -3.6199901e-06, 0.35026532, 0, 0.3)
 
-[node name="Locker_door" type="MeshInstance3D" parent="Pivot/Hinge"]
+[node name="Locker_door" type="MeshInstance3D" parent="Pivot/Hinge" unique_id=1352387430]
 transform = Transform3D(-4.3711385e-08, 0, -0.9999999, 0, 1, 0, 0.9999999, 0, -4.3711385e-08, -0.0075603127, 1.2205653, -0.008872688)
 mesh = SubResource("ArrayMesh_rswr6")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("5_j2sq0")
 
-[node name="Locker" type="Node3D" parent="Pivot"]
+[node name="Locker" type="Node3D" parent="Pivot" unique_id=1737127676]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2014126557]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10045, 0.257965)
 shape = SubResource("BoxShape3D_gag77")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_c5776")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2051930352]
+libraries/ = SubResource("AnimationLibrary_c5776")
 
-[node name="Gun" parent="." instance=ExtResource("3_gag77")]
+[node name="Gun" parent="." unique_id=1487925229 instance=ExtResource("3_gag77")]
 transform = Transform3D(-4.1311267e-08, 0.32680556, 0.9450916, 1.4285125e-08, 0.9450916, -0.32680556, -1, 0, -4.371139e-08, -0.040565327, 1.2146193, 0.25592482)
 
-[node name="Interactable" parent="." instance=ExtResource("2_1tbto")]
+[node name="Interactable" parent="." unique_id=175769176 instance=ExtResource("2_1tbto")]
 interaction = ExtResource("7_j2sq0")
 
 [node name="InteractableArea" parent="Interactable" index="0"]
@@ -217,14 +215,14 @@ shape = SubResource("BoxShape3D_c5776")
 [node name="FocusPoint" parent="Interactable" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0153411, 1.04946, 0)
 
-[node name="Sounds" type="Node3D" parent="."]
+[node name="Sounds" type="Node3D" parent="." unique_id=1526895285]
 
-[node name="Open" type="AudioStreamPlayer3D" parent="Sounds"]
+[node name="Open" type="AudioStreamPlayer3D" parent="Sounds" unique_id=127727598]
 stream = ExtResource("7_hplko")
 
-[node name="Close" type="AudioStreamPlayer3D" parent="Sounds"]
+[node name="Close" type="AudioStreamPlayer3D" parent="Sounds" unique_id=1767907246]
 stream = ExtResource("8_j2sq0")
 
-[node name="Locker" type="Node3D" parent="."]
+[node name="Locker" type="Node3D" parent="." unique_id=1014362620]
 
 [editable path="Interactable"]

@@ -1,0 +1,38 @@
+[
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Ahem, Captain?",
+			"action": "",
+			"direction": "right",
+			"time": 3
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "normal",
+			"text": "Yes, what is it?",
+			"action": "",
+			"direction": "left",
+			"time": 3
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Nothing, never mind me. Sorry",
+			"action": "",
+			"direction": "right",
+			"time": 3
+		}
+	},
+]

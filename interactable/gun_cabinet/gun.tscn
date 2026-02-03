@@ -144,12 +144,14 @@ shape = SubResource("BoxShape3D_8ss2u")
 visible = false
 
 [node name="Sprite3D" type="Sprite3D" parent="Effect" unique_id=494072876]
+visible = false
 modulate = Color(1, 0.659333, 0.27, 0.705882)
 pixel_size = 0.001
 billboard = 1
 texture = ExtResource("3_vrb44")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="Effect" unique_id=129507432]
+visible = false
 amount = 60
 lifetime = 0.5
 mesh = SubResource("QuadMesh_b5ax2")

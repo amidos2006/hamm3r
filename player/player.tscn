@@ -2,19 +2,29 @@
 
 [ext_resource type="PackedScene" uid="uid://cmrwa6kvok00u" path="res://assets/models/human_scale.glb" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://d33dokaqiijiv" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="JSON" path="res://assets/actions/tanker/bark_1.json" id="2_mmwog"]
 [ext_resource type="Material" uid="uid://b3kktj7uhivlh" path="res://assets/materials/mat_hammer/m_gun.tres" id="3_1so5t"]
+[ext_resource type="JSON" path="res://assets/actions/tanker/bark_2.json" id="3_8pxes"]
 [ext_resource type="Texture2D" uid="uid://bytmxxwrusaqe" path="res://assets/graphics/ui/button_info.png" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://div4ma1sqdfk3" path="res://player/ui.gd" id="3_yw30f"]
 [ext_resource type="Script" uid="uid://f1uuhlwo4vj1" path="res://player/laser.gd" id="4_1so5t"]
+[ext_resource type="JSON" path="res://assets/actions/tanker/bark_3.json" id="4_fmu53"]
 [ext_resource type="Texture2D" uid="uid://blh3ylxptck2c" path="res://assets/graphics/ui/aimReticle.png" id="5_qjkh3"]
+[ext_resource type="JSON" path="res://assets/actions/tanker/bark_4.json" id="5_w7j2h"]
+[ext_resource type="JSON" path="res://assets/actions/tanker/bark_5.json" id="6_n0b8q"]
 [ext_resource type="AudioStream" uid="uid://dyelqq0x1iw5g" path="res://assets/music/in_game/AC_hum_spaceship.wav" id="7_boad6"]
+[ext_resource type="JSON" path="res://assets/actions/tanker/bark_6.json" id="7_jfgyi"]
 [ext_resource type="AudioStream" uid="uid://cwirhf7pe1dqg" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_01.wav" id="7_rgyib"]
+[ext_resource type="JSON" path="res://assets/actions/tanker/bark_7.json" id="8_237xx"]
 [ext_resource type="AudioStream" uid="uid://cc022xhqwa2q6" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_02.wav" id="8_hg6s5"]
 [ext_resource type="AudioStream" uid="uid://cq0p517jirjfh" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_03.wav" id="9_8t03j"]
 [ext_resource type="AudioStream" uid="uid://drh0ty2x3t1j5" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_11.wav" id="9_e7oew"]
+[ext_resource type="JSON" path="res://assets/actions/tanker/bark_8.json" id="9_wpyo2"]
 [ext_resource type="AudioStream" uid="uid://bda5l6akujb1d" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_04.wav" id="10_2ieo8"]
+[ext_resource type="JSON" path="res://assets/actions/tanker/bark_9.json" id="10_7crtr"]
 [ext_resource type="AudioStream" uid="uid://c6xef345kpi04" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_12.wav" id="10_bjvpn"]
 [ext_resource type="AudioStream" uid="uid://b1fg0h0n6xasl" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_13.wav" id="11_s7qer"]
+[ext_resource type="JSON" path="res://assets/actions/tanker/bark_10.json" id="11_vgvch"]
 [ext_resource type="AudioStream" uid="uid://dl8owxld55ums" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_05.wav" id="12_c35mf"]
 [ext_resource type="AudioStream" uid="uid://68adycp2df0x" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_14.wav" id="12_g4c7l"]
 [ext_resource type="AudioStream" uid="uid://c3sm7d1jnplt0" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_06.wav" id="13_65viv"]
@@ -250,6 +260,7 @@ stream_29/stream = ExtResource("29_w7j2h")
 
 [node name="Player" type="CharacterBody3D" unique_id=954889308]
 script = ExtResource("1_rkbax")
+bark_data = Array[JSON]([ExtResource("2_mmwog"), ExtResource("3_8pxes"), ExtResource("4_fmu53"), ExtResource("5_w7j2h"), ExtResource("6_n0b8q"), ExtResource("7_jfgyi"), ExtResource("8_237xx"), ExtResource("9_wpyo2"), ExtResource("10_7crtr"), ExtResource("11_vgvch")])
 metadata/_edit_group_ = true
 
 [node name="HumanScale" parent="." unique_id=846715413 instance=ExtResource("1_oul6g")]
@@ -257,7 +268,7 @@ transform = Transform3D(1, 0, 0, 0, 0.75, 0, 0, 0, 1, 0, 0, 0)
 visible = false
 
 [node name="Pivot" type="Node3D" parent="." unique_id=1333209666]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.4, 0)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Pivot" unique_id=587658740]
 fov = 65.0
@@ -365,4 +376,7 @@ stream = ExtResource("7_boad6")
 volume_db = -30.0
 autoplay = true
 
+[node name="BarkTimer" type="Timer" parent="." unique_id=707548295]
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="BarkTimer" to="." method="_on_bark_timer_timeout"]

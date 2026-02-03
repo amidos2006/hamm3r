@@ -268,7 +268,15 @@ static func generate_best_layout(graphs, size, start_type, end_type, broken_type
 	for g in graphs:
 		for i in range(size):
 			population.append(LayoutChromosome.new(g, g.nodes.size(), start_type, end_type, broken_type, random))
+			if population[-1].fitness() > 5:
+				break
+		if population[-1].fitness() > 5:
+			break
 	population.sort_custom(func(a,b): return a.fitness() < b.fitness())
+	#var ga = LayoutGA.new(graphs, size, start_type, end_type, broken_type, random)
+	#for i in range(size):
+		#ga.update(0,0.5,0.1,0.2,5)
+	#var population = [ga.best()]
 	return {"graph": population[-1]._graph, "layout": population[-1]._layout, "start": population[-1]._start, "fitness": population[-1]._fitness}
 	
 
@@ -485,7 +493,7 @@ class LayoutChromosome extends RefCounted:
 		
 	
 	func clone(graph):
-		var clone = LayoutChromosome.new(self._graph, self._start_type, 
+		var clone = LayoutChromosome.new(self._graph, self._genome.size(), self._start_type, 
 			self._end_type, self._broken_type, self._random)
 		for i in range(self._genome.size()):
 			clone._genome[i] = self._genome[i]
@@ -526,12 +534,13 @@ class LayoutChromosome extends RefCounted:
 			if self._fitness == 3:
 				self._fitness += 1.0 / (spaceship_result["end_connections"])
 			if self._fitness == 4:
+				if self._spaceship.size() > 10:
+					self._fitness += 1.0 / max(1, self._spaceship.size() - 9)
+			if self._fitness == 5:
 				self._fitness += 1.0 / (abs(spaceship_result["broken"].size() - spaceship_result["extra"].size()) + 1)
 				self._fitness += 2.0 / (spaceship_result["extra"].size() + 1)
 				if spaceship_result["holes"].size() == 0:
 					self._fitness -= 0.05
-				if self._spaceship.size() > 10:
-					self._fitness -= 0.01 * (self._spaceship.size() - 10)
 				if self._spaceship[0].size() > 14:
 					self._fitness -= 0.001 * (self._spaceship.size() - 13)
 				self._fitness += 0.01 * self._spaceship[0].size() / self._spaceship.size()
@@ -559,6 +568,7 @@ class LayoutGA extends RefCounted:
 	var _broken_type
 	var _random
 	var _population
+	var _genome_size
 	
 	func _init(graphs, size, start_type, end_type, broken_type, random=null):
 		self._graphs = graphs
@@ -570,8 +580,8 @@ class LayoutGA extends RefCounted:
 		self._random = random
 		self._genome_size = 0
 		for g in graphs:
-			if g.size() > self._genome_size:
-				self._genome_size = g.size()
+			if g.nodes.size() > self._genome_size:
+				self._genome_size = g.nodes.size()
 		self.reset(size)
 		
 	

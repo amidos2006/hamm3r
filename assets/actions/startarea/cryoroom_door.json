@@ -49,7 +49,7 @@
 	{
 		"action": "timer",
 		"args": {
-			"time": 0.25
+			"time": 0.5
 		}
 	},
 	{

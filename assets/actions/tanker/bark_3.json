@@ -1,0 +1,38 @@
+[
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Please keep your eyes peeled for anything unusual, Captain!",
+			"action": "",
+			"direction": "right",
+			"time": 3
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "angry",
+			"text": "Hey, I know why I am here. Please stop behaving like a stupid machine!",
+			"action": "",
+			"direction": "left",
+			"time": 3
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Ouchie...",
+			"action": "",
+			"direction": "right",
+			"time": 3
+		}
+	},
+]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://05t1uswscwq"]
+[gd_scene format=4 uid="uid://05t1uswscwq"]
 
 [ext_resource type="Script" uid="uid://dhrisfosy7p65" path="res://interactable/seal_door/seal_door.gd" id="1_xb6vn"]
 [ext_resource type="Material" uid="uid://c7udfa1objvm0" path="res://assets/materials/mat_hammer/m_startroom_objects.tres" id="2_4frlx"]
@@ -241,33 +241,31 @@ stream_0/stream = ExtResource("5_m8aqy")
 stream_1/stream = ExtResource("6_4frlx")
 stream_2/stream = ExtResource("7_4frlx")
 
-[node name="SealDoor" type="StaticBody3D"]
+[node name="SealDoor" type="StaticBody3D" unique_id=1811116729]
 script = ExtResource("1_xb6vn")
 
-[node name="Pivot" type="Node3D" parent="."]
+[node name="Pivot" type="Node3D" parent="." unique_id=1894069902]
 
-[node name="Seal_Door1_001" type="MeshInstance3D" parent="Pivot"]
+[node name="Seal_Door1_001" type="MeshInstance3D" parent="Pivot" unique_id=1664011221]
 mesh = SubResource("ArrayMesh_ouj14")
 skeleton = NodePath("")
 
-[node name="Seal_Door_L" type="MeshInstance3D" parent="Pivot"]
+[node name="Seal_Door_L" type="MeshInstance3D" parent="Pivot" unique_id=669963326]
 mesh = SubResource("ArrayMesh_75bh2")
 skeleton = NodePath("")
 
-[node name="Seal_Door_R" type="MeshInstance3D" parent="Pivot"]
+[node name="Seal_Door_R" type="MeshInstance3D" parent="Pivot" unique_id=1860858807]
 mesh = SubResource("ArrayMesh_jwt4e")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1440245004]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00439453, 1.18785, 0)
 shape = SubResource("BoxShape3D_ys3yn")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_ys3yn")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1886928025]
+libraries/ = SubResource("AnimationLibrary_ys3yn")
 
-[node name="Interactable" parent="." instance=ExtResource("5_66maq")]
+[node name="Interactable" parent="." unique_id=1284040651 instance=ExtResource("5_66maq")]
 interaction = ExtResource("4_4frlx")
 
 [node name="InteractableArea" parent="Interactable" index="0"]
@@ -275,9 +273,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 shape = SubResource("BoxShape3D_m8aqy")
 
 [node name="FocusPoint" parent="Interactable" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055, 1.4, 0.123)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055, 1.5, 0.123)
 
-[node name="Sounds" type="AudioStreamPlayer3D" parent="."]
+[node name="Sounds" type="AudioStreamPlayer3D" parent="." unique_id=1904019654]
 stream = SubResource("AudioStreamRandomizer_4frlx")
 
 [connection signal="player_exited" from="Interactable" to="." method="_on_interactable_player_exited"]

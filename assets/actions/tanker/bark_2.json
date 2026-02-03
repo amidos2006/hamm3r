@@ -1,0 +1,26 @@
+[
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Does the inside of the tanker look unusual to you?",
+			"action": "",
+			"direction": "right",
+			"time": 3
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "normal",
+			"text": "Nothing out of the ordinary, at least for now.",
+			"action": "",
+			"direction": "left",
+			"time": 3
+		}
+	},
+]

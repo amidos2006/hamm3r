@@ -1,8 +1,10 @@
 extends Node
 
-func _ready():
-	pass
-	
+
+var _running_actions = false
+var _stop_actions = false
+
+
 func get_target(type, caller, player=null):
 	var target = caller
 	if type.to_lower() == "player":
@@ -20,11 +22,21 @@ func check_condition(conditions, caller, player=null):
 	return result
 	
 	
+func stop_actions():
+	if _running_actions:
+		_stop_actions = true
+	
+	
 func run_actions(actions, caller, player=null):
+	_running_actions = true
 	for act in actions:
 		var conditions = check_condition(act.get("conditions", []), caller, player)
 		if not conditions:
 			continue
+		
+		if _stop_actions:
+			_stop_actions = false
+			return
 		
 		var target = get_target(act.get("target", ""), caller, player)
 		match(act.action):
@@ -96,3 +108,4 @@ func run_actions(actions, caller, player=null):
 				await Signal(target, act.wait)
 			else:
 				await get_tree().create_timer(act.wait, false).timeout
+	_running_actions = false

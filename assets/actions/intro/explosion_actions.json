@@ -23,6 +23,18 @@
 		}
 	},
 	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "tess",
+			"mood": "angry",
+			"text": "What did you do?!",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
 		"action": "fade",
 		"args": {
 			"start": 0,
