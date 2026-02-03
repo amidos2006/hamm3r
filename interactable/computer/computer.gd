@@ -13,22 +13,22 @@ enum ScreenType{
 @export var moniter_1:ScreenType:
 	set(value): 
 		moniter_1 = value
-		if $Pivot/Monitor1 != null:
+		if self.is_node_ready() and $Pivot/Monitor1 != null:
 			_assign_screen($Pivot/Monitor1, value)
 @export var moniter_2:ScreenType:
 	set(value): 
 		moniter_2 = value
-		if $Pivot/Monitor2 != null:
+		if self.is_node_ready() and $Pivot/Monitor2 != null:
 			_assign_screen($Pivot/Monitor2, value)
 @export var moniter_3:ScreenType:
 	set(value):
 		moniter_3 = value
-		if $Pivot/Monitor3 != null:
+		if self.is_node_ready() and $Pivot/Monitor3 != null:
 			_assign_screen($Pivot/Monitor3, value)
 @export var moniter_4:ScreenType:
 	set(value): 
 		moniter_4 = value
-		if $Pivot/Monitor4 != null:
+		if self.is_node_ready() and $Pivot != null and $Pivot/Monitor4 != null:
 			_assign_screen($Pivot/Monitor4, value)
 
 

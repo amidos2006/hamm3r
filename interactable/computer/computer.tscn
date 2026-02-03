@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="4_qpu04"]
 [ext_resource type="Texture2D" uid="uid://q8qcugkv1w8x" path="res://assets/models/ControlRoom_Computers_CntrlRoom_Screen_Desk_f1.png" id="5_6bncj"]
 [ext_resource type="JSON" path="res://assets/actions/startarea/computer.json" id="6_3txo5"]
+[ext_resource type="Texture2D" uid="uid://b8xloy63qnuxq" path="res://assets/graphics/screens/CntrlRoom_Screen_Desk_f1.png" id="6_jgxms"]
 [ext_resource type="Material" uid="uid://cbd7c8jwr4u21" path="res://assets/materials/mat_hammer/m_controlroom_pipes.tres" id="9_8g2b1"]
 [ext_resource type="FontFile" uid="uid://dg4warscx3c37" path="res://assets/fonts/ShareTech-Regular.ttf" id="11_3jk4j"]
 [ext_resource type="Texture2D" uid="uid://ci13a7mlsb8qr" path="res://assets/generator/border_pieces.png" id="11_7b14u"]
@@ -373,6 +374,33 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_flnu4")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jgxms"]
+render_priority = 0
+shader = ExtResource("3_nbhi1")
+shader_parameter/albedo_texture = ExtResource("6_jgxms")
+shader_parameter/texture_uv = Vector2(0, 0)
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qqvxj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cw6rt"]
@@ -430,6 +458,33 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_v6cpp")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3jk4j"]
+render_priority = 0
+shader = ExtResource("3_nbhi1")
+shader_parameter/albedo_texture = ExtResource("6_jgxms")
+shader_parameter/texture_uv = Vector2(0, 0)
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_buard"]
 
@@ -692,53 +747,53 @@ moniter_2 = 3
 moniter_3 = 3
 moniter_4 = 3
 
-[node name="ControlRoom_Computers" type="Node3D" parent="." unique_id=725054896]
+[node name="Pivot" type="Node3D" parent="." unique_id=725054896]
 
-[node name="Monitor_MobileKeyboard_001" type="MeshInstance3D" parent="ControlRoom_Computers" unique_id=518142958]
+[node name="Monitor_MobileKeyboard_001" type="MeshInstance3D" parent="Pivot" unique_id=518142958]
 mesh = SubResource("ArrayMesh_f3gpm")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("3_kso1q")
 
-[node name="Monitor_Stand_002" type="MeshInstance3D" parent="ControlRoom_Computers" unique_id=215789786]
+[node name="Monitor_Stand_002" type="MeshInstance3D" parent="Pivot" unique_id=215789786]
 mesh = SubResource("ArrayMesh_xcwvp")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("3_kso1q")
 
-[node name="Monitor1_002" type="MeshInstance3D" parent="ControlRoom_Computers" unique_id=404840559]
+[node name="Monitor1" type="MeshInstance3D" parent="Pivot" unique_id=404840559]
 mesh = SubResource("ArrayMesh_x0j8v")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("3_kso1q")
 surface_material_override/1 = SubResource("ShaderMaterial_8s7rf")
 
-[node name="Monitor_Keyboard_002" type="MeshInstance3D" parent="ControlRoom_Computers" unique_id=1770543872]
+[node name="Monitor_Keyboard_002" type="MeshInstance3D" parent="Pivot" unique_id=1770543872]
 mesh = SubResource("ArrayMesh_u5gu7")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("3_kso1q")
 
-[node name="Monitor_Computer_002" type="MeshInstance3D" parent="ControlRoom_Computers" unique_id=1715999764]
+[node name="Monitor_Computer_002" type="MeshInstance3D" parent="Pivot" unique_id=1715999764]
 mesh = SubResource("ArrayMesh_lgq0f")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("3_kso1q")
 
-[node name="Monitor4_002" type="MeshInstance3D" parent="ControlRoom_Computers" unique_id=2104797459]
+[node name="Monitor4" type="MeshInstance3D" parent="Pivot" unique_id=2104797459]
 mesh = SubResource("ArrayMesh_aiwrg")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("3_kso1q")
 surface_material_override/1 = SubResource("ShaderMaterial_6bncj")
 
-[node name="Monitor2_002" type="MeshInstance3D" parent="ControlRoom_Computers" unique_id=605250674]
+[node name="Monitor2" type="MeshInstance3D" parent="Pivot" unique_id=605250674]
 mesh = SubResource("ArrayMesh_84rtt")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("3_kso1q")
-surface_material_override/1 = SubResource("ShaderMaterial_6bncj")
+surface_material_override/1 = SubResource("ShaderMaterial_jgxms")
 
-[node name="Monitor3_002" type="MeshInstance3D" parent="ControlRoom_Computers" unique_id=2135270644]
+[node name="Monitor3" type="MeshInstance3D" parent="Pivot" unique_id=2135270644]
 mesh = SubResource("ArrayMesh_058w0")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("3_kso1q")
-surface_material_override/1 = SubResource("ShaderMaterial_6bncj")
+surface_material_override/1 = SubResource("ShaderMaterial_3jk4j")
 
-[node name="Monitor_Cables_002" type="MeshInstance3D" parent="ControlRoom_Computers" unique_id=1113719056]
+[node name="Monitor_Cables_002" type="MeshInstance3D" parent="Pivot" unique_id=1113719056]
 mesh = SubResource("ArrayMesh_c56gn")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("9_8g2b1")
