@@ -191,9 +191,9 @@
 		"args": {
 			"path": "res://intermission/intermission.tscn",
 			"message": "[font_size=72][color=#f5c25c]Two Months Later...[/color][/font_size]",
-			"ui_message": "",
-			"ui_action": "",
-			"time": 3,
+			"ui_message": "PRESS [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO CONTINUE",
+			"ui_action": "interact",
+			"time": 0.5,
 			"return": "res://in_game/in_game.tscn",
 			"args": {
 				

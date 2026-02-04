@@ -6,6 +6,21 @@ var _ui_action
 var _return_scene
 var _return_args
 var _return_time
+var _start_time
+
+
+func _fade_out():
+	var difference = (Time.get_ticks_msec() - _start_time) / 1000.0
+	if _return_time > 0 and _return_time - difference > 0:
+		await get_tree().create_timer(_return_time, false).timeout
+	if _ui_action.length() > 0:
+		UiMessage.show_message(_ui_message, _ui_action)
+		await UiMessage.advance_message
+		UiMessage.hide_message()
+	var tween = get_tree().create_tween()
+	tween.tween_property($Label, "modulate", Color(Color.WHITE, 0), 2)
+	await tween.finished
+	SceneManager.execute_scene()
 
 
 func _ready():
@@ -13,17 +28,10 @@ func _ready():
 	var tween = get_tree().create_tween()
 	tween.tween_property($Label, "modulate", Color(Color.WHITE, 1), 2)
 	await tween.finished
-	if _return_time > 0:
-		await get_tree().create_timer(_return_time, false).timeout
-	if _ui_action.length() > 0:
-		UiMessage.show_message(_ui_message, _ui_action)
-		await UiMessage.advance_message
-		UiMessage.hide_message()
-	tween = get_tree().create_tween()
-	tween.tween_property($Label, "modulate", Color(Color.WHITE, 0), 2)
-	await tween.finished
+	
+	_start_time = Time.get_ticks_msec()
 	if _return_scene.length() > 0:
-		SceneManager.switch_scene(_return_scene, _return_args)
+		SceneManager.switch_scene(_return_scene, _return_args, _fade_out)
 
 
 func initialize(args):
