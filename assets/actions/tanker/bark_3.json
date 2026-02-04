@@ -20,7 +20,7 @@
 			"text": "Hey, I know why I am here. Please stop behaving like a stupid machine!",
 			"action": "",
 			"direction": "left",
-			"time": 3
+			"time": 4
 		}
 	},
 	{
@@ -32,7 +32,7 @@
 			"text": "Ouchie...",
 			"action": "",
 			"direction": "right",
-			"time": 3
+			"time": 4
 		}
 	},
 ]

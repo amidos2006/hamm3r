@@ -8,7 +8,7 @@
 			"text": "I- I think...",
 			"action": "",
 			"direction": "left",
-			"time": 3
+			"time": 4
 		}
 	},
 	{
@@ -20,7 +20,7 @@
 			"text": "Nah, I guess that was nothing.",
 			"action": "",
 			"direction": "left",
-			"time": 3
+			"time": 4
 		}
 	},
 	{
@@ -32,7 +32,7 @@
 			"text": "Feel free to buzz in anytime. I am listening.",
 			"action": "",
 			"direction": "right",
-			"time": 3
+			"time": 4
 		}
 	},
 ]

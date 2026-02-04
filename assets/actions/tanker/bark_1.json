@@ -8,7 +8,7 @@
 			"text": "You okay in there, Captain?",
 			"action": "",
 			"direction": "right",
-			"time": 3
+			"time": 4
 		}
 	},
 	{
@@ -20,7 +20,7 @@
 			"text": "Doin' just peachy, buddy.",
 			"action": "",
 			"direction": "left",
-			"time": 3
+			"time": 4
 		}
 	},
 	{
@@ -32,7 +32,7 @@
 			"text": "It was all a bit too quiet, that is why I was asking...",
 			"action": "",
 			"direction": "right",
-			"time": 3
+			"time": 4
 		}
 	},
 ]

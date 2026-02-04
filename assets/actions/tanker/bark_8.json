@@ -8,7 +8,7 @@
 			"text": "Until this point, it all seems pretty dead to me.",
 			"action": "",
 			"direction": "left",
-			"time": 3
+			"time": 4
 		}
 	},
 	{
@@ -20,7 +20,7 @@
 			"text": "I am not sure I heard that right. Could you repeat?",
 			"action": "",
 			"direction": "right",
-			"time": 3
+			"time": 4
 		}
 	},
 	{
@@ -32,7 +32,7 @@
 			"text": "I said it’s all good for now.",
 			"action": "",
 			"direction": "left",
-			"time": 3
+			"time": 4
 		}
 	},
 	{
@@ -44,7 +44,7 @@
 			"text": "Copy that, Captain, thank you.",
 			"action": "",
 			"direction": "right",
-			"time": 3
+			"time": 4
 		}
 	},
 ]

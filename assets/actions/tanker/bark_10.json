@@ -8,7 +8,7 @@
 			"text": "About what you said earlier...",
 			"action": "",
 			"direction": "right",
-			"time": 3
+			"time": 4
 		}
 	},
 	{
@@ -20,7 +20,7 @@
 			"text": "Yes?",
 			"action": "",
 			"direction": "left",
-			"time": 3
+			"time": 4
 		}
 	},
 	{
@@ -32,7 +32,7 @@
 			"text": "I- I guess it does not matter. Forget about it.",
 			"action": "",
 			"direction": "right",
-			"time": 3
+			"time": 4
 		}
 	},
 ]

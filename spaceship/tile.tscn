@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://b6wpagdi5de5j"]
 
 [ext_resource type="Script" uid="uid://bahocjj6rtrsu" path="res://spaceship/tile.gd" id="1_vxwtg"]
-[ext_resource type="PackedScene" uid="uid://c0bosxmp10csq" path="res://assets/models/pcg_modules/sc_special_kitchen.tscn" id="2_8jb1s"]
-[ext_resource type="PackedScene" uid="uid://cr0gqot0emxoy" path="res://assets/models/pcg_modules/sc_special_ENDroom.tscn" id="3_dl3ic"]
-[ext_resource type="PackedScene" uid="uid://ts3iombhp4xk" path="res://assets/models/pcg_modules/sc_corner.tscn" id="4_ts5ky"]
-[ext_resource type="PackedScene" uid="uid://bacnak5cpfr70" path="res://assets/models/pcg_modules/sc_Tshape.tscn" id="5_ts5ky"]
-[ext_resource type="PackedScene" uid="uid://tp4u6ktpgjbk" path="res://assets/models/pcg_modules/sc_straight_1.tscn" id="6_8jb1s"]
-[ext_resource type="PackedScene" uid="uid://v51wab4qcihn" path="res://assets/models/pcg_modules/sc_straight_2.tscn" id="7_dl3ic"]
-[ext_resource type="PackedScene" uid="uid://d0mu4t2htg0sn" path="res://assets/models/pcg_modules/sc_straight_3.tscn" id="8_omlcc"]
-[ext_resource type="PackedScene" uid="uid://h3rfx71jfhrx" path="res://assets/models/pcg_modules/sc_cross.tscn" id="9_ts5ky"]
+[ext_resource type="PackedScene" uid="uid://c0bosxmp10csq" path="res://spaceship/modules/sc_special_kitchen.tscn" id="2_8jb1s"]
+[ext_resource type="PackedScene" uid="uid://cr0gqot0emxoy" path="res://spaceship/modules/sc_special_ENDroom.tscn" id="3_dl3ic"]
+[ext_resource type="PackedScene" uid="uid://ts3iombhp4xk" path="res://spaceship/modules/sc_corner.tscn" id="4_ts5ky"]
+[ext_resource type="PackedScene" uid="uid://bacnak5cpfr70" path="res://spaceship/modules/sc_Tshape.tscn" id="5_ts5ky"]
+[ext_resource type="PackedScene" uid="uid://tp4u6ktpgjbk" path="res://spaceship/modules/sc_straight_1.tscn" id="6_8jb1s"]
+[ext_resource type="PackedScene" uid="uid://v51wab4qcihn" path="res://spaceship/modules/sc_straight_2.tscn" id="7_dl3ic"]
+[ext_resource type="PackedScene" uid="uid://d0mu4t2htg0sn" path="res://spaceship/modules/sc_straight_3.tscn" id="8_omlcc"]
+[ext_resource type="PackedScene" uid="uid://h3rfx71jfhrx" path="res://spaceship/modules/sc_cross.tscn" id="9_ts5ky"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vxwtg"]
 

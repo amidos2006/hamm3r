@@ -8,7 +8,7 @@ extends CharacterBody3D
 @export var max_health = 5
 @export var health = 3
 @export var bark_data:Array[JSON]
-@export var bark_time:Vector2 = Vector2(20, 30)
+@export var bark_time:Vector2 = Vector2(25, 35)
 
 var disable_controls:
 	set(value):
@@ -194,7 +194,7 @@ func restrict_angle(min_value, max_value):
 
 func enter_tanker():
 	self.inside_hamm = false
-	$BarkTimer.start(randi_range(bark_time.x, bark_time.y))
+	$BarkTimer.start(randf_range(bark_time.x, bark_time.y))
 
 
 func _on_animation_player_animation_finished(anim_name):
@@ -205,4 +205,4 @@ func _on_animation_player_animation_finished(anim_name):
 func _on_bark_timer_timeout() -> void:
 	ActionManager.stop_actions();
 	ActionManager.run_actions(bark_data.pick_random().data, self, self)
-	$BarkTimer.start(randi_range(bark_time.x, bark_time.y))
+	$BarkTimer.start(randf_range(bark_time.x, bark_time.y))

@@ -8,7 +8,7 @@
 			"text": "3R, can you see where I am?",
 			"action": "",
 			"direction": "left",
-			"time": 3
+			"time": 4
 		}
 	},
 	{
@@ -20,7 +20,7 @@
 			"text": "Now that life support is on I can barely see anything in there.",
 			"action": "",
 			"direction": "right",
-			"time": 3
+			"time": 4
 		}
 	},
 	{
@@ -32,7 +32,7 @@
 			"text": "Mhhh...",
 			"action": "",
 			"direction": "left",
-			"time": 3
+			"time": 4
 		}
 	},
 ]
