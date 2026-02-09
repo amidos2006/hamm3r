@@ -87,7 +87,7 @@
 		"args": {
 			"name": "start_moving",
 			"object": "Station",
-			"args": [100, 4, 8, 2, 1, "interact"]
+			"args": [100, 5, 16, 2, 1, "interact"]
 		}
 	},
 	{

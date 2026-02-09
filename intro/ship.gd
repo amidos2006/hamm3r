@@ -38,7 +38,7 @@ func _ready():
 	tween.tween_property($AnimationSprite, "modulate", Color(Color.WHITE, 1), 0.1)
 
 
-func _process(delta):
+func _physics_process(delta):
 	_last_speed = linear_velocity.length()
 	
 	if _thruster_power == 0:

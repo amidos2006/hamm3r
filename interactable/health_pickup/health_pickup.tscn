@@ -1,11 +1,9 @@
-[gd_scene format=3 uid="uid://bm5x0bls0m7tg"]
+[gd_scene format=3 uid="uid://d0s0m47se5jrn"]
 
-[ext_resource type="PackedScene" uid="uid://qgotcx4tsokc" path="res://assets/models/HealthPickup.glb" id="1_5tirg"]
-[ext_resource type="Material" uid="uid://bp113us1g1bu7" path="res://assets/materials/mat_spaceship/m_pcg_barrels.tres" id="2_tc5ql"]
-[ext_resource type="Material" uid="uid://c2h5jcdybyc3w" path="res://assets/materials/mat_spaceship/m_pcg_barrels_transparent.tres" id="3_6sx66"]
+[ext_resource type="PackedScene" uid="uid://bm5x0bls0m7tg" path="res://interactable/health_pickup/health_pickup_model.tscn" id="1_n1skv"]
 
-[node name="HealthPickup" unique_id=1012017272 instance=ExtResource("1_5tirg")]
+[node name="HealthPickup2" type="StaticBody3D" unique_id=241888779]
 
-[node name="HealthPickup" parent="." index="0"]
-surface_material_override/0 = ExtResource("2_tc5ql")
-surface_material_override/1 = ExtResource("3_6sx66")
+[node name="Pivot" type="Node3D" parent="." unique_id=1019299362]
+
+[node name="HealthPickupModel" parent="Pivot" unique_id=1012017272 instance=ExtResource("1_n1skv")]

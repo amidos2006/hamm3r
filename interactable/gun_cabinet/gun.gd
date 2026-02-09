@@ -4,6 +4,10 @@ extends Area3D
 signal animation_ended
 
 
+var highlight:bool:
+	set(value): $Pivot/Gun/Outline.visible = value
+
+
 func _ready():
 	$Effect.visible = false
 	$Effect/AnimationPlayer.stop()

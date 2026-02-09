@@ -26,6 +26,11 @@ func _ready():
 		$Interactable.interaction = gun_json
 
 
+func _process(_delta):
+	if $Gun:
+		$Gun.highlight = $Interactable.is_interacting()
+
+
 func open_door():
 	if _state == DoorState.CLOSE:
 		if contain_gun:

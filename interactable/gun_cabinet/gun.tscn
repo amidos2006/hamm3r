@@ -4,6 +4,7 @@
 [ext_resource type="Material" uid="uid://b3kktj7uhivlh" path="res://assets/materials/mat_hammer/m_gun.tres" id="2_6gla4"]
 [ext_resource type="Texture2D" uid="uid://c8r25dl7fpgct" path="res://assets/graphics/particles/halo.png" id="3_vrb44"]
 [ext_resource type="Texture2D" uid="uid://dp0wnlh0dxh0m" path="res://assets/graphics/particles/big_circle.png" id="4_1kbl7"]
+[ext_resource type="Shader" uid="uid://6wv4haaue3i4" path="res://assets/shaders/outline.gdshader" id="4_5by41"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_865fj"]
 _surfaces = [{
@@ -38,6 +39,11 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_865fj")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nu488"]
+render_priority = 0
+shader = ExtResource("4_5by41")
+shader_parameter/outline_color = Color(1, 1, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ss2u"]
 size = Vector3(0.5, 0.5, 0.8)
@@ -133,9 +139,16 @@ metadata/_edit_group_ = true
 [node name="Gun" type="Node3D" parent="Pivot" unique_id=567481575]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.049, -0.122)
 
-[node name="Gun" type="MeshInstance3D" parent="Pivot/Gun" unique_id=1170545699]
+[node name="Mesh" type="MeshInstance3D" parent="Pivot/Gun" unique_id=1170545699]
 mesh = SubResource("ArrayMesh_3ljft")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_6gla4")
+
+[node name="Outline" type="MeshInstance3D" parent="Pivot/Gun" unique_id=836185233]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, -0.020145908)
+mesh = SubResource("ArrayMesh_3ljft")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_nu488")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1489193711]
 shape = SubResource("BoxShape3D_8ss2u")

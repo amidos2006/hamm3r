@@ -386,11 +386,12 @@ position = Vector2(237, -3)
 
 [node name="Ship" type="RigidBody2D" parent="." unique_id=525000957]
 position = Vector2(104, 528)
-mass = 10.0
 gravity_scale = 0.0
 lock_rotation = true
 contact_monitor = true
 max_contacts_reported = 50
+linear_damp_mode = 1
+angular_damp_mode = 1
 script = ExtResource("8_1l24h")
 metadata/_edit_group_ = true
 

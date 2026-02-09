@@ -14,6 +14,10 @@ signal player_entered
 signal player_exited
 
 
+func is_interacting():
+	return _player != null and _player.is_looking_at(get_parent()) and not disable_interaction
+
+
 func _process(_delta):
 	if _player != null:
 		if _player.is_looking_at(get_parent()) and not disable_interaction:
