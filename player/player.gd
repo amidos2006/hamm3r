@@ -28,6 +28,9 @@ var gun_equipped = false
 var inside_hamm = true
 var back_hamm = false
 var inside_cryo = true
+var bark_timer:bool:
+	set(value): $BarkTimer.paused = not value
+var bark_index = 0
 
 
 signal angle_left
@@ -44,6 +47,7 @@ var _is_shooting = false
 func _ready():
 	$UI.initialize_health(health, max_health)
 	$Pivot/Camera3D/Gun.visible = false
+	bark_data.shuffle()
 
 
 func _get_rotation(target_pos):
@@ -83,6 +87,9 @@ func _physics_process(delta):
 					laser_position = $RayCast3D.get_collision_point()
 					laser_normal = $RayCast3D.get_collision_normal()
 					laser_collider = $RayCast3D.get_collider()
+					if $RayCast3D.get_collider().is_in_group("Explosive"):
+						SceneManager.switch_scene("res://end/end.tscn", {})
+				$Pivot/Camera3D/Laser/AudioStreamPlayer3D.play()
 				$AnimationPlayer.play("Shoot")
 				$AnimationPlayer.speed_scale = 1
 				$Pivot/Camera3D/Laser.fire(laser_collider, laser_position, laser_normal, laser_length)
@@ -119,6 +126,8 @@ func _physics_process(delta):
 			$AnimationPlayer.speed_scale = anim_dir
 		else:
 			$AnimationPlayer.play("Idle")
+	if gun_equipped:
+		$UI.update_health(health)
 		
 	move_and_slide()
 	
@@ -164,12 +173,11 @@ func is_looking_at(body):
 	if $RayCast3D.is_colliding():
 		return $RayCast3D.get_collider() == body
 	return false
-
-
-func take_gun(locker):
-	var gun = locker.get_node("Gun")
-	gun.move_gun(self.global_position + $Pivot.position / 2, 0.5)
-	await gun.animation_ended
+	
+	
+func take(object, time, shift=0.0):
+	object.move(self.global_position + $Pivot.position / 2 + Vector3(0, shift, 0), time)
+	await object.animation_ended
 	animation_ended.emit()
 	
 
@@ -203,6 +211,9 @@ func _on_animation_player_animation_finished(anim_name):
 
 
 func _on_bark_timer_timeout() -> void:
-	ActionManager.stop_actions();
-	ActionManager.run_actions(bark_data.pick_random().data, self, self)
-	$BarkTimer.start(randf_range(bark_time.x, bark_time.y))
+	if not UiMessage._active:
+		ActionManager.run_actions(bark_data[bark_index].data, self, self)
+		bark_index = (bark_index + 1) % bark_data.size()
+		$BarkTimer.start(randf_range(bark_time.x, bark_time.y))
+	else:
+		$BarkTimer.start(1.0)

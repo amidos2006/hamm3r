@@ -1,11 +1,52 @@
-[gd_scene load_steps=4 format=3 uid="uid://h3rfx71jfhrx"]
+[gd_scene format=3 uid="uid://h3rfx71jfhrx"]
 
 [ext_resource type="PackedScene" uid="uid://bo8ulv1sgs4rj" path="res://assets/models/pcg_modules/mod_Cross.glb" id="1_y7fso"]
 [ext_resource type="Material" uid="uid://lue8lkv0lnff" path="res://assets/materials/mat_spaceship/m_pcg_cross.tres" id="2_rmd4v"]
 [ext_resource type="Material" uid="uid://ebgky5s4iuq8" path="res://assets/materials/mat_spaceship/m_pcg_pipes.tres" id="3_4afbl"]
+[ext_resource type="PackedScene" uid="uid://br3rqfg816caj" path="res://interactable/explosive_area.tscn" id="4_c1q4a"]
 
-[node name="mod_Cross" instance=ExtResource("1_y7fso")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_u6tmg"]
+size = Vector3(0.5, 3, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tekqn"]
+size = Vector3(0.5, 3, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j67wm"]
+size = Vector3(0.8, 3, 0.8)
+
+[node name="mod_Cross" unique_id=394415936 instance=ExtResource("1_y7fso")]
 
 [node name="mod_CrossShape" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_rmd4v")
 surface_material_override/1 = ExtResource("3_4afbl")
+
+[node name="ExplosiveArea1" parent="." index="1" unique_id=433124444 instance=ExtResource("4_c1q4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.466, 1.5, 1.67)
+
+[node name="CollisionShape3D" parent="ExplosiveArea1" index="0" unique_id=547566022]
+shape = SubResource("BoxShape3D_u6tmg")
+
+[node name="ExplosiveArea2" parent="." index="2" unique_id=44673041 instance=ExtResource("4_c1q4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9188473, 1.5, -1.67)
+
+[node name="CollisionShape3D" parent="ExplosiveArea2" index="0" unique_id=547566022]
+shape = SubResource("BoxShape3D_tekqn")
+
+[node name="ExplosiveArea4" parent="." index="3" unique_id=1278895347 instance=ExtResource("4_c1q4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.466, 1.5, -1.9)
+
+[node name="CollisionShape3D" parent="ExplosiveArea4" index="0" unique_id=547566022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42648292, 0, 0)
+shape = SubResource("BoxShape3D_j67wm")
+
+[node name="ExplosiveArea3" parent="." index="4" unique_id=299613641 instance=ExtResource("4_c1q4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6426507, 1.5, 1.9)
+
+[node name="CollisionShape3D" parent="ExplosiveArea3" index="0" unique_id=547566022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13465142, 0, -0.13176203)
+shape = SubResource("BoxShape3D_j67wm")
+
+[editable path="ExplosiveArea1"]
+[editable path="ExplosiveArea2"]
+[editable path="ExplosiveArea4"]
+[editable path="ExplosiveArea3"]

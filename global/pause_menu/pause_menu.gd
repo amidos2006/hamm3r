@@ -29,6 +29,7 @@ func _process(_delta):
 		if _ignore_release:
 			_ignore_release = false
 		else:
+			$PauseSound.play()
 			if self.is_paused():
 				self.unpause()
 			else:

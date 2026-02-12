@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr0gqot0emxoy"]
+[gd_scene format=3 uid="uid://cr0gqot0emxoy"]
 
 [ext_resource type="PackedScene" uid="uid://dii3au4wbw1s1" path="res://assets/models/pcg_modules/mod_special_END.glb" id="1_peksx"]
 [ext_resource type="Material" uid="uid://cd6220vbayq3t" path="res://assets/materials/mat_spaceship/m_pcg_special_ENDroom.tres" id="2_kjlt1"]
 [ext_resource type="Material" uid="uid://6eumye00dh2d" path="res://assets/materials/mat_spaceship/m_pcg_special_ENDcables.tres" id="3_p1xoh"]
 [ext_resource type="Material" uid="uid://ebgky5s4iuq8" path="res://assets/materials/mat_spaceship/m_pcg_pipes.tres" id="4_xd47i"]
+[ext_resource type="PackedScene" uid="uid://br3rqfg816caj" path="res://interactable/explosive_area.tscn" id="5_0elog"]
 
-[node name="mod_special_END" instance=ExtResource("1_peksx")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_pyv40"]
+size = Vector3(0.5, 3, 3)
+
+[node name="mod_special_END" unique_id=217833437 instance=ExtResource("1_peksx")]
 
 [node name="mod_EndRoom" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0011817217, -5.9604645e-08, 8.46982e-05)
@@ -15,3 +19,18 @@ surface_material_override/2 = ExtResource("4_xd47i")
 
 [node name="CollisionShape3D" parent="mod_EndRoom/col_EndScreen_R1" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0039860606, 0, -0.00042629242)
+
+[node name="ExplosiveArea" parent="." index="1" unique_id=433124444 instance=ExtResource("5_0elog")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.466, 1.5, 1)
+
+[node name="CollisionShape3D" parent="ExplosiveArea" index="0" unique_id=547566022]
+shape = SubResource("BoxShape3D_pyv40")
+
+[node name="ExplosiveArea2" parent="." index="2" unique_id=1932682228 instance=ExtResource("5_0elog")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.466, 1.5, 1)
+
+[node name="CollisionShape3D" parent="ExplosiveArea2" index="0" unique_id=547566022]
+shape = SubResource("BoxShape3D_pyv40")
+
+[editable path="ExplosiveArea"]
+[editable path="ExplosiveArea2"]

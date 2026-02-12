@@ -1,0 +1,120 @@
+[
+	{
+		"action": "fade",
+		"args": {
+			"start": 1.0,
+			"end": 0.0,
+			"time": 2,
+			"color": "#FFFFFF"
+		}
+	},
+	{
+		"action": "function",
+		"target": "Explosion/Sound",
+		"args":{
+			"name": "play"
+		}
+	},
+	{
+		"action": "function",
+		"target": "Explosion/Animation",
+		"wait": "animation_finished",
+		"args": {
+			"name": "play"
+		}
+	},
+	{
+		"action": "fade",
+		"args": {
+			"start": 0.0,
+			"end": 0.25,
+			"time": 2
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "tess",
+			"mood": "concerned",
+			"text": "Uh-oh...",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "function",
+		"wait": 10,
+		"target": "Credits",
+		"args": {
+			"name": "roll_credits",
+			"args": [30]
+		}
+	},
+	{
+		"action": "function",
+		"wait": 0.5,
+		"target": "Credits",
+		"args": {
+			"name": "stop_credits",
+		}
+	},
+	{
+		"action": "function",
+		"wait": "animation_ended",
+		"target": "Credits",
+		"args": {
+			"name": "unroll_credits",
+			"args": [1]
+		}
+	},
+	{
+		"action": "fade",
+		"args": {
+			"start": 0.25,
+			"end": 0.0,
+			"time": 0.05
+		}
+	},
+	{
+		"action": "variable",
+		"target": "Explosion",
+		"args": {
+			"name": "speed_scale",
+			"value": 10.0
+		}
+	},
+	{
+		"action": "function",
+		"target": "Explosion/Reverse",
+		"args":{
+			"name": "play"
+		}
+	},
+	{
+		"action": "function",
+		"target": "Explosion/Animation",
+		"wait": "animation_finished",
+		"args": {
+			"name": "play_backwards"
+		}
+	},
+	{
+		"action": "fade",
+		"wait": "animation_ended",
+		"args": {
+			"start": 0.0,
+			"end": 1.0,
+			"time": 0.05,
+			"color": "#000000"
+		}
+	},
+	{
+		"action": "switch_scene",
+		"wait": false,
+		"args": {
+			"path": "res://in_game/in_game.tscn",
+		}
+	}
+]

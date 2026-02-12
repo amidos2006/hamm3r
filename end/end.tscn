@@ -1,0 +1,278 @@
+[gd_scene format=3 uid="uid://do678n02hb34"]
+
+[ext_resource type="Script" uid="uid://bqrud42sik6pv" path="res://end/end.gd" id="1_1nfhg"]
+[ext_resource type="Texture2D" uid="uid://brug4thvekhdd" path="res://assets/graphics/backgrounds/bg_space.png" id="1_7p2ky"]
+[ext_resource type="Script" uid="uid://jn62uv7akgg1" path="res://intro/camera_2d.gd" id="2_jueq2"]
+[ext_resource type="JSON" path="res://assets/actions/end/bad_end.json" id="2_xxh8w"]
+[ext_resource type="Script" uid="uid://df7bseqn61wc3" path="res://end/credits.gd" id="3_6f13e"]
+[ext_resource type="Texture2D" uid="uid://2xmwm7kv3uln" path="res://assets/graphics/explosion/explosion_A_0000.png" id="3_u824g"]
+[ext_resource type="Texture2D" uid="uid://bxfb8o4qb8l7u" path="res://assets/graphics/explosion/explosion_A_0001.png" id="4_1nfhg"]
+[ext_resource type="Texture2D" uid="uid://dpl7q5tf5eq53" path="res://assets/graphics/logos/logo.png" id="4_u6wvn"]
+[ext_resource type="Texture2D" uid="uid://meqhg4520ade" path="res://assets/graphics/explosion/explosion_A_0002.png" id="5_xxh8w"]
+[ext_resource type="FontFile" uid="uid://b3yalra5jswgu" path="res://assets/fonts/JosefinSans-Regular.ttf" id="5_yodmx"]
+[ext_resource type="Texture2D" uid="uid://c6y01embash38" path="res://assets/graphics/logos/idg_logo.png" id="6_4remo"]
+[ext_resource type="Texture2D" uid="uid://dq20xshnsu2kq" path="res://assets/graphics/explosion/explosion_A_0003.png" id="6_8r530"]
+[ext_resource type="Texture2D" uid="uid://cr6dyfqd5usad" path="res://assets/graphics/explosion/explosion_A_0004.png" id="7_3v37i"]
+[ext_resource type="Texture2D" uid="uid://do52d4smn44hu" path="res://assets/graphics/logos/mdia_logo.png" id="7_n5cfa"]
+[ext_resource type="Texture2D" uid="uid://bo0830o6er7ty" path="res://assets/graphics/logos/godot_logo.png" id="8_0y8q2"]
+[ext_resource type="Texture2D" uid="uid://dqwq5s1t51j4w" path="res://assets/graphics/explosion/explosion_A_0005.png" id="8_ews5i"]
+[ext_resource type="Texture2D" uid="uid://dpe6hewgde4s7" path="res://assets/graphics/explosion/explosion_A_0006.png" id="9_7yt1l"]
+[ext_resource type="Texture2D" uid="uid://dujbymgc2drsv" path="res://assets/graphics/explosion/explosion_A_0007.png" id="10_0t2np"]
+[ext_resource type="Texture2D" uid="uid://yewmc31kmkjg" path="res://assets/graphics/explosion/explosion_A_0008.png" id="11_6f13e"]
+[ext_resource type="Texture2D" uid="uid://bd5fr1lp1y0kx" path="res://assets/graphics/explosion/explosion_A_0009.png" id="12_2dwm6"]
+[ext_resource type="Texture2D" uid="uid://do7oqr7kalc0o" path="res://assets/graphics/explosion/explosion_A_0010.png" id="13_u6wvn"]
+[ext_resource type="Texture2D" uid="uid://bvkytumu0dm4a" path="res://assets/graphics/explosion/explosion_A_0011.png" id="14_yodmx"]
+[ext_resource type="Texture2D" uid="uid://ipd63wedt438" path="res://assets/graphics/explosion/explosion_A_0012.png" id="15_4remo"]
+[ext_resource type="Texture2D" uid="uid://hxqp7lpdyipf" path="res://assets/graphics/explosion/explosion_A_0013.png" id="16_n5cfa"]
+[ext_resource type="Texture2D" uid="uid://ovkkhjynbkv6" path="res://assets/graphics/explosion/explosion_A_0014.png" id="17_0y8q2"]
+[ext_resource type="Texture2D" uid="uid://4jnd7eyvxj2s" path="res://assets/graphics/explosion/explosion_A_0015.png" id="18_100wd"]
+[ext_resource type="Texture2D" uid="uid://dmc31q6jqed3m" path="res://assets/graphics/explosion/explosion_A_0016.png" id="19_7gxq2"]
+[ext_resource type="AudioStream" uid="uid://xj4gl4rrbt6a" path="res://assets/sfx/in_game/explosion.wav" id="28_2dwm6"]
+[ext_resource type="AudioStream" uid="uid://cxcuq8v0taqw5" path="res://assets/sfx/in_game/explosion_reverse.wav" id="29_u6wvn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tegkn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_u824g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1nfhg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xxh8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8r530")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3v37i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ews5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7yt1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0t2np")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6f13e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2dwm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_u6wvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_yodmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4remo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_n5cfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0y8q2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_100wd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_7gxq2")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="End" type="Node" unique_id=1655543647]
+script = ExtResource("1_1nfhg")
+end_actions = ExtResource("2_xxh8w")
+
+[node name="Credits" type="CanvasLayer" parent="." unique_id=817605921]
+layer = 110
+script = ExtResource("3_6f13e")
+
+[node name="Pivot" type="Control" parent="Credits" unique_id=1005970010]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 520.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="TextureRect" parent="Credits/Pivot" unique_id=1247502342]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -807.0
+offset_right = 807.0
+offset_bottom = 483.0
+grow_horizontal = 2
+pivot_offset = Vector2(855, 483)
+texture = ExtResource("4_u6wvn")
+
+[node name="Logos" type="Control" parent="Credits/Pivot" unique_id=1956022015]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Credits/Pivot/Logos" unique_id=1784269313]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.5
+offset_top = -319.0
+offset_right = 154.5
+offset_bottom = -291.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("5_yodmx")
+theme_override_font_sizes/font_size = 28
+text = "Made possible thanks to"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UM" type="TextureRect" parent="Credits/Pivot/Logos" unique_id=3527963]
+modulate = Color(0.819608, 1, 0.521569, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -918.0
+offset_top = -248.0
+offset_right = -278.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_4remo")
+
+[node name="MDIA" type="TextureRect" parent="Credits/Pivot/Logos" unique_id=477121295]
+modulate = Color(0.819608, 1, 0.521569, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 359.0
+offset_top = -205.0
+offset_right = 999.0
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_n5cfa")
+
+[node name="Godot" type="TextureRect" parent="Credits/Pivot/Logos" unique_id=1010265572]
+modulate = Color(0.819608, 1, 0.521569, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -274.5
+offset_right = 357.0
+offset_bottom = 274.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_0y8q2")
+
+[node name="Text" type="RichTextLabel" parent="Credits/Pivot" unique_id=816872533]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -388.0
+offset_bottom = 388.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("5_yodmx")
+theme_override_fonts/bold_font = ExtResource("5_yodmx")
+theme_override_fonts/bold_italics_font = ExtResource("5_yodmx")
+theme_override_fonts/italics_font = ExtResource("5_yodmx")
+theme_override_fonts/mono_font = ExtResource("5_yodmx")
+theme_override_font_sizes/normal_font_size = 42
+theme_override_font_sizes/bold_font_size = 42
+theme_override_font_sizes/bold_italics_font_size = 42
+theme_override_font_sizes/italics_font_size = 42
+theme_override_font_sizes/mono_font_size = 42
+bbcode_enabled = true
+text = "
+
+[font_size=28]Written and Designed by[/font_size]
+[color=#d1ff85][font_size=52]Stefano Gualeni[/font_size][/color]
+
+[font_size=28]Programming by[/font_size]
+[color=#d1ff85][font_size=52]Ahmed Khalifa[/font_size][/color]
+
+[font_size=28]3D modelling and textures by[/font_size]
+[color=#d1ff85][font_size=52]Irina Tomova[/font_size][/color]
+
+[font_size=28]Concept art and illustrations by[/font_size]
+[color=#d1ff85][font_size=52]Daniele Giardini[/font_size][/color]
+
+[font_size=28]Sound and Music by[/font_size]
+[color=#d1ff85][font_size=52]Costantino Oliva[/font_size][/color]
+
+"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1863453323]
+z_index = -1000
+texture = ExtResource("1_7p2ky")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=950440251]
+zoom = Vector2(0.8, 0.8)
+position_smoothing_enabled = true
+script = ExtResource("2_jueq2")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="Camera2D" unique_id=871540388]
+current = true
+
+[node name="Explosion" type="Node2D" parent="." unique_id=1210131648]
+
+[node name="Animation" type="AnimatedSprite2D" parent="Explosion" unique_id=44444429]
+position = Vector2(0, 116)
+sprite_frames = SubResource("SpriteFrames_tegkn")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="Explosion" unique_id=1577489168]
+stream = ExtResource("28_2dwm6")
+pitch_scale = 1.5
+
+[node name="Reverse" type="AudioStreamPlayer2D" parent="Explosion" unique_id=903869310]
+stream = ExtResource("29_u6wvn")
+pitch_scale = 9.0

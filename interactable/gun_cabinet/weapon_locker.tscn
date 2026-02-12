@@ -223,6 +223,4 @@ stream = ExtResource("7_hplko")
 [node name="Close" type="AudioStreamPlayer3D" parent="Sounds" unique_id=1767907246]
 stream = ExtResource("8_j2sq0")
 
-[node name="Locker" type="Node3D" parent="." unique_id=1014362620]
-
 [editable path="Interactable"]

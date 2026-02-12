@@ -36,6 +36,7 @@
 	},
 	{
 		"action": "fade",
+		"wait": "animation_ended",
 		"args": {
 			"start": 0,
 			"end": 1,

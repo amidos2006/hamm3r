@@ -23,7 +23,7 @@ func stop_effect():
 	$Effect/AnimationPlayer.stop()
 	
 	
-func move_gun(location, time):
+func move(location, time):
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "global_position", location, time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	await tween.finished

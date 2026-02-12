@@ -1,15 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpot1yxbaqdjd"]
+[gd_scene format=3 uid="uid://dpot1yxbaqdjd"]
 
 [ext_resource type="Texture2D" uid="uid://dj81fdngg5atu" path="res://assets/graphics/ui/pauseMenu_wasdKeys.png" id="1_c0oj6"]
 [ext_resource type="Script" uid="uid://c1ky3k6ghtem5" path="res://global/pause_menu/pause_menu.gd" id="1_ebvsp"]
 [ext_resource type="FontFile" uid="uid://b3yalra5jswgu" path="res://assets/fonts/JosefinSans-Regular.ttf" id="3_wh8p8"]
+[ext_resource type="AudioStream" uid="uid://rkiarv82t7uh" path="res://assets/sfx/UI_positive.wav" id="4_kgv25"]
 
-[node name="PasueMenu" type="CanvasLayer"]
+[node name="PasueMenu" type="CanvasLayer" unique_id=444045263]
 layer = 150
 visible = false
 script = ExtResource("1_ebvsp")
 
-[node name="Overlayer" type="ColorRect" parent="."]
+[node name="Overlayer" type="ColorRect" parent="." unique_id=1834490774]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -17,7 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.78431374)
 
-[node name="Info" type="TextureRect" parent="."]
+[node name="Info" type="TextureRect" parent="." unique_id=1744717467]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -32,7 +33,7 @@ grow_vertical = 2
 texture = ExtResource("1_c0oj6")
 stretch_mode = 5
 
-[node name="Label" type="RichTextLabel" parent="Info"]
+[node name="Label" type="RichTextLabel" parent="Info" unique_id=1359616936]
 layout_mode = 1
 offset_left = 218.75
 offset_top = 117.5
@@ -49,7 +50,7 @@ bbcode_enabled = true
 text = "HOLD [color=#f4ad0f][font_size=42]ESC[/font_size][/color] TO RESTART"
 horizontal_alignment = 1
 
-[node name="TimerFill" type="ColorRect" parent="Info"]
+[node name="TimerFill" type="ColorRect" parent="Info" unique_id=414823989]
 layout_mode = 1
 offset_left = 248.75
 offset_top = 164.5
@@ -59,7 +60,10 @@ scale = Vector2(1e-05, 1)
 pivot_offset = Vector2(200, 0)
 color = Color(0.12156863, 0.8039216, 0.24313726, 1)
 
-[node name="RestartTimer" type="Timer" parent="."]
+[node name="RestartTimer" type="Timer" parent="." unique_id=1700753442]
 wait_time = 3.0
+
+[node name="PauseSound" type="AudioStreamPlayer" parent="." unique_id=1935612063]
+stream = ExtResource("4_kgv25")
 
 [connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]

@@ -1,0 +1,121 @@
+[
+	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "disable_controls",
+			"value": true
+		}
+	},
+	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "bark_timer",
+			"value": false
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "normal",
+			"text": "Well, looks like I just found something interesting.",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "normal",
+			"text": "A... A remedy of some kind.",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "You are not going to eat expired pills that you just happened to find lying around, are you?",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "function",
+		"target": "player",
+		"args": {
+			"name": "take",
+			"object": "caller",
+			"args": [0.5, 0.75]
+		}
+	},
+	{
+		"action": "timer",
+		"wait": 0.3
+	},
+	{
+		"action": "fade",
+		"args": {
+			"start": 1.0,
+			"end": 0.0,
+			"time": 0.5,
+			"color": "#d1ff85"
+		}
+	},
+	{
+		"action": "function",
+		"args": {
+			"name": "use",
+			"object": "player"
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "smiling",
+			"text": "*MUNCH MUNCH* Of course not!",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "timer",
+		"wait": 0.25,
+	},
+	{
+		"action": "function",
+		"args": {
+			"name": "queue_free"
+		}
+	},
+	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "bark_timer",
+			"value": true
+		}
+	},
+	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "disable_controls",
+			"value": false
+		}
+	},
+]

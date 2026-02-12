@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dwpiv25oetsnw"
+path="res://.godot/imported/laser gun B.wav-786963bcae3e872e8c45dab577aea5fc.sample"
+
+[deps]
+
+source_file="res://assets/sfx/in_game/laser/laser gun B.wav"
+dest_files=["res://.godot/imported/laser gun B.wav-786963bcae3e872e8c45dab577aea5fc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

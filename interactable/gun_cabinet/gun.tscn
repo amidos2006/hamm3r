@@ -43,7 +43,7 @@ shadow_mesh = SubResource("ArrayMesh_865fj")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nu488"]
 render_priority = 0
 shader = ExtResource("4_5by41")
-shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_color = Color(0.81960785, 1, 0.52156866, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ss2u"]
 size = Vector3(0.5, 0.5, 0.8)
@@ -145,7 +145,7 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("2_6gla4")
 
 [node name="Outline" type="MeshInstance3D" parent="Pivot/Gun" unique_id=836185233]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, -0.020145908)
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, -0.03)
 mesh = SubResource("ArrayMesh_3ljft")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_nu488")

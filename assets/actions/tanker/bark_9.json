@@ -1,14 +1,22 @@
 [
 	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "disable_controls",
+			"value": true
+		}
+	},
+	{
 		"action": "show_dialogue",
 		"wait": "advance_dialogue",
 		"args": {
 			"name": "3R",
 			"mood": "normal",
 			"text": "Want... Want to hear a joke?",
-			"action": "",
+			"action": "interact",
 			"direction": "right",
-			"time": 4
+			"time": 0
 		}
 	},
 	{
@@ -18,9 +26,9 @@
 			"name": "martin",
 			"mood": "normal",
 			"text": "Not now, 3R.",
-			"action": "",
+			"action": "interact",
 			"direction": "left",
-			"time": 4
+			"time": 0
 		}
 	},
 	{
@@ -30,9 +38,9 @@
 			"name": "3R",
 			"mood": "normal",
 			"text": "So, a one human walks into a bar and two artificial intelligences...",
-			"action": "",
+			"action": "interact",
 			"direction": "right",
-			"time": 4
+			"time": 0
 		}
 	},
 	{
@@ -42,9 +50,9 @@
 			"name": "martin",
 			"mood": "angry",
 			"text": "I said not now!",
-			"action": "",
+			"action": "interact",
 			"direction": "left",
-			"time": 4
+			"time": 0
 		}
 	},
 	{
@@ -54,9 +62,21 @@
 			"name": "3R",
 			"mood": "normal",
 			"text": "*SIGHS*",
-			"action": "",
+			"action": "interact",
 			"direction": "right",
-			"time": 4
+			"time": 0
+		}
+	},
+	{
+		"action": "timer",
+		"wait": 0.25
+	},
+	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "disable_controls",
+			"value": false
 		}
 	},
 ]

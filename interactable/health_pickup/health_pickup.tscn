@@ -1,9 +1,31 @@
 [gd_scene format=3 uid="uid://d0s0m47se5jrn"]
 
+[ext_resource type="Script" uid="uid://dj3dfgd2ig3o0" path="res://interactable/health_pickup/health_pickup.gd" id="1_ato4p"]
 [ext_resource type="PackedScene" uid="uid://bm5x0bls0m7tg" path="res://interactable/health_pickup/health_pickup_model.tscn" id="1_n1skv"]
+[ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="2_2bc57"]
+[ext_resource type="JSON" path="res://assets/actions/tanker/health_pickup.json" id="4_prbbq"]
 
-[node name="HealthPickup2" type="StaticBody3D" unique_id=241888779]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_n1skv"]
+height = 4.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ato4p"]
+height = 4.0
+radius = 1.5
+
+[node name="HealthPickup" type="StaticBody3D" unique_id=241888779]
+script = ExtResource("1_ato4p")
 
 [node name="Pivot" type="Node3D" parent="." unique_id=1019299362]
 
 [node name="HealthPickupModel" parent="Pivot" unique_id=1012017272 instance=ExtResource("1_n1skv")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=725443737]
+shape = SubResource("CylinderShape3D_n1skv")
+
+[node name="Interactable" parent="." unique_id=93104871 instance=ExtResource("2_2bc57")]
+interaction = ExtResource("4_prbbq")
+
+[node name="InteractableArea" parent="Interactable" index="0"]
+shape = SubResource("CylinderShape3D_ato4p")
+
+[editable path="Interactable"]

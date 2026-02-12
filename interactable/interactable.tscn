@@ -1,13 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bp4kbh30sjpeb"]
+[gd_scene format=3 uid="uid://bp4kbh30sjpeb"]
 
 [ext_resource type="Script" uid="uid://crmyddufpbq1q" path="res://interactable/interactable.gd" id="1_8p6r8"]
 
-[node name="Interactable" type="Area3D"]
+[node name="Interactable" type="Area3D" unique_id=557943197]
+collision_layer = 2
 script = ExtResource("1_8p6r8")
 
-[node name="InteractableArea" type="CollisionShape3D" parent="."]
+[node name="InteractableArea" type="CollisionShape3D" parent="." unique_id=452995842]
 
-[node name="FocusPoint" type="Marker3D" parent="."]
+[node name="FocusPoint" type="Marker3D" parent="." unique_id=418345644]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://b0ana0fcakyho" path="res://assets/sfx/in_game/doors/spaceship-compartment-door_2.wav" id="6_xwfpf"]
 [ext_resource type="AudioStream" uid="uid://b8rutcl3ipwpw" path="res://assets/sfx/in_game/doors/spaceship-compartment-door_3.wav" id="7_hexuy"]
 [ext_resource type="PackedScene" uid="uid://dd38pm1u7j0yr" path="res://assets/models/pcg_modules/mod_Door_Top.glb" id="7_vs44l"]
+[ext_resource type="AudioStream" uid="uid://cctnfswbif2ci" path="res://assets/sfx/in_game/doors/door_failing_to_open.wav" id="12_cc146"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y7nol"]
 size = Vector3(3.4, 3, 0.6)
@@ -184,6 +185,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Sounds" type="AudioStreamPlayer3D" parent="." unique_id=1828886932]
 stream = SubResource("AudioStreamRandomizer_hjl6g")
+
+[node name="FailSound" type="AudioStreamPlayer3D" parent="." unique_id=1876112565]
+stream = ExtResource("12_cc146")
 
 [connection signal="player_exited" from="Interactable" to="." method="_on_interactable_player_exited"]
 

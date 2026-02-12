@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://br3rqfg816caj"]
+
+[node name="ExplosiveArea" type="Area3D" unique_id=433124444 groups=["Explosive"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=547566022]

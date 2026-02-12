@@ -7,8 +7,8 @@ func select_tile(bottom, right, top, left, room_type=""):
 	tile_name += "1" if right else "0"
 	tile_name += "1" if top else "0"
 	tile_name += "1" if left else "0"
-	var is_kitchen = tile_name.count("1") == 1 and room_type.length() == 0
-	var is_health_kitchen = room_type == "health" and is_kitchen
+	var is_deadend = tile_name.count("1") == 1
+	var is_health_kitchen = is_deadend and room_type == "health"
 	var active_child = null
 	for child in self.get_children():
 		if child.name == tile_name:
@@ -31,8 +31,9 @@ func select_tile(bottom, right, top, left, room_type=""):
 	for model in active_child.get_children():
 		if not model.visible:
 			active_child.remove_child(model)
-		elif is_kitchen and not is_health_kitchen:
-			model.get_node("HealthPickup").queue_free()
+		elif is_deadend and not is_health_kitchen:
+			if model.get_child(0).has_node("HealthPickup"):
+				model.get_child(0).get_node("HealthPickup").queue_free()
 			
 	
 	if room_type.to_lower() == "blocked":

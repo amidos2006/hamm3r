@@ -113,6 +113,7 @@
 	},
 	{
 		"action": "fade",
+		"wait": "animation_ended",
 		"args": {
 			"start": 0,
 			"end": 0.25,
@@ -179,6 +180,7 @@
 	},
 	{
 		"action": "fade",
+		"wait": "animation_ended",
 		"args": {
 			"start": 0.25,
 			"end": 1,

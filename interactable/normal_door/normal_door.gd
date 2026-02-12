@@ -23,6 +23,7 @@ func open_door():
 func fail_door():
 	if _state == DoorState.CLOSE:
 		$AnimationPlayer.play("fail")
+		$FailSound.play()
 		_state = DoorState.FAIL
 		await $AnimationPlayer.animation_finished
 		$Interactable.disable_interaction = true

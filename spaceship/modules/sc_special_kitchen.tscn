@@ -5,6 +5,10 @@
 [ext_resource type="Material" uid="uid://bp113us1g1bu7" path="res://assets/materials/mat_spaceship/m_pcg_barrels.tres" id="4_jq30w"]
 [ext_resource type="Material" uid="uid://ebgky5s4iuq8" path="res://assets/materials/mat_spaceship/m_pcg_pipes.tres" id="5_huaaq"]
 [ext_resource type="PackedScene" uid="uid://d0s0m47se5jrn" path="res://interactable/health_pickup/health_pickup.tscn" id="6_txme7"]
+[ext_resource type="PackedScene" uid="uid://br3rqfg816caj" path="res://interactable/explosive_area.tscn" id="6_x4aqb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8bqbe"]
+size = Vector3(0.5, 3, 1)
 
 [node name="mod_special_Kitchen" unique_id=374279793 instance=ExtResource("1_x4aqb")]
 
@@ -15,3 +19,11 @@ surface_material_override/2 = ExtResource("5_huaaq")
 
 [node name="HealthPickup" parent="." index="1" unique_id=241888779 instance=ExtResource("6_txme7")]
 transform = Transform3D(0.10973431, 0, -0.993961, 0, 1, 0, 0.993961, 0, 0.10973431, 0.068, 0.708, 0.815)
+
+[node name="ExplosiveArea" parent="." index="2" unique_id=433124444 instance=ExtResource("6_x4aqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.466, 1.5, 1.8880496)
+
+[node name="CollisionShape3D" parent="ExplosiveArea" index="0" unique_id=547566022]
+shape = SubResource("BoxShape3D_8bqbe")
+
+[editable path="ExplosiveArea"]

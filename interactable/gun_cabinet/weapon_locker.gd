@@ -27,7 +27,7 @@ func _ready():
 
 
 func _process(_delta):
-	if $Gun:
+	if self.has_node("Gun"):
 		$Gun.highlight = $Interactable.is_interacting()
 
 

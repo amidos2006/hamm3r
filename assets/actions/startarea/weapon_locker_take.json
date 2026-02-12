@@ -55,8 +55,9 @@
 		"target": "player",
 		"wait": "animation_ended",
 		"args": {
-			"name": "take_gun",
-			"object": "caller"
+			"name": "take",
+			"object": "Gun",
+			"args": [0.5]
 		}
 	},
 	{

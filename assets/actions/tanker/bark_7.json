@@ -1,14 +1,22 @@
 [
 	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "disable_controls",
+			"value": true
+		}
+	},
+	{
 		"action": "show_dialogue",
 		"wait": "advance_dialogue",
 		"args": {
 			"name": "3R",
 			"mood": "normal",
 			"text": "Mhhh... I have a bad feeling about this, Captain.",
-			"action": "",
+			"action": "interact",
 			"direction": "right",
-			"time": 4
+			"time": 0
 		}
 	},
 	{
@@ -18,9 +26,9 @@
 			"name": "martin",
 			"mood": "normal",
 			"text": "Feelings? You?!",
-			"action": "",
+			"action": "interact",
 			"direction": "left",
-			"time": 4
+			"time": 0
 		}
 	},
 	{
@@ -30,9 +38,21 @@
 			"name": "3R",
 			"mood": "normal",
 			"text": "*SIGHS*",
-			"action": "",
+			"action": "interact",
 			"direction": "right",
-			"time": 4
+			"time": 0
+		}
+	},
+	{
+		"action": "timer",
+		"wait": 0.25
+	},
+	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "disable_controls",
+			"value": false
 		}
 	},
 ]

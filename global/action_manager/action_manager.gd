@@ -56,9 +56,11 @@ func run_actions(actions, caller, player=null):
 			"switch_scene":
 				SceneManager.switch_scene(act.args.path, act.args)
 			"fade":
-				Blackout.fade(act.args.start, act.args.end, act.args.time)
+				var color = "#000000"
+				if act.args.has("color"):
+					color = act.args.color
+				Blackout.fade(act.args.start, act.args.end, act.args.time, color)
 				target = Blackout
-				act.wait = "animation_ended"
 			"open":
 				Blackout.open(act.args.start, act.args.end, act.args.time)
 				target = Blackout

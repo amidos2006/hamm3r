@@ -66,12 +66,12 @@ shadow_mesh = SubResource("ArrayMesh_57mmv")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vwmnt"]
 render_priority = 0
 shader = ExtResource("4_prbbq")
-shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_color = Color(0.81960785, 1, 0.52156866, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1xpai"]
 render_priority = 0
 shader = ExtResource("4_prbbq")
-shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_color = Color(0.81960785, 1, 0.52156866, 1)
 
 [node name="HealthPickupModel" unique_id=1012017272 instance=ExtResource("1_5tirg")]
 
@@ -80,7 +80,7 @@ surface_material_override/0 = ExtResource("2_tc5ql")
 surface_material_override/1 = ExtResource("3_6sx66")
 
 [node name="Outline" type="MeshInstance3D" parent="." index="1" unique_id=275781246]
-transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, 0, 0)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 mesh = SubResource("ArrayMesh_qvppb")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_vwmnt")

@@ -28,6 +28,6 @@ func initialize_health(health, max_health):
 
 
 func update_health(health):
-	var children = $Pivot/HeartContainer.get_children()
+	var children = $TopPivot/HeartContainer.get_children()
 	for index in children.size():
 		children[index].set_health(index < health)

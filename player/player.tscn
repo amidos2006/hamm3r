@@ -33,10 +33,13 @@
 [ext_resource type="AudioStream" uid="uid://do3vgtbsjgo3a" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_07.wav" id="14_x7c3f"]
 [ext_resource type="AudioStream" uid="uid://b4wcn3pwu1w4w" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV2_Walk_02.wav" id="15_1so5t"]
 [ext_resource type="AudioStream" uid="uid://ba3jmkqr0rwsh" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_08.wav" id="15_bjvpn"]
+[ext_resource type="AudioStream" uid="uid://efvpu82pqph4" path="res://assets/sfx/in_game/laser/laser gun A.wav" id="15_w7j2h"]
 [ext_resource type="AudioStream" uid="uid://bq76317ocejcb" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV2_Walk_03.wav" id="16_55jnj"]
+[ext_resource type="AudioStream" uid="uid://dwpiv25oetsnw" path="res://assets/sfx/in_game/laser/laser gun B.wav" id="16_n0b8q"]
 [ext_resource type="AudioStream" uid="uid://io0d0la46l73" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_09.wav" id="16_s7qer"]
 [ext_resource type="AudioStream" uid="uid://d3naorbx00q1p" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV2_Walk_04.wav" id="17_dx5ib"]
 [ext_resource type="AudioStream" uid="uid://b7wedty1o082m" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_10.wav" id="17_g4c7l"]
+[ext_resource type="AudioStream" uid="uid://un3vkfdjaxi4" path="res://assets/sfx/in_game/laser/laser gun C.wav" id="17_jfgyi"]
 [ext_resource type="AudioStream" uid="uid://r6ltp57kw8iq" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV2_Walk_05.wav" id="18_a2xo5"]
 [ext_resource type="AudioStream" uid="uid://bqbg4pbusyx" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV2_Walk_06.wav" id="20_art4l"]
 [ext_resource type="AudioStream" uid="uid://dkax5iqmlq7wg" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV2_Walk_07.wav" id="21_fjxoa"]
@@ -95,6 +98,12 @@ albedo_color = Color(0.95686275, 0.6784314, 0.05882353, 1)
 emission_enabled = true
 emission = Color(0.95686275, 0.6784314, 0.05882353, 1)
 emission_energy_multiplier = 10.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_237xx"]
+streams_count = 3
+stream_0/stream = ExtResource("15_w7j2h")
+stream_1/stream = ExtResource("16_n0b8q")
+stream_2/stream = ExtResource("17_jfgyi")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 radius = 0.25
@@ -259,8 +268,10 @@ stream_28/stream = ExtResource("28_fmu53")
 stream_29/stream = ExtResource("29_w7j2h")
 
 [node name="Player" type="CharacterBody3D" unique_id=954889308]
+collision_mask = 3
 script = ExtResource("1_rkbax")
 bark_data = Array[JSON]([ExtResource("2_mmwog"), ExtResource("3_8pxes"), ExtResource("4_fmu53"), ExtResource("5_w7j2h"), ExtResource("6_n0b8q"), ExtResource("7_jfgyi"), ExtResource("8_237xx"), ExtResource("9_wpyo2"), ExtResource("10_7crtr"), ExtResource("11_vgvch")])
+bark_time = Vector2(75, 90)
 metadata/_edit_group_ = true
 
 [node name="HumanScale" parent="." unique_id=846715413 instance=ExtResource("1_oul6g")]
@@ -300,6 +311,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_1so5t")
 [node name="Marker3D" type="Marker3D" parent="Pivot/Camera3D/Laser" unique_id=686281208]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9)
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Pivot/Camera3D/Laser" unique_id=1567069282]
+stream = SubResource("AudioStreamRandomizer_237xx")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=607503661]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("CapsuleShape3D_kqu6x")
@@ -307,6 +321,7 @@ shape = SubResource("CapsuleShape3D_kqu6x")
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=542985318]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
 target_position = Vector3(0, 0, 100)
+collide_with_areas = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=938881685]
 libraries/ = SubResource("AnimationLibrary_boad6")
