@@ -54,10 +54,22 @@
 	},
 	{
 		"action": "function",
+		"args": {
+			"name": "pause_vhs",
+		}
+	},
+	{
+		"action": "function",
 		"wait": 0.5,
 		"target": "Credits",
 		"args": {
 			"name": "stop_credits",
+		}
+	},
+	{
+		"action": "function",
+		"args": {
+			"name": "rewind_vhs",
 		}
 	},
 	{
