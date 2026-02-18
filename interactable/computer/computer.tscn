@@ -805,11 +805,11 @@ shape = SubResource("BoxShape3D_s0ocy")
 [node name="Interactable" parent="." unique_id=911038736 instance=ExtResource("4_qpu04")]
 interaction = ExtResource("6_3txo5")
 
-[node name="InteractableArea" parent="Interactable" index="0"]
+[node name="InteractableArea" parent="Interactable" index="0" unique_id=452995842]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.303223)
 shape = SubResource("BoxShape3D_3txo5")
 
-[node name="FocusPoint" parent="Interactable" index="1"]
+[node name="FocusPoint" parent="Interactable" index="1" unique_id=418345644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225348, 0.84898853, 0.716522)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2018933016]
@@ -843,7 +843,7 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0.22745098, 0.8, 0.87058824, 1)
 theme_override_fonts/font = ExtResource("11_3jk4j")
 theme_override_font_sizes/font_size = 64
-text = "Spaceship Layout"
+text = "Tanker Layout"
 horizontal_alignment = 1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="SpaceshipMap" unique_id=481749875]

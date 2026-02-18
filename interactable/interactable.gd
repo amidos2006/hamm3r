@@ -2,6 +2,7 @@ extends Area3D
 
 
 @export var interaction:JSON = null
+@export var interactable_verb:String = "INTERACT"
 
 var _player = null
 var _different_marker = null
@@ -24,7 +25,7 @@ func _process(_delta):
 			var marker = $FocusPoint
 			if _different_marker != null:
 				marker = _different_marker
-			_player.focus_interactable(get_parent(), marker.global_position)
+			_player.focus_interactable(get_parent(), marker.global_position, self.interactable_verb)
 		else:
 			_player.reset_interactable(get_parent())
 

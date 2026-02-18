@@ -9,15 +9,6 @@
 	},
 	{
 		"action": "function",
-		"target": "Interactable",
-		"args": {
-			"name": "disable_interactable",
-			"object": "player",
-			"args": [true]
-		}
-	},
-	{
-		"action": "function",
 		"target": "Player",
 		"args": {
 			"name": "look_at_interactable",
@@ -97,15 +88,6 @@
 	{
 		"action": "timer",
 		"wait": 0.25,
-	},
-	{
-		"action": "function",
-		"target": "Interactable",
-		"args": {
-			"name": "disable_interactable",
-			"object": "player",
-			"args": [false]
-		}
 	},
 	{
 		"action": "variable",

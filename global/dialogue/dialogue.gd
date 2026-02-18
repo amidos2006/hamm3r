@@ -27,6 +27,7 @@ func _get_picture(character_name, mood):
 
 
 func show_message(character_name, mood, dialogue, direction = "left", time=0, action = "interact"):
+	self.show()
 	if _timer != null:
 		_timer.cancel_free()
 		_timer.timeout.emit()
@@ -66,6 +67,7 @@ func show_message(character_name, mood, dialogue, direction = "left", time=0, ac
 
 
 func hide_message():
+	self.hide()
 	_action_pressed.emit()
 	_action_button = ""
 	$Left.hide()

@@ -8,14 +8,20 @@
 		}
 	},
 	{
-		"action": "function",
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
 		"args": {
-			"name": "open_door"
+			"name": "martin",
+			"mood": "normal",
+			"text": "The computer is already shot.",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
 		}
 	},
 	{
 		"action": "timer",
-		"wait": 0.75,
+		"wait": 0.25
 	},
 	{
 		"action": "variable",

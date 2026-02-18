@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://br3rqfg816caj" path="res://interactable/explosive_area.tscn" id="6_x4aqb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8bqbe"]
-size = Vector3(0.5, 3, 1)
+size = Vector3(0.5, 3, 0.9223633)
 
 [node name="mod_special_Kitchen" unique_id=374279793 instance=ExtResource("1_x4aqb")]
 
@@ -24,6 +24,7 @@ transform = Transform3D(0.10973431, 0, -0.993961, 0, 1, 0, 0.993961, 0, 0.109734
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.466, 1.5, 1.8880496)
 
 [node name="CollisionShape3D" parent="ExplosiveArea" index="0" unique_id=547566022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20382237, 0, -0.060510635)
 shape = SubResource("BoxShape3D_8bqbe")
 
 [editable path="ExplosiveArea"]

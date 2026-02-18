@@ -26,24 +26,28 @@ surface_material_override/2 = ExtResource("4_m50wy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.466, 1.5, 1.67)
 
 [node name="CollisionShape3D" parent="ExplosiveArea1" index="0" unique_id=547566022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05193627, 0, 0.0908041)
 shape = SubResource("BoxShape3D_cndqs")
 
 [node name="ExplosiveArea2" parent="." index="2" unique_id=400801825 instance=ExtResource("5_cndqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.466, 1.5, -1.67)
 
 [node name="CollisionShape3D" parent="ExplosiveArea2" index="0" unique_id=547566022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12678325, 0, -0.08547819)
 shape = SubResource("BoxShape3D_3b3ec")
 
 [node name="ExplosiveArea4" parent="." index="3" unique_id=374566875 instance=ExtResource("5_cndqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.466, 1.5, -1.9)
 
 [node name="CollisionShape3D" parent="ExplosiveArea4" index="0" unique_id=547566022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09068942, 0, -0.07291973)
 shape = SubResource("BoxShape3D_2i2gb")
 
 [node name="ExplosiveArea3" parent="." index="4" unique_id=1558422619 instance=ExtResource("5_cndqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.466, 1.5, 1.9)
 
 [node name="CollisionShape3D" parent="ExplosiveArea3" index="0" unique_id=547566022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16748667, 0, 0.10764277)
 shape = SubResource("BoxShape3D_2i2gb")
 
 [editable path="ExplosiveArea1"]

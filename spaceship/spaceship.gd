@@ -4,6 +4,8 @@ extends Node3D
 @export var mission_generator_2:Mission
 @export var tile_size:Vector2 = Vector2(6, 6)
 @export var computer:Node3D
+@export_range(1, 20, 1) var graph_size:int = 10
+@export_range(1, 20, 1) var layout_size:int = 10
 @export_range(0, 1, 0.05) var door_prob:Array[float] = [0.4, 0.8, 1.0]
 @export_range(0, 1, 0.05) var door_open_prob:float = 0.25
 
@@ -15,14 +17,15 @@ var _door_scene = preload("res://interactable/ship_door/ship_door.tscn")
 func _ready():
 	var fitness = 0
 	var result = null
-	while fitness < 2:
+	while fitness < 5:
+		print("Trial")
 		var graphs = []
-		for i in range(10):
+		for i in range(graph_size):
 			graphs.append(self._generate_mission())
 		#var result = LayoutGenerator._mission_to_layout(graph, 
 			#[23, 12, 54, 1, 0, 5, 2, 5, 8, 3, 10, 42, 13, 57, 2, 4, 5, 6, 9, 10], 
 			#"Start", "End", "Blocked")
-		result = LayoutGenerator.generate_best_layout(graphs, 10, "Start", "End", "Blocked")
+		result = LayoutGenerator.generate_best_layout(graphs, layout_size, "Start", "End", "Blocked")
 		fitness = result["fitness"]
 	print(str(result))
 	var offset = result["start"]
@@ -63,11 +66,11 @@ func _ready():
 					else:
 						temp_opening[key] = false
 				tile.select_tile(
-						cell.doors[LayoutGenerator.LayoutDirection.South] != LayoutGenerator.LayoutDoor.Wall or temp_opening[LayoutGenerator.LayoutDirection.South], 
-						cell.doors[LayoutGenerator.LayoutDirection.East] != LayoutGenerator.LayoutDoor.Wall or temp_opening[LayoutGenerator.LayoutDirection.East], 
-						cell.doors[LayoutGenerator.LayoutDirection.North] != LayoutGenerator.LayoutDoor.Wall or temp_opening[LayoutGenerator.LayoutDirection.North], 
-						cell.doors[LayoutGenerator.LayoutDirection.West] != LayoutGenerator.LayoutDoor.Wall or temp_opening[LayoutGenerator.LayoutDirection.West],
-						room_type
+					cell.doors[LayoutGenerator.LayoutDirection.South] != LayoutGenerator.LayoutDoor.Wall or temp_opening[LayoutGenerator.LayoutDirection.South], 
+					cell.doors[LayoutGenerator.LayoutDirection.East] != LayoutGenerator.LayoutDoor.Wall or temp_opening[LayoutGenerator.LayoutDirection.East], 
+					cell.doors[LayoutGenerator.LayoutDirection.North] != LayoutGenerator.LayoutDoor.Wall or temp_opening[LayoutGenerator.LayoutDirection.North], 
+					cell.doors[LayoutGenerator.LayoutDirection.West] != LayoutGenerator.LayoutDoor.Wall or temp_opening[LayoutGenerator.LayoutDirection.West],
+					room_type
 				)
 				tile.position = Vector3((x - offset.x) * tile_size.x, 0, (y - offset.y) * tile_size.y)
 				self.add_child(tile)

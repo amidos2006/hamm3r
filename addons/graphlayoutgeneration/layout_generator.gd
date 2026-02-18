@@ -268,10 +268,6 @@ static func generate_best_layout(graphs, size, start_type, end_type, broken_type
 	for g in graphs:
 		for i in range(size):
 			population.append(LayoutChromosome.new(g, g.nodes.size(), start_type, end_type, broken_type, random))
-			if population[-1].fitness() > 5:
-				break
-		if population[-1].fitness() > 5:
-			break
 	population.sort_custom(func(a,b): return a.fitness() < b.fitness())
 	#var ga = LayoutGA.new(graphs, size, start_type, end_type, broken_type, random)
 	#for i in range(size):
@@ -523,7 +519,7 @@ class LayoutChromosome extends RefCounted:
 			var layout_result = LayoutGenerator._mission_to_layout(self._graph, 
 				self._genome, self._start_type, self._end_type, self._broken_type)
 			self._layout = layout_result["layout"]
-			self._fitness += 1.0 / (layout_result["placement"].size() * layout_result["missing"].size() + layout_result["connections"].size() + 1)
+			self._fitness += 1.0 / (layout_result["placement"].size() + layout_result["missing"].size() + layout_result["connections"].size() + 1)
 			var spaceship_result = LayoutGenerator._spaceship_2d(self._layout, self._start_type, self._broken_type, self._end_type)
 			self._spaceship = spaceship_result["layout"]
 			self._start = spaceship_result["start_loc"][0]
@@ -534,16 +530,11 @@ class LayoutChromosome extends RefCounted:
 			if self._fitness == 3:
 				self._fitness += 1.0 / (spaceship_result["end_connections"])
 			if self._fitness == 4:
-				if self._spaceship.size() > 10:
-					self._fitness += 1.0 / max(1, self._spaceship.size() - 9)
+				self._fitness += 1.0 / max(1, self._spaceship.size() - 9)
 			if self._fitness == 5:
 				self._fitness += 1.0 / (abs(spaceship_result["broken"].size() - spaceship_result["extra"].size()) + 1)
 				self._fitness += 2.0 / (spaceship_result["extra"].size() + 1)
-				if spaceship_result["holes"].size() == 0:
-					self._fitness -= 0.05
-				if self._spaceship[0].size() > 14:
-					self._fitness -= 0.001 * (self._spaceship.size() - 13)
-				self._fitness += 0.01 * self._spaceship[0].size() / self._spaceship.size()
+				self._fitness += 0.05 * min(20, self._spaceship[0].size())
 			#self._fitness += 1.0 / (layout_result["extra"] + 1)
 			#self._fitness /= 3.0
 		return self._fitness

@@ -88,7 +88,12 @@ func _physics_process(delta):
 					laser_normal = $RayCast3D.get_collision_normal()
 					laser_collider = $RayCast3D.get_collider()
 					if $RayCast3D.get_collider().is_in_group("Explosive"):
+						Blackout.fade(1, 1, 0, "#FFFFFF")
 						SceneManager.switch_scene("res://end/end.tscn", {})
+					if $RayCast3D.get_collider().is_in_group("Computer"):
+						var caller = $RayCast3D.get_collider()
+						caller.remove_from_group("Computer")
+						ActionManager.run_actions(caller.get_parent().shoot_computer.data, caller, self)
 				$Pivot/Camera3D/Laser/AudioStreamPlayer3D.play()
 				$AnimationPlayer.play("Shoot")
 				$AnimationPlayer.speed_scale = 1
@@ -135,11 +140,11 @@ func _physics_process(delta):
 	$Pivot/Camera3D.rotation = lerp($Pivot/Camera3D.rotation, _interactable_focus, 0.1)
 	
 	
-func focus_interactable(interactable, focus_point):
+func focus_interactable(interactable, focus_point, interact_verb = "INTERACT"):
 	_interactable_object = interactable
 	_interactable_focus = _get_rotation(focus_point)
 	if _interactable_object and not _interactable_object.get_node("Interactable").disable_interaction:
-		UiMessage.show_message("PRESS [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO INTERACT", "interact", 0)
+		UiMessage.show_message("PRESS [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO " + interact_verb, "interact", 0)
 
 
 func look_at_interactable(caller, enable, at=""):
@@ -211,7 +216,7 @@ func _on_animation_player_animation_finished(anim_name):
 
 
 func _on_bark_timer_timeout() -> void:
-	if not UiMessage._active:
+	if not UiMessage._active and not Dialogue.visible:
 		ActionManager.run_actions(bark_data[bark_index].data, self, self)
 		bark_index = (bark_index + 1) % bark_data.size()
 		$BarkTimer.start(randf_range(bark_time.x, bark_time.y))

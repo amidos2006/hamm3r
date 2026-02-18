@@ -1,0 +1,109 @@
+[
+	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "disable_controls",
+			"value": true
+		}
+	},
+	{
+		"action": "function",
+		"target": "..",
+		"args": {
+			"name": "shoot_computers"
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "happy",
+			"text": "Huh?! That was weird.\nOh well, what is done is done.",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Well boss, that was quick.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "happy",
+			"text": "I know, I know. Both good-looking AND efficient. What can I say...",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Right, yes. Now please make your way back onboard the HAMM.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "I need to depressurize this bad boy before starting the loading procedures.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "normal",
+			"text": "On my way, buddy.",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "function",
+		"target": "Interactable",
+		"args": {
+			"name": "change_script",
+			"args": ["res://assets/actions/tanker/computer_bleed.json"]
+		}
+	},
+	{
+		"action": "timer",
+		"wait": 0.25
+	},
+	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "disable_controls",
+			"value": false
+		}
+	},
+]

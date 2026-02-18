@@ -1,15 +1,282 @@
 [gd_scene format=3 uid="uid://cr0gqot0emxoy"]
 
 [ext_resource type="PackedScene" uid="uid://dii3au4wbw1s1" path="res://assets/models/pcg_modules/mod_special_END.glb" id="1_peksx"]
+[ext_resource type="Script" uid="uid://br4e4l306o552" path="res://spaceship/modules/sc_special_en_droom.gd" id="2_2163d"]
 [ext_resource type="Material" uid="uid://cd6220vbayq3t" path="res://assets/materials/mat_spaceship/m_pcg_special_ENDroom.tres" id="2_kjlt1"]
+[ext_resource type="JSON" path="res://assets/actions/tanker/computer_shot.json" id="3_2dmtt"]
 [ext_resource type="Material" uid="uid://6eumye00dh2d" path="res://assets/materials/mat_spaceship/m_pcg_special_ENDcables.tres" id="3_p1xoh"]
 [ext_resource type="Material" uid="uid://ebgky5s4iuq8" path="res://assets/materials/mat_spaceship/m_pcg_pipes.tres" id="4_xd47i"]
 [ext_resource type="PackedScene" uid="uid://br3rqfg816caj" path="res://interactable/explosive_area.tscn" id="5_0elog"]
+[ext_resource type="Shader" uid="uid://c5glrffg5mopa" path="res://assets/shaders/crt_spatial_shader.gdshader" id="5_pyv40"]
+[ext_resource type="Texture2D" uid="uid://bknede0bvkocs" path="res://assets/textures/tex_spaceship/T_screen_sim.png" id="6_52bxi"]
+[ext_resource type="Texture2D" uid="uid://blltx8lrk2ass" path="res://assets/textures/tex_spaceship/T_screen_text_scroll.png" id="6_doi5s"]
+[ext_resource type="Texture2D" uid="uid://ci1h7ocsy553i" path="res://assets/textures/tex_spaceship/T_screen_sim_Small.png" id="8_btql0"]
+[ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="11_kfplh"]
+[ext_resource type="JSON" path="res://assets/actions/tanker/computer_investigate.json" id="12_chuba"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_52bxi"]
+render_priority = 0
+shader = ExtResource("5_pyv40")
+shader_parameter/albedo_texture = ExtResource("6_doi5s")
+shader_parameter/texture_uv = Vector2(0, 0)
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pyv40"]
+render_priority = 0
+shader = ExtResource("5_pyv40")
+shader_parameter/albedo_texture = ExtResource("6_doi5s")
+shader_parameter/texture_uv = Vector2(0, 0)
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_doi5s"]
+render_priority = 0
+shader = ExtResource("5_pyv40")
+shader_parameter/albedo_texture = ExtResource("6_doi5s")
+shader_parameter/texture_uv = Vector2(0, 0)
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_btql0"]
+render_priority = 0
+shader = ExtResource("5_pyv40")
+shader_parameter/albedo_texture = ExtResource("8_btql0")
+shader_parameter/texture_uv = Vector2(0, 0)
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2163d"]
+render_priority = 0
+shader = ExtResource("5_pyv40")
+shader_parameter/albedo_texture = ExtResource("6_52bxi")
+shader_parameter/texture_uv = Vector2(0, 0)
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kfplh"]
+render_priority = 0
+shader = ExtResource("5_pyv40")
+shader_parameter/albedo_texture = ExtResource("6_doi5s")
+shader_parameter/texture_uv = Vector2(0, 0)
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_chuba"]
+render_priority = 0
+shader = ExtResource("5_pyv40")
+shader_parameter/albedo_texture = ExtResource("6_doi5s")
+shader_parameter/texture_uv = Vector2(0, 0)
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2dmtt"]
+render_priority = 0
+shader = ExtResource("5_pyv40")
+shader_parameter/albedo_texture = ExtResource("6_doi5s")
+shader_parameter/texture_uv = Vector2(0.53, 0)
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lyjn3"]
+render_priority = 0
+shader = ExtResource("5_pyv40")
+shader_parameter/albedo_texture = ExtResource("8_btql0")
+shader_parameter/texture_uv = Vector2(0, 0)
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pyv40"]
-size = Vector3(0.5, 3, 3)
+size = Vector3(0.5, 3, 2.5595703)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0elog"]
+height = 2.4
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pyv40"]
+height = 2.4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_chuba"]
+size = Vector3(1.800075, 3.1010742, 0.37573242)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kfplh"]
+size = Vector3(2.3996277, 3.2459717, 2.1802254)
 
 [node name="mod_special_END" unique_id=217833437 instance=ExtResource("1_peksx")]
+script = ExtResource("2_2163d")
+shoot_computer = ExtResource("3_2dmtt")
+rollspeed = 0.5
+swimspeed = 0.25
 
 [node name="mod_EndRoom" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0011817217, -5.9604645e-08, 8.46982e-05)
@@ -20,17 +287,78 @@ surface_material_override/2 = ExtResource("4_xd47i")
 [node name="CollisionShape3D" parent="mod_EndRoom/col_EndScreen_R1" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0039860606, 0, -0.00042629242)
 
+[node name="mod_end_Screen_L1" parent="mod_EndRoom" index="34"]
+surface_material_override/0 = SubResource("ShaderMaterial_52bxi")
+
+[node name="mod_end_Screen_L2" parent="mod_EndRoom" index="35"]
+surface_material_override/0 = SubResource("ShaderMaterial_pyv40")
+
+[node name="mod_end_Screen_L3" parent="mod_EndRoom" index="36"]
+surface_material_override/0 = SubResource("ShaderMaterial_doi5s")
+
+[node name="mod_end_Screen_L4" parent="mod_EndRoom" index="37"]
+surface_material_override/0 = SubResource("ShaderMaterial_btql0")
+
+[node name="mod_end_Screen_MID" parent="mod_EndRoom" index="38"]
+surface_material_override/0 = SubResource("ShaderMaterial_2163d")
+
+[node name="mod_end_Screen_R1" parent="mod_EndRoom" index="39"]
+surface_material_override/0 = SubResource("ShaderMaterial_kfplh")
+
+[node name="mod_end_Screen_R2" parent="mod_EndRoom" index="40"]
+surface_material_override/0 = SubResource("ShaderMaterial_chuba")
+
+[node name="mod_end_Screen_R3" parent="mod_EndRoom" index="41"]
+surface_material_override/0 = SubResource("ShaderMaterial_2dmtt")
+
+[node name="mod_end_Screen_R4" parent="mod_EndRoom" index="42"]
+surface_material_override/0 = SubResource("ShaderMaterial_lyjn3")
+
 [node name="ExplosiveArea" parent="." index="1" unique_id=433124444 instance=ExtResource("5_0elog")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.466, 1.5, 1)
 
 [node name="CollisionShape3D" parent="ExplosiveArea" index="0" unique_id=547566022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.78244555, 0, -0.8823931)
 shape = SubResource("BoxShape3D_pyv40")
 
 [node name="ExplosiveArea2" parent="." index="2" unique_id=1932682228 instance=ExtResource("5_0elog")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.466, 1.5, 1)
 
 [node name="CollisionShape3D" parent="ExplosiveArea2" index="0" unique_id=547566022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.81488097, 0, -0.9133768)
 shape = SubResource("BoxShape3D_pyv40")
+
+[node name="ExplosiveArea3" parent="." index="3" unique_id=2069672 instance=ExtResource("5_0elog")]
+
+[node name="CollisionShape3D" parent="ExplosiveArea3" index="0" unique_id=547566022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7965297, 1.2354712, 1.918438)
+shape = SubResource("CylinderShape3D_0elog")
+
+[node name="ExplosiveArea4" parent="." index="4" unique_id=53710664 instance=ExtResource("5_0elog")]
+
+[node name="CollisionShape3D" parent="ExplosiveArea4" index="0" unique_id=547566022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8806908, 1.2668831, 1.8901153)
+shape = SubResource("CylinderShape3D_pyv40")
+
+[node name="FinalComputer" type="StaticBody3D" parent="." index="5" unique_id=1051768628 groups=["Computer"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FinalComputer" index="0" unique_id=1950336889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021641076, 1, -0.18933105)
+shape = SubResource("BoxShape3D_chuba")
+
+[node name="Interactable" parent="FinalComputer" index="1" unique_id=557943197 instance=ExtResource("11_kfplh")]
+interaction = ExtResource("12_chuba")
+
+[node name="InteractableArea" parent="FinalComputer/Interactable" index="0" unique_id=452995842]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08906555, 1.1229858, 0.6314335)
+shape = SubResource("BoxShape3D_kfplh")
+
+[node name="FocusPoint" parent="FinalComputer/Interactable" index="1" unique_id=418345644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
 
 [editable path="ExplosiveArea"]
 [editable path="ExplosiveArea2"]
+[editable path="ExplosiveArea3"]
+[editable path="ExplosiveArea4"]
+[editable path="FinalComputer/Interactable"]

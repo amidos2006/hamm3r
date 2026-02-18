@@ -1,0 +1,67 @@
+[
+	{
+		"action": "fade",
+		"args": {
+			"start": 1.0,
+			"end": 0.0,
+			"time": 2,
+			"color": "#FFFFFF"
+		}
+	},
+	{
+		"action": "function",
+		"target": "Explosion/Sound",
+		"args":{
+			"name": "play"
+		}
+	},
+	{
+		"action": "function",
+		"target": "Explosion/Animation",
+		"wait": "animation_finished",
+		"args": {
+			"name": "play"
+		}
+	},
+	{
+		"action": "fade",
+		"args": {
+			"start": 0.0,
+			"end": 0.25,
+			"time": 2
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "tess",
+			"mood": "concerned",
+			"text": "Uh-oh...",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "fade",
+		"wait": "animation_ended",
+		"args": {
+			"start": 0.25,
+			"end": 1.0,
+			"time": 2.0,
+			"color": "#000000"
+		}
+	},
+	{
+		"action": "switch_scene",
+		"args": {
+			"path": "res://intermission/intermission.tscn",
+			"ui_message": "PRESS [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO RESTART",
+			"ui_action": "interact",
+			"time": 0.5,
+			"message": "[font_size=128][color=#f5c25c]- GAME OVER -[/color][/font_size]",
+			"return": "res://intro/intro.tscn",
+		}
+	}
+]

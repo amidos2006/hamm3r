@@ -1,0 +1,57 @@
+[
+	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "disable_controls",
+			"value": true
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "happy",
+			"text": "I think that is for the best.",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "function",
+		"target": "..",
+		"args": {
+			"name": "shutdown_computers"
+		}
+	},
+	{
+		"action": "function",
+		"target": "Interactable",
+		"args": {
+			"name": "change_script",
+			"args": ["res://assets/actions/tanker/computer_closed.json"]
+		}
+	},
+	{
+		"action": "variable",
+		"target": "Interactable",
+		"args": {
+			"name": "interactable_verb",
+			"value": "INTERACT"
+		}
+	},
+	{
+		"action": "timer",
+		"wait": 0.25
+	},
+	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "disable_controls",
+			"value": false
+		}
+	},
+]

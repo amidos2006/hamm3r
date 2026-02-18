@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://br3rqfg816caj" path="res://interactable/explosive_area.tscn" id="4_ig5qv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j02v7"]
-size = Vector3(0.5, 3, 5)
+size = Vector3(0.5, 3, 4.602783)
 
 [node name="mod_Corner" unique_id=407716561 instance=ExtResource("1_nck3l")]
 
@@ -18,12 +18,14 @@ surface_material_override/1 = ExtResource("3_itl7k")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.466, 1.5, 0)
 
 [node name="CollisionShape3D" parent="ExplosiveArea" index="0" unique_id=547566022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03695786, 0.0726316, 0.09069824)
 shape = SubResource("BoxShape3D_j02v7")
 
 [node name="ExplosiveArea2" parent="." index="2" unique_id=1246057166 instance=ExtResource("4_ig5qv")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.5, -1.466)
 
 [node name="CollisionShape3D" parent="ExplosiveArea2" index="0" unique_id=547566022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021752954, 0.06926751, -9.508483e-10)
 shape = SubResource("BoxShape3D_j02v7")
 
 [editable path="ExplosiveArea"]

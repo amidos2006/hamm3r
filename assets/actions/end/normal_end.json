@@ -1,0 +1,41 @@
+[
+	{
+		"action": "fade",
+		"args": {
+			"start": 1.0,
+			"end": 0.25,
+			"time": 2,
+			"color": "#000000"
+		}
+	},
+	{
+		"action": "function",
+		"wait": "animation_ended",
+		"target": "Credits",
+		"args": {
+			"name": "roll_credits",
+			"args": [30]
+		}
+	},
+	{
+		"action": "fade",
+		"wait": "animation_ended",
+		"args": {
+			"start": 0.25,
+			"end": 1.0,
+			"time": 2.0,
+			"color": "#000000"
+		}
+	},
+	{
+		"action": "switch_scene",
+		"args": {
+			"path": "res://intermission/intermission.tscn",
+			"ui_message": "PRESS [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO RESTART",
+			"ui_action": "interact",
+			"time": 0.5,
+			"message": "[font_size=128][color=#f5c25c]- THANKS FOR PLAYING -[/color][/font_size]",
+			"return": "res://intro/intro.tscn",
+		}
+	}
+]
