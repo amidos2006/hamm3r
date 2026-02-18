@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://8lynv2ggdi87"]
+
+[ext_resource type="PackedScene" uid="uid://5favcio8at2g" path="res://assets/models/clutter_panel.glb" id="1_8o6s2"]
+[ext_resource type="Material" uid="uid://cp12kn0rs1ouc" path="res://assets/materials/mat_spaceship/m_pcg_straight3.tres" id="2_fj0un"]
+
+[node name="clutter_panel" unique_id=407655997 instance=ExtResource("1_8o6s2")]
+
+[node name="clutter_panel" parent="." index="0" unique_id=161842622]
+surface_material_override/0 = ExtResource("2_fj0un")

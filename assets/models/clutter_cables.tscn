@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://buw0mbveladbp"]
+
+[ext_resource type="PackedScene" uid="uid://8a0imle3uhlq" path="res://assets/models/clutter_cables.glb" id="1_vrh8c"]
+[ext_resource type="Material" uid="uid://cfu600yh5ya11" path="res://assets/materials/mat_spaceship/m_pcg_door.tres" id="2_07f6y"]
+
+[node name="clutter_cables" unique_id=467943858 instance=ExtResource("1_vrh8c")]
+
+[node name="clutter_cables" parent="." index="0" unique_id=1914869561]
+surface_material_override/0 = ExtResource("2_07f6y")

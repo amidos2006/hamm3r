@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cfcalafsohf47"]
+
+[ext_resource type="PackedScene" uid="uid://clgbbnxru4x2f" path="res://assets/models/clutter_vent2.glb" id="1_bvtoa"]
+[ext_resource type="Material" uid="uid://b3koepijts638" path="res://assets/materials/mat_spaceship/m_pcg_straight1.tres" id="2_ucwds"]
+
+[node name="clutter_vent2" unique_id=1105666904 instance=ExtResource("1_bvtoa")]
+
+[node name="clutter_vent2" parent="." index="0" unique_id=1280889823]
+surface_material_override/0 = ExtResource("2_ucwds")
