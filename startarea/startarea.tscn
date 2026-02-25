@@ -1226,74 +1226,74 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4070177, 0, -6.6717277)
 [node name="Book_Leaning" parent="Ship_Interior/Paper_Clutter" unique_id=424093671 instance=ExtResource("17_doki2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40478897, 1.0158585, -1.9583907)
 
-[node name="Book 4" parent="Ship_Interior/Paper_Clutter/Book_Leaning" index="0" unique_id=1803436235]
+[node name="Book 4" parent="Ship_Interior/Paper_Clutter/Book_Leaning" index="0" unique_id=786012433]
 transform = Transform3D(-0.01948154, -0.97272694, -0.23113379, -1.1920929e-07, 0.23117769, -0.9729116, 0.9998102, -0.01895377, -0.004503846, 0.023198128, 0, -0.018967152)
 surface_material_override/0 = ExtResource("18_xinp0")
 
 [node name="Book_Stack" parent="Ship_Interior/Paper_Clutter" unique_id=492244724 instance=ExtResource("19_itakq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5434437, 0.8155988, -0.43908405)
 
-[node name="Book_1" parent="Ship_Interior/Paper_Clutter/Book_Stack" index="0" unique_id=897949289]
+[node name="Book_1" parent="Ship_Interior/Paper_Clutter/Book_Stack" index="0" unique_id=1992504698]
 surface_material_override/0 = ExtResource("18_xinp0")
 
-[node name="Book_2" parent="Ship_Interior/Paper_Clutter/Book_Stack" index="1" unique_id=74036316]
+[node name="Book_2" parent="Ship_Interior/Paper_Clutter/Book_Stack" index="1" unique_id=661462226]
 surface_material_override/0 = ExtResource("18_xinp0")
 
-[node name="Book_3" parent="Ship_Interior/Paper_Clutter/Book_Stack" index="2" unique_id=300668740]
+[node name="Book_3" parent="Ship_Interior/Paper_Clutter/Book_Stack" index="2" unique_id=1097279153]
 surface_material_override/0 = ExtResource("18_xinp0")
 
 [node name="Paper_PostitsWall" parent="Ship_Interior/Paper_Clutter" unique_id=1125490999 instance=ExtResource("20_2clgs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1953254, 1.4712652, -0.53983736)
 
-[node name="Paper_Postit_5" parent="Ship_Interior/Paper_Clutter/Paper_PostitsWall" index="0" unique_id=1228650268]
+[node name="Paper_Postit_5" parent="Ship_Interior/Paper_Clutter/Paper_PostitsWall" index="0" unique_id=1815412861]
 surface_material_override/0 = ExtResource("18_xinp0")
 
-[node name="Paper_Postit_4" parent="Ship_Interior/Paper_Clutter/Paper_PostitsWall" index="1" unique_id=332984397]
+[node name="Paper_Postit_4" parent="Ship_Interior/Paper_Clutter/Paper_PostitsWall" index="1" unique_id=1276139951]
 surface_material_override/0 = ExtResource("18_xinp0")
 
 [node name="Paper_Stack" parent="Ship_Interior/Paper_Clutter" unique_id=1840934217 instance=ExtResource("21_5yten")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8070469, 0.8175934, -1.673502)
 
-[node name="Paper_A4_Stacks" parent="Ship_Interior/Paper_Clutter/Paper_Stack" index="0" unique_id=167426213]
+[node name="Paper_A4_Stacks" parent="Ship_Interior/Paper_Clutter/Paper_Stack" index="0" unique_id=1562086285]
 surface_material_override/0 = ExtResource("18_xinp0")
 
-[node name="Paper_A4_2" parent="Ship_Interior/Paper_Clutter/Paper_Stack" index="1" unique_id=27591842]
+[node name="Paper_A4_2" parent="Ship_Interior/Paper_Clutter/Paper_Stack" index="1" unique_id=985067855]
 surface_material_override/0 = ExtResource("18_xinp0")
 
-[node name="Paper_Postit_3" parent="Ship_Interior/Paper_Clutter/Paper_Stack" index="2" unique_id=608489117]
+[node name="Paper_Postit_3" parent="Ship_Interior/Paper_Clutter/Paper_Stack" index="2" unique_id=1608130421]
 surface_material_override/0 = ExtResource("18_xinp0")
 
-[node name="Paper_A4_3" parent="Ship_Interior/Paper_Clutter/Paper_Stack" index="3" unique_id=2077307914]
+[node name="Paper_A4_3" parent="Ship_Interior/Paper_Clutter/Paper_Stack" index="3" unique_id=1074869106]
 surface_material_override/0 = ExtResource("18_xinp0")
 
 [node name="Paper_Wall" parent="Ship_Interior/Paper_Clutter" unique_id=629405538 instance=ExtResource("22_qgwtf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23735237, 1.9900105, -2.2265897)
 
-[node name="Paper_A4_1" parent="Ship_Interior/Paper_Clutter/Paper_Wall" index="0" unique_id=2096947724]
+[node name="Paper_A4_1" parent="Ship_Interior/Paper_Clutter/Paper_Wall" index="0" unique_id=1017109863]
 surface_material_override/0 = ExtResource("18_xinp0")
 
-[node name="Paper_A4_4" parent="Ship_Interior/Paper_Clutter/Paper_Wall" index="1" unique_id=589660418]
+[node name="Paper_A4_4" parent="Ship_Interior/Paper_Clutter/Paper_Wall" index="1" unique_id=1138807800]
 surface_material_override/0 = ExtResource("18_xinp0")
 
-[node name="Paper_Postit_1" parent="Ship_Interior/Paper_Clutter/Paper_Wall" index="2" unique_id=1190784917]
+[node name="Paper_Postit_1" parent="Ship_Interior/Paper_Clutter/Paper_Wall" index="2" unique_id=1665715799]
 surface_material_override/0 = ExtResource("18_xinp0")
 
-[node name="Paper_Postit_2" parent="Ship_Interior/Paper_Clutter/Paper_Wall" index="3" unique_id=260844695]
+[node name="Paper_Postit_2" parent="Ship_Interior/Paper_Clutter/Paper_Wall" index="3" unique_id=382685223]
 surface_material_override/0 = ExtResource("18_xinp0")
 
 [node name="Pencil2" parent="Ship_Interior/Paper_Clutter" unique_id=389969194 instance=ExtResource("23_wwn5p")]
 transform = Transform3D(0.97169775, 0, 0.23622766, 0, 1, 0, -0.23622766, 0, 0.97169775, 0.2722621, 0.82886153, -1.6892571)
 
-[node name="Pencil" parent="Ship_Interior/Paper_Clutter/Pencil2" index="0" unique_id=1137060204]
+[node name="Pencil" parent="Ship_Interior/Paper_Clutter/Pencil2" index="0" unique_id=657985402]
 surface_material_override/0 = ExtResource("18_xinp0")
 
-[node name="Pencil_leads" parent="Ship_Interior/Paper_Clutter/Pencil2" index="1" unique_id=1225233592]
+[node name="Pencil_leads" parent="Ship_Interior/Paper_Clutter/Pencil2" index="1" unique_id=1542973605]
 surface_material_override/0 = ExtResource("18_xinp0")
 
 [node name="Paper_PostitsMonitor" parent="Ship_Interior/Paper_Clutter" unique_id=911511208 instance=ExtResource("24_106fm")]
 transform = Transform3D(0.99993163, 0.011693433, 0, -0.011693433, 0.99993163, 0, 0, 0, 1, 0.46521044, 1.310125, -1.7587152)
 
-[node name="Paper_Postit_6" parent="Ship_Interior/Paper_Clutter/Paper_PostitsMonitor" index="0" unique_id=1844727558]
+[node name="Paper_Postit_6" parent="Ship_Interior/Paper_Clutter/Paper_PostitsMonitor" index="0" unique_id=9565254]
 transform = Transform3D(0.004198324, 0.086416274, 0.9962506, -0.11271447, 0.9899515, -0.0853948, -0.99361855, -0.111933276, 0.013896525, 0.0042705536, -0.060404778, 0.02656269)
 surface_material_override/0 = ExtResource("18_xinp0")
 
@@ -1367,19 +1367,11 @@ transform = Transform3D(0.9811108, 0, -0.18026339, 0, 1, 0, 0.19344644, 0, 0.914
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6206021, -0.0048007965, 16.252949)
 
 [node name="Cryoroom_Cryopod_2" parent="InteractableObjects" unique_id=421422194 instance=ExtResource("19_rgvhy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.83909076, 0, 16.254297)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8441171, -2.3841858e-07, 16.242006)
 show_note = false
 
-[node name="CryoPod_Door" parent="InteractableObjects/Cryoroom_Cryopod_2/Pivot/CryoPod" index="0"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-
-[node name="CryoPod_Note" parent="InteractableObjects/Cryoroom_Cryopod_2/Pivot/CryoPod" index="1"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-
-[node name="Interactable" parent="InteractableObjects/Cryoroom_Cryopod_2" index="6"]
-disable_interaction = true
+[node name="CryoPod_Note" parent="InteractableObjects/Cryoroom_Cryopod_2/Pivot/CryoPod" parent_id_path=PackedInt32Array(421422194, 207636917) index="1" unique_id=1123713066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11384988, 0, 0)
 
 [node name="Cryoroom_Poster_1" parent="InteractableObjects" unique_id=1706680121 instance=ExtResource("2_pen6l")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.53426, -0.395715, 14.0196)
