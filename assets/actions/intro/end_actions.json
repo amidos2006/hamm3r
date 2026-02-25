@@ -65,7 +65,7 @@
 		"args": {
 			"name": "3r",
 			"mood": "",
-			"text": "Ouch! That was cold, Captain.",
+			"text": "Ouch... She gave you a bit of a cold shoulder there, huh?",
 			"action": "interact",
 			"direction": "left",
 			"time": 0

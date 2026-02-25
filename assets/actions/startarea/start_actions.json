@@ -52,7 +52,7 @@
 		"args": {
 			"name": "martin",
 			"mood": "frosty",
-			"text": "Has... Has it been four months already?",
+			"text": "Are... Are we already back at the station?",
 			"action": "interact",
 			"direction": "left",
 			"time": 0

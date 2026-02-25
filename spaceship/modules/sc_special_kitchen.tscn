@@ -10,6 +10,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_8bqbe"]
 size = Vector3(0.5, 3, 0.9223633)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_x4aqb"]
+size = Vector3(5.614868, 1.9692383, 1)
+
 [node name="mod_special_Kitchen" unique_id=374279793 instance=ExtResource("1_x4aqb")]
 
 [node name="mod_Kitchen" parent="." index="0"]
@@ -26,5 +29,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.466, 1.5, 1.8880496)
 [node name="CollisionShape3D" parent="ExplosiveArea" index="0" unique_id=547566022]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20382237, 0, -0.060510635)
 shape = SubResource("BoxShape3D_8bqbe")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3" unique_id=1975391361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.4321208)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1504284423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1251831, 0.48461914, 0)
+shape = SubResource("BoxShape3D_x4aqb")
 
 [editable path="ExplosiveArea"]

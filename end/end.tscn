@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bqrud42sik6pv" path="res://end/end.gd" id="1_1nfhg"]
 [ext_resource type="Texture2D" uid="uid://brug4thvekhdd" path="res://assets/graphics/backgrounds/bg_space.png" id="1_7p2ky"]
-[ext_resource type="JSON" path="res://assets/actions/end/bad_end.json" id="2_xxh8w"]
 [ext_resource type="Script" uid="uid://df7bseqn61wc3" path="res://end/credits.gd" id="3_6f13e"]
 [ext_resource type="Texture2D" uid="uid://2xmwm7kv3uln" path="res://assets/graphics/explosion/explosion_A_0000.png" id="3_u824g"]
 [ext_resource type="Texture2D" uid="uid://bxfb8o4qb8l7u" path="res://assets/graphics/explosion/explosion_A_0001.png" id="4_1nfhg"]
@@ -118,7 +117,6 @@ shader_parameter/vignette_opacity = 0.0
 
 [node name="End" type="CanvasLayer" unique_id=2090040041]
 script = ExtResource("1_1nfhg")
-end_actions = ExtResource("2_xxh8w")
 
 [node name="Credits" type="Control" parent="." unique_id=1755900869]
 layout_mode = 3
@@ -134,7 +132,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 520.0
+offset_bottom = 870.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -274,7 +272,13 @@ text = "
 [font_size=28]Sound and Music by[/font_size]
 [color=#d1ff85][font_size=52]Costantino Oliva[/font_size][/color]
 
-"
+[font_size=28]Additional Design by[/font_size]
+[color=#d1ff85][font_size=52]Ahmed Khalifa[/font_size][/color]
+[color=#d1ff85][font_size=52]Danielius Degesys[/font_size][/color]
+
+[font_size=28]Tested by[/font_size]
+[color=#d1ff85][font_size=52]Nele Van de Mosselaer[/font_size][/color]
+[color=#d1ff85]"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1

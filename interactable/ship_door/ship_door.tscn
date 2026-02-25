@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://wvtabkn0uq5l" path="res://interactable/ship_door/ship_door.gd" id="1_sk2rt"]
 [ext_resource type="JSON" path="res://assets/actions/objects/fail_door.json" id="3_hjl6g"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="3_y2usl"]
+[ext_resource type="JSON" path="res://assets/actions/tanker/last_door.json" id="4_vs44l"]
 [ext_resource type="JSON" path="res://assets/actions/objects/door.json" id="4_ygbkc"]
 [ext_resource type="Material" uid="uid://cfu600yh5ya11" path="res://assets/materials/mat_spaceship/m_pcg_door.tres" id="5_cc146"]
 [ext_resource type="PackedScene" uid="uid://dimmho0wlqegv" path="res://assets/models/pcg_modules/mod_Door_Bottom.glb" id="5_jr33b"]
@@ -148,6 +149,7 @@ stream_2/stream = ExtResource("7_hexuy")
 script = ExtResource("1_sk2rt")
 normal_interation = ExtResource("4_ygbkc")
 fail_interaction = ExtResource("3_hjl6g")
+last_interaction = ExtResource("4_vs44l")
 metadata/_edit_group_ = true
 
 [node name="Pivot" type="Node3D" parent="." unique_id=1207514694]
@@ -176,11 +178,11 @@ libraries/ = SubResource("AnimationLibrary_55cad")
 
 [node name="Interactable" parent="." unique_id=1385376361 instance=ExtResource("3_y2usl")]
 
-[node name="InteractableArea" parent="Interactable" index="0"]
+[node name="InteractableArea" parent="Interactable" index="0" unique_id=452995842]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
 shape = SubResource("BoxShape3D_dlvnk")
 
-[node name="FocusPoint" parent="Interactable" index="1"]
+[node name="FocusPoint" parent="Interactable" index="1" unique_id=418345644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Sounds" type="AudioStreamPlayer3D" parent="." unique_id=1828886932]

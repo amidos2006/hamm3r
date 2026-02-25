@@ -9,12 +9,14 @@ extends Node3D
 var code_screens = []
 var organism_screens = []
 var time = 0.0
+var simulation_running = true
 
 
 var _shutdown_screen = preload("res://assets/models/ControlRoom_Computers_CntrlRoom_Screen_S_OFF.png")
 var _cow_screen = preload("res://assets/textures/tex_spaceship/T_screen_sim.png")
 var _micro_screen = preload("res://assets/textures/tex_spaceship/T_screen_sim_Small.png")
 var _code_screen = preload("res://assets/textures/tex_spaceship/T_screen_text_scroll.png")
+
 
 func _ready():
 	code_screens.append($mod_EndRoom/mod_end_Screen_L3)
@@ -59,7 +61,15 @@ func _process(delta):
 		screen.get_surface_override_material(0).set_shader_parameter("texture_uv", current)
 	
 	
+func investigate_computers():
+	var door = get_tree().get_nodes_in_group("Tunnel_SealDoor")[0]
+	door.get_node("Interactable").interaction = load("res://assets/actions/objects/door.json")
+	
+	
 func shutdown_computers():
+	var door = get_tree().get_nodes_in_group("Tunnel_SealDoor")[0]
+	door.get_node("Interactable").interaction = load("res://assets/actions/objects/door.json")
+	simulation_running = false
 	for screen in code_screens:
 		screen.get_surface_override_material(0).set_shader_parameter("albedo_texture", _shutdown_screen)
 		screen.get_surface_override_material(0).set_shader_parameter("roll", false)
@@ -75,6 +85,9 @@ func shutdown_computers():
 
 
 func shoot_computers():
+	var door = get_tree().get_nodes_in_group("Tunnel_SealDoor")[0]
+	door.get_node("Interactable").interaction = load("res://assets/actions/objects/door.json")
+	simulation_running = false
 	for screen in code_screens:
 		screen.get_surface_override_material(0).set_shader_parameter("albedo_texture", _shutdown_screen)
 		screen.get_surface_override_material(0).set_shader_parameter("roll", false)

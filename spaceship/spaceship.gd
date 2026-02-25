@@ -79,14 +79,15 @@ func _ready():
 				
 	self.rotation_degrees = rotation_angle
 	self.position.z = -0.5 * tile_size.y
-	
-	
+
+
 func _add_door(layout, tile, x, y, direction):
 	var current_cell = layout[y][x]
 	if current_cell.doors[direction] == LayoutGenerator.LayoutDoor.Wall:
 		return
 	var delta = LayoutGenerator._relative_from_direction(direction)
 	var next_cell = layout[y + delta.y][x + delta.x]
+	var is_final = current_cell.mission.type.to_lower() == "end" or next_cell.mission.type.to_lower() == "end"
 	
 	var create_door = false
 	var is_open = false
@@ -113,9 +114,8 @@ func _add_door(layout, tile, x, y, direction):
 		door.position.z = delta.y * tile_size.y / 2
 		if abs(delta.x) > 0:
 			door.rotation_degrees.y = 90
-		door.initialize(current_cell.doors[direction] == LayoutGenerator.LayoutDoor.Broken, is_open)
+		door.initialize(current_cell.doors[direction] == LayoutGenerator.LayoutDoor.Broken, is_open, is_final)
 		tile.add_child(door)
-	
 
 
 func _generate_mission():

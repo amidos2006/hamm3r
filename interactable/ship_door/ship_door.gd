@@ -3,6 +3,7 @@ extends StaticBody3D
 
 @export var normal_interation:JSON
 @export var fail_interaction:JSON
+@export var last_interaction:JSON
 
 
 enum DoorState{
@@ -15,9 +16,14 @@ enum DoorState{
 var _state = DoorState.CLOSE
 
 
-func initialize(is_broken, is_open):
+signal animation_ended
+
+
+func initialize(is_broken, is_open, is_last):
 	if is_broken:
 		$Interactable.interaction = fail_interaction
+	elif is_last:
+		$Interactable.interaction = last_interaction
 	else:
 		$Interactable.interaction = normal_interation
 	if is_open:
@@ -34,6 +40,7 @@ func open_door():
 		$CollisionShape3D.set_deferred("disabled", true)
 		_state = DoorState.OPEN
 		$Interactable.disable_interaction = true
+	animation_ended.emit()
 
 
 func fail_door():
@@ -43,6 +50,7 @@ func fail_door():
 		_state = DoorState.FAIL
 		await $AnimationPlayer.animation_finished
 		$Interactable.disable_interaction = true
+	animation_ended.emit()
 
 
 func close_door():
@@ -52,6 +60,7 @@ func close_door():
 		await $AnimationPlayer.animation_finished
 		_state = DoorState.CLOSE
 		$Interactable.disable_interaction = false
+	animation_ended.emit()
 
 
 func _on_interactable_player_exited():

@@ -49,7 +49,7 @@
 		"args": {
 			"name": "martin",
 			"mood": "concerned",
-			"text": "Yeah, and it seems to be running a– A sped-up simulation of some sorts? Wonder how long it’s been keeping it going...",
+			"text": "Yeah, and it seems to be running a... A sped-up simulation of some sorts? Wonder how long it’s been keeping it going...",
 			"action": "interact",
 			"direction": "left",
 			"time": 0
@@ -77,6 +77,13 @@
 			"action": "interact",
 			"direction": "right",
 			"time": 0
+		}
+	},
+	{
+		"action": "function",
+		"target": "..",
+		"args": {
+			"name": "investigate_computers"
 		}
 	},
 	{

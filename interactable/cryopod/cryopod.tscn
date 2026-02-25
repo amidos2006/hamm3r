@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=4 uid="uid://bo6xmnsy3pi2o"]
+[gd_scene format=4 uid="uid://bo6xmnsy3pi2o"]
 
 [ext_resource type="Script" uid="uid://cuun17rnovr7k" path="res://interactable/cryopod/cryopod.gd" id="1_t0j7g"]
+[ext_resource type="Texture2D" uid="uid://r5acy6oa6i83" path="res://assets/textures/tex_hammer/T_cryopod.png" id="3_6bmbm"]
 [ext_resource type="Material" uid="uid://bjitklds44p61" path="res://assets/materials/mat_hammer/m_cryopod.tres" id="3_q6wdd"]
 [ext_resource type="Material" uid="uid://bjf0a24v6e5ur" path="res://assets/materials/mat_hammer/m_cryopod_glass.tres" id="4_q6wdd"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="7_q6wdd"]
@@ -39,6 +40,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ji63i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6wdd"]
+albedo_texture = ExtResource("3_6bmbm")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7trao"]
 resource_name = "Cryo Pods"
@@ -213,17 +217,18 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_t0j7g"]
 size = Vector3(2, 2.4, 3)
 
-[node name="Cryopod" type="StaticBody3D"]
+[node name="Cryopod" type="StaticBody3D" unique_id=1385979335]
 script = ExtResource("1_t0j7g")
 
-[node name="Pivot" type="Node3D" parent="."]
+[node name="Pivot" type="Node3D" parent="." unique_id=377422887]
 
-[node name="CryoPod" type="MeshInstance3D" parent="Pivot"]
+[node name="CryoPod" type="MeshInstance3D" parent="Pivot" unique_id=207636917]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_5r2tp")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_q6wdd")
 
-[node name="CryoPod_Door" type="MeshInstance3D" parent="Pivot/CryoPod"]
+[node name="CryoPod_Door" type="MeshInstance3D" parent="Pivot/CryoPod" unique_id=1412229956]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.049838, -0.20131)
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_18mcl")
@@ -231,41 +236,39 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("3_q6wdd")
 surface_material_override/1 = ExtResource("4_q6wdd")
 
-[node name="CryoPod_Note" type="MeshInstance3D" parent="Pivot/CryoPod"]
+[node name="CryoPod_Note" type="MeshInstance3D" parent="Pivot/CryoPod" unique_id=1123713066]
 mesh = SubResource("ArrayMesh_vj5n5")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("3_q6wdd")
 surface_material_override/1 = ExtResource("4_q6wdd")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1078706498]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 shape = SubResource("BoxShape3D_6bmbm")
 
-[node name="Back" type="CollisionShape3D" parent="."]
+[node name="Back" type="CollisionShape3D" parent="." unique_id=1981723982]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0.450385)
 shape = SubResource("BoxShape3D_8e3tg")
 
-[node name="Right" type="CollisionShape3D" parent="."]
+[node name="Right" type="CollisionShape3D" parent="." unique_id=1313435008]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.2, -0.049)
 shape = SubResource("BoxShape3D_mgbn5")
 
-[node name="Left" type="CollisionShape3D" parent="."]
+[node name="Left" type="CollisionShape3D" parent="." unique_id=278785296]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.2, -0.049)
 shape = SubResource("BoxShape3D_mgbn5")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_q6wdd")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=336415241]
+libraries/ = SubResource("AnimationLibrary_q6wdd")
 
-[node name="Interactable" parent="." instance=ExtResource("7_q6wdd")]
+[node name="Interactable" parent="." unique_id=307673982 instance=ExtResource("7_q6wdd")]
 interaction = ExtResource("9_8e3tg")
 
-[node name="InteractableArea" parent="Interactable" index="0"]
+[node name="InteractableArea" parent="Interactable" index="0" unique_id=452995842]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 shape = SubResource("BoxShape3D_t0j7g")
 
-[node name="FocusPoint" parent="Interactable" index="1"]
+[node name="FocusPoint" parent="Interactable" index="1" unique_id=418345644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00544, 0)
 
 [editable path="Interactable"]

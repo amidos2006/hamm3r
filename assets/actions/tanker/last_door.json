@@ -9,42 +9,34 @@
 	},
 	{
 		"action": "function",
-		"target": "../Tunnel_SealDoor",
+		"wait": "animation_ended",
 		"args": {
-			"name": "close_door",
-			"args": []
-		}
-	},
-	{
-		"action": "function",
-		"target": "../Tunnel_SealDoor/Interactable",
-		"args": {
-			"name": "change_script",
-			"args": ["res://assets/actions/startarea/tunnel_no_back.json"]
+			"name": "open_door"
 		}
 	},
 	{
 		"action": "show_dialogue",
 		"wait": "advance_dialogue",
 		"args": {
-			"name": "3R",
+			"name": "martin",
 			"mood": "normal",
-			"text": "You're in the tanker now, Captain. Be careful with the gun in there!",
+			"text": "All right, looks like this is it. Let's see what's going on in here.",
 			"action": "interact",
-			"direction": "right",
+			"direction": "left",
 			"time": 0
 		}
 	},
 	{
 		"action": "function",
-		"target": "Player",
+		"target": "Interactable",
 		"args": {
-			"name": "enter_tanker",
+			"name": "change_script",
+			"args": ["res://assets/actions/objects/door.json"]
 		}
 	},
 	{
 		"action": "timer",
-		"wait": 0.25
+		"wait": 0.25,
 	},
 	{
 		"action": "variable",

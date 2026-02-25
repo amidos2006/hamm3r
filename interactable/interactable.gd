@@ -3,12 +3,10 @@ extends Area3D
 
 @export var interaction:JSON = null
 @export var interactable_verb:String = "INTERACT"
+@export var disable_interaction:bool = false
 
 var _player = null
 var _different_marker = null
-
-
-var disable_interaction = false
 
 
 signal player_entered

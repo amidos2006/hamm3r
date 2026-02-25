@@ -10,6 +10,7 @@ extends CharacterBody3D
 @export var bark_data:Array[JSON]
 @export var bark_time:Vector2 = Vector2(25, 35)
 
+
 var disable_controls:
 	set(value):
 		for key in allowed_controls:
@@ -89,7 +90,11 @@ func _physics_process(delta):
 					laser_collider = $RayCast3D.get_collider()
 					if $RayCast3D.get_collider().is_in_group("Explosive"):
 						Blackout.fade(1, 1, 0, "#FFFFFF")
-						SceneManager.switch_scene("res://end/end.tscn", {})
+						var endroom = get_tree().get_nodes_in_group("FinalRoom")[0]
+						var ending = "res://assets/actions/end/bad_bad_end.json"
+						if endroom.simulation_running:
+							ending = "res://assets/actions/end/bad_end.json"
+						SceneManager.switch_scene("res://end/end.tscn", {"actions": ending})
 					if $RayCast3D.get_collider().is_in_group("Computer"):
 						var caller = $RayCast3D.get_collider()
 						caller.remove_from_group("Computer")

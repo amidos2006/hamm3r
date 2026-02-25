@@ -1,10 +1,8 @@
 extends CanvasLayer
 
 
-@export var end_actions:JSON
-
-
-func _ready():
+func initialize(args):
+	var end_actions = load(args.actions)
 	ActionManager.run_actions(end_actions.data, self, null)
 
 

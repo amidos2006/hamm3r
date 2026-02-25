@@ -7,17 +7,10 @@
 			"value": true
 		}
 	},
+	
 	{
 		"action": "function",
-		"target": "Interactable",
-		"args": {
-			"name": "disable_interactable",
-			"object": "player",
-			"args": [true]
-		}
-	},
-	{
-		"action": "function",
+		"wait": "animation_ended",
 		"args": {
 			"name": "fail_door"
 		}
@@ -32,6 +25,15 @@
 			"action": "interact",
 			"direction": "left",
 			"time": 0
+		}
+	},
+	{
+		"action": "function",
+		"target": "Interactable",
+		"args": {
+			"name": "disable_interactable",
+			"object": "player",
+			"args": [true]
 		}
 	},
 	{

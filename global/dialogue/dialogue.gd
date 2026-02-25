@@ -25,6 +25,10 @@ func _get_picture(character_name, mood):
 	assert(character_name in pictures, "ERROR: The character name (" + character_name + ") is not found")
 	return pictures[character_name].get_picture(mood)
 
+func _get_sound(character_name, mood):
+	character_name = character_name.to_lower().strip_edges()
+	assert(character_name in pictures, "ERROR: The character name (" + character_name + ") is not found")
+	return pictures[character_name].get_audio(mood)
 
 func show_message(character_name, mood, dialogue, direction = "left", time=0, action = "interact"):
 	self.show()
@@ -53,6 +57,9 @@ func show_message(character_name, mood, dialogue, direction = "left", time=0, ac
 	else:
 		chatbox.get_node("Prompt").text = ""
 	chatbox.show()
+	$AudioStreamPlayer.stop()
+	$AudioStreamPlayer.stream = self._get_sound(character_name, mood)
+	$AudioStreamPlayer.play()
 	
 	if time > 0:
 		_timer = get_tree().create_timer(time, false)
@@ -68,6 +75,7 @@ func show_message(character_name, mood, dialogue, direction = "left", time=0, ac
 
 func hide_message():
 	self.hide()
+	$AudioStreamPlayer.stop()
 	_action_pressed.emit()
 	_action_button = ""
 	$Left.hide()

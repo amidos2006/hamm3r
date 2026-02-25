@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://clbk1ikf7v48y"
+path="res://.godot/imported/male voice - long - grogged_1.wav-546af65dc025cce678aee55e0068e282.sample"
+
+[deps]
+
+source_file="res://assets/sfx/dialogue/martin/male voice - long - grogged_1.wav"
+dest_files=["res://.godot/imported/male voice - long - grogged_1.wav-546af65dc025cce678aee55e0068e282.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

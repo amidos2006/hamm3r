@@ -272,11 +272,15 @@ size = Vector3(1.800075, 3.1010742, 0.37573242)
 [sub_resource type="BoxShape3D" id="BoxShape3D_kfplh"]
 size = Vector3(2.3996277, 3.2459717, 2.1802254)
 
-[node name="mod_special_END" unique_id=217833437 instance=ExtResource("1_peksx")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_2dmtt"]
+size = Vector3(1.9180908, 1.4072266, 1.4073486)
+
+[node name="mod_special_END" unique_id=217833437 groups=["FinalRoom"] instance=ExtResource("1_peksx")]
 script = ExtResource("2_2163d")
 shoot_computer = ExtResource("3_2dmtt")
 rollspeed = 0.5
 swimspeed = 0.25
+metadata/_edit_group_ = true
 
 [node name="mod_EndRoom" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0011817217, -5.9604645e-08, 8.46982e-05)
@@ -356,6 +360,13 @@ shape = SubResource("BoxShape3D_kfplh")
 
 [node name="FocusPoint" parent="FinalComputer/Interactable" index="1" unique_id=418345644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="6" unique_id=1147086380]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1382272, 0, -2.1952739)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=74016589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1519165, 0.20361328, 0.20367432)
+shape = SubResource("BoxShape3D_2dmtt")
 
 [editable path="ExplosiveArea"]
 [editable path="ExplosiveArea2"]

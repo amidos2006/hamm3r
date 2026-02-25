@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dtgukuqqtxncl"
+path="res://.godot/imported/male voice - long_1.wav-f4c8db8d6f706789ddde2d6c176272ae.sample"
+
+[deps]
+
+source_file="res://assets/sfx/dialogue/martin/male voice - long_1.wav"
+dest_files=["res://.godot/imported/male voice - long_1.wav-f4c8db8d6f706789ddde2d6c176272ae.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -9,7 +9,11 @@
 		}
 	},
 	{
-		"action": "function",
+		"action": "wait",
+		"wait": 0.1
+	},
+	{
+		"action": "sound",
 		"target": "Explosion/Sound",
 		"args":{
 			"name": "play"
