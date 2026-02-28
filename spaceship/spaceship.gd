@@ -198,14 +198,16 @@ func _get_group_order(pos):
 	
 	
 func _process(_delta):
-	var group_orders = self._get_group_order(self._player.global_position)
 	for i in range(self._groups.size()):
 		var group = self._groups[i]
 		for tile in group:
 			if tile.has_node("OmniLight3D"):
 				tile.get_node("OmniLight3D").visible = false
-		if i == group_orders[0]["index"] or i == group_orders[1]["index"]:
-			for tile in group:
-				if tile.has_node("OmniLight3D"):
-					tile.get_node("OmniLight3D").visible = true
+	
+	var group_orders = self._get_group_order(self._player.global_position)
+	for i in range(2):
+		var group = self._groups[group_orders[i]["index"]]
+		for tile in group:
+			if tile.has_node("OmniLight3D"):
+				tile.get_node("OmniLight3D").visible = true
 		

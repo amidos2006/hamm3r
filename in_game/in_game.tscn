@@ -7,9 +7,6 @@
 
 [node name="StartArea" parent="." unique_id=1094612729 instance=ExtResource("1_0dbxd")]
 
-[node name="Interactable" parent="StartArea/InteractableObjects/Cryoroom_Cryopod_2" parent_id_path=PackedInt32Array(1094612729, 421422194) index="6" unique_id=307673982]
-disable_interaction = true
-
 [node name="Cyroroom" parent="StartArea/Lighting" parent_id_path=PackedInt32Array(1094612729, 1740467455) index="0" unique_id=699701197]
 distance_fade_begin = 20.0
 
