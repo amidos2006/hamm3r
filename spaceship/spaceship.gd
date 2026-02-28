@@ -12,6 +12,8 @@ extends Node3D
 
 var _tile_scene = preload("res://spaceship/tile.tscn")
 var _door_scene = preload("res://interactable/ship_door/ship_door.tscn")
+var _groups = []
+var _player = null
 
 
 func _ready():
@@ -51,6 +53,7 @@ func _ready():
 		rotation_angle.y = -90
 		start_opening[LayoutGenerator.LayoutDirection.East] = true
 	computer.setup_ship(layout, offset, start_opening.find_key(true))
+	var doors = []
 	for y in layout.size():
 		for x in layout[y].size():
 			var cell = layout[y][x]
@@ -74,11 +77,63 @@ func _ready():
 				)
 				tile.position = Vector3((x - offset.x) * tile_size.x, 0, (y - offset.y) * tile_size.y)
 				self.add_child(tile)
-				self._add_door(layout, tile, x, y, LayoutGenerator.LayoutDirection.South)
-				self._add_door(layout, tile, x, y, LayoutGenerator.LayoutDirection.East)
-				
+				if self._add_door(layout, tile, x, y, LayoutGenerator.LayoutDirection.South):
+					doors.append({"loc": Vector2(x, y), "dir": LayoutGenerator.LayoutDirection.South})
+				if self._add_door(layout, tile, x, y, LayoutGenerator.LayoutDirection.East):
+					doors.append({"loc": Vector2(x, y), "dir": LayoutGenerator.LayoutDirection.East})
+				layout[y][x].tile = tile
+	
+	for door in doors:
+		var loc = door["loc"]
+		var delta = LayoutGenerator._relative_from_direction(door["dir"])
+		layout[loc.y][loc.x].connect_to(layout[loc.y+delta.y][loc.x+delta.x], LayoutGenerator.LayoutDoor.Wall)
+	
+	var color_layout = []
+	var start_locs = []
+	for y in layout.size():
+		color_layout.append([])
+		for x in layout[y].size():
+			color_layout[y].append(-1)
+			if layout[y][x] != null and layout[y][x].mission != null:
+				start_locs.append(Vector2(x, y))
+	var color_index = 0
+	for loc in start_locs:
+		if self._color_map(layout, color_layout, loc.x, loc.y, color_index):
+			color_index += 1
+	
+	self._groups = []
+	for i in range(color_index):
+		self._groups.append([])
+	for y in layout.size():
+		for x in layout[y].size():
+			if color_layout[y][x] != -1:
+				self._groups[color_layout[y][x]].append(layout[y][x].tile)
+	for group in self._groups:
+		if group.size() > 1:
+			group.shuffle()
+			for i in range(max(1, int(group.size() / 2) - 1)):
+				var light = group[i].get_node("OmniLight3D")
+				light.queue_free()
+	
 	self.rotation_degrees = rotation_angle
 	self.position.z = -0.5 * tile_size.y
+	self._player = get_node("../StartArea/Player")
+
+
+func _color_map(layout, color_map, x, y, index):
+	if color_map[y][x] != -1:
+		return false
+	var queue = [Vector2(x, y)]
+	while queue.size() > 0:
+		var loc = queue.pop_front()
+		if color_map[loc.y][loc.x] != -1:
+			continue
+		color_map[loc.y][loc.x] = index
+		for dir in LayoutGenerator.LayoutDirection.values():
+			if layout[loc.y][loc.x].doors[dir] == LayoutGenerator.LayoutDoor.Wall:
+				continue
+			queue.append(loc + LayoutGenerator._relative_from_direction(dir))
+	return true
 
 
 func _add_door(layout, tile, x, y, direction):
@@ -87,7 +142,8 @@ func _add_door(layout, tile, x, y, direction):
 		return
 	var delta = LayoutGenerator._relative_from_direction(direction)
 	var next_cell = layout[y + delta.y][x + delta.x]
-	var is_final = current_cell.mission.type.to_lower() == "end" or next_cell.mission.type.to_lower() == "end"
+	var is_final = current_cell != null and current_cell.mission != null and current_cell.mission.type.to_lower() == "end"
+	is_final = is_final or (next_cell != null and next_cell.mission != null and next_cell.mission.type.to_lower() == "end")
 	
 	var create_door = false
 	var is_open = false
@@ -116,6 +172,8 @@ func _add_door(layout, tile, x, y, direction):
 			door.rotation_degrees.y = 90
 		door.initialize(current_cell.doors[direction] == LayoutGenerator.LayoutDoor.Broken, is_open, is_final)
 		tile.add_child(door)
+	
+	return create_door and not is_open
 
 
 func _generate_mission():
@@ -123,3 +181,31 @@ func _generate_mission():
 	var graph_2 = mission_generator_2.generate_graph()
 	var pcg_graph = MissionGenerator.combine_graphs(graph_1, graph_2, "Start", "End", "Health")
 	return pcg_graph
+	
+	
+func _get_group_order(pos):
+	var distances = []
+	for index in range(self._groups.size()):
+		var min_dist = 10000000
+		var group = self._groups[index]
+		for tile in group:
+			var dist = (pos - tile.global_position).length()
+			if dist < min_dist:
+				min_dist = dist
+		distances.append({"index": index, "dist": min_dist})
+	distances.sort_custom(func(a, b): return a["dist"] < b["dist"])
+	return distances
+	
+	
+func _process(_delta):
+	var group_orders = self._get_group_order(self._player.global_position)
+	for i in range(self._groups.size()):
+		var group = self._groups[i]
+		for tile in group:
+			if tile.has_node("OmniLight3D"):
+				tile.get_node("OmniLight3D").visible = false
+		if i == group_orders[0]["index"] or i == group_orders[1]["index"]:
+			for tile in group:
+				if tile.has_node("OmniLight3D"):
+					tile.get_node("OmniLight3D").visible = true
+		

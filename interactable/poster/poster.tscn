@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://chj1rvqew6sky"]
+[gd_scene format=3 uid="uid://chj1rvqew6sky"]
 
 [ext_resource type="Script" uid="uid://bgcto2kuykqow" path="res://interactable/poster/poster.gd" id="1_ywquu"]
 [ext_resource type="PackedScene" uid="uid://c8tkaypw0t420" path="res://assets/models/Poster1.glb" id="2_kf4pn"]
@@ -15,38 +15,58 @@ size = Vector3(0.2, 2.4, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_6323w"]
 size = Vector3(1, 2.4, 1)
 
-[node name="Poster" type="StaticBody3D"]
+[node name="Poster" type="StaticBody3D" unique_id=1556410030]
 script = ExtResource("1_ywquu")
 
-[node name="Pivot" type="Node3D" parent="."]
+[node name="Pivot" type="Node3D" parent="." unique_id=1402498198]
 
-[node name="Poster_1" parent="Pivot" instance=ExtResource("2_kf4pn")]
+[node name="Poster_1" parent="Pivot" unique_id=2028165270 instance=ExtResource("2_kf4pn")]
 transform = Transform3D(-5.46392e-08, 0, 1.25, 0, 1.25, 0, -1.25, 0, -5.46392e-08, 0, 2.4, 0)
 
-[node name="Poster_2" parent="Pivot" instance=ExtResource("3_gnskj")]
+[node name="Poster1" parent="Pivot/Poster_1" index="0"]
+cast_shadow = 0
+
+[node name="Poster_2" parent="Pivot" unique_id=950325621 instance=ExtResource("3_gnskj")]
 transform = Transform3D(-5.46392e-08, 0, 1.25, 0, 1.25, 0, -1.25, 0, -5.46392e-08, 0, 2.4, 0)
 
-[node name="Poster_3" parent="Pivot" instance=ExtResource("4_cquos")]
+[node name="Poster2" parent="Pivot/Poster_2" index="0"]
+cast_shadow = 0
+
+[node name="Poster_3" parent="Pivot" unique_id=26575580 instance=ExtResource("4_cquos")]
 transform = Transform3D(-5.46392e-08, 0, 1.25, 0, 1.25, 0, -1.25, 0, -5.46392e-08, 0, 2.4, 0)
 
-[node name="Poster_4" parent="Pivot" instance=ExtResource("5_t8edg")]
+[node name="Poster3" parent="Pivot/Poster_3" index="0"]
+cast_shadow = 0
+
+[node name="Poster_4" parent="Pivot" unique_id=1432782107 instance=ExtResource("5_t8edg")]
 transform = Transform3D(-5.46392e-08, 0, 1.25, 0, 1.25, 0, -1.25, 0, -5.46392e-08, 0, 2.4, 0)
 
-[node name="Poster_5" parent="Pivot" instance=ExtResource("6_q0cbb")]
+[node name="Poster4" parent="Pivot/Poster_4" index="0"]
+cast_shadow = 0
+
+[node name="Poster_5" parent="Pivot" unique_id=129809892 instance=ExtResource("6_q0cbb")]
 transform = Transform3D(-5.46392e-08, 0, 1.25, 0, 1.25, 0, -1.25, 0, -5.46392e-08, 0, 2.4, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="Poster5" parent="Pivot/Poster_5" index="0"]
+cast_shadow = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1280948018]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 shape = SubResource("BoxShape3D_btaj2")
 
-[node name="Interactable" parent="." instance=ExtResource("7_p3482")]
+[node name="Interactable" parent="." unique_id=1739362265 instance=ExtResource("7_p3482")]
 interaction = ExtResource("8_6323w")
 
-[node name="InteractableArea" parent="Interactable" index="0"]
+[node name="InteractableArea" parent="Interactable" index="0" unique_id=452995842]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.2, 0)
 shape = SubResource("BoxShape3D_6323w")
 
-[node name="FocusPoint" parent="Interactable" index="1"]
+[node name="FocusPoint" parent="Interactable" index="1" unique_id=418345644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 
+[editable path="Pivot/Poster_1"]
+[editable path="Pivot/Poster_2"]
+[editable path="Pivot/Poster_3"]
+[editable path="Pivot/Poster_4"]
+[editable path="Pivot/Poster_5"]
 [editable path="Interactable"]

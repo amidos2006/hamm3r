@@ -17,7 +17,7 @@
 		"args": {
 			"name": "tess",
 			"mood": "angry",
-			"text": "FUCK!\nAre you trying to knock the station out of orbit?!",
+			"text": "DARN!\nAre you trying to knock the station out of orbit?!",
 			"action": "interact",
 			"direction": "right",
 			"time": 0

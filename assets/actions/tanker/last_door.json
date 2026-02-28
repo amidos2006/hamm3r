@@ -9,6 +9,14 @@
 	},
 	{
 		"action": "function",
+		"target": "player",
+		"args": {
+			"name": "rotate_interactable",
+			"object": "caller"
+		}
+	},
+	{
+		"action": "function",
 		"wait": "animation_ended",
 		"args": {
 			"name": "open_door"

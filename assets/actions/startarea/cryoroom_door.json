@@ -9,11 +9,10 @@
 	},
 	{
 		"action": "function",
-		"target": "Interactable",
+		"target": "player",
 		"args": {
-			"name": "disable_interactable",
-			"object": "player",
-			"args": [true]
+			"name": "rotate_interactable",
+			"object": "caller"
 		}
 	},
 	{
@@ -58,15 +57,6 @@
 		"args": {
 			"name": "change_script",
 			"args": ["res://assets/actions/objects/door.json"]
-		}
-	},
-	{
-		"action": "function",
-		"target": "Interactable",
-		"args": {
-			"name": "disable_interactable",
-			"object": "player",
-			"args": [false]
 		}
 	},
 	{

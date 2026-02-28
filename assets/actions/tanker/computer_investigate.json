@@ -12,8 +12,8 @@
 		"wait": "advance_dialogue",
 		"args": {
 			"name": "martin",
-			"mood": "happy",
-			"text": "Nobody is around anymore but...",
+			"mood": "normal",
+			"text": "Looks like nobody is around anymore...",
 			"action": "interact",
 			"direction": "left",
 			"time": 0
@@ -24,8 +24,8 @@
 		"wait": "advance_dialogue",
 		"args": {
 			"name": "martin",
-			"mood": "happy",
-			"text": "Well, it looks like someone forgot their weird computer on. This might explain the electrical signals you sensed.",
+			"mood": "normal",
+			"text": "But they must have forgotten to turn off their computer.\nCould this explain the signals you sensed?",
 			"action": "interact",
 			"direction": "left",
 			"time": 0

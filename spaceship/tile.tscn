@@ -168,13 +168,14 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ts5ky")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=203836739]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0735016, 0)
-light_energy = 1.463
+light_energy = 1.5
 light_bake_mode = 1
 shadow_enabled = true
 distance_fade_enabled = true
 distance_fade_begin = 30.0
 distance_fade_shadow = 40.0
 distance_fade_length = 5.0
+omni_range = 3.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1955116423]
 

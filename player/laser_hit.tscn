@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c5gjk2meqpxkv"]
+[gd_scene format=3 uid="uid://c5gjk2meqpxkv"]
 
 [ext_resource type="Script" uid="uid://dsve2vjflbrhh" path="res://player/laser_hit.gd" id="1_n1hiu"]
 [ext_resource type="Texture2D" uid="uid://dp0wnlh0dxh0m" path="res://assets/graphics/particles/big_circle.png" id="1_p4hsv"]
@@ -178,10 +178,10 @@ _data = {
 &"RESET": SubResource("Animation_w8onf")
 }
 
-[node name="LaserHit" type="Node3D"]
+[node name="LaserHit" type="Node3D" unique_id=1188254485]
 script = ExtResource("1_n1hiu")
 
-[node name="Sparks_1" type="CPUParticles3D" parent="."]
+[node name="Sparks_1" type="CPUParticles3D" parent="." unique_id=1504455010]
 transform = Transform3D(1.9106853e-15, 4.371139e-08, -0.99999994, 0.99999994, -4.371139e-08, 0, -4.3711385e-08, -1, -4.3711385e-08, 0, 0, 0)
 emitting = false
 amount = 100
@@ -199,7 +199,7 @@ scale_amount_curve = SubResource("Curve_0hiah")
 color_ramp = SubResource("Gradient_l5r1x")
 hue_variation_max = 1.0
 
-[node name="Sparks_2" type="CPUParticles3D" parent="."]
+[node name="Sparks_2" type="CPUParticles3D" parent="." unique_id=828185474]
 transform = Transform3D(1.9106853e-15, 4.371139e-08, -0.99999994, 0.99999994, -4.371139e-08, 0, -4.3711385e-08, -1, -4.3711385e-08, 0, 0, 0)
 emitting = false
 amount = 10
@@ -217,7 +217,7 @@ scale_amount_curve = SubResource("Curve_0hiah")
 color_ramp = SubResource("Gradient_bkrnw")
 hue_variation_max = 1.0
 
-[node name="Sparks_3" type="CPUParticles3D" parent="."]
+[node name="Sparks_3" type="CPUParticles3D" parent="." unique_id=246847328]
 transform = Transform3D(1.9106853e-15, 4.371139e-08, -0.99999994, 0.99999994, -4.371139e-08, 0, -4.3711385e-08, -1, -4.3711385e-08, 0, 0, 0)
 emitting = false
 amount = 20
@@ -235,22 +235,20 @@ scale_amount_curve = SubResource("Curve_0hiah")
 color_ramp = SubResource("Gradient_w8onf")
 hue_variation_max = 1.0
 
-[node name="HitSphere" type="MeshInstance3D" parent="."]
+[node name="HitSphere" type="MeshInstance3D" parent="." unique_id=841170604]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("SphereMesh_bkrnw")
 surface_material_override/0 = SubResource("StandardMaterial3D_bkrnw")
 
-[node name="Hole" type="Node3D" parent="."]
+[node name="Hole" type="Node3D" parent="." unique_id=1570314159]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
-[node name="Sprite3D_1" type="Sprite3D" parent="Hole"]
+[node name="Sprite3D_1" type="Sprite3D" parent="Hole" unique_id=1997946446]
 gi_mode = 0
 modulate = Color(0, 0, 0, 1)
 texture = ExtResource("3_bkrnw")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_w8onf")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=316389631]
+libraries/ = SubResource("AnimationLibrary_w8onf")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -9,17 +9,16 @@
 	},
 	{
 		"action": "function",
-		"target": "Interactable",
 		"args": {
-			"name": "disable_interactable",
-			"object": "player",
-			"args": [true]
+			"name": "fail_door"
 		}
 	},
 	{
 		"action": "function",
+		"target": "player",
 		"args": {
-			"name": "fail_door"
+			"name": "rotate_interactable",
+			"object": "caller"
 		}
 	},
 	{

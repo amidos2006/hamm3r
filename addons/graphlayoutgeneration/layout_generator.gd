@@ -280,6 +280,7 @@ class LayoutCell extends RefCounted:
 	var mission
 	var position
 	var doors
+	var tile
 	
 	
 	func _init(x, y, mission = null):

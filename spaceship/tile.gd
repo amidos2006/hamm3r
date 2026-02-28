@@ -34,7 +34,6 @@ func select_tile(bottom, right, top, left, room_type=""):
 		elif is_deadend and not is_health_kitchen:
 			if model.get_child(0).has_node("HealthPickup"):
 				model.get_child(0).get_node("HealthPickup").queue_free()
-			
 	
 	if room_type.to_lower() == "blocked":
-		$OmniLight3D.visible = false
+		$OmniLight3D.queue_free()

@@ -88,7 +88,7 @@
 		"args": {
 			"name": "3R",
 			"mood": "normal",
-			"text": "Take this as a precautionary measure, for which I need your help.",
+			"text": "Take this as a precautionary measure,\none for which I need your help.",
 			"action": "interact",
 			"direction": "right",
 			"time": 0
@@ -100,7 +100,7 @@
 		"args": {
 			"name": "3R",
 			"mood": "normal",
-			"text": "But first, some post-awakening diagnostics. Look all the way to the right.",
+			"text": "But first, some post-awakening diagnostics.\nPlease look all the way to the right.",
 			"action": "interact",
 			"direction": "right",
 			"time": 0
@@ -156,7 +156,7 @@
 		"args": {
 			"name": "3R",
 			"mood": "normal",
-			"text": "Wonderful. Let us try the left-hand side now?",
+			"text": "Wonderful.\nThe left-hand side now?",
 			"action": "interact",
 			"direction": "right",
 			"time": 0

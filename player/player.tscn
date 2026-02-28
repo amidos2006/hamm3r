@@ -41,6 +41,7 @@
 [ext_resource type="AudioStream" uid="uid://b7wedty1o082m" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_10.wav" id="17_g4c7l"]
 [ext_resource type="AudioStream" uid="uid://un3vkfdjaxi4" path="res://assets/sfx/in_game/laser/laser gun C.wav" id="17_jfgyi"]
 [ext_resource type="AudioStream" uid="uid://r6ltp57kw8iq" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV2_Walk_05.wav" id="18_a2xo5"]
+[ext_resource type="PackedScene" uid="uid://c5gjk2meqpxkv" path="res://player/laser_hit.tscn" id="18_n0b8q"]
 [ext_resource type="AudioStream" uid="uid://bqbg4pbusyx" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV2_Walk_06.wav" id="20_art4l"]
 [ext_resource type="AudioStream" uid="uid://dkax5iqmlq7wg" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV2_Walk_07.wav" id="21_fjxoa"]
 [ext_resource type="AudioStream" uid="uid://bo112rf5cbv4d" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV2_Walk_08.wav" id="22_gswnw"]
@@ -313,6 +314,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Pivot/Camera3D/Laser" unique_id=1567069282]
 stream = SubResource("AudioStreamRandomizer_237xx")
+
+[node name="LaserHits" type="Node3D" parent="Pivot/Camera3D" unique_id=1346136409]
+
+[node name="LaserHit_1" parent="Pivot/Camera3D/LaserHits" unique_id=1188254485 instance=ExtResource("18_n0b8q")]
+
+[node name="LaserHit_2" parent="Pivot/Camera3D/LaserHits" unique_id=701778677 instance=ExtResource("18_n0b8q")]
+
+[node name="LaserHit_3" parent="Pivot/Camera3D/LaserHits" unique_id=982552184 instance=ExtResource("18_n0b8q")]
+
+[node name="LaserHit_4" parent="Pivot/Camera3D/LaserHits" unique_id=560838928 instance=ExtResource("18_n0b8q")]
+
+[node name="LaserHit_5" parent="Pivot/Camera3D/LaserHits" unique_id=75826671 instance=ExtResource("18_n0b8q")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1.5, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=607503661]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)

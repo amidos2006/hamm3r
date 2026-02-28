@@ -49,6 +49,8 @@ func _ready():
 	$UI.initialize_health(health, max_health)
 	$Pivot/Camera3D/Gun.visible = false
 	bark_data.shuffle()
+	
+	$Pivot/Camera3D/Laser.fire(Vector3.ZERO, Vector3.UP, 100)
 
 
 func _get_rotation(target_pos):
@@ -57,6 +59,31 @@ func _get_rotation(target_pos):
 	var new_rotation = $Pivot/Camera3D.rotation
 	$Pivot/Camera3D.rotation = old_rotation
 	return new_rotation
+	
+func _shoot_gun():
+	var laser_length = $RayCast3D.target_position.length()
+	var laser_position = Vector3.ZERO
+	var laser_normal = Vector3.ZERO
+	if $RayCast3D.is_colliding():
+		laser_length = self.global_position.distance_to($RayCast3D.get_collision_point())
+		laser_position = $RayCast3D.get_collision_point()
+		laser_normal = $RayCast3D.get_collision_normal()
+		if $RayCast3D.get_collider().is_in_group("Explosive"):
+			Blackout.fade(1, 1, 0, "#FFFFFF")
+			var endroom = get_tree().get_nodes_in_group("FinalRoom")[0]
+			var ending = "res://assets/actions/end/bad_bad_end.json"
+			if endroom.simulation_running:
+				ending = "res://assets/actions/end/bad_end.json"
+			SceneManager.switch_scene("res://end/end.tscn", {"actions": ending})
+		if $RayCast3D.get_collider().is_in_group("Computer"):
+			var caller = $RayCast3D.get_collider()
+			caller.remove_from_group("Computer")
+			ActionManager.run_actions(caller.get_parent().shoot_computer.data, caller, self)
+	$Pivot/Camera3D/Laser/AudioStreamPlayer3D.play()
+	$AnimationPlayer.play("Shoot")
+	$AnimationPlayer.speed_scale = 1
+	$Pivot/Camera3D/Laser.fire(laser_position, laser_normal, laser_length)
+	self._is_shooting = true
 
 
 func _physics_process(delta):
@@ -79,31 +106,7 @@ func _physics_process(delta):
 			if inside_hamm:
 				Dialogue.show_message("martin", "normal", "#no_shooting#", "left", 3, "")
 			elif not self._is_shooting:
-				var laser_length = $RayCast3D.target_position.length()
-				var laser_position = Vector3.ZERO
-				var laser_normal = Vector3.ZERO
-				var laser_collider = null
-				if $RayCast3D.is_colliding():
-					laser_length = self.global_position.distance_to($RayCast3D.get_collision_point())
-					laser_position = $RayCast3D.get_collision_point()
-					laser_normal = $RayCast3D.get_collision_normal()
-					laser_collider = $RayCast3D.get_collider()
-					if $RayCast3D.get_collider().is_in_group("Explosive"):
-						Blackout.fade(1, 1, 0, "#FFFFFF")
-						var endroom = get_tree().get_nodes_in_group("FinalRoom")[0]
-						var ending = "res://assets/actions/end/bad_bad_end.json"
-						if endroom.simulation_running:
-							ending = "res://assets/actions/end/bad_end.json"
-						SceneManager.switch_scene("res://end/end.tscn", {"actions": ending})
-					if $RayCast3D.get_collider().is_in_group("Computer"):
-						var caller = $RayCast3D.get_collider()
-						caller.remove_from_group("Computer")
-						ActionManager.run_actions(caller.get_parent().shoot_computer.data, caller, self)
-				$Pivot/Camera3D/Laser/AudioStreamPlayer3D.play()
-				$AnimationPlayer.play("Shoot")
-				$AnimationPlayer.speed_scale = 1
-				$Pivot/Camera3D/Laser.fire(laser_collider, laser_position, laser_normal, laser_length)
-				self._is_shooting = true
+				self._shoot_gun()
 	
 	if direction != 0:
 		rotate_y(direction * rotation_speed * PI / 360)
