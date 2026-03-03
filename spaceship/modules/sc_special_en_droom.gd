@@ -64,11 +64,15 @@ func _process(delta):
 func investigate_computers():
 	var door = get_tree().get_nodes_in_group("Tunnel_SealDoor")[0]
 	door.get_node("Interactable").interaction = load("res://assets/actions/objects/door.json")
+	var return_area = get_tree().get_nodes_in_group("Return_Area")[0]
+	return_area.disable_event = false
 	
 	
 func shutdown_computers():
 	var door = get_tree().get_nodes_in_group("Tunnel_SealDoor")[0]
 	door.get_node("Interactable").interaction = load("res://assets/actions/objects/door.json")
+	var return_area = get_tree().get_nodes_in_group("Return_Area")[0]
+	return_area.disable_event = false
 	simulation_running = false
 	for screen in code_screens:
 		screen.get_surface_override_material(0).set_shader_parameter("albedo_texture", _shutdown_screen)
@@ -82,11 +86,16 @@ func shutdown_computers():
 	screen.get_surface_override_material(0).set_shader_parameter("albedo_texture", _shutdown_screen)
 	screen.get_surface_override_material(0).set_shader_parameter("roll", false)
 	screen.get_surface_override_material(0).set_shader_parameter("roll_size", 0.0)
+	get_parent().get_parent().get_parent().get_parent().start_flickering()
+	$AudioStreamPlayer3D.stop()
 
 
 func shoot_computers():
 	var door = get_tree().get_nodes_in_group("Tunnel_SealDoor")[0]
 	door.get_node("Interactable").interaction = load("res://assets/actions/objects/door.json")
+	var return_areas = get_tree().get_nodes_in_group("Return_Area")
+	for area in return_areas:
+		area.disable_event = false
 	simulation_running = false
 	for screen in code_screens:
 		screen.get_surface_override_material(0).set_shader_parameter("albedo_texture", _shutdown_screen)
@@ -100,3 +109,5 @@ func shoot_computers():
 	screen.get_surface_override_material(0).set_shader_parameter("albedo_texture", _shutdown_screen)
 	screen.get_surface_override_material(0).set_shader_parameter("roll", false)
 	screen.get_surface_override_material(0).set_shader_parameter("roll_size", 0.0)
+	get_parent().get_parent().get_parent().get_parent().start_flickering()
+	$AudioStreamPlayer3D.stop()

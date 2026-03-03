@@ -8,19 +8,20 @@
 		}
 	},
 	{
-		"action": "function",
-		"wait": "animation_ended",
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
 		"args": {
-			"name": "fail_door"
+			"name": "martin",
+			"mood": "normal",
+			"text": "I should go to the cryopod.",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
 		}
 	},
 	{
-		"action": "function",
-		"target": "player",
-		"args": {
-			"name": "rotate_interactable",
-			"object": "caller"
-		}
+		"action": "timer",
+		"wait": 0.25
 	},
 	{
 		"action": "variable",

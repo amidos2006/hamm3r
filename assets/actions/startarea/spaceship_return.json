@@ -1,0 +1,138 @@
+[
+	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "disable_controls",
+			"value": true
+		}
+	},
+	{
+		"action": "function",
+		"target": "../Control_SealDoor",
+		"args": {
+			"name": "close_door",
+		}
+	},
+	{
+		"action": "function",
+		"wait": "animation_ended",
+		"target": "player",
+		"args": {
+			"name": "unequip_gun"
+		}
+	},
+	{
+		"action": "function",
+		"target": "Player",
+		"args": {
+			"name": "look_at_interactable",
+			"object": "../Control_Computer",
+			"args": [true, "../Control_Computer"]
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Welcome back, Captain!",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "normal",
+			"text": "Thank you, and thank f&*!< that was nothing.",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "normal",
+			"text": "Guess you’ll take it from here, buddy?",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "I sure will. Please, head back to your cryopod.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "normal",
+			"text": "Goodnight...",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "function",
+		"target": "../Control_Computer/Interactable",
+		"args": {
+			"name": "change_script",
+			"args": ["res://assets/actions/startarea/computer_goodnight.json"]
+		}
+	},
+	{
+		"action": "function",
+		"target": "../Cryoroom_Cryopod_1/Interactable",
+		"args": {
+			"name": "change_script",
+			"args": ["res://assets/actions/startarea/cryopod_sleep.json"]
+		}
+	},
+	{
+		"action": "function",
+		"target": "../Control_SealDoor/Interactable",
+		"args": {
+			"name": "change_script",
+			"args": ["res://assets/actions/startarea/seal_door_ending.json"]
+		}
+	},
+	{
+		"action": "timer",
+		"wait": 0.5
+	},
+	{
+		"action": "function",
+		"target": "player",
+		"args": {
+			"name": "rotate_interactable",
+			"object": "../Control_Computer"
+		}
+	},
+	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "disable_controls",
+			"value": false
+		}
+	},
+]

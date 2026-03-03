@@ -25,7 +25,7 @@ shape = SubResource("CylinderShape3D_n1skv")
 [node name="Interactable" parent="." unique_id=93104871 instance=ExtResource("2_2bc57")]
 interaction = ExtResource("4_prbbq")
 
-[node name="InteractableArea" parent="Interactable" index="0"]
+[node name="InteractableArea" parent="Interactable" index="0" unique_id=452995842]
 shape = SubResource("CylinderShape3D_ato4p")
 
 [editable path="Interactable"]

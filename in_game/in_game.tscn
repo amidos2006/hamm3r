@@ -7,6 +7,18 @@
 
 [node name="StartArea" parent="." unique_id=1094612729 instance=ExtResource("1_0dbxd")]
 
+[node name="Corridor_Window_001" parent="StartArea/Ship_Interior/Room_Corridor/startship_window" parent_id_path=PackedInt32Array(1094612729, 260173798) index="0" unique_id=1444376152]
+surface_material_override/0 = null
+
+[node name="Control_Window_Glass" parent="StartArea/Ship_Interior" parent_id_path=PackedInt32Array(1094612729, 1881699871) index="7" unique_id=1567751323]
+surface_material_override/0 = null
+
+[node name="Tunnel_SealDoor" parent="StartArea/InteractableObjects" parent_id_path=PackedInt32Array(1094612729, 2095360871) index="11" unique_id=1591921562 groups=["Tunnel_SealDoor"]]
+
+[node name="ReturnArea" parent="StartArea/InteractableObjects" parent_id_path=PackedInt32Array(1094612729, 2095360871) index="19" unique_id=433124444 groups=["Return_Area"]]
+
+[node name="DisableShooting" parent="StartArea/InteractableObjects" parent_id_path=PackedInt32Array(1094612729, 2095360871) index="20" unique_id=1074200214 groups=["Return_Area"]]
+
 [node name="Cyroroom" parent="StartArea/Lighting" parent_id_path=PackedInt32Array(1094612729, 1740467455) index="0" unique_id=699701197]
 distance_fade_begin = 20.0
 
@@ -35,3 +47,5 @@ door_open_prob = 0.5
 [editable path="StartArea/InteractableObjects/Tunnel_EventArea"]
 [editable path="StartArea/InteractableObjects/Cryoroom_Cryopod_2"]
 [editable path="StartArea/InteractableObjects/Cryoroom_Cryopod_2/Interactable"]
+[editable path="StartArea/InteractableObjects/ReturnArea"]
+[editable path="StartArea/InteractableObjects/DisableShooting"]

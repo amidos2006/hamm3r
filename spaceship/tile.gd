@@ -1,6 +1,18 @@
 extends Node3D
 
 
+@export var flicker_amount:Vector2i = Vector2i(3, 6)
+
+
+var active_light = true
+var flick_light = true
+
+
+func _process(_delta):
+	if self.has_node("OmniLight3D"):
+		$OmniLight3D.visible = active_light and flick_light
+
+
 func select_tile(bottom, right, top, left, room_type=""):
 	var tile_name = ""
 	tile_name += "1" if bottom else "0"
@@ -37,3 +49,16 @@ func select_tile(bottom, right, top, left, room_type=""):
 	
 	if room_type.to_lower() == "blocked" or tile_name == "0000":
 		$OmniLight3D.queue_free()
+
+
+func start_light_flickering():
+	if self.has_node("OmniLight3D"):
+		$Timer.start(0.25)
+
+
+func _on_timer_timeout() -> void:
+	for i in range(randi_range(flicker_amount.x, flicker_amount.y)):
+		self.flick_light = !self.flick_light
+		await get_tree().create_timer(0.1, false).timeout	
+	self.flick_light = true
+	$Timer.start(5.0)

@@ -268,11 +268,11 @@ libraries/ = SubResource("AnimationLibrary_ys3yn")
 [node name="Interactable" parent="." unique_id=1284040651 instance=ExtResource("5_66maq")]
 interaction = ExtResource("4_4frlx")
 
-[node name="InteractableArea" parent="Interactable" index="0"]
+[node name="InteractableArea" parent="Interactable" index="0" unique_id=452995842]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 shape = SubResource("BoxShape3D_m8aqy")
 
-[node name="FocusPoint" parent="Interactable" index="1"]
+[node name="FocusPoint" parent="Interactable" index="1" unique_id=418345644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055, 1.5, 0.123)
 
 [node name="Sounds" type="AudioStreamPlayer3D" parent="." unique_id=1904019654]

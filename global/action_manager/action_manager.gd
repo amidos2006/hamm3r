@@ -5,6 +5,9 @@ var _running_actions = false
 var _stop_actions = false
 
 
+signal action_ended
+
+
 func get_target(type, caller, player=null):
 	var target = caller
 	if type.to_lower() == "player":
@@ -65,6 +68,10 @@ func run_actions(actions, caller, player=null):
 				Blackout.open(act.args.start, act.args.end, act.args.time)
 				target = Blackout
 				act.wait = "animation_ended"
+			"close":
+				Blackout.close(act.args.start, act.args.end, act.args.time)
+				target = Blackout
+				act.wait = "animation_ended"
 			
 			# Target related actions
 			"variable":
@@ -111,3 +118,4 @@ func run_actions(actions, caller, player=null):
 			else:
 				await get_tree().create_timer(act.wait, false).timeout
 	_running_actions = false
+	action_ended.emit()

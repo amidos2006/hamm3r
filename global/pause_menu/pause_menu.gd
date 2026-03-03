@@ -8,7 +8,7 @@ func _ready():
 	self.process_mode = Node.PROCESS_MODE_ALWAYS
 	_ignore_release = false
 	
-
+	
 func is_paused():
 	return get_tree().paused
 	
@@ -22,8 +22,8 @@ func unpause():
 	$RestartTimer.stop()
 	get_tree().paused = false
 	self.visible = false
-
-
+	
+	
 func _process(_delta):
 	if Input.is_action_just_released("pause"):
 		if _ignore_release:
@@ -44,9 +44,13 @@ func _process(_delta):
 		$Info/TimerFill.scale.x = 1 - $RestartTimer.time_left / $RestartTimer.wait_time
 	else:
 		$Info/TimerFill.scale.x = 0
-
-
+	
+	
 func _on_restart_timer_timeout():
 	self.unpause()
 	_ignore_release = true
+	ActionManager.stop_actions()
+	Dialogue.hide_message()
+	UiMessage.hide_message()
+	await get_tree().create_timer(0.1).timeout
 	SceneManager.switch_scene("res://intro/intro.tscn", {})

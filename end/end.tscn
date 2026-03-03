@@ -14,14 +14,23 @@
 [ext_resource type="Texture2D" uid="uid://do52d4smn44hu" path="res://assets/graphics/logos/mdia_logo.png" id="7_n5cfa"]
 [ext_resource type="Texture2D" uid="uid://bo0830o6er7ty" path="res://assets/graphics/logos/godot_logo.png" id="8_0y8q2"]
 [ext_resource type="Texture2D" uid="uid://dqwq5s1t51j4w" path="res://assets/graphics/explosion/explosion_A_0005.png" id="8_ews5i"]
+[ext_resource type="Script" uid="uid://c724r65khynp2" path="res://end/ship.gd" id="9_0n4vi"]
 [ext_resource type="Texture2D" uid="uid://dpe6hewgde4s7" path="res://assets/graphics/explosion/explosion_A_0006.png" id="9_7yt1l"]
 [ext_resource type="Texture2D" uid="uid://dujbymgc2drsv" path="res://assets/graphics/explosion/explosion_A_0007.png" id="10_0t2np"]
+[ext_resource type="Texture2D" uid="uid://cgt2bygfhedc" path="res://assets/graphics/intro/tankers.png" id="10_ylonx"]
 [ext_resource type="Texture2D" uid="uid://yewmc31kmkjg" path="res://assets/graphics/explosion/explosion_A_0008.png" id="11_6f13e"]
+[ext_resource type="Texture2D" uid="uid://cyu6o8m8cwmup" path="res://assets/graphics/intro/truck.png" id="11_vptuj"]
+[ext_resource type="Texture2D" uid="uid://bo8u5rlvgk6q6" path="res://assets/graphics/particles/small_circle.png" id="12_1ihem"]
 [ext_resource type="Texture2D" uid="uid://bd5fr1lp1y0kx" path="res://assets/graphics/explosion/explosion_A_0009.png" id="12_2dwm6"]
+[ext_resource type="Texture2D" uid="uid://bhyf1sevptwdg" path="res://assets/graphics/intro/truckEngine_03.png" id="13_cpgkr"]
 [ext_resource type="Texture2D" uid="uid://do7oqr7kalc0o" path="res://assets/graphics/explosion/explosion_A_0010.png" id="13_u6wvn"]
+[ext_resource type="Texture2D" uid="uid://c3atu0entwqwe" path="res://assets/graphics/intro/truckEngine_01.png" id="14_kvkke"]
 [ext_resource type="Texture2D" uid="uid://bvkytumu0dm4a" path="res://assets/graphics/explosion/explosion_A_0011.png" id="14_yodmx"]
+[ext_resource type="Texture2D" uid="uid://jovthc804xo4" path="res://assets/graphics/intro/truckEngine_02.png" id="15_1xjmn"]
 [ext_resource type="Texture2D" uid="uid://ipd63wedt438" path="res://assets/graphics/explosion/explosion_A_0012.png" id="15_4remo"]
+[ext_resource type="Texture2D" uid="uid://v4sq8bpfrmpg" path="res://assets/graphics/intro/truckEngine_00.png" id="16_jhhmn"]
 [ext_resource type="Texture2D" uid="uid://hxqp7lpdyipf" path="res://assets/graphics/explosion/explosion_A_0013.png" id="16_n5cfa"]
+[ext_resource type="AudioStream" uid="uid://g6mt8ig37mer" path="res://assets/sfx/intro/spaceship_engine_1.wav" id="17_0gqat"]
 [ext_resource type="Texture2D" uid="uid://ovkkhjynbkv6" path="res://assets/graphics/explosion/explosion_A_0014.png" id="17_0y8q2"]
 [ext_resource type="Texture2D" uid="uid://4jnd7eyvxj2s" path="res://assets/graphics/explosion/explosion_A_0015.png" id="18_100wd"]
 [ext_resource type="Texture2D" uid="uid://dmc31q6jqed3m" path="res://assets/graphics/explosion/explosion_A_0016.png" id="19_7gxq2"]
@@ -29,9 +38,55 @@
 [ext_resource type="AudioStream" uid="uid://cxcuq8v0taqw5" path="res://assets/sfx/in_game/explosion_reverse.wav" id="29_u6wvn"]
 [ext_resource type="Shader" uid="uid://ctxirvi6qb14" path="res://assets/shaders/crt_shader.gdshader" id="29_yodmx"]
 
+[sub_resource type="Curve" id="Curve_p7quh"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_kwgun"]
+offsets = PackedFloat32Array(0, 0.385906, 1)
+colors = PackedColorArray(0.4, 0.92, 1, 1, 0.2, 0.46, 0.5, 1, 0.068, 0.1564, 0.17, 0.352941)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dgb5m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_cpgkr")
+}],
+"loop": true,
+"name": &"high",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_kvkke")
+}],
+"loop": true,
+"name": &"low",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_1xjmn")
+}],
+"loop": true,
+"name": &"medium",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_jhhmn")
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_tegkn"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": null
+}, {
 "duration": 1.0,
 "texture": ExtResource("3_u824g")
 }, {
@@ -276,8 +331,9 @@ text = "
 [color=#d1ff85][font_size=52]Ahmed Khalifa[/font_size][/color]
 [color=#d1ff85][font_size=52]Danielius Degesys[/font_size][/color]
 
-[font_size=28]Tested by[/font_size]
+[font_size=28]Testers[/font_size]
 [color=#d1ff85][font_size=52]Nele Van de Mosselaer[/font_size][/color]
+[color=#d1ff85][font_size=52]Eneh Veronica Lang[/font_size][/color]
 [color=#d1ff85]"
 fit_content = true
 scroll_active = false
@@ -295,6 +351,71 @@ texture = ExtResource("1_7p2ky")
 expand_mode = 5
 stretch_mode = 5
 
+[node name="Ship" type="Control" parent="." unique_id=1483008399]
+visible = false
+z_index = -100
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1679.0
+offset_top = 725.0
+offset_right = 1679.0
+offset_bottom = 725.0
+script = ExtResource("9_0n4vi")
+metadata/_edit_group_ = true
+
+[node name="Cargo" type="Sprite2D" parent="Ship" unique_id=820935189]
+z_index = -1
+position = Vector2(26, -1.78814e-07)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("10_ylonx")
+
+[node name="Base" type="Sprite2D" parent="Ship" unique_id=956164960]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("11_vptuj")
+
+[node name="FrontParticlesLeft" type="CPUParticles2D" parent="Ship" unique_id=1808773020]
+position = Vector2(-5, 45)
+amount = 500
+texture = ExtResource("12_1ihem")
+emission_shape = 1
+emission_sphere_radius = 8.0
+direction = Vector2(1, 0.25)
+spread = 5.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 50.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_p7quh")
+color_ramp = SubResource("Gradient_kwgun")
+
+[node name="FrontParticlesRight" type="CPUParticles2D" parent="Ship" unique_id=1554794626]
+position = Vector2(10, 33)
+amount = 500
+texture = ExtResource("12_1ihem")
+emission_shape = 1
+emission_sphere_radius = 8.0
+direction = Vector2(1, 0.25)
+spread = 5.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 50.0
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_p7quh")
+color_ramp = SubResource("Gradient_kwgun")
+
+[node name="AnimationSprite" type="AnimatedSprite2D" parent="Ship" unique_id=689488281]
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_dgb5m")
+animation = &"low"
+
+[node name="Sounds" type="Node2D" parent="Ship" unique_id=770615210]
+
+[node name="Engine" type="AudioStreamPlayer2D" parent="Ship/Sounds" unique_id=642965326]
+stream = ExtResource("17_0gqat")
+volume_db = -30.0
+
 [node name="Explosion" type="Control" parent="." unique_id=340804989]
 layout_mode = 3
 anchors_preset = 8
@@ -308,6 +429,8 @@ grow_vertical = 2
 [node name="Animation" type="AnimatedSprite2D" parent="Explosion" unique_id=44444429]
 position = Vector2(0, 80)
 sprite_frames = SubResource("SpriteFrames_tegkn")
+frame = 18
+frame_progress = 1.0
 
 [node name="Sound" type="AudioStreamPlayer" parent="Explosion" unique_id=1715775704]
 stream = ExtResource("28_2dwm6")
@@ -324,3 +447,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=912330697]
+position = Vector2(1006, 597)

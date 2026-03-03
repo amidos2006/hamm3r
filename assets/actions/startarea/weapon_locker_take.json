@@ -86,8 +86,16 @@
 		}
 	},
 	{
+		"action": "function",
+		"target": "../Control_Computer/Interactable",
+		"args": {
+			"name": "change_script",
+			"args": ["res://assets/actions/startarea/computer_proceed.json"]
+		}
+	},
+	{
 		"action": "timer",
-		"wait": 0.25,
+		"wait": 0.5,
 	},
 	{
 		"action": "variable",

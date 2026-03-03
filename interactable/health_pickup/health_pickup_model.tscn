@@ -81,6 +81,7 @@ surface_material_override/1 = ExtResource("3_6sx66")
 
 [node name="Outline" type="MeshInstance3D" parent="." index="1" unique_id=275781246]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+visible = false
 mesh = SubResource("ArrayMesh_qvppb")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_vwmnt")

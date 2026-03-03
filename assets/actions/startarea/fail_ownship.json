@@ -7,7 +7,6 @@
 			"value": true
 		}
 	},
-	
 	{
 		"action": "function",
 		"wait": "animation_ended",
@@ -37,8 +36,12 @@
 		}
 	},
 	{
-		"action": "timer",
-		"wait": 0.1
+		"action": "function",
+		"target": "player",
+		"args": {
+			"name": "rotate_interactable",
+			"object": "caller"
+		}
 	},
 	{
 		"action": "variable",

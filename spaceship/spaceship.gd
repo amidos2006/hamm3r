@@ -111,9 +111,10 @@ func _ready():
 	for group in self._groups:
 		if group.size() > 1:
 			group.shuffle()
-			for i in range(max(1, int(group.size() / 2) - 1)):
+			for i in range(max(1, int(group.size() / 2))):
 				var light = group[i].get_node("OmniLight3D")
 				light.queue_free()
+				#light.omni_range = 2.0
 	
 	self.rotation_degrees = rotation_angle
 	self.position.z = -0.5 * tile_size.y
@@ -201,13 +202,16 @@ func _process(_delta):
 	for i in range(self._groups.size()):
 		var group = self._groups[i]
 		for tile in group:
-			if tile.has_node("OmniLight3D"):
-				tile.get_node("OmniLight3D").visible = false
+			tile.active_light = false
 	
 	var group_orders = self._get_group_order(self._player.global_position)
 	for i in range(2):
 		var group = self._groups[group_orders[i]["index"]]
 		for tile in group:
-			if tile.has_node("OmniLight3D"):
-				tile.get_node("OmniLight3D").visible = true
+			tile.active_light = true
 		
+
+func start_flickering():
+	for tile in self.get_children():
+		if tile.has_method("start_light_flickering"):
+			tile.start_light_flickering()

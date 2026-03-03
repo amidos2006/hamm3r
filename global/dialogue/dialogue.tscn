@@ -62,7 +62,7 @@ shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
 
 [node name="Dialogue" type="CanvasLayer" unique_id=1370816729]
-layer = 90
+layer = 100
 script = ExtResource("1_ru11m")
 pictures = Dictionary[String, ExtResource("2_efegq")]({
 "3r": ExtResource("3_c6k8d"),

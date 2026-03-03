@@ -34,6 +34,7 @@
 [ext_resource type="AudioStream" uid="uid://1krnre7hxqij" path="res://assets/music/intro/space_soundscape.wav" id="31_74s3g"]
 [ext_resource type="Script" uid="uid://ngomasgbyeik" path="res://intro/explosion.gd" id="33_yyo1g"]
 [ext_resource type="Texture2D" uid="uid://4dpq1nysypdt" path="res://assets/graphics/explosion/effect.png" id="34_8qj4l"]
+[ext_resource type="Shader" uid="uid://de27xd5kttgh1" path="res://assets/shaders/sub_shader.gdshader" id="34_srlbi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie2y0"]
 size = Vector2(123, 128)
@@ -192,8 +193,13 @@ point_count = 2
 offsets = PackedFloat32Array(0, 0.9739414)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_srlbi"]
-blend_mode = 2
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qss6y"]
+shader = ExtResource("34_srlbi")
+shader_parameter/mask_texture = ExtResource("34_8qj4l")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_srlbi"]
+shader = ExtResource("34_srlbi")
+shader_parameter/mask_texture = ExtResource("34_8qj4l")
 
 [node name="Intro" type="Node" unique_id=925115317]
 script = ExtResource("1_vyos2")
@@ -549,30 +555,20 @@ color_ramp = SubResource("Gradient_qqjqy")
 
 [node name="Cargo" type="Sprite2D" parent="Explosion" unique_id=1969392314]
 visible = false
-clip_children = 2
 z_index = -1
+material = SubResource("ShaderMaterial_qss6y")
 position = Vector2(12, -60)
 rotation = 0.33141154
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("10_8c3ee")
 
-[node name="Damage" type="Sprite2D" parent="Explosion/Cargo" unique_id=45305743]
-material = SubResource("CanvasItemMaterial_srlbi")
-scale = Vector2(2.8571427, 2.8571427)
-texture = ExtResource("34_8qj4l")
-
 [node name="Base" type="Sprite2D" parent="Explosion" unique_id=2099818889]
 visible = false
-clip_children = 2
+material = SubResource("ShaderMaterial_srlbi")
 position = Vector2(-37, -7.999999)
 rotation = -0.24154028
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("11_2i53d")
-
-[node name="Damage" type="Sprite2D" parent="Explosion/Base" unique_id=311758599]
-material = SubResource("CanvasItemMaterial_srlbi")
-scale = Vector2(2.8571427, 2.8571427)
-texture = ExtResource("34_8qj4l")
 
 [connection signal="body_entered" from="Ship" to="Ship" method="_on_body_entered"]
 [connection signal="screen_exited" from="Ship/VisibleNotifier" to="Ship" method="_on_visible_on_screen_notifier_2d_screen_exited"]

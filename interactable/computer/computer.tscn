@@ -521,10 +521,10 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_gttmd")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s0ocy"]
-size = Vector3(3.03314, 3.15527, 2.54736)
+size = Vector3(2.1225429, 3.15527, 1.7152083)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3txo5"]
-size = Vector3(4, 4, 4)
+size = Vector3(2.8460083, 4, 3.1745605)
 
 [sub_resource type="Animation" id="Animation_6bncj"]
 resource_name = "Gun_Show"
@@ -799,14 +799,14 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("9_8g2b1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1119572893]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0204163, 0.22027, 0.273682)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10805479, 0.22027, -0.14239383)
 shape = SubResource("BoxShape3D_s0ocy")
 
 [node name="Interactable" parent="." unique_id=911038736 instance=ExtResource("4_qpu04")]
 interaction = ExtResource("6_3txo5")
 
 [node name="InteractableArea" parent="Interactable" index="0" unique_id=452995842]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.303223)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23043823, 0, 0.54357946)
 shape = SubResource("BoxShape3D_3txo5")
 
 [node name="FocusPoint" parent="Interactable" index="1" unique_id=418345644]

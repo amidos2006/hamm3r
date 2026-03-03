@@ -30,7 +30,7 @@ func _get_sound(character_name, mood):
 	assert(character_name in pictures, "ERROR: The character name (" + character_name + ") is not found")
 	return pictures[character_name].get_audio(mood)
 
-func show_message(character_name, mood, dialogue, direction = "left", time=0, action = "interact"):
+func show_message(character_name, mood, dialogue, direction = "left", time=0.0, action = "interact"):
 	self.show()
 	if _timer != null:
 		_timer.cancel_free()

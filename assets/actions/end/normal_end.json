@@ -1,6 +1,15 @@
 [
 	{
+		"action": "variable",
+		"target": "Ship",
+		"args": {
+			"name": "visible",
+			"value": true,
+		}
+	},
+	{
 		"action": "fade",
+		"wait": "animation_ended",
 		"args": {
 			"start": 1.0,
 			"end": 0.25,
@@ -34,7 +43,7 @@
 			"ui_message": "PRESS [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO RESTART",
 			"ui_action": "interact",
 			"time": 0.5,
-			"message": "[font_size=128][color=#f5c25c]- THANKS FOR PLAYING -[/color][/font_size]",
+			"message": "[font_size=72][color=#f5c25c]Thanks for Playing[/color][/font_size]",
 			"return": "res://intro/intro.tscn",
 		}
 	}

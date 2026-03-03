@@ -108,7 +108,7 @@ stream_2/stream = ExtResource("17_jfgyi")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 radius = 0.25
-height = 1.2
+height = 0.7
 
 [sub_resource type="Animation" id="Animation_g6k8r"]
 resource_name = "Equip"
@@ -209,6 +209,33 @@ tracks/0/keys = {
 "values": [Vector3(0, -0.39999998, -0.55), Vector3(0, -0.4, -0.4), Vector3(0, -0.4, -0.55)]
 }
 
+[sub_resource type="Animation" id="Animation_n0b8q"]
+resource_name = "UnEquip"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Camera3D/Gun:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.0471976, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot/Camera3D/Gun:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector3(0, -0.4, -0.55), Vector3(0, -1, -0.55)]
+}
+
 [sub_resource type="Animation" id="Animation_rgyib"]
 resource_name = "Walk"
 length = 1.6
@@ -232,6 +259,7 @@ _data = {
 &"Idle": SubResource("Animation_hg6s5"),
 &"RESET": SubResource("Animation_boad6"),
 &"Shoot": SubResource("Animation_1so5t"),
+&"UnEquip": SubResource("Animation_n0b8q"),
 &"Walk": SubResource("Animation_rgyib")
 }
 
@@ -272,7 +300,7 @@ stream_29/stream = ExtResource("29_w7j2h")
 collision_mask = 3
 script = ExtResource("1_rkbax")
 bark_data = Array[JSON]([ExtResource("2_mmwog"), ExtResource("3_8pxes"), ExtResource("4_fmu53"), ExtResource("5_w7j2h"), ExtResource("6_n0b8q"), ExtResource("7_jfgyi"), ExtResource("8_237xx"), ExtResource("9_wpyo2"), ExtResource("10_7crtr"), ExtResource("11_vgvch")])
-bark_time = Vector2(75, 90)
+bark_time = Vector2(45, 75)
 metadata/_edit_group_ = true
 
 [node name="HumanScale" parent="." unique_id=846715413 instance=ExtResource("1_oul6g")]
@@ -329,7 +357,7 @@ stream = SubResource("AudioStreamRandomizer_237xx")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1.5, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=607503661]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36445314, 0)
 shape = SubResource("CapsuleShape3D_kqu6x")
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=542985318]

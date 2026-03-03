@@ -18,6 +18,14 @@ func show_ui(time):
 	tween.tween_property($BottomPivot, "position", Vector2(), time).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
 	await tween.finished
 	animation_ended.emit()
+	
+	
+func hide_ui(time):
+	var tween = get_tree().create_tween().set_parallel(true)
+	tween.tween_property($TopPivot, "position", Vector2(0, -$TopPivot.size.y / 2), time).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
+	tween.tween_property($BottomPivot, "position", Vector2(0, $BottomPivot.size.y), time).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE)
+	await tween.finished
+	animation_ended.emit()
 
 
 func initialize_health(health, max_health):

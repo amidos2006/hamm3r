@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ci1h7ocsy553i" path="res://assets/textures/tex_spaceship/T_screen_sim_Small.png" id="8_btql0"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="11_kfplh"]
 [ext_resource type="JSON" path="res://assets/actions/tanker/computer_investigate.json" id="12_chuba"]
+[ext_resource type="AudioStream" uid="uid://dbsmmlissrtnx" path="res://assets/sfx/in_game/hamm3r theme 1.1 [radio effect].wav" id="14_lyjn3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_52bxi"]
 render_priority = 0
@@ -367,6 +368,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1382272, 0, -2.1952739)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=74016589]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1519165, 0.20361328, 0.20367432)
 shape = SubResource("BoxShape3D_2dmtt")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="7" unique_id=1453063635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.922806, -3.0580835)
+stream = ExtResource("14_lyjn3")
+volume_db = -20.0
+autoplay = true
+max_distance = 6.0
 
 [editable path="ExplosiveArea"]
 [editable path="ExplosiveArea2"]

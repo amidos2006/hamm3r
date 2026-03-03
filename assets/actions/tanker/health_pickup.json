@@ -74,11 +74,30 @@
 		}
 	},
 	{
+		"action": "timer",
+		"wait": 0.5,
+	},
+	{
 		"action": "function",
 		"args": {
 			"name": "use",
 			"object": "player"
 		}
+	},
+	{
+		"action": "timer",
+		"wait": 0.5,
+	},
+	{
+		"action": "function",
+		"args": {
+			"name": "use",
+			"object": "player"
+		}
+	},
+	{
+		"action": "timer",
+		"wait": 0.5,
 	},
 	{
 		"action": "show_dialogue",

@@ -50,7 +50,7 @@ func _ready():
 	$Pivot/Camera3D/Gun.visible = false
 	bark_data.shuffle()
 	
-	$Pivot/Camera3D/Laser.fire(Vector3.ZERO, Vector3.UP, 100)
+	$Pivot/Camera3D/Laser.fire(Vector3.ZERO, Vector3.FORWARD, 100)
 
 
 func _get_rotation(target_pos):
@@ -61,6 +61,7 @@ func _get_rotation(target_pos):
 	return new_rotation
 	
 func _shoot_gun():
+	var explode = false
 	var laser_length = $RayCast3D.target_position.length()
 	var laser_position = Vector3.ZERO
 	var laser_normal = Vector3.ZERO
@@ -69,12 +70,7 @@ func _shoot_gun():
 		laser_position = $RayCast3D.get_collision_point()
 		laser_normal = $RayCast3D.get_collision_normal()
 		if $RayCast3D.get_collider().is_in_group("Explosive"):
-			Blackout.fade(1, 1, 0, "#FFFFFF")
-			var endroom = get_tree().get_nodes_in_group("FinalRoom")[0]
-			var ending = "res://assets/actions/end/bad_bad_end.json"
-			if endroom.simulation_running:
-				ending = "res://assets/actions/end/bad_end.json"
-			SceneManager.switch_scene("res://end/end.tscn", {"actions": ending})
+			explode = true
 		if $RayCast3D.get_collider().is_in_group("Computer"):
 			var caller = $RayCast3D.get_collider()
 			caller.remove_from_group("Computer")
@@ -84,6 +80,24 @@ func _shoot_gun():
 	$AnimationPlayer.speed_scale = 1
 	$Pivot/Camera3D/Laser.fire(laser_position, laser_normal, laser_length)
 	self._is_shooting = true
+	if explode:
+		self.disable_controls = true
+		await get_tree().create_timer(0.2, false).timeout
+		Blackout.fade(0, 1, 0.3, "#FFFFFF")
+		await Blackout.animation_ended
+		var endroom = get_tree().get_nodes_in_group("FinalRoom")[0]
+		var ending = "res://assets/actions/end/bad_bad_end.json"
+		if endroom.simulation_running:
+			ending = "res://assets/actions/end/bad_end.json"
+		SceneManager.switch_scene("res://end/end.tscn", {"actions": ending})
+
+
+func fire_insidehamm():
+	self.disable_controls = true
+	Dialogue.show_message("martin", "normal", "#no_shooting#", "left", 0, "interact")
+	await Dialogue.advance_dialogue
+	await get_tree().create_timer(0.25, false).timeout
+	self.disable_controls = false
 
 
 func _physics_process(delta):
@@ -102,9 +116,9 @@ func _physics_process(delta):
 	if allowed_controls["interact"] and Input.is_action_just_pressed("interact"):
 		if _interactable_object != null:
 			_interactable_object.get_node("Interactable").interact(self)
-		elif gun_equipped:
+		elif gun_equipped and not Dialogue.visible:
 			if inside_hamm:
-				Dialogue.show_message("martin", "normal", "#no_shooting#", "left", 3, "")
+				self.fire_insidehamm()
 			elif not self._is_shooting:
 				self._shoot_gun()
 	
@@ -204,6 +218,20 @@ func equip_gun():
 	animation_ended.emit()
 	
 	
+func unequip_gun():
+	gun_equipped = false
+	await get_tree().create_timer(0.1, false).timeout
+	$AnimationPlayer.clear_queue()
+	$AnimationPlayer.stop()
+	await get_tree().create_timer(0.1, false).timeout
+	$UI.hide_ui(1.5)
+	$AnimationPlayer.seek(1.0, true)
+	$AnimationPlayer.play_backwards("Equip")
+	await $UI.animation_ended
+	$Pivot/Camera3D/Gun.visible = false
+	animation_ended.emit()
+	
+	
 func allow_keys(allowed_keys={}):
 	for key in allowed_keys:
 		self.allowed_controls[key] = allowed_keys[key]
@@ -211,6 +239,16 @@ func allow_keys(allowed_keys={}):
 
 func restrict_angle(min_value, max_value):
 	self.restricted_angle = Vector2(min_value, max_value)
+
+
+func move_player(object):
+	var tween = create_tween()
+	tween.tween_property(self, "global_position", object.global_position, 1)
+	await tween.finished
+	tween = create_tween()
+	tween.tween_property(self, "global_rotation_degrees", Vector3(0, 180, 0), 0.5)
+	await tween.finished
+	animation_ended.emit()
 
 
 func enter_tanker():
@@ -227,6 +265,7 @@ func _on_bark_timer_timeout() -> void:
 	if not UiMessage._active and not Dialogue.visible:
 		ActionManager.run_actions(bark_data[bark_index].data, self, self)
 		bark_index = (bark_index + 1) % bark_data.size()
+		await ActionManager.action_ended
 		$BarkTimer.start(randf_range(bark_time.x, bark_time.y))
 	else:
 		$BarkTimer.start(1.0)

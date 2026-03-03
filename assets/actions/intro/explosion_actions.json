@@ -28,7 +28,7 @@
 		"args": {
 			"name": "tess",
 			"mood": "angry",
-			"text": "What did you do?!",
+			"text": "What have you done, you fool!",
 			"action": "interact",
 			"direction": "right",
 			"time": 0
@@ -50,7 +50,7 @@
 			"ui_message": "PRESS [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO RESTART",
 			"ui_action": "interact",
 			"time": 0.5,
-			"message": "[font_size=128][color=#f5c25c]- GAME OVER -[/color][/font_size]",
+			"message": "[font_size=72][color=#f5c25c]Game Over[/color][/font_size]",
 			"return": "res://intro/intro.tscn",
 		}
 	}

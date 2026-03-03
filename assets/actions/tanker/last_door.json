@@ -9,17 +9,17 @@
 	},
 	{
 		"action": "function",
-		"target": "player",
+		"wait": "animation_ended",
 		"args": {
-			"name": "rotate_interactable",
-			"object": "caller"
+			"name": "open_door"
 		}
 	},
 	{
 		"action": "function",
-		"wait": "animation_ended",
+		"target": "player",
 		"args": {
-			"name": "open_door"
+			"name": "rotate_interactable",
+			"object": "caller"
 		}
 	},
 	{
@@ -28,7 +28,7 @@
 		"args": {
 			"name": "martin",
 			"mood": "normal",
-			"text": "All right, looks like this is it. Let's see what's going on in here.",
+			"text": "Allright, let's see what's going on in here.",
 			"action": "interact",
 			"direction": "left",
 			"time": 0
@@ -43,8 +43,16 @@
 		}
 	},
 	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "bark_timer",
+			"value": false
+		}
+	},
+	{
 		"action": "timer",
-		"wait": 0.25,
+		"wait": 0.5,
 	},
 	{
 		"action": "variable",

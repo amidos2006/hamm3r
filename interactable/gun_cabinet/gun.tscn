@@ -146,6 +146,7 @@ surface_material_override/0 = ExtResource("2_6gla4")
 
 [node name="Outline" type="MeshInstance3D" parent="Pivot/Gun" unique_id=836185233]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, -0.03)
+visible = false
 mesh = SubResource("ArrayMesh_3ljft")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_nu488")

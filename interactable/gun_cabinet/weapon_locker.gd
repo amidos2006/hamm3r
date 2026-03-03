@@ -26,9 +26,9 @@ func _ready():
 		$Interactable.interaction = gun_json
 
 
-func _process(_delta):
-	if self.has_node("Gun"):
-		$Gun.highlight = $Interactable.is_interacting()
+#func _process(_delta):
+	#if self.has_node("Gun"):
+		#$Gun.highlight = $Interactable.is_interacting()
 
 
 func open_door():

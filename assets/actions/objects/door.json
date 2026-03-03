@@ -9,6 +9,7 @@
 	},
 	{
 		"action": "function",
+		"wait": "animation_ended",
 		"args": {
 			"name": "open_door"
 		}
@@ -20,10 +21,6 @@
 			"name": "rotate_interactable",
 			"object": "caller"
 		}
-	},
-	{
-		"action": "timer",
-		"wait": 0.75,
 	},
 	{
 		"action": "variable",

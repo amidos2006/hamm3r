@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bxw43s4qrsdcl"]
+[gd_scene format=3 uid="uid://bxw43s4qrsdcl"]
 
 [ext_resource type="Script" uid="uid://72xodijfuul5" path="res://interactable/toilet/toilet.gd" id="1_fx3bs"]
 [ext_resource type="PackedScene" uid="uid://enl5nsx5v3r" path="res://assets/models/Toilet.glb" id="2_1hqff"]
@@ -68,10 +68,10 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_ilrhp"]
 size = Vector3(1.8, 1.2, 1.8)
 
-[node name="Toilet" type="StaticBody3D"]
+[node name="Toilet" type="StaticBody3D" unique_id=644666083]
 script = ExtResource("1_fx3bs")
 
-[node name="Pivot" parent="." instance=ExtResource("2_1hqff")]
+[node name="Pivot" parent="." unique_id=1085116939 instance=ExtResource("2_1hqff")]
 
 [node name="Bathroom_Toilet" parent="Pivot" index="0"]
 surface_material_override/0 = ExtResource("3_pd4mk")
@@ -79,32 +79,30 @@ surface_material_override/0 = ExtResource("3_pd4mk")
 [node name="Bathroom_Toilet_Lid" parent="Pivot/Bathroom_Toilet" index="0"]
 surface_material_override/0 = ExtResource("3_pd4mk")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1371109917]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3289149, -0.133)
 shape = SubResource("BoxShape3D_8yj2b")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_fk677")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1135980763]
+libraries/ = SubResource("AnimationLibrary_fk677")
 
-[node name="Interactable" parent="." instance=ExtResource("3_ilrhp")]
+[node name="Interactable" parent="." unique_id=398633250 instance=ExtResource("3_ilrhp")]
 interaction = ExtResource("4_fx3bs")
 
-[node name="InteractableArea" parent="Interactable" index="0"]
+[node name="InteractableArea" parent="Interactable" index="0" unique_id=452995842]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("BoxShape3D_ilrhp")
 
-[node name="FocusPoint" parent="Interactable" index="1"]
+[node name="FocusPoint" parent="Interactable" index="1" unique_id=418345644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.531166, -0.0613174)
 
-[node name="Sounds" type="Node3D" parent="."]
+[node name="Sounds" type="Node3D" parent="." unique_id=1798341055]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4486165, 0)
 
-[node name="Open" type="AudioStreamPlayer3D" parent="Sounds"]
+[node name="Open" type="AudioStreamPlayer3D" parent="Sounds" unique_id=1202972388]
 stream = ExtResource("5_1hqff")
 
-[node name="Close" type="AudioStreamPlayer3D" parent="Sounds"]
+[node name="Close" type="AudioStreamPlayer3D" parent="Sounds" unique_id=741749791]
 stream = ExtResource("6_pd4mk")
 
 [editable path="Pivot"]

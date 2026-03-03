@@ -208,11 +208,11 @@ transform = Transform3D(-4.1311267e-08, 0.32680556, 0.9450916, 1.4285125e-08, 0.
 [node name="Interactable" parent="." unique_id=175769176 instance=ExtResource("2_1tbto")]
 interaction = ExtResource("7_j2sq0")
 
-[node name="InteractableArea" parent="Interactable" index="0"]
+[node name="InteractableArea" parent="Interactable" index="0" unique_id=452995842]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10248, 0.462273)
 shape = SubResource("BoxShape3D_c5776")
 
-[node name="FocusPoint" parent="Interactable" index="1"]
+[node name="FocusPoint" parent="Interactable" index="1" unique_id=418345644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0153411, 1.04946, 0)
 
 [node name="Sounds" type="Node3D" parent="." unique_id=1526895285]

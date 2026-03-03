@@ -1,0 +1,17 @@
+[
+	{
+		"action": "function",
+		"target": "../Tunnel_SealDoor",
+		"args": {
+			"name": "close_door",
+		}
+	},
+	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "inside_hamm",
+			"value": true
+		}
+	},
+]

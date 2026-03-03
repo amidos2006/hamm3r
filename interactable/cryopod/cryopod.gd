@@ -26,6 +26,15 @@ func open_door():
 	if _state == DoorState.CLOSE:
 		$AnimationPlayer.play("open")
 		await $AnimationPlayer.animation_finished
+		_state = DoorState.OPEN
+		animation_ended.emit()
+		
+
+func close_door():
+	if _state == DoorState.OPEN:
+		$AnimationPlayer.play_backwards("open")
+		await $AnimationPlayer.animation_finished
+		_state = DoorState.CLOSE
 		animation_ended.emit()
 		
 

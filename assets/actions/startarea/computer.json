@@ -34,7 +34,19 @@
 		"args": {
 			"name": "3R",
 			"mood": "normal",
-			"text": "Here’s the thing: my sensors say that this tanker is not completely dead.",
+			"text": "This might be nothing, but here’s the thing–",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "My sensors indicate that the tanker out there is not completely dead.",
 			"action": "interact",
 			"direction": "right",
 			"time": 0
@@ -155,8 +167,16 @@
 		}
 	},
 	{
+		"action": "function",
+		"target": "Interactable",
+		"args": {
+			"name": "change_script",
+			"args": ["res://assets/actions/startarea/computer_weapon.json"],
+		}
+	},
+	{
 		"action": "timer",
-		"wait": 0.25,
+		"wait": 0.5,
 	},
 	{
 		"action": "function",
@@ -164,15 +184,6 @@
 		"args": {
 			"name": "rotate_interactable",
 			"object": "caller"
-		}
-	},
-	{
-		"action": "function",
-		"target": "Interactable",
-		"args": {
-			"name": "disable_interactable",
-			"object": "player",
-			"args": [true]
 		}
 	},
 	{

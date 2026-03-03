@@ -4,8 +4,8 @@ extends StaticBody3D
 signal animation_ended
 
 
-func _process(_delta):
-	$Pivot/HealthPickupModel/Outline.visible = $Interactable.is_interacting()
+#func _process(_delta):
+	#$Pivot/HealthPickupModel/Outline.visible = $Interactable.is_interacting()
 
 
 func move(location, time):
@@ -17,4 +17,4 @@ func move(location, time):
 	
 
 func use(player):
-	player.health = player.max_health
+	player.health += 1

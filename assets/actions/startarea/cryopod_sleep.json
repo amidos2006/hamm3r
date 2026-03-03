@@ -1,0 +1,47 @@
+[
+	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "disable_controls",
+			"value": true
+		}
+	},
+	{
+		"action": "function",
+		"args": {
+			"name": "disable_interaction"
+		}
+	},
+	{
+		"action": "function",
+		"target": "player",
+		"wait": "animation_ended",
+		"args": {
+			"name": "move_player",
+			"object": "caller"
+		}
+	},
+	{
+		"action": "function",
+		"wait": "animation_ended",
+		"args": {
+			"name": "close_door"
+		}
+	},
+	{
+		"action": "close",
+		"args": {
+			"start": -0.1,
+			"end": 1,
+			"time": 2
+		}
+	},
+	{
+		"action": "switch_scene",
+		"args": {
+			"path": "res://end/end.tscn",
+			"actions": "res://assets/actions/end/normal_end.json"
+		}
+	},
+]

@@ -25,7 +25,7 @@
 		"args": {
 			"name": "martin",
 			"mood": "normal",
-			"text": "But they must have forgotten to turn off their computer.\nCould this explain the signals you sensed?",
+			"text": "But they must have forgotten to turn off their computer. Could this explain the signals you sensed?",
 			"action": "interact",
 			"direction": "left",
 			"time": 0

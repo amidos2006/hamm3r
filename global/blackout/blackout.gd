@@ -46,3 +46,20 @@ func open(start_open, end_open, time):
 	tween.tween_property($ColorRect_2, "position", end_value, time).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_IN)
 	await tween.finished
 	animation_ended.emit()
+	
+
+func close(start_open, end_open, time):
+	$ColorRect.visible = false
+	$ColorRect_1.visible = true
+	$ColorRect_2.visible = true
+	$FreezeTexture.visible = false
+	
+	var start_value = Vector2(0, $ColorRect.size.y * (1.0 + end_open) / 2)
+	var end_value = Vector2(0, $ColorRect.size.y * (1.0 + start_open) / 2)
+	$ColorRect_1.position = -start_value
+	$ColorRect_2.position = start_value
+	var tween = get_tree().create_tween().set_parallel(true)
+	tween.tween_property($ColorRect_1, "position", -end_value, time).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	tween.tween_property($ColorRect_2, "position", end_value, time).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	await tween.finished
+	animation_ended.emit()

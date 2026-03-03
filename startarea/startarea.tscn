@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://chj1rvqew6sky" path="res://interactable/poster/poster.tscn" id="2_pen6l"]
 [ext_resource type="JSON" path="res://assets/actions/startarea/start_actions.json" id="2_xq0vx"]
 [ext_resource type="Material" uid="uid://dsoclvv6ric3u" path="res://assets/materials/mat_hammer/m_bathroom.tres" id="4_k17ha"]
+[ext_resource type="JSON" path="res://assets/actions/startarea/spaceship_return.json" id="5_xinp0"]
 [ext_resource type="Material" uid="uid://6yidcff8h8yx" path="res://assets/materials/mat_hammer/m_controlroom.tres" id="9_361ey"]
 [ext_resource type="Material" uid="uid://bic4y3wsictxk" path="res://assets/materials/mat_hammer/m_tunnel.tres" id="10_1vpb7"]
 [ext_resource type="Material" uid="uid://cbd7c8jwr4u21" path="res://assets/materials/mat_hammer/m_controlroom_pipes.tres" id="10_361ey"]
@@ -37,6 +38,7 @@
 [ext_resource type="Material" uid="uid://bp113us1g1bu7" path="res://assets/materials/mat_spaceship/m_pcg_barrels.tres" id="32_2c6kl"]
 [ext_resource type="Script" uid="uid://hae3qadaxqck" path="res://startarea/door_light.gd" id="32_106fm"]
 [ext_resource type="PackedScene" uid="uid://cxnv0w5rb7egn" path="res://interactable/gun_cabinet/weapon_locker.tscn" id="35_5sfhf"]
+[ext_resource type="JSON" path="res://assets/actions/startarea/spaceship_return_noshoot.json" id="40_itakq"]
 [ext_resource type="PackedScene" uid="uid://s06kfgaux5dw" path="res://interactable/computer/computer.tscn" id="44_wwn5p"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5ehgq"]
@@ -875,6 +877,9 @@ size = Vector3(10, 3, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_2pnu0"]
 size = Vector3(3, 2.4, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_doki2"]
+size = Vector3(4.2844543, 2.078003, 1.0224609)
+
 [node name="StartArea" type="Node3D" unique_id=2125436186]
 script = ExtResource("1_3scv4")
 start_actions = ExtResource("2_xq0vx")
@@ -1349,7 +1354,7 @@ interaction = ExtResource("20_k17ha")
 [node name="Corridor_ControlDoor" parent="InteractableObjects" unique_id=1788433554 instance=ExtResource("18_lxhx7")]
 transform = Transform3D(-0.999902, 0, -0.0139616, 0, 1, 0, 0.0139616, 0, -0.999902, 6.9482365, -0.114634, 9.790336)
 
-[node name="Tunnel_SealDoor" parent="InteractableObjects" unique_id=1591921562 groups=["Tunnel_SealDoor"] instance=ExtResource("27_doki2")]
+[node name="Tunnel_SealDoor" parent="InteractableObjects" unique_id=1591921562 instance=ExtResource("27_doki2")]
 transform = Transform3D(1, 0, -6.8236e-08, 0, 1, 0, 6.8236e-08, 0, 1, -0.0510805, 0.0418737, 0.293604)
 
 [node name="Tunnel_EventArea" parent="InteractableObjects" unique_id=2127575955 instance=ExtResource("21_xq0vx")]
@@ -1370,17 +1375,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6206021, -0.0048007965, 16.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8441171, -2.3841858e-07, 16.242006)
 show_note = false
 
-[node name="CryoPod" parent="InteractableObjects/Cryoroom_Cryopod_2/Pivot" parent_id_path=PackedInt32Array(421422194, 377422887) index="0" unique_id=207636917]
-surface_material_override/0 = null
-
-[node name="CryoPod_Door" parent="InteractableObjects/Cryoroom_Cryopod_2/Pivot/CryoPod" index="0" unique_id=1412229956]
-surface_material_override/0 = null
-surface_material_override/1 = null
-
-[node name="CryoPod_Note" parent="InteractableObjects/Cryoroom_Cryopod_2/Pivot/CryoPod" index="1" unique_id=1123713066]
+[node name="CryoPod_Note" parent="InteractableObjects/Cryoroom_Cryopod_2/Pivot/CryoPod" parent_id_path=PackedInt32Array(421422194, 207636917) index="1" unique_id=1123713066]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11384988, 0, 0)
-surface_material_override/0 = null
-surface_material_override/1 = null
+
+[node name="Interactable" parent="InteractableObjects/Cryoroom_Cryopod_2" index="6" unique_id=307673982]
+disable_interaction = true
 
 [node name="Cryoroom_Poster_1" parent="InteractableObjects" unique_id=1706680121 instance=ExtResource("2_pen6l")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.53426, -0.395715, 14.0196)
@@ -1394,6 +1393,23 @@ transform = Transform3D(-0.973734, 0, 0.227688, 0, 1, 0, -0.227688, 0, -0.973734
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableObjects/Cryoroom_CryopodExit" unique_id=1335038695]
 transform = Transform3D(0.974288, 0, 0.225308, 0, 1, 0, -0.225308, 0, 0.974288, 0, 1.2, -0.120012)
 shape = SubResource("BoxShape3D_2pnu0")
+
+[node name="ReturnArea" parent="InteractableObjects" unique_id=433124444 instance=ExtResource("21_xq0vx")]
+transform = Transform3D(0.70734125, 0, 0.7068723, 0, 1, 0, -0.7068723, 0, 0.70734125, 4.1687903, 0, 7.843153)
+event = ExtResource("5_xinp0")
+disable_event = true
+
+[node name="CollisionShape3D" parent="InteractableObjects/ReturnArea" index="0" unique_id=547566022]
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_doki2")
+
+[node name="DisableShooting" parent="InteractableObjects" unique_id=1074200214 instance=ExtResource("21_xq0vx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.072909474, 0, 2.7798257)
+event = ExtResource("40_itakq")
+disable_event = true
+
+[node name="CollisionShape3D" parent="InteractableObjects/DisableShooting" index="0" unique_id=547566022]
+shape = SubResource("BoxShape3D_doki2")
 
 [node name="Lighting" type="Node3D" parent="." unique_id=1740467455]
 
@@ -1469,3 +1485,5 @@ omni_range = 10.0
 [editable path="InteractableObjects/Tunnel_EventArea"]
 [editable path="InteractableObjects/Cryoroom_Cryopod_2"]
 [editable path="InteractableObjects/Cryoroom_Cryopod_2/Interactable"]
+[editable path="InteractableObjects/ReturnArea"]
+[editable path="InteractableObjects/DisableShooting"]
