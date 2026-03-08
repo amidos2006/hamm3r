@@ -3,10 +3,16 @@
 [ext_resource type="Script" uid="uid://ctxh6c3jp62vb" path="res://global/dialogue/characters/character_mood_pictures.gd" id="1_6jcfi"]
 [ext_resource type="Texture2D" uid="uid://djn8vucy5y0ut" path="res://assets/graphics/dialogue/3R_normal.png" id="1_6s50u"]
 [ext_resource type="Script" uid="uid://cq3vw6ffhj3vi" path="res://global/dialogue/characters/character_pictures.gd" id="2_xsu3q"]
+[ext_resource type="AudioStream" uid="uid://tw5vtn5rdn1y" path="res://assets/sfx/dialogue/3R/computer - regular_1.wav" id="3_u1qm7"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_cm2tn"]
+streams_count = 1
+stream_0/stream = ExtResource("3_u1qm7")
 
 [sub_resource type="Resource" id="Resource_w12ax"]
 script = ExtResource("2_xsu3q")
 pictures = Array[Texture]([ExtResource("1_6s50u")])
+sounds = SubResource("AudioStreamRandomizer_cm2tn")
 metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
 
 [resource]

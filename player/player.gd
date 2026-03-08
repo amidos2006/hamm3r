@@ -82,6 +82,7 @@ func _shoot_gun():
 	self._is_shooting = true
 	if explode:
 		self.disable_controls = true
+		Dialogue.show_message("3R", "normal", "Why did—", "right", 0.5, "")
 		await get_tree().create_timer(0.2, false).timeout
 		Blackout.fade(0, 1, 0.3, "#FFFFFF")
 		await Blackout.animation_ended
@@ -211,6 +212,7 @@ func take(object, time, shift=0.0):
 func equip_gun():
 	$UI.show_ui(1.5)
 	$AnimationPlayer.play("Equip")
+	$Pivot/Camera3D/Gun/Sound.play()
 	$Pivot/Camera3D/Gun.visible = true
 	await $UI.animation_ended
 	$AnimationPlayer.play("Idle")

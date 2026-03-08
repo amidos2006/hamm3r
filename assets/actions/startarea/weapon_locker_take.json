@@ -71,7 +71,7 @@
 		"args": {
 			"name": "martin",
 			"mood": "smiling",
-			"text": "That is more like it.",
+			"text": "Well, that's more like it!",
 			"action": "interact",
 			"direction": "left",
 			"time": 0

@@ -2,10 +2,12 @@ extends Node
 
 
 var _running_actions = false
-var _stop_actions = false
 
 
 signal action_ended
+
+
+var active = true
 
 
 func get_target(type, caller, player=null):
@@ -25,21 +27,15 @@ func check_condition(conditions, caller, player=null):
 	return result
 	
 	
-func stop_actions():
-	if _running_actions:
-		_stop_actions = true
-	
-	
 func run_actions(actions, caller, player=null):
+	if not active:
+		return
 	_running_actions = true
 	for act in actions:
 		var conditions = check_condition(act.get("conditions", []), caller, player)
 		if not conditions:
 			continue
 		
-		if _stop_actions:
-			_stop_actions = false
-			return
 		
 		var target = get_target(act.get("target", ""), caller, player)
 		match(act.action):
@@ -113,9 +109,12 @@ func run_actions(actions, caller, player=null):
 						target.volume_db = act.args.value
 		
 		if act.has("wait"):
+			var result = null
 			if typeof(act.wait) == TYPE_STRING:
-				await Signal(target, act.wait)
+				result = await SignalAny.new([Signal(target, act.wait), PauseMenu.restart_signal]).triggered
 			else:
-				await get_tree().create_timer(act.wait, false).timeout
+				result = await SignalAny.new([get_tree().create_timer(act.wait, false).timeout, PauseMenu.restart_signal]).triggered
+			if result == PauseMenu.restart_signal:
+				break
 	_running_actions = false
 	action_ended.emit()

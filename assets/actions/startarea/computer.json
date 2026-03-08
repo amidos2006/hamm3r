@@ -64,7 +64,7 @@
 		"args": {
 			"name": "martin",
 			"mood": "concerned",
-			"text": "That lemon out there has been gathering cosmic rays and interstellar dust for more than twenty years!",
+			"text": "That lemon has been gathering cosmic rays and interstellar dust for more than twenty years!",
 			"action": "interact",
 			"direction": "left",
 			"time": 0
@@ -100,7 +100,7 @@
 		"args": {
 			"name": "martin",
 			"mood": "normal",
-			"text": "Well, fuck me then. Are gravity and pressure okay in there?",
+			"text": "Well, f&*!< me then. Are gravity and pressure okay in there?",
 			"action": "interact",
 			"direction": "left",
 			"time": 0

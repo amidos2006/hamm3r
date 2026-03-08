@@ -8,9 +8,13 @@ var active_light = true
 var flick_light = true
 
 
+var _model = null
+
+
 func _process(_delta):
 	if self.has_node("OmniLight3D"):
 		$OmniLight3D.visible = active_light and flick_light
+	_model.visible = active_light
 
 
 func select_tile(bottom, right, top, left, room_type=""):
@@ -29,6 +33,7 @@ func select_tile(bottom, right, top, left, room_type=""):
 		if not child.name.begins_with("0") and not child.name.begins_with("1"):
 			continue
 		self.remove_child(child)
+	self._model = active_child
 	var variants = []
 	for model in active_child.get_children():
 		model.visible = false

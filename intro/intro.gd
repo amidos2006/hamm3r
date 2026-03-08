@@ -10,10 +10,10 @@ extends Node
 @export var end_actions:JSON
 
 
-var _docking_speed
-var _soft_threshold
-var _medium_threshold
-var _high_threshold
+var _docking_speed = 0.0
+var _soft_threshold = 0.0
+var _medium_threshold = 0.0
+var _high_threshold = 0.0
 
 
 func _ready():

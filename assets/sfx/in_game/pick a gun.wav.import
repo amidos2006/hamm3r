@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bb2crtqyx5b5v"
+path="res://.godot/imported/pick a gun.wav-dc3bec3f9a1a75d008e8829284a742a2.sample"
+
+[deps]
+
+source_file="res://assets/sfx/in_game/pick a gun.wav"
+dest_files=["res://.godot/imported/pick a gun.wav-dc3bec3f9a1a75d008e8829284a742a2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -4,18 +4,31 @@
 [ext_resource type="Script" uid="uid://cq3vw6ffhj3vi" path="res://global/dialogue/characters/character_pictures.gd" id="1_cy58x"]
 [ext_resource type="Texture2D" uid="uid://bdmitepqkf4ty" path="res://assets/graphics/dialogue/Tess_angry.png" id="3_6cv3u"]
 [ext_resource type="Script" uid="uid://ctxh6c3jp62vb" path="res://global/dialogue/characters/character_mood_pictures.gd" id="3_e4ir5"]
+[ext_resource type="AudioStream" uid="uid://b4lvj83mvaqov" path="res://assets/sfx/dialogue/tess/female voice - regular_2.wav" id="3_p0cgm"]
 [ext_resource type="Texture2D" uid="uid://chvoffwgiq73r" path="res://assets/graphics/dialogue/Tess_shocked.png" id="4_6cv3u"]
 [ext_resource type="Texture2D" uid="uid://cqqi2yu451wb8" path="res://assets/graphics/dialogue/Tess_smiling.png" id="5_f8rgk"]
 [ext_resource type="Texture2D" uid="uid://cdo2js7u6fr1m" path="res://assets/graphics/dialogue/Tess_noise.png" id="6_ya1dj"]
+[ext_resource type="AudioStream" uid="uid://de85d4lne7x4x" path="res://assets/sfx/dialogue/tess/female voice - grogged_2.wav" id="7_x1a6o"]
+[ext_resource type="AudioStream" uid="uid://uypdis75l4mx" path="res://assets/sfx/dialogue/tess/female voice - excited_2.wav" id="9_45lif"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jgawy"]
+streams_count = 1
+stream_0/stream = ExtResource("3_p0cgm")
 
 [sub_resource type="Resource" id="Resource_6cv3u"]
 script = ExtResource("1_cy58x")
 pictures = Array[Texture]([ExtResource("1_aqei6")])
+sounds = SubResource("AudioStreamRandomizer_jgawy")
 metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_w7lxx"]
+streams_count = 1
+stream_0/stream = ExtResource("7_x1a6o")
 
 [sub_resource type="Resource" id="Resource_f8rgk"]
 script = ExtResource("1_cy58x")
 pictures = Array[Texture]([ExtResource("3_6cv3u")])
+sounds = SubResource("AudioStreamRandomizer_w7lxx")
 metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
 
 [sub_resource type="Resource" id="Resource_x1d1r"]
@@ -23,14 +36,24 @@ script = ExtResource("1_cy58x")
 pictures = Array[Texture]([ExtResource("6_ya1dj")])
 metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_v784v"]
+streams_count = 1
+stream_0/stream = ExtResource("7_x1a6o")
+
 [sub_resource type="Resource" id="Resource_ya1dj"]
 script = ExtResource("1_cy58x")
 pictures = Array[Texture]([ExtResource("4_6cv3u")])
+sounds = SubResource("AudioStreamRandomizer_v784v")
 metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vrv7b"]
+streams_count = 1
+stream_0/stream = ExtResource("9_45lif")
 
 [sub_resource type="Resource" id="Resource_0m1ar"]
 script = ExtResource("1_cy58x")
 pictures = Array[Texture]([ExtResource("5_f8rgk")])
+sounds = SubResource("AudioStreamRandomizer_vrv7b")
 metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
 
 [resource]

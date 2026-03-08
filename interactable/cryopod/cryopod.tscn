@@ -5,6 +5,7 @@
 [ext_resource type="Material" uid="uid://bjitklds44p61" path="res://assets/materials/mat_hammer/m_cryopod.tres" id="3_q6wdd"]
 [ext_resource type="Material" uid="uid://bjf0a24v6e5ur" path="res://assets/materials/mat_hammer/m_cryopod_glass.tres" id="4_q6wdd"]
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="7_q6wdd"]
+[ext_resource type="AudioStream" uid="uid://bhgo1kpd6wily" path="res://assets/sfx/in_game/pod_opening.wav" id="7_t0j7g"]
 [ext_resource type="JSON" path="res://assets/actions/startarea/cryopod.json" id="9_8e3tg"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ji63i"]
@@ -269,5 +270,13 @@ shape = SubResource("BoxShape3D_t0j7g")
 
 [node name="FocusPoint" parent="Interactable" index="1" unique_id=418345644]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00544, 0)
+
+[node name="Sounds" type="Node3D" parent="." unique_id=397475287]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13, -0.587)
+
+[node name="Open" type="AudioStreamPlayer3D" parent="Sounds" unique_id=1501677368]
+stream = ExtResource("7_t0j7g")
+volume_db = -20.0
+max_db = 2.0
 
 [editable path="Interactable"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://qbiuoxq1r045"
+path="res://.godot/imported/computer - grogged_1.wav-2aa5a6254eff0c2428f514eae35c7757.sample"
+
+[deps]
+
+source_file="res://assets/sfx/dialogue/3R/computer - grogged_1.wav"
+dest_files=["res://.godot/imported/computer - grogged_1.wav-2aa5a6254eff0c2428f514eae35c7757.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

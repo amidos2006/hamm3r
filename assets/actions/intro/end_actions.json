@@ -174,8 +174,26 @@
 		"target": "Title/AppearSound",
 		"args": {
 			"name": "volume",
-			"value": -40,
-			"time": 2
+			"value": -80,
+			"time": 3
+		}
+	},
+	{
+		"action": "sound",
+		"target": "Ship",
+		"args": {
+			"name": "volume",
+			"value": -80,
+			"time": 3
+		}
+	},
+	{
+		"action": "sound",
+		"target": "Music",
+		"args": {
+			"name": "volume",
+			"value": -80,
+			"time": 3
 		}
 	},
 	{
@@ -184,7 +202,7 @@
 		"args": {
 			"start": 0.25,
 			"end": 1,
-			"time": 2
+			"time": 3
 		}
 	},
 	{

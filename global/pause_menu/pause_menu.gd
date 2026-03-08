@@ -4,6 +4,9 @@ extends CanvasLayer
 var _ignore_release
 
 
+signal restart_signal
+
+
 func _ready():
 	self.process_mode = Node.PROCESS_MODE_ALWAYS
 	_ignore_release = false
@@ -46,11 +49,18 @@ func _process(_delta):
 		$Info/TimerFill.scale.x = 0
 	
 	
-func _on_restart_timer_timeout():
-	self.unpause()
-	_ignore_release = true
-	ActionManager.stop_actions()
+func restart():
+	Blackout.start()
+	ActionManager.active = false
+	restart_signal.emit()
 	Dialogue.hide_message()
 	UiMessage.hide_message()
 	await get_tree().create_timer(0.1).timeout
-	SceneManager.switch_scene("res://intro/intro.tscn", {})
+	ActionManager.active = true
+	SceneManager.execute_scene()
+	
+	
+func _on_restart_timer_timeout():
+	self.unpause()
+	_ignore_release = true
+	SceneManager.switch_scene("res://intro/intro.tscn", {}, restart)

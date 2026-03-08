@@ -29,6 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://68adycp2df0x" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_14.wav" id="12_g4c7l"]
 [ext_resource type="AudioStream" uid="uid://c3sm7d1jnplt0" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_06.wav" id="13_65viv"]
 [ext_resource type="AudioStream" uid="uid://ukqkurfs0kdf" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_15.wav" id="13_knn7v"]
+[ext_resource type="AudioStream" uid="uid://bb2crtqyx5b5v" path="res://assets/sfx/in_game/pick a gun.wav" id="14_jfgyi"]
 [ext_resource type="AudioStream" uid="uid://d2wfndawhw6wa" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV2_Walk_01.wav" id="14_pnw6m"]
 [ext_resource type="AudioStream" uid="uid://do3vgtbsjgo3a" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_07.wav" id="14_x7c3f"]
 [ext_resource type="AudioStream" uid="uid://b4wcn3pwu1w4w" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV2_Walk_02.wav" id="15_1so5t"]
@@ -322,6 +323,9 @@ transform = Transform3D(-0.25, 0, 3.7748997e-08, 0, 0.25, 0, -3.7748997e-08, 0, 
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_sxpnq")
 skeleton = NodePath("")
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="Pivot/Camera3D/Gun" unique_id=1812819542]
+stream = ExtResource("14_jfgyi")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="Pivot/Camera3D" unique_id=527951568]
 current = true

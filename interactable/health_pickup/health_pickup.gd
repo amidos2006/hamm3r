@@ -18,3 +18,4 @@ func move(location, time):
 
 func use(player):
 	player.health += 1
+	$AudioStreamPlayer.play()

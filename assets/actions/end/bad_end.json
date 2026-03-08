@@ -53,7 +53,7 @@
 		"target": "Credits",
 		"args": {
 			"name": "roll_credits",
-			"args": [30]
+			"args": [40]
 		}
 	},
 	{

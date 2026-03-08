@@ -23,9 +23,14 @@ pictures = Array[Texture]([ExtResource("1_rjki6"), ExtResource("2_h0kq6")])
 sounds = SubResource("AudioStreamRandomizer_eremp")
 metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4apym"]
+streams_count = 1
+stream_0/stream = ExtResource("9_t0jul")
+
 [sub_resource type="Resource" id="Resource_cxqns"]
 script = ExtResource("1_be6e7")
 pictures = Array[Texture]([ExtResource("4_h0kq6")])
+sounds = SubResource("AudioStreamRandomizer_4apym")
 metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_41e1x"]

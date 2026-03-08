@@ -35,6 +35,15 @@
 		}
 	},
 	{
+		"action": "sound",
+		"target": "Music",
+		"args": {
+			"name": "volume",
+			"value": -80,
+			"time": 1.5
+		}
+	},
+	{
 		"action": "fade",
 		"wait": "animation_ended",
 		"args": {

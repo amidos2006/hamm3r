@@ -36,12 +36,30 @@
 		}
 	},
 	{
+		"action": "sound",
+		"target": "Ship",
+		"args": {
+			"name": "volume",
+			"value": -80,
+			"time": 1.5
+		}
+	},
+	{
+		"action": "sound",
+		"target": "Music",
+		"args": {
+			"name": "volume",
+			"value": -80,
+			"time": 1.5
+		}
+	},
+	{
 		"action": "fade",
 		"wait": "animation_ended",
 		"args": {
 			"start": 0,
 			"end": 1,
-			"time": 1
+			"time": 1.5
 		}
 	},
 	{

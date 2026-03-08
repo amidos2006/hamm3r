@@ -25,6 +25,7 @@ func _ready():
 func open_door():
 	if _state == DoorState.CLOSE:
 		$AnimationPlayer.play("open")
+		$Sounds/Open.play()
 		await $AnimationPlayer.animation_finished
 		_state = DoorState.OPEN
 		animation_ended.emit()
