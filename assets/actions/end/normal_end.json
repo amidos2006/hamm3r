@@ -52,7 +52,7 @@
 			"ui_message": "PRESS [color=#d1ff85][font_size=72]SPACE[/font_size][/color] TO RESTART",
 			"ui_action": "interact",
 			"time": 0.5,
-			"message": "[font_size=72][color=#f5c25c]\"I suppose it is tempting,\nif the only tool you have is a hammer,\nto treat everything as if it were a nail.\"[/color]\n\n[color=#ffffff]Abraham Maslow, 1966[/color][/font_size]",
+			"message": "[font_size=56][color=#f5c25c]\"I suppose it is tempting,\nif the only tool you have is a hammer,\nto treat everything as if it were a nail.\"[/color][/font_size]\n\n[font_size=32][color=#ffffff]Abraham Maslow, 1966[/color][/font_size]",
 			"return": "res://intro/intro.tscn",
 		}
 	}
