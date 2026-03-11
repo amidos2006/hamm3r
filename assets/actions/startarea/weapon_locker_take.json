@@ -9,6 +9,13 @@
 	},
 	{
 		"action": "function",
+		"conditions": [
+			{
+				"name": "know_gun",
+				"target": "player",
+				"value": false,
+			}
+		],
 		"target": "Player",
 		"args": {
 			"name": "look_at_interactable",
@@ -18,6 +25,13 @@
 	},
 	{
 		"action": "show_dialogue",
+		"conditions": [
+			{
+				"name": "know_gun",
+				"target": "player",
+				"value": false,
+			}
+		],
 		"wait": "advance_dialogue",
 		"args": {
 			"name": "3R",
@@ -30,6 +44,13 @@
 	},
 	{
 		"action": "function",
+		"conditions": [
+			{
+				"name": "know_gun",
+				"target": "player",
+				"value": false,
+			}
+		],
 		"target": "Player",
 		"args": {
 			"name": "look_at_interactable",
@@ -39,6 +60,13 @@
 	},
 	{
 		"action": "timer",
+		"conditions": [
+			{
+				"name": "know_gun",
+				"target": "player",
+				"value": false,
+			}
+		],
 		"wait": 0.8,
 	},
 	{

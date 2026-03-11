@@ -11,6 +11,11 @@ var flick_light = true
 var _model = null
 
 
+func _ready():
+	if self.has_node("AudioStreamPlayer3D"):
+		$AudioStreamPlayer3D.play()
+
+
 func _process(_delta):
 	if self.has_node("OmniLight3D"):
 		$OmniLight3D.visible = active_light and flick_light
@@ -52,7 +57,16 @@ func select_tile(bottom, right, top, left, room_type=""):
 			if model.get_child(0).has_node("HealthPickup"):
 				model.get_child(0).get_node("HealthPickup").queue_free()
 	
-	if room_type.to_lower() == "blocked" or tile_name == "0000":
+	var model_object = active_child.get_child(0)
+	if model_object.has_node("barrels"):
+		if room_type == "start" or randf() < 0.4:
+			model_object.get_node("barrels").queue_free()
+	if room_type == "end" or randf() < 0.75:
+		$AudioStreamPlayer3D.queue_free()
+	if model_object.has_node("health_clutter") and room_type != "health":
+		model_object.get_node("health_clutter").queue_free()
+	if (room_type.to_lower() == "blocked" and is_deadend) or tile_name == "0000":
+		$AudioStreamPlayer3D.queue_free()
 		$OmniLight3D.queue_free()
 
 

@@ -1358,7 +1358,7 @@ transform = Transform3D(-0.999902, 0, -0.0139616, 0, 1, 0, 0.0139616, 0, -0.9999
 transform = Transform3D(1, 0, -6.8236e-08, 0, 1, 0, 6.8236e-08, 0, 1, -0.0510805, 0.0418737, 0.293604)
 
 [node name="Tunnel_EventArea" parent="InteractableObjects" unique_id=2127575955 instance=ExtResource("21_xq0vx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5721524)
 event = ExtResource("22_0uvls")
 
 [node name="CollisionShape3D" parent="InteractableObjects/Tunnel_EventArea" index="0" unique_id=547566022]
@@ -1375,8 +1375,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6206021, -0.0048007965, 16.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8441171, -2.3841858e-07, 16.242006)
 show_note = false
 
-[node name="CryoPod_Note" parent="InteractableObjects/Cryoroom_Cryopod_2/Pivot/CryoPod" parent_id_path=PackedInt32Array(421422194, 207636917) index="1" unique_id=1123713066]
+[node name="CryoPod" parent="InteractableObjects/Cryoroom_Cryopod_2/Pivot" parent_id_path=PackedInt32Array(421422194, 377422887) index="0" unique_id=207636917]
+surface_material_override/0 = null
+
+[node name="CryoPod_Note" parent="InteractableObjects/Cryoroom_Cryopod_2/Pivot/CryoPod" index="1" unique_id=1123713066]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11384988, 0, 0)
+surface_material_override/0 = null
+surface_material_override/1 = null
 
 [node name="Interactable" parent="InteractableObjects/Cryoroom_Cryopod_2" index="6" unique_id=307673982]
 disable_interaction = true

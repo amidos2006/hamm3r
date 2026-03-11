@@ -16,10 +16,36 @@
 	},
 	{
 		"action": "show_dialogue",
+		"conditions": [
+			{
+				"name": "is_frozen",
+				"target": "player",
+				"value": false
+			},
+		],
 		"wait": "advance_dialogue",
 		"args": {
 			"name": "martin",
 			"mood": "normal",
+			"text": "Hard pass.",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"conditions": [
+			{
+				"name": "is_frozen",
+				"target": "player",
+				"value": true
+			},
+		],
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "frosty",
 			"text": "Hard pass.",
 			"action": "interact",
 			"direction": "left",

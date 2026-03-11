@@ -53,6 +53,14 @@
 		}
 	},
 	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "know_gun",
+			"value": true
+		}
+	},
+	{
 		"action": "timer",
 		"wait": 0.5,
 	},

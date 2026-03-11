@@ -28,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://dl8owxld55ums" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_05.wav" id="12_c35mf"]
 [ext_resource type="AudioStream" uid="uid://68adycp2df0x" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_14.wav" id="12_g4c7l"]
 [ext_resource type="AudioStream" uid="uid://c3sm7d1jnplt0" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_06.wav" id="13_65viv"]
+[ext_resource type="Script" uid="uid://dk24k0a4sea3v" path="res://player/camera_3d.gd" id="13_237xx"]
 [ext_resource type="AudioStream" uid="uid://ukqkurfs0kdf" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV1_Walk_15.wav" id="13_knn7v"]
 [ext_resource type="AudioStream" uid="uid://bb2crtqyx5b5v" path="res://assets/sfx/in_game/pick a gun.wav" id="14_jfgyi"]
 [ext_resource type="AudioStream" uid="uid://d2wfndawhw6wa" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV2_Walk_01.wav" id="14_pnw6m"]
@@ -45,6 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://c5gjk2meqpxkv" path="res://player/laser_hit.tscn" id="18_n0b8q"]
 [ext_resource type="AudioStream" uid="uid://bqbg4pbusyx" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV2_Walk_06.wav" id="20_art4l"]
 [ext_resource type="AudioStream" uid="uid://dkax5iqmlq7wg" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV2_Walk_07.wav" id="21_fjxoa"]
+[ext_resource type="Script" uid="uid://l6fnyvh53yk6" path="res://player/explosion_sphere.gd" id="21_wpyo2"]
 [ext_resource type="AudioStream" uid="uid://bo112rf5cbv4d" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV2_Walk_08.wav" id="22_gswnw"]
 [ext_resource type="AudioStream" uid="uid://d0itf5c78w64r" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV2_Walk_09.wav" id="23_xcnuv"]
 [ext_resource type="AudioStream" uid="uid://dkr8bqiepdsoy" path="res://assets/sfx/in_game/steps/metal/Footsteps_MetalV2_Walk_10.wav" id="24_j55il"]
@@ -106,6 +108,17 @@ streams_count = 3
 stream_0/stream = ExtResource("15_w7j2h")
 stream_1/stream = ExtResource("16_n0b8q")
 stream_2/stream = ExtResource("17_jfgyi")
+
+[sub_resource type="SphereMesh" id="SphereMesh_237xx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_237xx"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.95686275, 0.6784314, 0.05882353, 1)
+emission_enabled = true
+emission = Color(0.95686275, 0.6784314, 0.05882353, 1)
+emission_energy_multiplier = 10.0
+grow_amount = -2.956
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 radius = 0.25
@@ -314,6 +327,7 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.5
 [node name="Camera3D" type="Camera3D" parent="Pivot" unique_id=587658740]
 fov = 65.0
 far = 100.0
+script = ExtResource("13_237xx")
 
 [node name="Gun" type="Node3D" parent="Pivot/Camera3D" unique_id=1097841654]
 transform = Transform3D(1, 0, 0, 0, 0.49999768, 0.8660262, 0, -0.8660262, 0.49999768, 0, -1, -0.55)
@@ -358,14 +372,19 @@ stream = SubResource("AudioStreamRandomizer_237xx")
 [node name="LaserHit_4" parent="Pivot/Camera3D/LaserHits" unique_id=560838928 instance=ExtResource("18_n0b8q")]
 
 [node name="LaserHit_5" parent="Pivot/Camera3D/LaserHits" unique_id=75826671 instance=ExtResource("18_n0b8q")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -1.5, 0)
+
+[node name="ExplosionSphere" type="MeshInstance3D" parent="Pivot/Camera3D" unique_id=111589105]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+mesh = SubResource("SphereMesh_237xx")
+surface_material_override/0 = SubResource("StandardMaterial3D_237xx")
+script = ExtResource("21_wpyo2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=607503661]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36445314, 0)
 shape = SubResource("CapsuleShape3D_kqu6x")
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=542985318]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45, 0)
 target_position = Vector3(0, 0, 100)
 collide_with_areas = true
 

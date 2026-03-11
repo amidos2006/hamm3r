@@ -49,7 +49,19 @@
 		"args": {
 			"name": "martin",
 			"mood": "concerned",
-			"text": "Yeah, and it seems to be running a... A sped-up simulation of some sorts? Wonder how long it’s been keeping it going...",
+			"text": "Yeah, and it seems to be running a... A sped-up simulation of some sorts?",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "concerned",
+			"text": "Wonder how long it’s been keeping it going processing...",
 			"action": "interact",
 			"direction": "left",
 			"time": 0
@@ -61,7 +73,31 @@
 		"args": {
 			"name": "3R",
 			"mood": "normal",
-			"text": "Funky! Anyway, decide what to do with it and make your way back onboard the HAMM.",
+			"text": "Funky! Still, it's messing with my sensors, and I'd appreciate it if you would deactivate it... Or blow it up, whatever.",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "concerned",
+			"text": "Is...is that really necessary?",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "3R",
+			"mood": "normal",
+			"text": "Decide what to do with it and make your way back to the HAMM.",
 			"action": "interact",
 			"direction": "right",
 			"time": 0
@@ -87,19 +123,27 @@
 		}
 	},
 	{
-		"action": "function",
-		"target": "Interactable",
-		"args": {
-			"name": "change_script",
-			"args": ["res://assets/actions/tanker/computer_shutdown.json"]
-		}
-	},
-	{
 		"action": "variable",
 		"target": "Interactable",
 		"args": {
 			"name": "interactable_verb",
-			"value": "TERMINATE"
+			"value": "SHOOT"
+		}
+	},
+	{
+		"action": "function",
+		"target": "Interactable",
+		"args": {
+			"name": "change_script",
+			"args": ["res://assets/actions/tanker/computer_investigate_shot.json"]
+		}
+	},
+	{
+		"action": "variable",
+		"target": "..",
+		"args": {
+			"name": "is_investigated",
+			"value": true
 		}
 	},
 	{

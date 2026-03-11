@@ -16,6 +16,13 @@
 	},
 	{
 		"action": "show_dialogue",
+		"conditions": [
+			{
+				"name": "is_investigated",
+				"target": "..",
+				"value": false
+			}
+		],
 		"wait": "advance_dialogue",
 		"args": {
 			"name": "martin",
@@ -28,6 +35,13 @@
 	},
 	{
 		"action": "show_dialogue",
+		"conditions": [
+			{
+				"name": "is_investigated",
+				"target": "..",
+				"value": false
+			}
+		],
 		"wait": "advance_dialogue",
 		"args": {
 			"name": "3R",
@@ -40,6 +54,13 @@
 	},
 	{
 		"action": "show_dialogue",
+		"conditions": [
+			{
+				"name": "is_investigated",
+				"target": "..",
+				"value": false
+			}
+		],
 		"wait": "advance_dialogue",
 		"args": {
 			"name": "martin",
@@ -52,6 +73,13 @@
 	},
 	{
 		"action": "show_dialogue",
+		"conditions": [
+			{
+				"name": "is_investigated",
+				"target": "..",
+				"value": false
+			},
+		],
 		"wait": "advance_dialogue",
 		"args": {
 			"name": "3R",
@@ -64,6 +92,13 @@
 	},
 	{
 		"action": "show_dialogue",
+		"conditions": [
+			{
+				"name": "is_investigated",
+				"target": "..",
+				"value": false
+			}
+		],
 		"wait": "advance_dialogue",
 		"args": {
 			"name": "3R",
@@ -76,6 +111,13 @@
 	},
 	{
 		"action": "show_dialogue",
+		"conditions": [
+			{
+				"name": "is_investigated",
+				"target": "..",
+				"value": false
+			}
+		],
 		"wait": "advance_dialogue",
 		"args": {
 			"name": "martin",
@@ -87,11 +129,35 @@
 		}
 	},
 	{
+		"action": "variable",
+		"target": "Interactable",
+		"args": {
+			"name": "interactable_verb",
+			"value": "SHOOT"
+		}
+	},
+	{
 		"action": "function",
 		"target": "Interactable",
 		"args": {
 			"name": "change_script",
-			"args": ["res://assets/actions/tanker/computer_bleed.json"]
+			"args": ["res://assets/actions/tanker/computer_investigate_shot.json"]
+		}
+	},
+	{
+		"action": "variable",
+		"target": "..",
+		"args": {
+			"name": "is_investigated",
+			"value": true,
+		}
+	},
+	{
+		"action": "variable",
+		"target": "..",
+		"args": {
+			"name": "is_shot",
+			"value": true,
 		}
 	},
 	{

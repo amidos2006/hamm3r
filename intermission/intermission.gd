@@ -7,6 +7,7 @@ var _return_scene
 var _return_args
 var _return_time
 var _start_time
+var _audio_play
 
 
 func _fade_out():
@@ -24,6 +25,9 @@ func _fade_out():
 
 
 func _ready():
+	if self._audio_play:
+		self._audio_play.play()
+	
 	Blackout.start()
 	var tween = get_tree().create_tween()
 	tween.tween_property($Label, "modulate", Color(Color.WHITE, 1), 2)
@@ -50,3 +54,6 @@ func initialize(args):
 	_return_args = null
 	if "args" in args:
 		_return_args = args.args
+		
+	if "audio" in args:
+		self._audio_play = self.get_node(args.audio)

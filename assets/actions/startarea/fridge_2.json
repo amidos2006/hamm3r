@@ -16,10 +16,36 @@
 	},
 	{
 		"action": "show_dialogue",
+		"conditions": [
+			{
+				"name": "is_frozen",
+				"target": "player",
+				"value": false
+			},
+		],
 		"wait": "advance_dialogue",
 		"args": {
 			"name": "martin",
 			"mood": "normal",
+			"text": "Nah! Being brought back from the dead has a way of upsetting my stomach.",
+			"action": "interact",
+			"direction": "left",
+			"time": 0
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"conditions": [
+			{
+				"name": "is_frozen",
+				"target": "player",
+				"value": true
+			},
+		],
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "martin",
+			"mood": "frosty",
 			"text": "Nah! Being brought back from the dead has a way of upsetting my stomach.",
 			"action": "interact",
 			"direction": "left",

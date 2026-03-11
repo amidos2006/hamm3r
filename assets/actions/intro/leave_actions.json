@@ -71,6 +71,7 @@
 			"time": 0.5,
 			"message": "[font_size=72][color=#f5c25c]Game Over[/color][/font_size]",
 			"return": "res://intro/intro.tscn",
+			"audio": "GameOverAudio",
 		}
 	}
 ]

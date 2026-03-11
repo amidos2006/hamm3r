@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://blrn5n044biwj"]
 
 [ext_resource type="Script" uid="uid://b8ovk472pd51w" path="res://intermission/intermission.gd" id="1_b0epg"]
+[ext_resource type="AudioStream" uid="uid://d4fcrluirjbsv" path="res://assets/sfx/game over.wav" id="3_rqrmq"]
 [ext_resource type="FontFile" uid="uid://b3yalra5jswgu" path="res://assets/fonts/JosefinSans-Regular.ttf" id="4_hi2t4"]
 
 [node name="Intermission" type="CanvasLayer" unique_id=1890473980]
@@ -31,3 +32,7 @@ test"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="GameOverAudio" type="AudioStreamPlayer" parent="." unique_id=1935313804]
+stream = ExtResource("3_rqrmq")
+volume_db = -10.0

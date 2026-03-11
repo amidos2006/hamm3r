@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bcmor3xk4b4s3"]
+
+[ext_resource type="PackedScene" uid="uid://clnio5gia26px" path="res://interactable/explosive_barrel/exp_barrel.tscn" id="1_d8xl2"]
+[ext_resource type="Script" uid="uid://b8eds2erevilg" path="res://interactable/explosive_barrel/barrels.gd" id="1_ejlva"]
+[ext_resource type="PackedScene" uid="uid://br3rqfg816caj" path="res://interactable/explosive_area.tscn" id="2_ejlva"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rysjv"]
+size = Vector3(2.3340187, 1.7736511, 1.0809937)
+
+[node name="DoorBarrels" type="Node3D" unique_id=1768783238]
+script = ExtResource("1_ejlva")
+
+[node name="Pivot" type="Node3D" parent="." unique_id=777684223]
+
+[node name="ExpBarrel_1" parent="Pivot" unique_id=1429544662 instance=ExtResource("1_d8xl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0, 0)
+
+[node name="ExpBarrel_2" parent="Pivot" unique_id=391161963 instance=ExtResource("1_d8xl2")]
+
+[node name="ExpBarrel_3" parent="Pivot" unique_id=892984815 instance=ExtResource("1_d8xl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, 0)
+
+[node name="ExpBarrel_4" parent="Pivot" unique_id=1622786467 instance=ExtResource("1_d8xl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 0.8, 0)
+
+[node name="ExpBarrel_5" parent="Pivot" unique_id=793553115 instance=ExtResource("1_d8xl2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0.8, 0)
+
+[node name="ExplosiveArea" parent="." unique_id=433124444 instance=ExtResource("2_ejlva")]
+
+[node name="CollisionShape3D" parent="ExplosiveArea" index="0" unique_id=547566022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007074356, 0.88020325, -0.017486572)
+shape = SubResource("BoxShape3D_rysjv")
+
+[editable path="ExplosiveArea"]

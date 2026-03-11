@@ -5,7 +5,7 @@
 		"args": {
 			"name": "tess",
 			"mood": "normal",
-			"text": "Fellas, I have a station to run.",
+			"text": "Okay. Fellas, I have a station to run.",
 			"action": "interact",
 			"direction": "right",
 			"time": 0

@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dqwq5s1t51j4w" path="res://assets/graphics/explosion/explosion_A_0005.png" id="8_ews5i"]
 [ext_resource type="Script" uid="uid://c724r65khynp2" path="res://end/ship.gd" id="9_0n4vi"]
 [ext_resource type="Texture2D" uid="uid://dpe6hewgde4s7" path="res://assets/graphics/explosion/explosion_A_0006.png" id="9_7yt1l"]
+[ext_resource type="AudioStream" uid="uid://c8q4l5v85kv22" path="res://assets/music/hamm3r_end_reverse.wav" id="9_ymlkf"]
 [ext_resource type="Texture2D" uid="uid://dujbymgc2drsv" path="res://assets/graphics/explosion/explosion_A_0007.png" id="10_0t2np"]
 [ext_resource type="Texture2D" uid="uid://cgt2bygfhedc" path="res://assets/graphics/intro/tankers.png" id="10_ylonx"]
 [ext_resource type="Texture2D" uid="uid://yewmc31kmkjg" path="res://assets/graphics/explosion/explosion_A_0008.png" id="11_6f13e"]
@@ -37,6 +38,7 @@
 [ext_resource type="AudioStream" uid="uid://xj4gl4rrbt6a" path="res://assets/sfx/in_game/explosion.wav" id="28_2dwm6"]
 [ext_resource type="AudioStream" uid="uid://cxcuq8v0taqw5" path="res://assets/sfx/in_game/explosion_reverse.wav" id="29_u6wvn"]
 [ext_resource type="Shader" uid="uid://ctxirvi6qb14" path="res://assets/shaders/crt_shader.gdshader" id="29_yodmx"]
+[ext_resource type="AudioStream" uid="uid://l21x4qt0iee5" path="res://assets/music/hamm3r_end_edit.wav" id="38_wp2y4"]
 
 [sub_resource type="Curve" id="Curve_p7quh"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -187,7 +189,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 970.0
+offset_bottom = 1120.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -196,8 +198,8 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -807.0
-offset_right = 807.0
+offset_left = -860.0
+offset_right = 754.0
 offset_bottom = 483.0
 grow_horizontal = 2
 pivot_offset = Vector2(855, 483)
@@ -335,11 +337,21 @@ text = "
 [color=#d1ff85][font_size=52]Nele Van de Mosselaer[/font_size][/color]
 [color=#d1ff85][font_size=52]Eneh Veronica Lang[/font_size][/color]
 [color=#d1ff85][font_size=52]Martina Galea[/font_size][/color]
-[color=#d1ff85][font_size=52]Nemanja Rasajski[/font_size][/color]"
+[color=#d1ff85][font_size=52]Nemanja Rasajski[/font_size][/color]
+[color=#d1ff85][font_size=52]Pablo Arango[/font_size][/color]
+[color=#d1ff85][font_size=52]Chris Paller[/font_size][/color]
+[color=#d1ff85][font_size=52]Jasper Schellekens[/font_size][/color]
+[color=#d1ff85][font_size=52]Amy Grech[/font_size][/color]"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="Credits" unique_id=494551586]
+stream = ExtResource("38_wp2y4")
+
+[node name="ReverseMusic" type="AudioStreamPlayer" parent="Credits" unique_id=1265594358]
+stream = ExtResource("9_ymlkf")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1097543029]
 z_index = -1000

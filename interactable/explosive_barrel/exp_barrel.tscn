@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://clnio5gia26px"]
+
+[ext_resource type="PackedScene" uid="uid://clkcifwng0u6f" path="res://assets/models/Barrel_Explosive.glb" id="1_4s6ec"]
+[ext_resource type="Texture2D" uid="uid://caxj10rh6acqt" path="res://assets/models/T_pcg_barrels.png" id="2_aalvj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0rpbw"]
+albedo_texture = ExtResource("2_aalvj")
+
+[node name="ExpBarrel" type="Node3D" unique_id=1429544662]
+
+[node name="Barrel_Explosive" parent="." unique_id=1226620636 instance=ExtResource("1_4s6ec")]
+
+[node name="mod_Barrel_Explosive" parent="Barrel_Explosive" index="0" unique_id=1422135147]
+surface_material_override/0 = SubResource("StandardMaterial3D_0rpbw")
+
+[editable path="Barrel_Explosive"]

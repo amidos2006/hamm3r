@@ -16,6 +16,7 @@ func roll_credits(time):
 	if self.tween != null:
 		self.tween.stop()
 	self.tween = get_tree().create_tween()
+	$Music.play()
 	self.tween.tween_property($Pivot, "position", target, time)
 	await self.tween.finished
 	animation_ended.emit()
@@ -24,12 +25,15 @@ func roll_credits(time):
 func stop_credits():
 	if self.tween != null:
 		self.tween.stop()
+	$Music.stop()
 
 
 func unroll_credits(time):
 	var target =  Vector2(0, get_viewport().get_visible_rect().size.y + 100)
 	if self.tween != null:
 		self.tween.stop()
+	$ReverseMusic.play($ReverseMusic.stream.get_length() - time)
+	
 	self.tween = get_tree().create_tween()
 	self.tween.tween_property($Pivot, "position", target, time)
 	await self.tween.finished

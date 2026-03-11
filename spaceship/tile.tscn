@@ -4,17 +4,27 @@
 [ext_resource type="PackedScene" uid="uid://c0bosxmp10csq" path="res://spaceship/modules/sc_special_kitchen.tscn" id="2_8jb1s"]
 [ext_resource type="PackedScene" uid="uid://cr0gqot0emxoy" path="res://spaceship/modules/sc_special_ENDroom.tscn" id="3_dl3ic"]
 [ext_resource type="PackedScene" uid="uid://ts3iombhp4xk" path="res://spaceship/modules/sc_corner.tscn" id="4_ts5ky"]
+[ext_resource type="PackedScene" uid="uid://bxr1nbl3b8pj6" path="res://interactable/explosive_barrel/corner_barrels.tscn" id="5_8jb1s"]
 [ext_resource type="PackedScene" uid="uid://bacnak5cpfr70" path="res://spaceship/modules/sc_Tshape.tscn" id="5_ts5ky"]
 [ext_resource type="PackedScene" uid="uid://tp4u6ktpgjbk" path="res://spaceship/modules/sc_straight_1.tscn" id="6_8jb1s"]
 [ext_resource type="PackedScene" uid="uid://v51wab4qcihn" path="res://spaceship/modules/sc_straight_2.tscn" id="7_dl3ic"]
+[ext_resource type="PackedScene" uid="uid://buw0mbveladbp" path="res://assets/models/clutter_cables.tscn" id="7_omlcc"]
 [ext_resource type="PackedScene" uid="uid://d0mu4t2htg0sn" path="res://spaceship/modules/sc_straight_3.tscn" id="8_omlcc"]
+[ext_resource type="PackedScene" uid="uid://8lynv2ggdi87" path="res://assets/models/clutter_panel.tscn" id="8_v17cd"]
 [ext_resource type="PackedScene" uid="uid://h3rfx71jfhrx" path="res://spaceship/modules/sc_cross.tscn" id="9_ts5ky"]
+[ext_resource type="AudioStream" uid="uid://barv2845blw0t" path="res://assets/sfx/in_game/drip.wav" id="13_v17cd"]
+[ext_resource type="AudioStream" uid="uid://bnm2cqqhmu3rg" path="res://assets/sfx/in_game/AC-heatpump.wav" id="14_vxtqr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vxwtg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ts5ky"]
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.051999997, 0.055999994, 0.1, 1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_7cygo"]
+streams_count = 2
+stream_0/stream = ExtResource("13_v17cd")
+stream_1/stream = ExtResource("14_vxtqr")
 
 [node name="tile" type="Node3D" unique_id=484017615]
 script = ExtResource("1_vxwtg")
@@ -71,12 +81,18 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0
 
 [node name="mod_Corner" parent="1100/model_1" unique_id=1699757269 instance=ExtResource("4_ts5ky")]
 
+[node name="barrels" parent="1100/model_1" unique_id=1768783238 instance=ExtResource("5_8jb1s")]
+transform = Transform3D(0.6724831, 0, 0.7401125, 0, 1, 0, -0.7401125, 0, 0.6724831, -0.52004075, 0, -0.55173653)
+
 [node name="0110" type="Node3D" parent="." unique_id=698300211]
 
 [node name="model_1" type="Node3D" parent="0110" unique_id=256028754]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="mod_Corner" parent="0110/model_1" unique_id=478425737 instance=ExtResource("4_ts5ky")]
+
+[node name="barrels" parent="0110/model_1" unique_id=1514561082 instance=ExtResource("5_8jb1s")]
+transform = Transform3D(0.62653583, 0, 0.77939266, 0, 1, 0, -0.77939266, 0, 0.62653583, -0.51939654, 0, -0.53446925)
 
 [node name="0011" type="Node3D" parent="." unique_id=1191741556]
 
@@ -85,12 +101,18 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 
 [node name="mod_Corner" parent="0011/model_1" unique_id=2034874002 instance=ExtResource("4_ts5ky")]
 
+[node name="barrels" parent="0011/model_1" unique_id=1777266329 instance=ExtResource("5_8jb1s")]
+transform = Transform3D(0.7580888, 0, 0.65215135, 0, 1, 0, -0.65215135, 0, 0.7580888, -0.60268515, 0, -0.53453475)
+
 [node name="1001" type="Node3D" parent="." unique_id=1217145695]
 
 [node name="model_1" type="Node3D" parent="1001" unique_id=943027600]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="mod_Corner" parent="1001/model_1" unique_id=749767673 instance=ExtResource("4_ts5ky")]
+
+[node name="barrels" parent="1001/model_1" unique_id=1278630677 instance=ExtResource("5_8jb1s")]
+transform = Transform3D(0.6923825, 0, 0.7215307, 0, 1, 0, -0.7215307, 0, 0.6923825, -0.6190304, 0, -0.49864385)
 
 [node name="1110" type="Node3D" parent="." unique_id=583633106]
 
@@ -99,12 +121,28 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0
 
 [node name="mod_Tshape" parent="1110/model_1" unique_id=708857319 instance=ExtResource("5_ts5ky")]
 
+[node name="health_clutter" type="Node3D" parent="1110/model_1" unique_id=262520522]
+
+[node name="clutter_cables" parent="1110/model_1/health_clutter" unique_id=467943858 instance=ExtResource("7_omlcc")]
+transform = Transform3D(0.67832637, 0, -0.7347607, 0, 1, 0, 0.7347607, 0, 0.67832637, 2.4515522e-08, 0, -0.5608498)
+
+[node name="clutter_panel" parent="1110/model_1/health_clutter" unique_id=407655997 instance=ExtResource("8_v17cd")]
+transform = Transform3D(1, -4.3575263e-08, 4.0264336e-08, 4.3575263e-08, 0.07885927, -0.99688584, 4.026434e-08, 0.99688584, 0.07885927, 0.5172053, 1.1388769, -1.4307989)
+
 [node name="0111" type="Node3D" parent="." unique_id=615591714]
 
 [node name="model_1" type="Node3D" parent="0111" unique_id=1954741164]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="mod_Tshape" parent="0111/model_1" unique_id=1075429105 instance=ExtResource("5_ts5ky")]
+
+[node name="health_clutter" type="Node3D" parent="0111/model_1" unique_id=1037345554]
+
+[node name="clutter_cables" parent="0111/model_1/health_clutter" unique_id=2131170565 instance=ExtResource("7_omlcc")]
+transform = Transform3D(0.67832637, 0, -0.7347607, 0, 1, 0, 0.7347607, 0, 0.67832637, 2.4515522e-08, 0, -0.5608498)
+
+[node name="clutter_panel" parent="0111/model_1/health_clutter" unique_id=973571837 instance=ExtResource("8_v17cd")]
+transform = Transform3D(1, -4.3575263e-08, 4.0264336e-08, 4.3575263e-08, 0.07885927, -0.99688584, 4.026434e-08, 0.99688584, 0.07885927, 0.5172053, 1.1388769, -1.4307989)
 
 [node name="1011" type="Node3D" parent="." unique_id=961186461]
 
@@ -113,11 +151,27 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0
 
 [node name="mod_Tshape" parent="1011/model_1" unique_id=1061130741 instance=ExtResource("5_ts5ky")]
 
+[node name="health_clutter" type="Node3D" parent="1011/model_1" unique_id=687570102]
+
+[node name="clutter_cables" parent="1011/model_1/health_clutter" unique_id=1671679450 instance=ExtResource("7_omlcc")]
+transform = Transform3D(0.67832637, 0, -0.7347607, 0, 1, 0, 0.7347607, 0, 0.67832637, 2.4515522e-08, 0, -0.5608498)
+
+[node name="clutter_panel" parent="1011/model_1/health_clutter" unique_id=961645893 instance=ExtResource("8_v17cd")]
+transform = Transform3D(1, -4.3575263e-08, 4.0264336e-08, 4.3575263e-08, 0.07885927, -0.99688584, 4.026434e-08, 0.99688584, 0.07885927, 0.5172053, 1.1388769, -1.4307989)
+
 [node name="1101" type="Node3D" parent="." unique_id=1567192541]
 
 [node name="model_1" type="Node3D" parent="1101" unique_id=414227488]
 
 [node name="mod_Tshape" parent="1101/model_1" unique_id=140774023 instance=ExtResource("5_ts5ky")]
+
+[node name="health_clutter" type="Node3D" parent="1101/model_1" unique_id=951358410]
+
+[node name="clutter_cables" parent="1101/model_1/health_clutter" unique_id=1238918384 instance=ExtResource("7_omlcc")]
+transform = Transform3D(0.67832637, 0, -0.7347607, 0, 1, 0, 0.7347607, 0, 0.67832637, 2.4515522e-08, 0, -0.5608498)
+
+[node name="clutter_panel" parent="1101/model_1/health_clutter" unique_id=2029648970 instance=ExtResource("8_v17cd")]
+transform = Transform3D(1, -4.3575263e-08, 4.0264336e-08, 4.3575263e-08, 0.07885927, -0.99688584, 4.026434e-08, 0.99688584, 0.07885927, 0.5172053, 1.1388769, -1.4307989)
 
 [node name="1010" type="Node3D" parent="." unique_id=281575087]
 
@@ -159,9 +213,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 [node name="0000" type="Node3D" parent="." unique_id=1001832790]
 visible = false
 
-[node name="model_1" type="MeshInstance3D" parent="0000" unique_id=1962144377]
+[node name="model_1" type="Node3D" parent="0000" unique_id=363500855]
+
+[node name="mesh" type="MeshInstance3D" parent="0000/model_1" unique_id=1962144377]
 transform = Transform3D(5, 0, 0, 0, 3.8, 0, 0, 0, 5, 0, 1.35509, 0)
 mesh = SubResource("BoxMesh_vxwtg")
+skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_ts5ky")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=203836739]
@@ -175,6 +232,12 @@ distance_fade_begin = 30.0
 distance_fade_shadow = 40.0
 distance_fade_length = 5.0
 omni_range = 6.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1950448223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.67319, 0)
+stream = SubResource("AudioStreamRandomizer_7cygo")
+volume_db = -25.0
+max_distance = 2.5
 
 [node name="Timer" type="Timer" parent="." unique_id=1764323387]
 

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bxr1nbl3b8pj6"]
+
+[ext_resource type="PackedScene" uid="uid://clnio5gia26px" path="res://interactable/explosive_barrel/exp_barrel.tscn" id="1_alll3"]
+[ext_resource type="Script" uid="uid://b8eds2erevilg" path="res://interactable/explosive_barrel/barrels.gd" id="1_rysjv"]
+[ext_resource type="PackedScene" uid="uid://br3rqfg816caj" path="res://interactable/explosive_area.tscn" id="2_51ox5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rysjv"]
+size = Vector3(1.6042786, 1.7736511, 1.0809937)
+
+[node name="CornerBarrels" type="Node3D" unique_id=1768783238]
+script = ExtResource("1_rysjv")
+
+[node name="Pivot" type="Node3D" parent="." unique_id=777684223]
+
+[node name="ExpBarrel_1" parent="Pivot" unique_id=1429544662 instance=ExtResource("1_alll3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35, 0, 0)
+
+[node name="ExpBarrel_2" parent="Pivot" unique_id=391161963 instance=ExtResource("1_alll3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="ExpBarrel_3" parent="Pivot" unique_id=892984815 instance=ExtResource("1_alll3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 0, 0)
+
+[node name="ExplosiveArea" parent="." unique_id=433124444 instance=ExtResource("2_51ox5")]
+
+[node name="CollisionShape3D" parent="ExplosiveArea" index="0" unique_id=547566022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0071258545, 0.88020325, -0.017486572)
+shape = SubResource("BoxShape3D_rysjv")
+
+[editable path="ExplosiveArea"]

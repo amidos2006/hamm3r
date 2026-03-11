@@ -8,6 +8,14 @@
 		}
 	},
 	{
+		"action": "variable",
+		"target": "player",
+		"args": {
+			"name": "is_frozen",
+			"value": false
+		}
+	},
+	{
 		"action": "function",
 		"target": "Player",
 		"args": {

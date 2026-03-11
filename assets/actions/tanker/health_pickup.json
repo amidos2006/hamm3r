@@ -74,32 +74,6 @@
 		}
 	},
 	{
-		"action": "timer",
-		"wait": 0.5,
-	},
-	{
-		"action": "function",
-		"args": {
-			"name": "use",
-			"object": "player"
-		}
-	},
-	{
-		"action": "timer",
-		"wait": 0.5,
-	},
-	{
-		"action": "function",
-		"args": {
-			"name": "use",
-			"object": "player"
-		}
-	},
-	{
-		"action": "timer",
-		"wait": 0.5,
-	},
-	{
 		"action": "show_dialogue",
 		"wait": "advance_dialogue",
 		"args": {
@@ -109,6 +83,28 @@
 			"action": "interact",
 			"direction": "left",
 			"time": 0
+		}
+	},
+	{
+		"action": "timer",
+		"wait": 0.5,
+	},
+	{
+		"action": "function",
+		"args": {
+			"name": "use",
+			"object": "player"
+		}
+	},
+	{
+		"action": "timer",
+		"wait": 0.5,
+	},
+	{
+		"action": "function",
+		"args": {
+			"name": "use",
+			"object": "player"
 		}
 	},
 	{

@@ -8,10 +8,12 @@ extends Node3D
 @export_range(1, 20, 1) var layout_size:int = 10
 @export_range(0, 1, 0.05) var door_prob:Array[float] = [0.4, 0.8, 1.0]
 @export_range(0, 1, 0.05) var door_open_prob:float = 0.25
+@export_range(0, 1, 0.05) var fake_hall_prob:float = 0.5
 
 
 var _tile_scene = preload("res://spaceship/tile.tscn")
 var _door_scene = preload("res://interactable/ship_door/ship_door.tscn")
+var _barrel_scene = preload("res://interactable/explosive_barrel/door_barrels.tscn")
 var _groups = []
 var _player = null
 
@@ -57,17 +59,52 @@ func _ready():
 	for y in layout.size():
 		for x in layout[y].size():
 			var cell = layout[y][x]
-			var tile = _tile_scene.instantiate()
 			if cell:
+				var tile = _tile_scene.instantiate()
 				var room_type = ""
 				if cell.mission:
 					room_type = cell.mission.type.to_lower()
 				var temp_opening = {}
 				for key in start_opening:
-					if cell.mission != null and cell.mission.type == "Start":
+					if room_type == "start":
 						temp_opening[key] = start_opening[key]
 					else:
 						temp_opening[key] = false
+				var fake_doors = {
+					LayoutGenerator.LayoutDirection.South: false,
+					LayoutGenerator.LayoutDirection.East: false
+				}
+				var is_fake = false
+				if room_type == "blocked":
+					if randf() < fake_hall_prob and cell.doors[LayoutGenerator.LayoutDirection.South] == LayoutGenerator.LayoutDoor.Wall:
+						temp_opening[LayoutGenerator.LayoutDirection.South] = true
+						fake_doors[LayoutGenerator.LayoutDirection.South] = true
+						is_fake = true
+					if randf() < fake_hall_prob and cell.doors[LayoutGenerator.LayoutDirection.East] == LayoutGenerator.LayoutDoor.Wall:
+						temp_opening[LayoutGenerator.LayoutDirection.East] = true
+						fake_doors[LayoutGenerator.LayoutDirection.East] = true
+						is_fake = true
+				if is_fake:
+					if cell.doors[LayoutGenerator.LayoutDirection.South] == LayoutGenerator.LayoutDoor.Broken:
+						var dir = LayoutGenerator._relative_from_direction(LayoutGenerator.LayoutDirection.South)
+						var next_cell = layout[y+dir.y][x+dir.x]
+						cell.connect_to(next_cell, LayoutGenerator.LayoutDoor.Open)
+						self._add_barrels(tile, LayoutGenerator.LayoutDirection.South)
+					if cell.doors[LayoutGenerator.LayoutDirection.North] == LayoutGenerator.LayoutDoor.Broken:
+						var dir = LayoutGenerator._relative_from_direction(LayoutGenerator.LayoutDirection.North)
+						var next_cell = layout[y+dir.y][x+dir.x]
+						cell.connect_to(next_cell, LayoutGenerator.LayoutDoor.Open)
+						self._add_barrels(tile, LayoutGenerator.LayoutDirection.North)
+					if cell.doors[LayoutGenerator.LayoutDirection.East] == LayoutGenerator.LayoutDoor.Broken:
+						var dir = LayoutGenerator._relative_from_direction(LayoutGenerator.LayoutDirection.East)
+						var next_cell = layout[y+dir.y][x+dir.x]
+						cell.connect_to(next_cell, LayoutGenerator.LayoutDoor.Open)
+						self._add_barrels(tile, LayoutGenerator.LayoutDirection.East)
+					if cell.doors[LayoutGenerator.LayoutDirection.West] == LayoutGenerator.LayoutDoor.Broken:
+						var dir = LayoutGenerator._relative_from_direction(LayoutGenerator.LayoutDirection.West)
+						var next_cell = layout[y+dir.y][x+dir.x]
+						cell.connect_to(next_cell, LayoutGenerator.LayoutDoor.Open)
+						self._add_barrels(tile, LayoutGenerator.LayoutDirection.West)
 				tile.select_tile(
 					cell.doors[LayoutGenerator.LayoutDirection.South] != LayoutGenerator.LayoutDoor.Wall or temp_opening[LayoutGenerator.LayoutDirection.South], 
 					cell.doors[LayoutGenerator.LayoutDirection.East] != LayoutGenerator.LayoutDoor.Wall or temp_opening[LayoutGenerator.LayoutDirection.East], 
@@ -77,11 +114,22 @@ func _ready():
 				)
 				tile.position = Vector3((x - offset.x) * tile_size.x, 0, (y - offset.y) * tile_size.y)
 				self.add_child(tile)
-				if self._add_door(layout, tile, x, y, LayoutGenerator.LayoutDirection.South):
-					doors.append({"loc": Vector2(x, y), "dir": LayoutGenerator.LayoutDirection.South})
-				if self._add_door(layout, tile, x, y, LayoutGenerator.LayoutDirection.East):
-					doors.append({"loc": Vector2(x, y), "dir": LayoutGenerator.LayoutDirection.East})
+				#if self._add_door(layout, tile, x, y, LayoutGenerator.LayoutDirection.South, fake_doors[LayoutGenerator.LayoutDirection.South]):
+					#doors.append({"loc": Vector2(x, y), "dir": LayoutGenerator.LayoutDirection.South})
+				#if self._add_door(layout, tile, x, y, LayoutGenerator.LayoutDirection.East, fake_doors[LayoutGenerator.LayoutDirection.East]):
+					#doors.append({"loc": Vector2(x, y), "dir": LayoutGenerator.LayoutDirection.East})
 				layout[y][x].tile = tile
+				layout[y][x].fake_doors = fake_doors
+	
+	for y in layout.size():
+		for x in layout[y].size():
+			if layout[y][x]:
+				var tile = layout[y][x].tile
+				var fake_doors = layout[y][x].fake_doors
+				if self._add_door(layout, tile, x, y, LayoutGenerator.LayoutDirection.South, fake_doors[LayoutGenerator.LayoutDirection.South]):
+					doors.append({"loc": Vector2(x, y), "dir": LayoutGenerator.LayoutDirection.South})
+				if self._add_door(layout, tile, x, y, LayoutGenerator.LayoutDirection.East, fake_doors[LayoutGenerator.LayoutDirection.East]):
+					doors.append({"loc": Vector2(x, y), "dir": LayoutGenerator.LayoutDirection.East})
 	
 	for door in doors:
 		var loc = door["loc"]
@@ -137,33 +185,49 @@ func _color_map(layout, color_map, x, y, index):
 	return true
 
 
-func _add_door(layout, tile, x, y, direction):
-	var current_cell = layout[y][x]
-	if current_cell.doors[direction] == LayoutGenerator.LayoutDoor.Wall:
-		return
+func _add_barrels(tile, direction):
 	var delta = LayoutGenerator._relative_from_direction(direction)
-	var next_cell = layout[y + delta.y][x + delta.x]
-	var is_final = current_cell != null and current_cell.mission != null and current_cell.mission.type.to_lower() == "end"
-	is_final = is_final or (next_cell != null and next_cell.mission != null and next_cell.mission.type.to_lower() == "end")
-	
-	var create_door = false
+	var barrel = _barrel_scene.instantiate()
+	barrel.position.x = delta.x * tile_size.x / 2
+	barrel.position.z = delta.y * tile_size.y / 2
+	if abs(delta.x) > 0:
+		barrel.rotation_degrees.y = 90
+	tile.add_child(barrel)
+
+
+func _add_door(layout, tile, x, y, direction, fake=false):
+	var current_cell = layout[y][x]
+	if not fake and current_cell.doors[direction] == LayoutGenerator.LayoutDoor.Wall:
+		return false
+	var delta = LayoutGenerator._relative_from_direction(direction)
+	if current_cell.doors[direction] == LayoutGenerator.LayoutDoor.Open:
+		var next_cell = layout[y + delta.y][x + delta.x]
+		current_cell.connect_to(next_cell, LayoutGenerator.LayoutDoor.Normal)
+		return false
+	var create_door = fake
 	var is_open = false
-	if current_cell.get_connections() >= 2 or next_cell.get_connections() >= 2:
-		var index = min(current_cell.get_connections() - 2, self.door_prob.size())
-		create_door = create_door or randf() < self.door_prob[index]
-		is_open = randf() < self.door_open_prob
-	var forced_door = false
-	if current_cell.mission != null:
-		forced_door = forced_door or current_cell.mission.type == "End" or current_cell.mission.type == "Health"
-	if next_cell.mission != null:
-		forced_door = forced_door or next_cell.mission.type == "End" or next_cell.mission.type == "Health"
-	if current_cell.mission != null or next_cell.mission != null:
-		forced_door = forced_door or current_cell.get_connections() == 1 or next_cell.get_connections() == 1
-	
-	create_door = create_door or forced_door
-	is_open = is_open and not forced_door
-	if current_cell.mission != null and next_cell.mission != null and current_cell.mission.type == "Health" and next_cell.mission.type == "Health":
-		create_door = false
+	var is_final = false
+	if not create_door:
+		var next_cell = layout[y + delta.y][x + delta.x]
+		is_final = current_cell != null and current_cell.mission != null and current_cell.mission.type.to_lower() == "end"
+		is_final = is_final or (next_cell != null and next_cell.mission != null and next_cell.mission.type.to_lower() == "end")
+		
+		if current_cell.get_connections() >= 1 or next_cell.get_connections() >= 1:
+			var index = min(max(current_cell.get_connections() - 1, next_cell.get_connections() - 1), self.door_prob.size())
+			create_door = create_door or randf() < self.door_prob[index]
+			is_open = randf() < self.door_open_prob
+		var forced_door = fake
+		if current_cell.mission != null:
+			forced_door = forced_door or current_cell.mission.type == "End" or current_cell.mission.type == "Health"
+		if next_cell.mission != null:
+			forced_door = forced_door or next_cell.mission.type == "End" or next_cell.mission.type == "Health"
+		if current_cell.mission != null or next_cell.mission != null:
+			forced_door = forced_door or current_cell.get_connections() == 1 or next_cell.get_connections() == 1
+		
+		create_door = create_door or forced_door
+		is_open = is_open and not forced_door
+		if current_cell.mission != null and next_cell.mission != null and current_cell.mission.type == "Health" and next_cell.mission.type == "Health":
+			create_door = false
 	
 	if create_door:
 		var door = _door_scene.instantiate()
@@ -174,7 +238,7 @@ func _add_door(layout, tile, x, y, direction):
 		door.initialize(current_cell.doors[direction] == LayoutGenerator.LayoutDoor.Broken, is_open, is_final)
 		tile.add_child(door)
 	
-	return create_door and not is_open
+	return create_door and not is_open and not fake
 
 
 func _generate_mission():
@@ -205,7 +269,7 @@ func _process(_delta):
 			tile.active_light = false
 	
 	var group_orders = self._get_group_order(self._player.global_position)
-	for i in range(2):
+	for i in range(3):
 		var group = self._groups[group_orders[i]["index"]]
 		for tile in group:
 			tile.active_light = true

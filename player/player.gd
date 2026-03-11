@@ -8,7 +8,7 @@ extends CharacterBody3D
 @export var max_health = 5
 @export var health = 3
 @export var bark_data:Array[JSON]
-@export var bark_time:Vector2 = Vector2(25, 35)
+@export var bark_time:Vector2 = Vector2(15, 30)
 
 
 var disable_controls:
@@ -28,6 +28,8 @@ var restricted_angle = null
 var gun_equipped = false
 var inside_hamm = true
 var back_hamm = false
+var is_frozen = true
+var know_gun = false
 var inside_cryo = true
 var bark_timer:bool:
 	set(value): $BarkTimer.paused = not value
@@ -60,6 +62,7 @@ func _get_rotation(target_pos):
 	$Pivot/Camera3D.rotation = old_rotation
 	return new_rotation
 	
+	
 func _shoot_gun():
 	var explode = false
 	var laser_length = $RayCast3D.target_position.length()
@@ -82,6 +85,8 @@ func _shoot_gun():
 	self._is_shooting = true
 	if explode:
 		self.disable_controls = true
+		$Pivot/Camera3D.shake_camera(0.5, 0.1)
+		$Pivot/Camera3D/ExplosionSphere.explode(laser_position, 1)
 		Dialogue.show_message("3R", "normal", "Why did—", "right", 0.5, "")
 		await get_tree().create_timer(0.2, false).timeout
 		Blackout.fade(0, 1, 0.3, "#FFFFFF")
@@ -91,6 +96,21 @@ func _shoot_gun():
 		if endroom.simulation_running:
 			ending = "res://assets/actions/end/bad_end.json"
 		SceneManager.switch_scene("res://end/end.tscn", {"actions": ending})
+
+
+func _shoot_gun_object(object):
+	var laser_length = $RayCast3D.target_position.length()
+	var laser_position = Vector3.ZERO
+	var laser_normal = Vector3.ZERO
+	if $RayCast3D.is_colliding():
+		laser_length = self.global_position.distance_to($RayCast3D.get_collision_point())
+		laser_position = object.global_position
+		laser_normal = $RayCast3D.get_collision_normal()
+	$Pivot/Camera3D/Laser/AudioStreamPlayer3D.play()
+	$AnimationPlayer.play("Shoot")
+	$AnimationPlayer.speed_scale = 1
+	$Pivot/Camera3D/Laser.fire(laser_position, laser_normal, laser_length)
+	self._is_shooting = true
 
 
 func fire_insidehamm():
@@ -255,7 +275,7 @@ func move_player(object):
 
 func enter_tanker():
 	self.inside_hamm = false
-	$BarkTimer.start(randf_range(bark_time.x, bark_time.y))
+	$BarkTimer.start(bark_time.x)
 
 
 func _on_animation_player_animation_finished(anim_name):
@@ -270,4 +290,4 @@ func _on_bark_timer_timeout() -> void:
 		await ActionManager.action_ended
 		$BarkTimer.start(randf_range(bark_time.x, bark_time.y))
 	else:
-		$BarkTimer.start(1.0)
+		$BarkTimer.start(3.0)

@@ -29,7 +29,7 @@
 		"args": {
 			"name": "3R",
 			"mood": "normal",
-			"text": "You're in the tanker now, Captain. Be careful with the gun in there!",
+			"text": "You're in the tanker now. Look out for yourself out there!",
 			"action": "interact",
 			"direction": "right",
 			"time": 0

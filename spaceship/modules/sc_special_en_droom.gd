@@ -10,6 +10,8 @@ var code_screens = []
 var organism_screens = []
 var time = 0.0
 var simulation_running = true
+var is_shot = false
+var is_investigated = false
 
 
 var _shutdown_screen = preload("res://assets/models/ControlRoom_Computers_CntrlRoom_Screen_S_OFF.png")
@@ -64,15 +66,17 @@ func _process(delta):
 func investigate_computers():
 	var door = get_tree().get_nodes_in_group("Tunnel_SealDoor")[0]
 	door.get_node("Interactable").interaction = load("res://assets/actions/objects/door.json")
-	var return_area = get_tree().get_nodes_in_group("Return_Area")[0]
-	return_area.disable_event = false
+	var return_areas = get_tree().get_nodes_in_group("Return_Area")
+	for area in return_areas:
+		area.disable_event = false
 	
 	
 func shutdown_computers():
 	var door = get_tree().get_nodes_in_group("Tunnel_SealDoor")[0]
 	door.get_node("Interactable").interaction = load("res://assets/actions/objects/door.json")
-	var return_area = get_tree().get_nodes_in_group("Return_Area")[0]
-	return_area.disable_event = false
+	var return_areas = get_tree().get_nodes_in_group("Return_Area")
+	for area in return_areas:
+		area.disable_event = false
 	simulation_running = false
 	for screen in code_screens:
 		screen.get_surface_override_material(0).set_shader_parameter("albedo_texture", _shutdown_screen)

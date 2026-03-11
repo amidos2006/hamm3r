@@ -16,6 +16,7 @@ enum LayoutDirection{
 enum LayoutDoor{
 	Wall,
 	Normal,
+	Open,
 	Broken,
 }
 
@@ -281,6 +282,7 @@ class LayoutCell extends RefCounted:
 	var position
 	var doors
 	var tile
+	var fake_doors
 	
 	
 	func _init(x, y, mission = null):
