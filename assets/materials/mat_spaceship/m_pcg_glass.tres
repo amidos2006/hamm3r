@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://c0fwdq65c41ve"]
 
-[ext_resource type="Texture2D" uid="uid://cgwokto51x554" path="res://assets/textures/tex_spaceship/T_pcg_window.png" id="1_v074n"]
+[ext_resource type="Texture2D" uid="uid://ch6rkjj1hwuyf" path="res://assets/textures/tex_hammer/seg_Window_Solid.png" id="1_v074n"]
 
 [resource]
 transparency = 1

@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://bo0830o6er7ty" path="res://assets/graphics/logos/godot_logo.png" id="27_35ehl"]
 [ext_resource type="AudioStream" uid="uid://cfrwrgchveoor" path="res://assets/sfx/intro/clunk_hard.wav" id="28_7v0dw"]
 [ext_resource type="AudioStream" uid="uid://1krnre7hxqij" path="res://assets/music/intro/space_soundscape.wav" id="31_74s3g"]
+[ext_resource type="AudioStream" uid="uid://u7jvse8d0hk1" path="res://assets/sfx/intro/kaboom.wav" id="31_qss6y"]
 [ext_resource type="Script" uid="uid://ngomasgbyeik" path="res://intro/explosion.gd" id="33_yyo1g"]
 [ext_resource type="Texture2D" uid="uid://4dpq1nysypdt" path="res://assets/graphics/explosion/effect.png" id="34_8qj4l"]
 [ext_resource type="Shader" uid="uid://de27xd5kttgh1" path="res://assets/shaders/sub_shader.gdshader" id="34_srlbi"]
@@ -388,8 +389,6 @@ shape = SubResource("RectangleShape2D_ie2y0")
 [node name="Center" type="Marker2D" parent="Station" unique_id=934324399]
 position = Vector2(237, -3)
 
-[node name="AudioListener2D" type="AudioListener2D" parent="Station" unique_id=954471864]
-
 [node name="Ship" type="RigidBody2D" parent="." unique_id=525000957]
 position = Vector2(104, 528)
 gravity_scale = 0.0
@@ -469,6 +468,9 @@ stream = ExtResource("27_7v0dw")
 
 [node name="Hard" type="AudioStreamPlayer2D" parent="Ship/Sounds" unique_id=1190624259]
 stream = ExtResource("28_7v0dw")
+
+[node name="Kaboom" type="AudioStreamPlayer2D" parent="Ship/Sounds" unique_id=1983011523]
+stream = ExtResource("31_qss6y")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=90017022]
 position = Vector2(888, 1225)

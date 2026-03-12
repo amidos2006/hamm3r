@@ -25,49 +25,11 @@
 		],
 		"wait": "advance_dialogue",
 		"args": {
-			"name": "martin",
-			"mood": "happy",
-			"text": "Huh?! That was weird.\nOh well, what is done is done.",
-			"action": "interact",
-			"direction": "left",
-			"time": 0
-		}
-	},
-	{
-		"action": "show_dialogue",
-		"conditions": [
-			{
-				"name": "is_investigated",
-				"target": "..",
-				"value": false
-			}
-		],
-		"wait": "advance_dialogue",
-		"args": {
 			"name": "3R",
 			"mood": "normal",
-			"text": "Well boss, that was quick.",
+			"text": "Whoa! Whatever you just did, boss, I am no longer sensing anything in there.",
 			"action": "interact",
 			"direction": "right",
-			"time": 0
-		}
-	},
-	{
-		"action": "show_dialogue",
-		"conditions": [
-			{
-				"name": "is_investigated",
-				"target": "..",
-				"value": false
-			}
-		],
-		"wait": "advance_dialogue",
-		"args": {
-			"name": "martin",
-			"mood": "happy",
-			"text": "I know, I know. Both good-looking AND efficient. What can I say...",
-			"action": "interact",
-			"direction": "left",
 			"time": 0
 		}
 	},
@@ -84,7 +46,7 @@
 		"args": {
 			"name": "3R",
 			"mood": "normal",
-			"text": "Right, yes. Now please make your way back onboard the HAMM.",
+			"text": "So please make your way back onboard the HAMM.",
 			"action": "interact",
 			"direction": "right",
 			"time": 0

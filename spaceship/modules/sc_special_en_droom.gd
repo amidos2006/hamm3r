@@ -92,6 +92,7 @@ func shutdown_computers():
 	screen.get_surface_override_material(0).set_shader_parameter("roll_size", 0.0)
 	get_parent().get_parent().get_parent().get_parent().start_flickering()
 	$AudioStreamPlayer3D.stop()
+	$MetalClang.play()
 
 
 func shoot_computers():

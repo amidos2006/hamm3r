@@ -38,4 +38,5 @@ func _ready():
 		await ActionManager.run_actions(hard_actions.data, self)
 		await ActionManager.run_actions(end_actions.data, self)
 	else:
+		$Ship/Sounds/Kaboom.play(0.1)
 		await ActionManager.run_actions(explosion_actions.data, self)

@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bp4kbh30sjpeb" path="res://interactable/interactable.tscn" id="11_kfplh"]
 [ext_resource type="JSON" path="res://assets/actions/tanker/computer_investigate.json" id="12_chuba"]
 [ext_resource type="AudioStream" uid="uid://dbsmmlissrtnx" path="res://assets/sfx/in_game/hamm3r theme 1.1 [radio effect].wav" id="14_lyjn3"]
+[ext_resource type="AudioStream" uid="uid://cjm1xuh7ie7x1" path="res://assets/sfx/in_game/metal sound.wav" id="15_ng3r0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_52bxi"]
 render_priority = 0
@@ -372,6 +373,13 @@ shape = SubResource("BoxShape3D_2dmtt")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="7" unique_id=1453063635]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.922806, -3.0580835)
 stream = ExtResource("14_lyjn3")
+volume_db = -20.0
+autoplay = true
+max_distance = 6.0
+
+[node name="MetalClang" type="AudioStreamPlayer3D" parent="." index="8" unique_id=2004012480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.922806, -3.0580835)
+stream = ExtResource("15_ng3r0")
 volume_db = -20.0
 autoplay = true
 max_distance = 6.0

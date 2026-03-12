@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://chvoffwgiq73r" path="res://assets/graphics/dialogue/Tess_shocked.png" id="4_6cv3u"]
 [ext_resource type="Texture2D" uid="uid://cqqi2yu451wb8" path="res://assets/graphics/dialogue/Tess_smiling.png" id="5_f8rgk"]
 [ext_resource type="Texture2D" uid="uid://cdo2js7u6fr1m" path="res://assets/graphics/dialogue/Tess_noise.png" id="6_ya1dj"]
+[ext_resource type="AudioStream" uid="uid://ckix8kjf2fgce" path="res://assets/sfx/dialogue/tess/static_noise.wav" id="7_45lif"]
 [ext_resource type="AudioStream" uid="uid://de85d4lne7x4x" path="res://assets/sfx/dialogue/tess/female voice - grogged_2.wav" id="7_x1a6o"]
 [ext_resource type="AudioStream" uid="uid://uypdis75l4mx" path="res://assets/sfx/dialogue/tess/female voice - excited_2.wav" id="9_45lif"]
 
@@ -31,9 +32,14 @@ pictures = Array[Texture]([ExtResource("3_6cv3u")])
 sounds = SubResource("AudioStreamRandomizer_w7lxx")
 metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_viovo"]
+streams_count = 1
+stream_0/stream = ExtResource("7_45lif")
+
 [sub_resource type="Resource" id="Resource_x1d1r"]
 script = ExtResource("1_cy58x")
 pictures = Array[Texture]([ExtResource("6_ya1dj")])
+sounds = SubResource("AudioStreamRandomizer_viovo")
 metadata/_custom_type_script = "uid://cq3vw6ffhj3vi"
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_v784v"]

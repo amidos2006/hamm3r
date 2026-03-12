@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bjf0a24v6e5ur"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bjf0a24v6e5ur"]
 
 [ext_resource type="Texture2D" uid="uid://b1xcwfxfkys7t" path="res://assets/textures/tex_hammer/T_cryopod_glass.png" id="1_anl4g"]
 

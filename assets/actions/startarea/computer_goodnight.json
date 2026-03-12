@@ -13,7 +13,7 @@
 		"args": {
 			"name": "3R",
 			"mood": "normal",
-			"text": "Goodnight, Captin.",
+			"text": "#sleep#",
 			"action": "interact",
 			"direction": "right",
 			"time": 0

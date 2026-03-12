@@ -61,7 +61,7 @@
 		"args": {
 			"name": "martin",
 			"mood": "concerned",
-			"text": "Wonder how long it’s been keeping it going processing...",
+			"text": "I wonder how long it's been processing for...",
 			"action": "interact",
 			"direction": "left",
 			"time": 0

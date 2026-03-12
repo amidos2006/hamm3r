@@ -189,7 +189,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 1120.0
+offset_bottom = 1220.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -339,9 +339,10 @@ text = "
 [color=#d1ff85][font_size=52]Martina Galea[/font_size][/color]
 [color=#d1ff85][font_size=52]Nemanja Rasajski[/font_size][/color]
 [color=#d1ff85][font_size=52]Pablo Arango[/font_size][/color]
-[color=#d1ff85][font_size=52]Chris Paller[/font_size][/color]
+[color=#d1ff85][font_size=52]Christian Paller[/font_size][/color]
 [color=#d1ff85][font_size=52]Jasper Schellekens[/font_size][/color]
-[color=#d1ff85][font_size=52]Amy Grech[/font_size][/color]"
+[color=#d1ff85][font_size=52]Amy Grech[/font_size][/color]
+[color=#d1ff85][font_size=52]Stefano Max Dooijes[/font_size][/color]"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1

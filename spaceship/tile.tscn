@@ -236,7 +236,7 @@ omni_range = 6.0
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1950448223]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.67319, 0)
 stream = SubResource("AudioStreamRandomizer_7cygo")
-volume_db = -25.0
+volume_db = -30.0
 max_distance = 2.5
 
 [node name="Timer" type="Timer" parent="." unique_id=1764323387]

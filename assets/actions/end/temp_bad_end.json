@@ -1,20 +1,50 @@
 [
 	{
-		"action": "variable",
-		"target": "Ship",
+		"action": "fade",
 		"args": {
-			"name": "visible",
-			"value": true,
+			"start": 1.0,
+			"end": 0.0,
+			"time": 2,
+			"color": "#FFFFFF"
+		}
+	},
+	{
+		"action": "wait",
+		"wait": 0.1
+	},
+	{
+		"action": "sound",
+		"target": "Explosion/Sound",
+		"args":{
+			"name": "play"
+		}
+	},
+	{
+		"action": "function",
+		"target": "Explosion/Animation",
+		"wait": "animation_finished",
+		"args": {
+			"name": "play"
 		}
 	},
 	{
 		"action": "fade",
-		"wait": "animation_ended",
 		"args": {
-			"start": 1.0,
+			"start": 0.0,
 			"end": 0.25,
-			"time": 2,
-			"color": "#000000"
+			"time": 2
+		}
+	},
+	{
+		"action": "show_dialogue",
+		"wait": "advance_dialogue",
+		"args": {
+			"name": "tess",
+			"mood": "concerned",
+			"text": "Uh-oh...",
+			"action": "interact",
+			"direction": "right",
+			"time": 0
 		}
 	},
 	{
